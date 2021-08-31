@@ -76,6 +76,21 @@ def greet3():
     return render_template("vunsh.html", name="World")
 
 
+@app.route('/lab1/')
+def lab1():
+    return render_template("lab1.html")
+
+
+@app.route('/lab2/')
+def lab2():
+    return render_template("lab2.html")
+
+
+@app.route('/lab3/')
+def lab3():
+    return render_template("lab3.html")
+
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
