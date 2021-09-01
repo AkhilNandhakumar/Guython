@@ -2,28 +2,52 @@
 {% extends "layouts/base.html" %}
 
 <!- This variable sets name of browser tab  -->
-{% set project = "Jakub" %}
+{% set project = "Tristan" %}
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here ->
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: verdana,sans-serif;">
+        <div class="col-12">
+            <p style="font-size:45px">Welcome, my name is Tristan Copley!</p>
+            <p>This page is all about me:</p>
+            <p style="font-size:29px">Who I am:</p>
+            <p>I am a Junior at Del Norte High School. My family is from Poland, which I am very proud of (that's why my name is spelled J-A-K-U-B instead of the normal J-A-C-O-B). I am roughly 5'11'', with dark brown hair and blue eyes.</p>
+            <img src="https://1z8qih1l8tj53pg8zi3f9dif-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/Del-Norte-HS-Poway-K12-Structural-San-Diego-1200x600.jpg" width="240" height="160">
+            <img src="https://m.media-amazon.com/images/I/61xvFPfQUwL._AC_SX425_.jpg" width="240" height="160">
+            <p></p>
+            <p style="font-size:29px">What I like</p>
+            <p>One of my biggest interests is engineering. I enjoy making physical things, such as assembling furniture, 3D-puzzles, or even LEGOs. I also like to play video games when I have free time, like Skyrim or Team Fortress 2. When I am tired of sitting in front of a computer, I often go biking, listening to my favorite music while getting some exercise. I also like to watch short videos on YouTube; one of my favorite types of videos is comedy sketches, made my creators like Gus Johnson, who I subscribe to. </p>
+            <img src="https://www.realtyexecutives.com/blog/wp-content/uploads/2019/09/teenage-boy-assembling-furniture-with-his-father-picture-id1082564414.jpg" width="160" height="120">
+            <img src="https://cdn-ext.fanatical.com/production/product/1280x720/305f04c9-8780-4c7b-91dd-e87979844dab.jpg" width="180" height="120">
+            <img src="https://www.portasouthjetty.com/wp-content/uploads/images/2016-04-07/1p1.jpg" width="160" height="120">
+            <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2020/09/youtube-shorts-5f73757dc34a3-760x400.png" width="180" height="120">
+            <p></p>
+            <p style="font-size:29px">What I want to do</p>
+            <p>In the near future I want to do well in school so that I can attend a good college. I want to major in mechanical engineering, so I am hoping to get into such schools like the California Institute of Technology or the California Polytechnic State University. When I graduate from college, I want to find a good job: Not an easy one, nor a lucrative one, but rather a job that I look forward to every day. I want to be able to apply what I know to the real world, helping people solve their problems through mechanical engineering.</p>
+            <img src="https://www.calpoly.edu/sites/calpoly.edu/files/2021-02/Lawn%20Sign_CPBOUND.jpg" width="240" height="170">
+            <img src="https://www.mw.tum.de/fileadmin/w00btx/mw/Forschung/Schwerpunktthemen/Mechanical-Engineering/Mechanical-Engineering_Work-at-MSRM.jpg" width="360" height="170">
+            <p></p>
+            <p style="font-size:29px">Greet Integration:</p>
+    </div>
+    <br />
+    <br />
+    <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
         <div class="col-12">
             <p>Hello, {{name}}!</p>
         </div>
         <div class="col-12">
-            <form action="/jakub/" id="stub" method="POST" >
+            <form action="/tristan/" id="stub" method="POST" >
                 <label for="name">Type a greeting name?</label>
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
             </form>
         </div>
+
         <div class="col-12">
             <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
         </div>
     </div>
-    <p>This is a test</p>
-    <p>Tech Talk 1 - Body Stub</p>
 {% endblock %}
 
 <!- This is turning off birds background from base.html -->
