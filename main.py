@@ -77,13 +77,14 @@ def greet3():
 
 
 @app.route('/lab1/', methods=['GET', 'POST'])
-def greetlab1():
+def greet5():
     # submit button has been pushed
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
             return render_template("lab1.html", name=name)
     # starting and empty input default
+    return render_template("lab1.html", name="World")
 
 
 @app.route('/lab2/')
