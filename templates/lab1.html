@@ -7,8 +7,14 @@
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here ->
-    <p>This is a test</p>
-    <p>Mini-Lab 1</p>
+    <style>
+        p1 {
+            font-size: 40px;
+            padding-left: 12px;
+            font-family: arial;
+        }
+    </style>
+    <p1> Mini-Lab 1</p1>
     <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
         <div class="col-12">
             <p>Hello, {{name}}!</p>
@@ -22,7 +28,7 @@
         </div>
 
         <div class="col-12">
-            <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1200px-Flask_logo.svg.png" style="max-width:50%">
         </div>
     </div>
 
