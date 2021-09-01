@@ -65,13 +65,7 @@ def greet2():
 
 @app.route('/vunsh/', methods=['GET', 'POST'])
 def greet3():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("vunsh.html", name=name)
-    # starting and empty input default
-    return render_template("vunsh.html", name="World")
+    return render_template("index.html")
 
 
 @app.route('/lab1/', methods=['GET', 'POST'])
