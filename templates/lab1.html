@@ -8,20 +8,35 @@
 {% block body %}
     <!- Try building a new body here ->
     <style>
+        p {
+            color: black;
+        }
         p1 {
             font-size: 40px;
-            padding-left: 12px;
+            padding-left: 14px;
             font-family: arial;
+            color: black;
+        }
+        p2 {
+            font-size: 16px;
+            padding-left: 14px;
+            font-family: arial;
+            line-height: 0px;
+            color: black;
+            display: block
         }
     </style>
     <p1> Mini-Lab 1</p1>
+    <br>
+<p2>This Mini-Lab demonstrates the greeting function.</p2><br><p2> Input your name below and click enter.</p2>
+    <br><br><br>
     <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
         <div class="col-12">
             <p>Hello, {{name}}!</p>
         </div>
         <div class="col-12">
             <form action="/lab1/" id="stub" method="POST" >
-                <label for="name">Type a greeting name?</label>
+                <label for="name" style="color: black">Type a greeting name?</label>
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
             </form>
