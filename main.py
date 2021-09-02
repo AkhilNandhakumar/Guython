@@ -107,6 +107,21 @@ def greet():
     return render_template("greet.html", name="World")
 
 
+@app.route('/weather1/')
+def weather1():
+    return render_template("weather1.html")
+
+
+@app.route('/weather2/')
+def weather2():
+    return render_template("weather2.html")
+
+
+@app.route('/weather3/')
+def weather3():
+    return render_template("weather3.html")
+
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
