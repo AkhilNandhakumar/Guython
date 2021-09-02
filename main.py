@@ -4,10 +4,16 @@ from flask import Flask, render_template, request
 # create a Flask instance
 app = Flask(__name__)
 
+
 # connects default URL to render index.html
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("main_page.html")
+
+
+@app.route('/main_page')
+def mainpage():
+    return render_template("main_page.html")
 
 
 # connects /kangaroos path to render kangaroos.html
@@ -24,6 +30,7 @@ def walruses():
 @app.route('/hawkers/')
 def hawkers():
     return render_template("hawkers.html")
+
 
 @app.route('/stub/')
 def stub():
@@ -88,8 +95,8 @@ def lab2():
 def lab3():
     return render_template("lab3.html")
 
-@app.route('/greet', methods=['GET', 'POST'])
 
+@app.route('/greet', methods=['GET', 'POST'])
 def greet():
     # submit button has been pushed
     if request.method == "POST":
@@ -98,6 +105,7 @@ def greet():
             return render_template("greet.html", name=name)
     # starting and empty input default
     return render_template("greet.html", name="World")
+
 
 # runs the application on the development server
 if __name__ == "__main__":

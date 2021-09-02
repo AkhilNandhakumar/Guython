@@ -9,20 +9,18 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-            <a class="nav-link" href={{ url_for('index') }}>Portfolio</a>
-            <a class="nav-link" href={{ url_for('kangaroos') }}>Kangaroos</a>
-            <a class="nav-link" href={{ url_for('walruses') }}>Walruses</a>
-            <a class="nav-link" href={{ url_for('hawkers') }}>Hawkers</a>
+            <a class="nav-link" href="/main_page">Home</a>
             <!-- stub is shown using the name of the route -->
             <a class="nav-link" href="/jakub">Jakub</a>
             <a class="nav-link" href="/tristan">Tristan</a>
             <a class="nav-link" href="/vunsh">Vunsh</a>
             <a class="nav-link" href="/anika">Anika</a>
+            <a class="nav-link" href="/empty"></a>
         </div>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Mini-Labs
+                     Mini-Labs
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/lab1">Mini-Lab 1</a>
@@ -30,6 +28,5 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                 </div>
             </li>
         <div/>
-
     </div>
 </nav>
