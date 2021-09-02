@@ -19,6 +19,39 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+        html, body {
+    width: 100%;
+    height:100%;
+  }
+
+  .nav-link dropdown-toggle{
+        font-family: 'Roboto', sans-serif;
+
+     }
+
+  body {
+    text-align:center;
+    color:white;
+      background: linear-gradient(-45deg, #ee7762, #e73c7e, #23a5d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+
+
         :root{
             --white: whitesmoke;
             --black: black;

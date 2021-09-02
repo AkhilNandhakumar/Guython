@@ -72,7 +72,7 @@ def greet2():
 
 @app.route('/vunsh/', methods=['GET', 'POST'])
 def greet3():
-    return render_template("index.html")
+    return render_template("vunsh.html")
 
 
 @app.route('/lab1/', methods=['GET', 'POST'])
