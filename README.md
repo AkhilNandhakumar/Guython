@@ -1,5 +1,19 @@
 ## [Flask Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Flask%20Portfolio%20Starter)
 Runtime link: https://portfolio.nighthawkcodingsociety.com/
+## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio)
+### Scores (9/3/21)
+Team: 4/4   
+Jakub: 3.5/4  
+Anika: 3.5/4  
+Tristan: 3.5/4  
+Vunsh: 3.5/4
+### Table of Contents (code tangibles)
+1. Greet integration in "about me" pages: [Anika](templates/anika.html), [Jakub](templates/jakub.html), [Tristan](templates/tristan.html), [Vunsh](templates/vunsh.html)
+2. [Dropdown code](templates/layouts/navbar.html)
+3. [Greet Integration in mini lab](templates/lab1.html)
+4. [Video Journal 0 Integration](templates/lab2.html) 
+5. README.md updates
+6. "About Me" page completion [Anika](templates/anika.html), [Jakub](templates/jakub.html), [Tristan](templates/tristan.html), [Vunsh](templates/vunsh.html) 
 ### Idea
 Personalized starter website
 ### Visual thoughts
