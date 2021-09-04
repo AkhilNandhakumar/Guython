@@ -6,6 +6,9 @@ app = Flask(__name__)
 
 
 # connects default URL to render index.html
+
+# The code below creates the default pages that we have hidden from view on our website
+
 @app.route('/')
 def index():
     return render_template("main_page.html")
@@ -36,6 +39,7 @@ def hawkers():
 def stub():
     return render_template("jakub.html")
 
+# The code below creates the custom about me pages for each team member
 
 @app.route('/jakub/', methods=['GET', 'POST'])
 def greet0():
@@ -74,6 +78,7 @@ def greet2():
 def greet3():
     return render_template("vunsh.html")
 
+# The code below creates the lab pages
 
 @app.route('/lab1/', methods=['GET', 'POST'])
 def greet5():
@@ -105,6 +110,22 @@ def greet():
             return render_template("greet.html", name=name)
     # starting and empty input default
     return render_template("greet.html", name="World")
+
+# The code below creates the weather pages
+
+@app.route('/weather1/')
+def weather1():
+    return render_template("weather1.html")
+
+
+@app.route('/weather2/')
+def weather2():
+    return render_template("weather2.html")
+
+
+@app.route('/weather3/')
+def weather3():
+    return render_template("weather3.html")
 
 
 # runs the application on the development server
