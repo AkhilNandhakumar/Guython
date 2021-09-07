@@ -8,22 +8,30 @@
 {% block body %}
     <!- Try building a new body here ->
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-        <div class="col-12">
-            <p>Hello, {{name}}!</p>
+        <div>
+            <h1 id="vunshHead">About me</h1>
+            <p id="intro_vunsh">Hi! My name is Vunsh Mehta and I am an 11th grader at Del Norte High School. I love to code, video edit, bike, and sleep. Below you can find some things that describe me, I hope you enjoy!</p>
         </div>
-        <div class="col-12">
-            <form action="/vunsh/" id="stub" method="POST" >
-                <label for="name">Type a greeting name?</label>
-                <input name="name" id="name">
-                <input type="submit" value="Greetings!">
-            </form>
-        </div>
-        <div class="col-12">
-            <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
+            <div class="buttons_vunsh">
+                <style>
+                .buttons_vunsh{
+                    text-align:center;
+                    }
+                </style>
+        <a href="https://twitter.com/vuneesh" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com/channel/UCc2-ENMh311Xyb8VAxau5CQ" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/vuneesh/" class="fa fa-instagram"></a>
+        <a href="https://open.spotify.com/user/4oyjh2n50rd3x23r6aqgpg5z0?si=57c02739306c4951" class="fa fa-spotify"></a>
         </div>
     </div>
-    <p>This is a test</p>
-    <p>Tech Talk 1 - Body Stub</p>
+
+    <div class = "playlist_embed_vunsh">
+
+        <iframe src="https://open.spotify.com/embed/playlist/79sWKpi4zOGu6IsviDqg5T" width="250" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    </div>
+
+
 {% endblock %}
 
 <!- This is turning off birds background from base.html -->
