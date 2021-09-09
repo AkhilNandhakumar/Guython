@@ -2,12 +2,87 @@
 {% extends "layouts/base.html" %}
 
 <!- This variable sets name of browser tab  -->
-{% set project = "Stubby" %}
+{% set project = "Mini-Lab 3" %}
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here ->
-    <p>Tech Talk 1 - Body Stub</p>
+
+    <!-- # The code below is for the videos in lab 2 which are displayed on the page as a list. -->
+<!-- CSS-->
+<style>
+    .col-4 {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    }
+    .col-6 {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    }
+    .col-9 {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    }
+    .row {
+    border-style: solid;
+    border-width: 4px;
+    border-color: red;
+    }
+</style>
+<!--
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-4">
+      One of two columns
+    </div>
+    <div class="col-4">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      One of two columns
+    </div>
+    <div class="col-4">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-4">
+      One of two columns
+    </div>
+    <div class="col-4">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-4">
+      One of two columns
+    </div>
+    <div class="col-4">
+      One of two columns
+    </div>
+  </div>
+  <div class="row justify-content-between">
+    <div class="col-4">
+      One of two columns
+    </div>
+    <div class="col-4">
+      One of two columns
+    </div>
+  </div>
+</div>
+-->
+<div class="row">
+  <div class="col-9">.col-9</div>
+  <div class="col-4">.col-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+  <div class="col-6">.col-6<br>Subsequent columns continue along the new line.</div>
+</div>
+<!-- -->
+
 {% endblock %}
 
 <!- This is turning off birds background from base.html -->

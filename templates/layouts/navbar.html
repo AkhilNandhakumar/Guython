@@ -1,48 +1,75 @@
 <!-- Navigation Bar from bootstrap
 This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
 -->
+<style>
+    pList:hover {
+        color: mediumaquamarine;
+        cursor: pointer;
+    }
+    pList {
+        font-family: Copperplate, fantasy;
+        font-size: 22px;
+        margin: -2.8% 0% -4%;
+        color: #55ACEE;
+    }
+</style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-    <a class="navbar-brand" href="https://csp.nighthawkcodingsociety.com/">{{basename}}</a>
+    <a style="font-family: Luminari, fantasy; font-size: 30px"  class="navbar-brand" href="https://csp.nighthawkcodingsociety.com/">{{basename}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+        <div style="font-family: Copperplate,fantasy" class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-            <a class="nav-link" href="/main_page">Home</a>
+            <a class="nav-link" style="font-size: 30px; margin: -4.8% 4% -4% " href="/main_page">Home</a>
             <!-- stub is shown using the name of the route -->
-            <a class="nav-link" href="/jakub">Jakub</a>
-            <a class="nav-link" href="/tristan">Tristan</a>
-            <a class="nav-link" href="/vunsh">Vunsh</a>
-            <a class="nav-link" href="/anika">Anika</a>
             <a class="nav-link" href="/empty"></a>
         </div>
 
-        <!-- # The code below creates drop down menus which we utilize for more efficient and flush navbar usage. -->
-        <div id="navbarSupportedContent" class="collapse navbar-collapse">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Mini-Labs
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/lab1/">Mini-Lab 1: Greet</a>
-                    <a class="dropdown-item" href="/lab2/">Mini-Lab 2: Journal 0 Videos</a>
-                </div>
-            </li>
-        <div/>
 
+        <div class="dropdown">
+            <pList style="font-family: Copperplate,fantasy" margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Us
+            </pList>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" href="/anika">Anika</a>
+                <a class="dropdown-item" href="/jakub">Jakub</a>
+                <a class="dropdown-item" href="/tristan">Tristan</a>
+                <a class="dropdown-item" href="/vunsh">Vunsh</a>
+            </div>
+        </div>
+        <!-- # The code below creates drop down menus which we utilize for more efficient and flush navbar usage. -->
+
+
+        <div style="font-family: Copperplate,fantasy" class="navbar-nav">
+            <a class="nav-link" href="/empty"></a>
+        </div>
+
+        <div class="dropdown">
+            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Our Work
+            </pList>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" href="/lab1/">Mini-Lab 1: Greet</a>
+                <a class="dropdown-item" href="/lab2/">Mini-Lab 2: Journal 0 Videos</a>
+                <a class="dropdown-item" href="/lab3/">Test Prep Tuesdays</a>
+            </div>
+        </div>
            <!-- # Second dropdown menu -->
-        <div id="navbarSupportedContent" class="collapse navbar-collapse">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Weather Information
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/weather1">Clouds</a>
-                    <a class="dropdown-item" href="/weather2">Sun</a>
-                    <a class="dropdown-item" href="/weather3">Wind</a>
-                </div>
-            </li>
-        <div/>
+
+        <div style="font-family: Copperplate,fantasy" class="navbar-nav">
+            <a class="nav-link" href="/empty"></a>
+        </div>
+
+        <div class="dropdown">
+            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Weather Information
+            </pList>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" href="/weather1">Clouds</a>
+                <a class="dropdown-item" href="/weather2">Sun</a>
+                <a class="dropdown-item" href="/weather3">Wind</a>
+            </div>
+        </div>
     </div>
 </nav>

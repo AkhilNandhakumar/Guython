@@ -2,28 +2,53 @@
 {% extends "layouts/base.html" %}
 
 <!- This variable sets name of browser tab  -->
-{% set project = "Jakub" %}
+{% set project = "Anika" %}
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here ->
-    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: verdana,sans-serif;">
+        <div class="col-12">
+            <p style="font-size:45px">Welcome, my name is Anika Sharma!</p>
+            <p>This page is all about me:</p>
+            <p style="font-size:29px">My Identity:</p>
+            <p>Hi! I'm Anika, I live in Southern California. My family is from South India, and we are all Hindu. I have one younger brother, and we are both fluent in two South Indian languages, Kannada and Tamil. My pronouns are she/her, and </p>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png" width="240" height="160">
+            <img src="https://mc-42b990dd-5dae-4647-b81e-424724-cdn-endpoint.azureedge.net/-/media/blogs/2021/hinduism.jpg?rev=6be28ece4e3141d89fd97e08cefd4372" width="240" height="160">
+            <p></p>
+            <p style="font-size:29px">My Aspirations:</p>
+            <p>After high school I want to go to a four year university, and major in aerospace/mechanical engineering or robotics. I want to work at NASA SpaceX or Tesla, working in robotics or aerospace engineering, and live in Sourthern California. </p>
+            <img src="https://www.nasa.gov/sites/default/files/images/nasaLogo-570x450.png" width="160" height="120">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png" width="180" height="120">
+            <img src="https://media.wired.com/photos/5c6f46d93e8add2cdb917279/master/pass/spaceshuttle.jpg" width="160" height="120">
+            <img src="https://www.popsci.com/uploads/2021/08/24/0x0-KJC_5055-1.jpg?width=1440" width="160" height="120">
+             <p></p>
+            <p style="font-size:29px">My Extracurriculars:</p>
+            <p>I have been classically trained in Indian dance and vocal for 10 years. I have done robotics as part of the FIRST program for 7 years. I am a part of Model UN, and I am a part of multiple female empowerment clubs. </p>
+            <img src="https://1000logos.net/wp-content/uploads/2018/01/Flag-United-Nations-Logo.jpg" width="360" height="170">
+            <img src="https://www.allgirlsstemsociety.org/uploads/2/8/3/5/28355005/1477188173_2.png" width="360" height="170">
+            <p></p>
+            </div>
+    </div>
+    <br />
+    <br />
+    <p style="font-size:29px">Greet Integration:</p>
+    <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
         <div class="col-12">
             <p>Hello, {{name}}!</p>
         </div>
         <div class="col-12">
-            <form action="/anika/" id="stub" method="POST" >
+            <form action="/tristan/" id="stub" method="POST" >
                 <label for="name">Type a greeting name?</label>
                 <input name="name" id="name">
                 <input type="submit" value="Greetings!">
             </form>
         </div>
+
         <div class="col-12">
             <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
         </div>
     </div>
-    <p>This is a test</p>
-    <p>Tech Talk 1 - Body Stub</p>
 {% endblock %}
 
 <!- This is turning off birds background from base.html -->

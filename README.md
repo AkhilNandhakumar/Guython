@@ -1,6 +1,7 @@
 ## [Flask Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Flask%20Portfolio%20Starter)
 Runtime link: https://portfolio.nighthawkcodingsociety.com/
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio)
+## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
