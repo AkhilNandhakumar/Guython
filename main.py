@@ -111,6 +111,11 @@ def lab3():
     return render_template("lab3.html")
 
 
+@app.route('/tt3/')
+def tt3():
+    return render_template("tt3.html")
+
+
 @app.route('/greet', methods=['GET', 'POST'])
 def greet():
     # submit button has been pushed
