@@ -113,7 +113,8 @@ def lab3():
 
 @app.route('/tt3/')
 def tt3():
-    return render_template("tt3.html")
+    return render_template("tt3.html", imgBulbOn = "/static/assets/bulb_on.gif", imgBulbOff = "/static/assets"
+                                                                                              "/bulb_off.png", msgTurnOn = "Turn On", msgTurnOff = "Turn Off")
 
 
 @app.route('/greet', methods=['GET', 'POST'])
