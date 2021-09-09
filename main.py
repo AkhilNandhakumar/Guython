@@ -1,4 +1,6 @@
 # import "packages" from flask
+import requests, json
+
 from flask import Flask, render_template, request
 
 # create a Flask instance
@@ -11,12 +13,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("main_page.html")
+    response = requests.get("https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
+    text = response.json()
+    temp = text["data"][0]["temp"]
+    return render_template("main_page.html", temp=temp)
 
 
 @app.route('/main_page')
 def mainpage():
-    return render_template("main_page.html")
+    response = requests.get("https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
+    text = response.json()
+    temp = text["data"][0]["temp"]
+    return render_template("main_page.html", temp=temp)
 
 
 # connects /kangaroos path to render kangaroos.html
@@ -38,6 +46,7 @@ def hawkers():
 @app.route('/stub/')
 def stub():
     return render_template("jakub.html")
+
 
 # The code below creates the custom about me pages for each team member
 
@@ -78,6 +87,7 @@ def greet2():
 def greet3():
     return render_template("vunsh.html")
 
+
 # The code below creates the lab pages
 
 @app.route('/lab1/', methods=['GET', 'POST'])
@@ -110,6 +120,7 @@ def greet():
             return render_template("greet.html", name=name)
     # starting and empty input default
     return render_template("greet.html", name="World")
+
 
 # The code below creates the weather pages
 

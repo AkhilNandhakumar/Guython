@@ -7,7 +7,11 @@
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here ->
-    <p>Main page</p>
+    <h1>Temperature in San Diego</h1>
+
+    <p>Temp in Degrees Celsius: {{temp}}</p>
+    <p name = "temp" id = "temp"></p>
+
     </div>
 
 {% endblock %}
