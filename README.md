@@ -2,16 +2,49 @@
 # Number 1 Hackers
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio)
 ## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
+## Contributors: 
+Jakub Ponulak, Anika Sharma , Tristan Copley, Vunsh Mehta
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
 ### Anika
 GitHub ID: anika1sharma1
 
+GitHub [Issues](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Aanika1sharma1+is%3Aopen) Filter
+
+[Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Aanika1sharma1) Filter:
+
+GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=anika1sharma1)
+
+GitHub [profile](https://github.com/anika1sharma1)
 ### Jakub
 GitHub ID: JakubPonulak
+
+GitHub [Issues](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3AJakubPonulak+is%3Aopen) Filter
+
+[Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3AJakubPonulak) Filter:
+
+GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=JakubPonulak)
+
+GitHub [profile](https://github.com/JakubPonulak)
 ### Tristan
 GitHub ID: Sinergixxx
+
+GitHub [Issues](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3ASinergixxx+is%3Aopen) Filter
+
+[Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3ASinergixxx) Filter:
+
+GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=Sinergixxx)
+
+GitHub [profile](https://github.com/Sinergixxx)
 ### Vunsh
 GitHub ID: vunsh
+
+GitHub [Issues](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Avunsh+is%3Aopen) Filter
+
+[Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Avunsh) Filter:
+
+GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=vunsh)
+
+GitHub [profile](https://github.com/vunsh)
 ### Sprint 1,2 (code tangibles)
 1. Greet integration in "about me" pages: [Anika](templates/about%20us/anika.html), [Jakub](templates/about%20us/jakub.html), [Tristan](templates/about%20us/tristan.html), [Vunsh](templates/about%20us/vunsh.html)
 2. [Dropdown code](templates/layouts/navbar.html)
