@@ -13,7 +13,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    response = requests.get("https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
+    response = requests.get(
+        "https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
     text = response.json()
     temp = text["data"][0]["temp"]
     return render_template("main_page.html", temp=temp)
@@ -21,7 +22,8 @@ def index():
 
 @app.route('/main_page')
 def mainpage():
-    response = requests.get("https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
+    response = requests.get(
+        "https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
     text = response.json()
     temp = text["data"][0]["temp"]
     return render_template("main_page.html", temp=temp)
@@ -45,7 +47,7 @@ def hawkers():
 
 @app.route('/stub/')
 def stub():
-    return render_template("jakub.html")
+    return render_template("about us/jakub.html")
 
 
 # The code below creates the custom about me pages for each team member
@@ -56,9 +58,9 @@ def greet0():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("jakub.html", name=name)
+            return render_template("about us/jakub.html", name=name)
     # starting and empty input default
-    return render_template("jakub.html", name="World")
+    return render_template("about us/jakub.html", name="World")
 
 
 @app.route('/anika/', methods=['GET', 'POST'])
@@ -67,9 +69,9 @@ def greet1():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("anika.html", name=name)
+            return render_template("about us/anika.html", name=name)
     # starting and empty input default
-    return render_template("anika.html", name="World")
+    return render_template("about us/anika.html", name="World")
 
 
 @app.route('/tristan/', methods=['GET', 'POST'])
@@ -78,14 +80,14 @@ def greet2():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("tristan.html", name=name)
+            return render_template("about us/tristan.html", name=name)
     # starting and empty input default
-    return render_template("tristan.html", name="World")
+    return render_template("about us/tristan.html", name="World")
 
 
 @app.route('/vunsh/', methods=['GET', 'POST'])
 def greet3():
-    return render_template("vunsh.html")
+    return render_template("about us/vunsh.html")
 
 
 # The code below creates the lab pages
@@ -96,25 +98,26 @@ def greet5():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("lab1.html", name=name)
+            return render_template("our work/lab1.html", name=name)
     # starting and empty input default
-    return render_template("lab1.html", name="World")
+    return render_template("our work/lab1.html", name="World")
 
 
 @app.route('/lab2/')
 def lab2():
-    return render_template("lab2.html")
+    return render_template("our work/lab2.html")
 
 
 @app.route('/lab3/')
 def lab3():
-    return render_template("lab3.html")
+    return render_template("our work/lab3.html")
 
 
-@app.route('/tt3/')
+@app.route('/hackathontt3/')
 def tt3():
-    return render_template("tt3.html", imgBulbOn = "/static/assets/bulb_on.gif", imgBulbOff = "/static/assets"
-                                                                                              "/bulb_off.png", msgTurnOn = "Turn On", msgTurnOff = "Turn Off")
+    return render_template("our work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif", imgBulbOff="/static/assets"
+                                                                                          "/bulb_off.png",
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off")
 
 
 @app.route('/greet', methods=['GET', 'POST'])
@@ -132,17 +135,17 @@ def greet():
 
 @app.route('/weather1/')
 def weather1():
-    return render_template("weather1.html")
+    return render_template("weather info/weather1.html")
 
 
 @app.route('/weather2/')
 def weather2():
-    return render_template("weather2.html")
+    return render_template("weather info/weather2.html")
 
 
 @app.route('/weather3/')
 def weather3():
-    return render_template("weather3.html")
+    return render_template("weather info/weather3.html")
 
 
 # runs the application on the development server

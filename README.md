@@ -1,20 +1,36 @@
-## [Flask Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Flask%20Portfolio%20Starter)
-Runtime link: https://portfolio.nighthawkcodingsociety.com/
+
+# Number 1 Hackers
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio)
+## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
+### Anika
+GitHub ID: anika1sharma1
+
+### Jakub
+GitHub ID: JakubPonulak
+### Tristan
+GitHub ID: Sinergixxx
+### Vunsh
+GitHub ID: vunsh
+### Sprint 1,2 (code tangibles)
+1. Greet integration in "about me" pages: [Anika](templates/about%20us/anika.html), [Jakub](templates/about%20us/jakub.html), [Tristan](templates/about%20us/tristan.html), [Vunsh](templates/about%20us/vunsh.html)
+2. [Dropdown code](templates/layouts/navbar.html)
+3. [Greet Integration in mini lab](templates/our%20work/lab1.html)
+4. [Video Journal 0 Integration](templates/our%20work/lab2.html) 
+5. README.md updates
+6. "About Me" page completion [Anika](templates/about%20us/anika.html), [Jakub](templates/about%20us/jakub.html), [Tristan](templates/about%20us/tristan.html), [Vunsh](templates/about%20us/vunsh.html) 
+### Sprint 3,4 (code tangibles)
+1. Website theme, fonts/colors : [base.html](templates/layouts/base.html), [navbar.html](templates/layouts/navbar.html) 
+2. [Our Work dropdown](templates/layouts/navbar.html) creation + content
+3. Tech Talk 3: [Hack-a-thon](templates/our%20work/hackathontt3.html)
+4. "About Us" pages improvement: [Anika](templates/about%20us/anika.html), [Jakub](templates/about%20us/jakub.html), [Tristan](templates/about%20us/tristan.html), [Vunsh](templates/about%20us/vunsh.html)
+5. [Home page improvement](templates/main_page.html)
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
 Anika: 3.5/4  
 Tristan: 3.5/4  
 Vunsh: 3.5/4
-### Table of Contents (code tangibles)
-1. Greet integration in "about me" pages: [Anika](templates/anika.html), [Jakub](templates/jakub.html), [Tristan](templates/tristan.html), [Vunsh](templates/vunsh.html)
-2. [Dropdown code](templates/layouts/navbar.html)
-3. [Greet Integration in mini lab](templates/lab1.html)
-4. [Video Journal 0 Integration](templates/lab2.html) 
-5. README.md updates
-6. "About Me" page completion [Anika](templates/anika.html), [Jakub](templates/jakub.html), [Tristan](templates/tristan.html), [Vunsh](templates/vunsh.html) 
 ### Idea
 Personalized starter website
 ### Visual thoughts
