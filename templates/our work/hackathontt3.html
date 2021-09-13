@@ -48,7 +48,7 @@ Hack: Set bulbs and pass as variables via Python render_template
              DOM assignment by converting decimal https://www.w3schools.com/jsref/jsref_fromcharcode.asplook
              below ASCII for more ideas of where to make changes
              */
-            document.getElementById('ascii').innerHTML = parseInt(binary, 2).toString(14);
+            document.getElementById('ascii').innerHTML = String.fromCharCode(parseInt(binary, 2))
         }
 
         // algorithm to convert decimal to base using division and remainder
