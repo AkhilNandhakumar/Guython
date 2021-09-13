@@ -153,6 +153,11 @@ def weather3():
     return render_template("weather info/weather3.html")
 
 
+@app.route('/weather4/')
+def weather4():
+    return render_template("weather info/weather4.html")
+
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)

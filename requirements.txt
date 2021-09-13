@@ -1,2 +1,3 @@
 Flask~=2.0.1
 django-os-geocoder~=0.1.6
+requests~=2.26.0
