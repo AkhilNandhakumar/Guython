@@ -1,6 +1,8 @@
 # import "packages" from flask
 import requests, json
 
+from tkinter import *
+
 from flask import Flask, render_template, request
 
 # create a Flask instance
@@ -17,7 +19,13 @@ def index():
         "https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
     text = response.json()
     temp = text["data"][0]["temp"]
-    return render_template("main_page.html", temp=temp)
+    imagee = text["data"][0]["weather"]["icon"]
+    final = str(temp) + "°C"
+    ffinal = str(temp * 9/5 + 32) + "°F"
+    img = "https://www.weatherbit.io/static/img/icons/" + imagee + ".png"
+
+
+    return render_template("main_page.html", temp=final, tempf=ffinal, image=img)
 
 
 @app.route('/main_page')
@@ -26,7 +34,8 @@ def mainpage():
         "https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
     text = response.json()
     temp = text["data"][0]["temp"]
-    return render_template("main_page.html", temp=temp)
+    final = str(temp) + "°C"
+    return render_template("main_page.html", temp=final)
 
 
 # connects /kangaroos path to render kangaroos.html
