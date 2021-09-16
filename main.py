@@ -117,6 +117,11 @@ def lab2():
     return render_template("our work/lab2.html")
 
 
+@app.route('/lab3/')
+def lab3():
+    return render_template("our work/lab3.html")
+
+
 @app.route('/tpts/')
 def tpts():
     return render_template("our work/tpts.html")
@@ -132,6 +137,9 @@ def tt3():
     return render_template("our work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif", imgBulbOff="/static/assets"
                                                                                                             "/bulb_off.png",
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", name=8)
+
+
+
 
 
 @app.route('/wireframe/')
