@@ -132,11 +132,11 @@ def tt3():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("our work/hackathontt3.html", name=name)
+            return render_template("our work/hackathontt3.html", BITS=int(name))
     # starting and empty input default
     return render_template("our work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif", imgBulbOff="/static/assets"
                                                                                                             "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", name=8)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
 
 
 

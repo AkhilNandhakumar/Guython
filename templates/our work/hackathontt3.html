@@ -10,11 +10,10 @@ Hack: Build form to drive bit size dynamic updates
 <!-- located on line 176
 
 Anika
- Hack: use 8 as default -->
-{% set BITS = 8 %}
+ Hack: use 8 as default
 {% set MAX = ((2 ** BITS) - 1) %}
 
-<!-- Jakub
+ Jakub
 Hack: Set bulbs and pass as variables via Python render_template
            add new images (ie PNGs) to project -->
 <!-- use your PNGs as default -->
@@ -157,14 +156,14 @@ Hack: Set bulbs and pass as variables via Python render_template
             <div class="col-12">
                 <table class="table">
                     <tr>
-                        {% for i in range(8) %}
+                        {% for i in range(BITS) %}
                             <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="40" height="Auto">
                                 <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button>
                             </td>
                         {% endfor %}
                     </tr>
                     <tr>
-                        {% for i in range(8) %}
+                        {% for i in range(BITS) %}
                             <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
                         {% endfor %}
                     </tr>
@@ -188,7 +187,7 @@ Hack: Set bulbs and pass as variables via Python render_template
                 <label for="name" style="color: black">Select a number of bits (1-16)</label>
                 <input type="number" step="1" name="name" id="name" min="1" max="16">
                 <input type="submit" value="Submit">
-                <p></p>
+                <p>Bits: {{ BITS }}</p>
             </form>
         </div>
     </div>
