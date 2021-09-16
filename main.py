@@ -122,11 +122,16 @@ def tpts():
     return render_template("our work/tpts.html")
 
 
-@app.route('/hackathontt3/')
+@app.route('/hackathontt3/', methods={'GET', 'POST'})
 def tt3():
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("our work/hackathontt3.html", name=name)
+    # starting and empty input default
     return render_template("our work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif", imgBulbOff="/static/assets"
-                                                                                          "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off")
+                                                                                                            "/bulb_off.png",
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", name=8)
 
 
 @app.route('/wireframe/')

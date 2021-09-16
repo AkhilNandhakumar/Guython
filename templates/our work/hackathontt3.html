@@ -3,12 +3,13 @@
 
 <!-- Search for all the Hack: below for hack-a-thon and mini-lab requirements -->
 
-<!-- Vunsh
+<!-- Jakub/Anika
 Hack: Build form to drive bit size dynamic updates
            use HTML Input Form in Frontend, ie toward top of Page
            send initial value and updated values to form via Python render_template -->
+<!-- located on line 176
 
-<!--Anika
+Anika
  Hack: use 8 as default -->
 {% set BITS = 8 %}
 {% set MAX = ((2 ** BITS) - 1) %}
@@ -171,4 +172,35 @@ Hack: Set bulbs and pass as variables via Python render_template
 
         </div>
     </div>
+
+    <!--
+    <form action="/hackathontt3">
+        <label for="name">Bit Number (between 1-16):</label>
+        <input type="number" id="name" name="name" min="1" max="16"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    --!>
+
+    <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
+        <div class="col-12">
+            <form action="/hackathontt3/" id="stub" method="POST" >
+                <label for="name" style="color: black">Select a number of bits (1-16)</label>
+                <input type="number" step="1" name="name" id="name" min="1" max="16">
+                <input type="submit" value="Submit">
+                <p></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        function convertStoI() {
+            var a = {{name}};
+            var bitint = parseInt(a);
+            document.write(bitint)
+
+        }
+        convertStoI();
+    </script>
+
 {% endblock %}
