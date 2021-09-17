@@ -139,9 +139,6 @@ def tt3():
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
 
 
-
-
-
 @app.route('/wireframe/')
 def wireframe():
     return render_template("our work/wireframe.html")
