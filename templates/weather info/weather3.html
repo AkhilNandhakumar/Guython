@@ -6,20 +6,127 @@
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
-    <!- Try building a new body here ->
-    <style>
-        body {
+<!- Try building a new body here ->
+<style>
+    body {
         background-color: #a7ecf2;
-        }
+        font-size: 15px;
+        text-align: center;
+    }
 
-        .titleOfHomePage {
-        color: red;
+    img {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .h1 {
+        color: white;
+        font-size: 25px;
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    .h2 {
+        font-size: 25px;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    .t1 {
+        color: white;
+        font-size: 19px;
+        text-align: left;
+        margin-left: 20px;
+        max-width: 650px;
+        word-wrap: break-word;
+        margin-bottom: 100px;
+    }
+
+    .titleOfHomePage {
+        color: white;
+        font-size: 55px;
         margin-left: 10px;
-        }
+        text-align: center;
+    }
+    .weatherCol1 {
+        width: 48%;
+    }
+    .weatherCol2 {
+        border: white;
+        border-style: solid;
+        width: 50%;
+    }
+    body {
+        font-size: 20px;
+        text-align: left;
+    }
 
-    </style>
-<p class="titleOfHomePage">Wind</p>
+</style>
+<div class="titleOfHomePage">
+    <p1>The Wind</p1>
+</div>
+<div class="container" style="margin-left: 2%; min-width:100%;">
+    <div class="row">
+        <div class="weatherCol1">
+            <p>Everyone has felt wind and seen its effects, but what <i>exactly</i> is wind and what does it do? Wind is the global movement of a collective of gases known as air. Wind is occurs when pressure differences form which results in air from high pressure to flow to low pressure.</p>
+            <br>
+            <p>Wind can be found almost everywhere around the world and is notoriously hard to predict. The craziest thing about wind is it actually occurs in space, too!</p>
+
+            <br>
+            <a href="https://kestrelmeters.com/blogs/news/importance-wind-direction-world-weather">Source & More Information</a>
+            <br>
+            <br>
+            <img style="max-width: 700px; max-height: 320px; float: left" src="https://cpi.studiod.com/ehowmedia/a05/3p/11/wind-speed-related-pressure-gradient-800x800.jpg">
+            <br>
+            <br>
+            <br>
+
+        </div>
+        <div class="weatherCol2">
+            One of two columns
+        </div>
+        <div class="weatherCol2">
+            One of two columns
+        </div>
+    </div>
+</div>
+<!--
+<div class="row">
+  <div class="col-9">Test Prep Tuesdays</div>
+  <div class="col-4">Brainwrite Exercise<br></div>
+  <div class="col-6"><br>Subsequent columns continue along the new line.</div>
+</div>
+
+<!-
+<img style="max-width: 700px; max-height: 320px; float: right" src="https://www.ymcaharrison.org/sites/ymcaharrison.org/files/pexels-pixabay-301599.jpg">
+
+<div class="h1">
+    <p>The Basics:</p>
+</div>
+
+<div class="t1">
+    <p>Everyone has felt wind and seen its effects, but what <i>exactly</i> is wind and what does it do? Wind is the global movement of a collective of gases known as air. Wind is occurs when pressure differences form which results in air from high pressure to flow to low pressure.</p>
+    <br>
+    <p>Wind can be found almost everywhere around the world and is notoriously hard to predict. The craziest thing about wind is it actually occurs in space, too!</p>
+    <a href="https://kestrelmeters.com/blogs/news/importance-wind-direction-world-weather">Source & More Information</a>
+</div>
+
+<br>
+
+<img style="max-width: 700px; max-height: 320px; float: left" src="https://cpi.studiod.com/ehowmedia/a05/3p/11/wind-speed-related-pressure-gradient-800x800.jpg">
+<br><br>
+<div class="h2">
+    <p>How it affects the weather:</p>
+</div>
+
+<div class="t1" style="text-align: right; margin-left: 750px; margin-right: 20px; max-width: 100%">
+    <p>The sun keeps the Earth warm and lit up.  Without the sun, the surface of the Earth would turn into an icy wasteland. As the Earth rotates around the Sun, the temperature on Earth changes in the form of changing seasons. During the summer, the sun is closer to Earth, where it gets warmer. On the other hand, during the winter, the sun is further away from the Earth, which causes temperatures to drop.</p>
+    <br>
+    <a href="https://www.nationalgeographic.org/encyclopedia/season/">Source & More Information</a>
+</div>
+-->
 {% endblock %}
+
 
 <!- This is turning off birds background from base.html -->
 {% block background %}
