@@ -4,6 +4,8 @@ import requests, json
 from tkinter import *
 
 from flask import Flask, render_template, request
+from flask import Blueprint, render_template
+from algorithm import image_data
 
 # create a Flask instance
 app = Flask(__name__)
@@ -21,9 +23,8 @@ def index():
     temp = text["data"][0]["temp"]
     imagee = text["data"][0]["weather"]["icon"]
     final = str(temp) + "°C"
-    ffinal = str(temp * 9/5 + 32) + "°F"
+    ffinal = str(temp * 9 / 5 + 32) + "°F"
     img = "https://www.weatherbit.io/static/img/icons/" + imagee + ".png"
-
 
     return render_template("main_page.html", temp=final, tempf=ffinal, image=img)
 
@@ -117,9 +118,9 @@ def lab2():
     return render_template("our work/lab2.html")
 
 
-@app.route('/lab3/')
-def lab3():
-    return render_template("our work/lab3.html")
+@app.route('/lab3/', methods=['GET', 'POST'])
+def rgb():
+    return render_template("our work/lab3.html", images=image_data())
 
 
 @app.route('/tpts/')
@@ -134,12 +135,10 @@ def tt3():
         if len(name) != 0:  # input field has content
             return render_template("our work/hackathontt3.html", BITS=int(name))
     # starting and empty input default
-    return render_template("our work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif", imgBulbOff="/static/assets"
-                                                                                                            "/bulb_off.png",
+    return render_template("our work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
+                           imgBulbOff="/static/assets"
+                                      "/bulb_off.png",
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
-
-
-
 
 
 @app.route('/wireframe/')

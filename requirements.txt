@@ -6,6 +6,7 @@ flask_login
 flask_sqlalchemy
 flask_migrate
 flask_restful
-numpy
+numpy~=1.21.2
 Pillow~=8.2.0
 django-os-geocoder~=0.1.6
+algorithm~=1.2.0
