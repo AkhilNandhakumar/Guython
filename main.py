@@ -57,7 +57,7 @@ def hawkers():
 
 @app.route('/stub/')
 def stub():
-    return render_template("about us/jakub.html")
+    return render_template("about_us/jakub.html")
 
 
 # The code below creates the custom about me pages for each team member
@@ -68,9 +68,9 @@ def greet0():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("about us/jakub.html", name=name)
+            return render_template("about_us/jakub.html", name=name)
     # starting and empty input default
-    return render_template("about us/jakub.html", name="World")
+    return render_template("about_us/jakub.html", name="World")
 
 
 @app.route('/anika/', methods=['GET', 'POST'])
@@ -79,9 +79,9 @@ def greet1():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("about us/anika.html", name=name)
+            return render_template("about_us/anika.html", name=name)
     # starting and empty input default
-    return render_template("about us/anika.html", name="World")
+    return render_template("about_us/anika.html", name="World")
 
 
 @app.route('/tristan/', methods=['GET', 'POST'])
@@ -90,14 +90,14 @@ def greet2():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("about us/tristan.html", name=name)
+            return render_template("about_us/tristan.html", name=name)
     # starting and empty input default
-    return render_template("about us/tristan.html", name="World")
+    return render_template("about_us/tristan.html", name="World")
 
 
 @app.route('/vunsh/', methods=['GET', 'POST'])
 def greet3():
-    return render_template("about us/vunsh.html")
+    return render_template("about_us/vunsh.html")
 
 
 # The code below creates the lab pages
@@ -108,24 +108,24 @@ def greet5():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("our work/lab1.html", name=name)
+            return render_template("our_work/lab1.html", name=name)
     # starting and empty input default
-    return render_template("our work/lab1.html", name="World")
+    return render_template("our_work/lab1.html", name="World")
 
 
 @app.route('/lab2/')
 def lab2():
-    return render_template("our work/lab2.html")
+    return render_template("our_work/lab2.html")
 
 
 @app.route('/lab3/', methods=['GET', 'POST'])
 def rgb():
-    return render_template("our work/lab3.html", images=image_data())
+    return render_template("our_work/lab3.html", images=image_data())
 
 
 @app.route('/tpts/')
 def tpts():
-    return render_template("our work/tpts.html")
+    return render_template("our_work/tpts.html")
 
 
 @app.route('/hackathontt3/', methods={'GET', 'POST'})
@@ -133,9 +133,9 @@ def tt3():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("our work/hackathontt3.html", BITS=int(name))
+            return render_template("our_work/hackathontt3.html", BITS=int(name))
     # starting and empty input default
-    return render_template("our work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
+    return render_template("our_work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
@@ -143,7 +143,7 @@ def tt3():
 
 @app.route('/wireframe/')
 def wireframe():
-    return render_template("our work/wireframe.html")
+    return render_template("our_work/wireframe.html")
 
 
 @app.route('/greet', methods=['GET', 'POST'])
@@ -161,22 +161,22 @@ def greet():
 
 @app.route('/weather1/')
 def weather1():
-    return render_template("weather info/weather1.html")
+    return render_template("weather_info/weather1.html")
 
 
 @app.route('/weather2/')
 def weather2():
-    return render_template("weather info/weather2.html")
+    return render_template("weather_info/weather2.html")
 
 
 @app.route('/weather3/')
 def weather3():
-    return render_template("weather info/weather3.html")
+    return render_template("weather_info/weather3.html")
 
 
 @app.route('/weather4/')
 def weather4():
-    return render_template("weather info/weather4.html")
+    return render_template("weather_info/weather4.html")
 
 
 # runs the application on the development server

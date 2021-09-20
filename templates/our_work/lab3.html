@@ -36,10 +36,19 @@
                             <div>{{image.label}}</div>
                             <div>{{image.source}}</div>
                         </td>
+                        <script>
+                            function changeImgGray()
+                            {
+                                var img = document.getElementById("img{{loop.index}}");
+                                img.src="{{image.base64_GRAY}}";
+                                return false;
+                            }
+                        </script>
                         <td>
                             <img class="img-responsive py-3" id=img{{loop.index}} alt="" width="256" height="Auto" src="{{image.base64}}" >
                             <p hidden id="img_orig{{loop.index}}">{{image.base64}}</p>
                             <p hidden id="img_gray{{loop.index}}">{{image.base64_GRAY}}</p>
+                            <button id="clickme" onclick="changeImgGray();">Greyscale</button>
                         </td>
                         <td>
                             <div class="overflow-auto" style="height: 256px">
