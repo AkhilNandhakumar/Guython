@@ -46,18 +46,19 @@ GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=
 
 GitHub [profile](https://github.com/vunsh)
 ### Sprint 1,2 (code tangibles)
-1. Greet integration in "about me" pages: [Anika](templates/about%20us/anika.html), [Jakub](templates/about%20us/jakub.html), [Tristan](templates/about%20us/tristan.html), [Vunsh](templates/about%20us/vunsh.html)
+1. Greet integration in "about me" pages: [Anika](templates/about_us/anika.html), [Jakub](templates/about_us/jakub.html), [Tristan](templates/about_us/tristan.html), [Vunsh](templates/about_us/vunsh.html)
 2. [Dropdown code](templates/layouts/navbar.html)
-3. [Greet Integration in mini lab](templates/our%20work/lab1.html)
-4. [Video Journal 0 Integration](templates/our%20work/lab2.html) 
+3. [Greet Integration in mini lab](templates/our_work/lab1.html)
+4. [Video Journal 0 Integration](templates/our_work/lab2.html) 
 5. README.md updates
-6. "About Me" page completion [Anika](templates/about%20us/anika.html), [Jakub](templates/about%20us/jakub.html), [Tristan](templates/about%20us/tristan.html), [Vunsh](templates/about%20us/vunsh.html) 
+6. "About Me" page completion [Anika](templates/about_us/anika.html), [Jakub](templates/about_us/jakub.html), [Tristan](templates/about_us/tristan.html), [Vunsh](templates/about_us/vunsh.html) 
 ### Sprint 3,4 (code tangibles)
 1. Website theme, fonts/colors : [base.html](templates/layouts/base.html), [navbar.html](templates/layouts/navbar.html) 
 2. [Our Work dropdown](templates/layouts/navbar.html) creation + content
-3. Tech Talk 3: [Hack-a-thon](templates/our%20work/hackathontt3.html)
-4. "About Us" pages improvement: [Anika](templates/about%20us/anika.html), [Jakub](templates/about%20us/jakub.html), [Tristan](templates/about%20us/tristan.html), [Vunsh](templates/about%20us/vunsh.html)
+3. Tech Talk 3: [Hack-a-thon](templates/our_work/hackathontt3.html)
+4. "About Us" pages improvement: [Anika](templates/about_us/anika.html), [Jakub](templates/about_us/jakub.html), [Tristan](templates/about_us/tristan.html), [Vunsh](templates/about_us/vunsh.html)
 5. [Home page improvement](templates/main_page.html)
+6. Weather pages: [Clouds](templates/weather_info/weather1.html), [Sun](templates/weather_info/weather2.html), [Wind](templates/weather_info/weather3.html)
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
