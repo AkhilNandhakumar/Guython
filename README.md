@@ -2,6 +2,9 @@
 # Number 1 Hackers
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio)
 ## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
+## Table of Contents:
+1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio#sprint-12-code-tangibles)
+2. [Weeks 3,4](https://github.com/JakubPonulak/flask_portfolio#sprint-34-code-tangibles)
 ## Contributors: 
 Jakub Ponulak, Anika Sharma , Tristan Copley, Vunsh Mehta
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
