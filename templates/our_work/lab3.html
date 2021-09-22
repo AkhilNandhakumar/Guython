@@ -15,6 +15,27 @@
 {% endblock %}
 
 {% block body %}
+<style>
+    .rangeslider{
+        width: 50%;
+    }
+
+    .myslider {
+        -webkit-appearance: none;
+        background: #FCF3CF  ;
+        width: 100%;
+        height: 20px;
+        opacity: 2;
+    }
+
+    .myslider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        cursor: pointer;
+        background: #34495E  ;
+        width: 5%;
+        height: 20px;
+    }
+</style>
     <h1 class="text-center">RGB values within an Image</h1>
     <div class="container">
         <div class="row justify-content-md-center">
@@ -37,19 +58,20 @@
                             <div>{{image.source}}</div>
                         </td>
                         <script>
-                            function changeImgGray()
-                            {
-                                var img = document.getElementById("img{{loop.index}}");
-                                img.src="{{image.base64_GRAY}}";
-                                return false;
-                            }
                         </script>
                         <td>
                             <img class="img-responsive py-3" id=img{{loop.index}} alt="" width="256" height="Auto" src="{{image.base64}}" >
                             <p hidden id="img_orig{{loop.index}}">{{image.base64}}</p>
                             <p hidden id="img_gray{{loop.index}}">{{image.base64_GRAY}}</p>
-                            <button id="clickme" onclick="changeImgGray();">Greyscale</button>
+                            <button id="clickme" onclick="changeImgGray();">Toggle Greyscale</button>
+                            <p> Size Slider</p>
+                            <div class="rangeslider">
+                                <input type="range" min="1" max="100" value="10"
+                                       class="myslider" id="sliderRange">
+                            </div>
+                            <p>Value: <span id="demo"></span></p>
                         </td>
+
                         <td>
                             <div class="overflow-auto" style="height: 256px">
                                 <table class="table">
@@ -84,4 +106,15 @@
 
         </div>
     </div>
+
+<script>
+    var rangeslider = document.getElementById("sliderRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = rangeslider.value;
+
+    rangeslider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+</script>
+
 {% endblock %}
