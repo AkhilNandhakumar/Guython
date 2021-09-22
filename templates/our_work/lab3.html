@@ -37,11 +37,20 @@
                             <div>{{image.source}}</div>
                         </td>
                         <script>
-                            function changeImgGray()
-                            {
-                                var img = document.getElementById("img{{loop.index}}");
-                                img.src="{{image.base64_GRAY}}";
-                                return false;
+                            let boolRGB = 0;
+                            function changeImgGray() {
+                                if (boolRGB == 0) {
+                                    var img = document.getElementById("img{{loop.index}}");
+                                    img.src = "{{image.base64_GRAY}}";
+                                    boolRGB = 1;
+                                    return false;
+                                }
+                                else {
+                                    var img = document.getElementById("img{{loop.index}}");
+                                    img.src = "{{image.base64}}";
+                                    boolRGB = 0;
+                                    return false;
+                                }
                             }
                         </script>
                         <td>
