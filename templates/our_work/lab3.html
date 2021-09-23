@@ -15,6 +15,46 @@
 {% endblock %}
 
 {% block body %}
+<style>
+    :root {
+        --scale: 60%;
+    }
+
+    .rangeslider{
+        width: 50%;
+    }
+
+    .myslider {
+        -webkit-appearance: none;
+        background: #FCF3CF  ;
+        width: 200%;
+        height: 20px;
+        opacity: 2;
+    }
+
+
+    .myslider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        cursor: pointer;
+        background: #34495E  ;
+        width: 5%;
+        height: 20px;
+    }
+
+
+    .myslider:hover {
+        opacity: 1;
+    }
+
+    .main-image {
+        width: var(--scale);
+    }
+    .imageConfigControls {
+        position: absolute;
+        left: 200px;
+        top: 400px;
+    }
+</style>
     <h1 class="text-center">RGB values within an Image</h1>
     <div class="container">
         <div class="row justify-content-md-center">
@@ -54,16 +94,20 @@
                             }
                         </script>
                         <td>
-                            <img class="img-responsive py-3" id=img{{loop.index}} alt="" width="256" height="Auto" src="{{image.base64}}" >
-                            <p hidden id="img_orig{{loop.index}}">{{image.base64}}</p>
-                            <p hidden id="img_gray{{loop.index}}">{{image.base64_GRAY}}</p>
-                            <button id="clickme" onclick="changeImgGray();">Toggle Greyscale</button>
-                            <p> Size Slider</p>
-                            <div class="rangeslider">
-                                <input type="range" min="1" max="100" value="10"
-                                       class="myslider" id="sliderRange">
+                            <img class="main-image" id=img{{loop.index}} alt=""  height="Auto" src="{{image.base64}}" >
+                            <p hidden id="img_orig{{loop.index}}" class="imageScalable">{{image.base64}}</p>
+                            <p hidden id="img_gray{{loop.index}}" class="imageScalable" >{{image.base64_GRAY}}</p>
+                            <div class="imageConfigControls">
+                                <button id="clickme" onclick="changeImgGray();">Toggle Greyscale</button>
+                                <br><br>
+                                <p> Size Slider</p>
+                                <div class="rangeslider">
+                                    <input type="range" min="1" max="100" value="60"
+                                           class="myslider" id="sliderRange">
+                                </div>
+                                <p>Value: <span id="demo"></span></p>
                             </div>
-                            <p>Value: <span id="demo"></span></p>
+
                         </td>
 
                         <td>
@@ -97,7 +141,19 @@
                 {% endfor %}
                 </tbody>
             </table>
+            <script>
+                var rangeslider = document.getElementById("sliderRange");
+                var output = document.getElementById("demo");
+                output.innerHTML = rangeslider.value;
 
+
+
+                rangeslider.oninput = function() {
+                    output.innerHTML = this.value;
+                    document.documentElement.style.setProperty('--scale', this.value + "%");
+                }
+
+            </script>
         </div>
     </div>
 {% endblock %}
