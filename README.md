@@ -5,9 +5,17 @@
 ## Table of Contents:
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio#sprint-12-code-tangibles)
 2. [Weeks 3,4](https://github.com/JakubPonulak/flask_portfolio#sprint-34-code-tangibles)
-## Contributors: 
-Jakub Ponulak, Anika Sharma , Tristan Copley, Vunsh Mehta
+3. [Weeks 5,6](https://github.com/JakubPonulak/flask_portfolio#sprint-56-code-tangibles)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
+## Contributors:
+Team Member | Anika | Jakub | Tristan | Vunsh |
+--- | --- | --- | --- | ---
+GitHub ID: | anika1sharma1 | JakubPonulak | senTristanC | vunsh
+GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Avunsh+is%3Aopen)
+Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Aanika1sharma1)| [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3AsenTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Avunsh)
+GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=vunsh)
+GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/senTristanC) | [Link](https://github.com/vunsh)
+
 ### Anika
 GitHub ID: anika1sharma1
 
