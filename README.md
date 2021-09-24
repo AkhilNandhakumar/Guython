@@ -16,46 +16,6 @@ Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1
 GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=vunsh)
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/senTristanC) | [Link](https://github.com/vunsh)
 
-### Anika
-GitHub ID: anika1sharma1
-
-GitHub [Issues](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Aanika1sharma1+is%3Aopen) Filter
-
-[Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Aanika1sharma1) Filter:
-
-GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=anika1sharma1)
-
-GitHub [profile](https://github.com/anika1sharma1)
-### Jakub
-GitHub ID: JakubPonulak
-
-GitHub [Issues](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3AJakubPonulak+is%3Aopen) Filter
-
-[Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3AJakubPonulak) Filter:
-
-GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=JakubPonulak)
-
-GitHub [profile](https://github.com/JakubPonulak)
-### Tristan
-GitHub ID: Sinergixxx
-
-GitHub [Issues](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3ASinergixxx+is%3Aopen) Filter
-
-[Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3ASinergixxx) Filter:
-
-GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=Sinergixxx)
-
-GitHub [profile](https://github.com/Sinergixxx)
-### Vunsh
-GitHub ID: vunsh
-
-GitHub [Issues](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Avunsh+is%3Aopen) Filter
-
-[Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Avunsh) Filter:
-
-GitHub [commits](https://github.com/JakubPonulak/flask_portfolio/commits?author=vunsh)
-
-GitHub [profile](https://github.com/vunsh)
 ### Sprint 1,2 (code tangibles)
 1. Greet integration in "about me" pages: [Anika](templates/about_us/anika.html), [Jakub](templates/about_us/jakub.html), [Tristan](templates/about_us/tristan.html), [Vunsh](templates/about_us/vunsh.html)
 2. [Dropdown code](templates/layouts/navbar.html)
