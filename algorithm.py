@@ -30,6 +30,8 @@ def image_data(path='static/assets/', img_list=None):  # path of static images i
         file = path + img_dict['file']  # file with path for local access (backend)
         # Python Image Library operations
         img_reference = Image.open(file)  # PIL
+        draw = ImageDraw.Draw(img_reference)
+        draw.text((75,50), "hi", fill=(255, 0, 0))
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
