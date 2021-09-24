@@ -1,7 +1,9 @@
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import numpy
 import base64
 from io import BytesIO
+from flask import Flask, render_template, request
+from flask import Blueprint, render_template
 
 
 # image (PNG, JPG) to base64 conversion (string), learn about base64 on wikipedia https://en.wikipedia.org/wiki/Base64
@@ -59,6 +61,14 @@ def image_data(path='static/assets/', img_list=None):  # path of static images i
         img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
     return img_list  # list is returned with all the attributes for each image dictionary
 
+def imgText():
+    img = Image.open('/static/assets/logo.png')
+    d1 = ImageDraw.Draw(img)
+    #myFont = ImageFont.truetype('E:/PythonPillow/Fonts/FreeMono.ttf', 40)
+    d1.text((20, 20), "Sample text", font=myFont, fill=(255, 0, 0))
+    img.show()
+    image= img.save("/static/assets/logo.png")
+    return render_template("lab3.html", testImage=image)
 
 # run this as standalone tester to see data printed in terminal
 if __name__ == "__main__":
@@ -94,4 +104,6 @@ if __name__ == "__main__":
         draw = ImageDraw.Draw(image_ref)
         draw.text((0, 0), "Size is {0} X {1}".format(*row['size']))  # draw in image
         image_ref.show()
+
+
 print()
