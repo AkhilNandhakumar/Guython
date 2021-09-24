@@ -62,6 +62,8 @@ GitHub [profile](https://github.com/vunsh)
 4. "About Us" pages improvement: [Anika](templates/about_us/anika.html), [Jakub](templates/about_us/jakub.html), [Tristan](templates/about_us/tristan.html), [Vunsh](templates/about_us/vunsh.html)
 5. [Home page improvement](templates/main_page.html)
 6. Weather pages: [Clouds](templates/weather_info/weather1.html), [Sun](templates/weather_info/weather2.html), [Wind](templates/weather_info/weather3.html)
+### Sprint 5,6 (code tangibles)
+1. [RGB Lab](templates/our_work/lab3.html): Frontend (Dynamic Greyscale) Backend (Pillow Image Write, Big O Notation) New Development (Image Manipulation) 
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
