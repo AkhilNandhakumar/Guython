@@ -6,8 +6,7 @@
 {% block meta %}
     <script>
         function setImg(img, base64) {
-            // add button and rotate image from original to gray and back (toggle)
-            // document.getElementById(img). = base64;  //change img src to inner html on <p> tag
+            //button located on line 101 (Jakub)
         }
     </script>
 
@@ -77,7 +76,7 @@
                             <div>{{image.source}}</div>
                         </td>
                         <script>
-                            // Jakub
+                            // Jakub (dynamic greyscale)
                             let boolRGB = 0;
                             function changeImgGray() {
                                 if (boolRGB == 0) {
@@ -101,7 +100,7 @@
                             <div class="imageConfigControls">
                                 <button id="clickme" onclick="changeImgGray();">Toggle Greyscale</button>
                                 <br><br>
-                                <!-- Tristan -->
+                                <!-- Tristan (image manipulation)-->
                                 <p> Size Slider</p>
                                 <div class="rangeslider">
                                     <input type="range" min="1" max="100" value="60"

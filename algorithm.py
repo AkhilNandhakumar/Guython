@@ -28,9 +28,10 @@ def image_data(path='static/assets/', img_list=None):  # path of static images i
     for img_dict in img_list:
         file = path / img_dict['file']  # file with path for local access (backend)
         # Python Image Library operations
-        img_reference = Image.open(file)  # PIL
+        img_reference = Image.open(file)
+        # Anika PIL
         draw = ImageDraw.Draw(img_reference)
-        draw.text((75,50), "hi", fill=(255, 0, 0))
+        draw.text((75,50), "hi",     fill=(255, 0, 0))
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
@@ -42,7 +43,7 @@ def image_data(path='static/assets/', img_list=None):  # path of static images i
         img_dict['hex_array'] = []
         img_dict['binary_array'] = []
         # 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted
-        # Jakub & Vunsh
+        # Jakub & Vunsh (Big O Notation)
         img_dict['gray_data'] = []
         for pixel in img_dict['data']:
             # hexadecimal conversions
@@ -61,6 +62,7 @@ def image_data(path='static/assets/', img_list=None):  # path of static images i
         img_reference.putdata(img_dict['gray_data'])
         img_dict['base64_GRAY'] = image_formatter(img_reference, img_dict['format'])
     return img_list  # list is returned with all the attributes for each image dictionary
+
 
 def imgText():
     img = Image.open('/static/assets/logo.png')
