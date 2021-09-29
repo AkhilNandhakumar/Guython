@@ -15,7 +15,7 @@ GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q
 Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Aanika1sharma1)| [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3AsenTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Avunsh)
 GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=vunsh)
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/senTristanC) | [Link](https://github.com/vunsh)
-
+## Time Box:
 ### Sprint 1,2 (code tangibles)
 1. Greet integration in "about me" pages: [Anika](templates/about_us/anika.html), [Jakub](templates/about_us/jakub.html), [Tristan](templates/about_us/tristan.html), [Vunsh](templates/about_us/vunsh.html)
 2. [Dropdown code](templates/layouts/navbar.html)
@@ -31,7 +31,12 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 5. [Home page improvement](templates/main_page.html)
 6. Weather pages: [Clouds](templates/weather_info/weather1.html), [Sun](templates/weather_info/weather2.html), [Wind](templates/weather_info/weather3.html)
 ### Sprint 5,6 (code tangibles)
-1. [RGB Lab](templates/our_work/lab3.html): Frontend (Dynamic Greyscale), Backend (Pillow Image Write, Big O Notation) New Development (Image Manipulation) --- In each section, there is a label (comment) indicating which team member(s) worked on it.
+1. RGB Lab: 
+   1. [Frontend](templates/our_work/lab3.html) (Dynamic Greyscale lines 79-92, 101)
+   2. [Backend](algorithm.py) (Pillow Image Write lines 33-34, Big O Notation lines 47-60) 
+   3. [New Development](templates/our_work/lab3.html) (Image Manipulation lines 104-110, 147-157) 
+   
+In each section, there is a label (comment) indicating which team member(s) worked on it.
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
