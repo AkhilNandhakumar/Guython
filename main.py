@@ -125,6 +125,19 @@ def rgb():
     return render_template("our_work/lab3.html", images=image_data(path))
 
 
+@app.route('/lab4/', methods={'GET', 'POST'})
+def lab4():
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("our_work/lab4.html", BITS=int(name))
+    # starting and empty input default
+    return render_template("our_work/lab4.html", imgBulbOn="/static/assets/bulb_on.gif",
+                           imgBulbOff="/static/assets"
+                                      "/bulb_off.png",
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
+
+
 @app.route('/tpts/')
 def tpts():
     return render_template("our_work/tpts.html")
