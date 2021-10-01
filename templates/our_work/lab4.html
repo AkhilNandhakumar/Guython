@@ -115,7 +115,7 @@ add new images (ie PNGs) to project -->
 {% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Binary Math with Conversions</h1>
+    <h1 class="text-center">Logic Gates Lab</h1>
     <div class="container">
         <div class="row justify-content-md-center">
 
@@ -149,16 +149,17 @@ add new images (ie PNGs) to project -->
 
             <div class="col-12">
                 <table class="table">
+                <!-- code to add rows for bits -->
                     <div>
-                    {% for i in range(BITS) %} {# we just want 8 bits per row #}
-                        {% if i % 8 == 0 %} {# this is a modulo operation where if the index is divisible by 8 then a table row gets created and if the index + 1 is divisible by 8 then the table row is ended #}
+                    {% for i in range(BITS) %} {# 8 bits / row #}
+                        {% if i % 8 == 0 %} {# if "i" is divisible by 8, table row gets created #}
                         <tr>
                         {% endif %}
-                            <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td> {# added the digit at the top instead of its own for loop to make the code more efficient #}
-                            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="40" height="Auto"> {# this sets the default image to off and creates the id for the image #}
-                                <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button> {# this sets the default message to off and calls the function "toggleBit" on the click of the button which is found in the javascript #}
+                            <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
+                            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="40" height="Auto"> {# sets default image off and creates id for image #}
+                                <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button> {# sets default message to off and calls function "toggleBit" on click of button which is found in JS #}
                             </td>
-                        {% if i + 1 % 8 == 0 or i == BITS %} {# this is the modulo operation for the end row #}
+                        {% if i + 1 % 8 == 0 or i == BITS %} {# if "i" + 1 is divisible by 8 then table row is ended#}
                         </tr>
                         {% endif %}
                     {% endfor %}
@@ -172,8 +173,8 @@ add new images (ie PNGs) to project -->
     <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
         <div class="col-12">
             <form action="/lab4/" id="stub" method="POST" >
-                <label for="name" style="color: white">Select a number of bits (1-18)</label>
-                <input type="number" step="1" name="name" id="name" min="1" max="18">
+                <label for="name" style="color: white">Select a number of bits</label>
+                <input type="number" step="1" name="name" id="name" min="1">
                 <input type="submit" value="Submit">
                 <p>Bits: {{ BITS }}</p>
             </form>

@@ -2,6 +2,7 @@
 # Number 1 Hackers
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio)
 ## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
+## [Documentation](https://docs.google.com/document/d/12Wc6Z9wMwf0dZz3SWHhZ5onLveiV20Ybi1M7fdX0deA/edit?usp=sharing)
 ## Table of Contents:
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio#sprint-12-code-tangibles)
 2. [Weeks 3,4](https://github.com/JakubPonulak/flask_portfolio#sprint-34-code-tangibles)
