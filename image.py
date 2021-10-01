@@ -31,7 +31,7 @@ def image_data(path='static/assets/', img_list=None):  # path of static images i
         img_reference = Image.open(file)
         # Anika PIL
         draw = ImageDraw.Draw(img_reference)
-        draw.text((75,50), "hi",     fill=(255, 0, 0))
+        draw.text((75, 50), "Hello World!", fill=(255, 255, 255))
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode
@@ -67,11 +67,12 @@ def image_data(path='static/assets/', img_list=None):  # path of static images i
 def imgText():
     img = Image.open('/static/assets/logo.png')
     d1 = ImageDraw.Draw(img)
-    #myFont = ImageFont.truetype('E:/PythonPillow/Fonts/FreeMono.ttf', 40)
+    # myFont = ImageFont.truetype('E:/PythonPillow/Fonts/FreeMono.ttf', 40)
     d1.text((20, 20), "Sample text", font=myFont, fill=(255, 0, 0))
     img.show()
-    image= img.save("/static/assets/logo.png")
+    image = img.save("/static/assets/logo.png")
     return render_template("lab3.html", testImage=image)
+
 
 # run this as standalone tester to see data printed in terminal
 if __name__ == "__main__":
@@ -107,6 +108,5 @@ if __name__ == "__main__":
         draw = ImageDraw.Draw(image_ref)
         draw.text((0, 0), "Size is {0} X {1}".format(*row['size']))  # draw in image
         image_ref.show()
-
 
 print()
