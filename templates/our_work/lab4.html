@@ -44,6 +44,17 @@ add new images (ie PNGs) to project -->
              below ASCII for more ideas of where to make changes
              */
             document.getElementById('ascii').innerHTML = String.fromCharCode(parseInt(binary, 2))
+
+            let temp = binary;
+            // convert to decimal and do math
+            let temp2 = parseInt(temp, 2);
+            if (temp2 >= 127) {
+                unicodeDisplayName = "Unicode"
+            }
+            else {
+                unicodeDisplayName = "Ascii"
+            }
+            document.getElementById('unicodeDisplayText').innerHTML = unicodeDisplayName
         }
 
         // algorithm to convert decimal to base using division and remainder
@@ -157,7 +168,7 @@ add new images (ie PNGs) to project -->
                         <th>Octal</th>
                         <th>Hexadecimal</th>
                         <th>Decimal</th>
-                        <th>ASCII</th>
+                        <th id="unicodeDisplayText">Ascii</th>
                         <!-- Tristan
                         Hack: display ASCII label for printable character(s)  -->
                         <th>Minus</th>
