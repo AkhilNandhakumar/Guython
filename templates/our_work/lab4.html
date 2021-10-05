@@ -3,6 +3,7 @@
 
 {% set project = "Mini-Lab 4: Logic Gates" %}
 
+
 <!--Anika
 Hack: use 8 as default
 {% set MAX = ((2 ** BITS) - 1) %}
@@ -117,7 +118,7 @@ add new images (ie PNGs) to project -->
 {% block body %}
     <h1 class="text-center">Logic Gates Lab</h1>
     <div class="container">
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center" style="border-style: none">
 
             <div class="col-8">
                 <table class="table">
@@ -169,6 +170,7 @@ add new images (ie PNGs) to project -->
         </div>
     </div>
 
+    <br>
 
     <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
         <div class="col-12">
@@ -181,7 +183,155 @@ add new images (ie PNGs) to project -->
         </div>
     </div>
 
+    <br>
+
+    <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
+        <div class="col-12">
+            <form action="/lab4/" id="stub" method="POST" >
+                <p style="font-size: 35px">Logic Gates</p>
+                <label for="checkA" style="color: white">A</label>
+                <input type="checkbox" id="checkA">
+                <label for="checkB" style="color: white">B</label>
+                <input type="checkbox" id="checkB">
+                <button id="submission">Submit</button>
+                <!--<input type="submit" value="Submit" onclick="LogicGatesChecker('checkA','checkB')"> -->
+            </form>
+        </div>
+    </div>
+
+
+    <div class="container">
+    <style>
+        .row {
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+        }
+        .col-sm {
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+            padding: 70px 0;
+        }
+        .col-lg {
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+            padding: 10px 0;
+        }
+    </style>
+    <div class="row">
+            <div class="col-lg">
+                Image
+            </div>
+            <div class="col-lg">
+                Type
+            </div>
+            <div class="col-lg">
+                Result
+            </div>
+            <div class="w-100"></div>
+            <div class="col-lg">
+                <img src="/static/assets/andgate.png" width="300 px" height="150 px">
+            </div>
+            <div class="col-sm">
+                And Gate
+            </div>
+            <div class="col-sm">
+                <script>document.write(random)</script>
+                <!--<p id='result'>1</p>-->
+            </div>
+            <div class="w-100"></div>
+            <div class="col-lg">
+                <img src="/static/assets/nandgate.png" width="300 px" height="150 px">
+            </div>
+            <div class="col-sm">
+                Nand Gate
+            </div>
+            <div class="col-sm">
+                <p id="nandgateresult">text</p>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-lg">
+                <img src="/static/assets/orgate.png" width="300 px" height="150 px">
+            </div>
+            <div class="col-sm">
+                Or Gate
+            </div>
+            <div class="col-sm">
+                (var)
+            </div>
+            <div class="w-100"></div>
+            <div class="col-lg">
+                <img src="/static/assets/norgate.png" width="300 px" height="150 px">
+            </div>
+            <div class="col-sm">
+                Nor Gate
+            </div>
+            <div class="col-sm">
+                (var)
+            </div>
+            <div class="w-100"></div>
+            <div class="col-lg">
+                <img src="/static/assets/xorgate.png" width="300 px" height="150 px">
+            </div>
+            <div class="col-sm">
+                Xor Gate
+            </div>
+            <div class="col-sm">
+                (var)
+            </div>
+            <div class="w-100"></div>
+            <div class="col-lg">
+                <img src="/static/assets/notgate.png" width="300 px" height="150 px">
+            </div>
+            <div class="col-sm">
+                Inverter (not gate)
+            </div>
+            <div class="col-sm">
+                (var)
+            </div>
+    </div>
+
     <script>
+        var andgate = "0";
+        var nandgate = "0";
+        var orgate = "0";
+        var norgate = "0";
+        var xorgate = "0";
+        var inverter = "0";
+        let button = document.getElementById('submission')
+        button.onclick = alert('function work')
+        function LogicGatesChecker(checkboxA, checkboxB) {
+            alert('function worked')
+            var Abox = document.getElementById(checkboxA);
+            var Bbox = document.getElementById(checkboxB);
+            if (!Abox.checked) {
+                andgate = "0"
+                nandgate = "1"
+                document.getElementById('nandgateresult').innerText = nandgate
+                orgate = "0"
+                norgate = "1"
+                xorgate = "0"
+                inverter = "1"
+            }
+            else {
+                if (!Bbox.checked) {
+                    andgate = "0"
+                    nandgate = "1"
+                    orgate = "1"
+                    norgate = "1"
+                    xorgate = "1"
+                }
+                else {
+                    andgate = "1"
+                    nandgate = "0"
+                    orgate = "1"
+                    norgate = "0"
+                    xorgate = "0"
+                }
+            }
+        }
 
         //BITS = convertStoI();
         function convertStoI() {
@@ -191,10 +341,5 @@ add new images (ie PNGs) to project -->
         }
 
         convertStoI();
-
     </script>
-
-
-
-
 {% endblock %}
