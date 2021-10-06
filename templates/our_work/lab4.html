@@ -232,14 +232,13 @@ add new images (ie PNGs) to project -->
     <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
         <div class="col-12">
             <form action="/lab4/" id="stub" method="POST" >
-                <p style="font-size: 35px">Logic Gates</p>
-                <label for="checkA" style="color: white">A</label>
-                <input type="checkbox" id="checkA">
-                <label for="checkB" style="color: white">B</label>
-                <input type="checkbox" id="checkB">
-                <button id="submission">Submit</button>
                 <!--<input type="submit" value="Submit" onclick="LogicGatesChecker('checkA','checkB')"> -->
             </form>
+            <p style="font-size: 35px">Logic Gates</p>
+            <label for="checkA" style="color: white">A</label>
+            <input type="checkbox" id="checkA">
+            <label for="checkB" style="color: white">B</label>
+            <input type="checkbox" id="checkB">
         </div>
     </div>
 
@@ -282,7 +281,7 @@ add new images (ie PNGs) to project -->
                 And Gate
             </div>
             <div class="col-sm">
-                <script>document.write(random)</script>
+                <p id="andgateresult">0</p>
                 <!--<p id='result'>1</p>-->
             </div>
             <div class="w-100"></div>
@@ -293,7 +292,7 @@ add new images (ie PNGs) to project -->
                 Nand Gate
             </div>
             <div class="col-sm">
-                <p id="nandgateresult">text</p>
+                <p id="nandgateresult">1</p>
             </div>
             <div class="w-100"></div>
             <div class="col-lg">
@@ -303,7 +302,7 @@ add new images (ie PNGs) to project -->
                 Or Gate
             </div>
             <div class="col-sm">
-                (var)
+                <p id="orgateresult">0</p>
             </div>
             <div class="w-100"></div>
             <div class="col-lg">
@@ -313,7 +312,7 @@ add new images (ie PNGs) to project -->
                 Nor Gate
             </div>
             <div class="col-sm">
-                (var)
+                <p id="norgateresult">1</p>
             </div>
             <div class="w-100"></div>
             <div class="col-lg">
@@ -323,7 +322,7 @@ add new images (ie PNGs) to project -->
                 Xor Gate
             </div>
             <div class="col-sm">
-                (var)
+                <p id="xorgateresult">0</p>
             </div>
             <div class="w-100"></div>
             <div class="col-lg">
@@ -333,10 +332,77 @@ add new images (ie PNGs) to project -->
                 Inverter (not gate)
             </div>
             <div class="col-sm">
-                (var)
+                <p id="inverterresult">1, 1</p>
             </div>
     </div>
-
+    <script>
+        var andgate = "0";
+        var nandgate = "0";
+        var orgate = "0";
+        var norgate = "0";
+        var xorgate = "0";
+        var inverter = "1, 1";
+        var buttonA = document.getElementById('checkA')
+        var buttonB = document.getElementById('checkB')
+        buttonA.addEventListener("change", function() {
+            if (buttonA.checked && buttonB.checked) {
+                andgate = "1"
+                document.getElementById('andgateresult').innerText = andgate
+                nandgate = "0"
+                document.getElementById('nandgateresult').innerText = nandgate
+                orgate = "1"
+                document.getElementById('orgateresult').innerText = orgate
+                norgate = "0"
+                document.getElementById('norgateresult').innerText = norgate
+                xorgate = "0"
+                document.getElementById('xorgateresult').innerText = xorgate
+                inverter = "0, 0"
+                document.getElementById('inverterresult').innerText = inverter
+            }
+            else if (buttonA.checked && !buttonB.checked) {
+                andgate = '0'
+                document.getElementById('andgateresult').innerText = andgate
+                nandgate = '1'
+                document.getElementById('nandgateresult').innerText = nandgate
+                orgate = '1'
+                document.getElementById('orgateresult').innerText = orgate
+                norgate = '0'
+                document.getElementById('norgateresult').innerText = norgate
+                xorgate = '1'
+                document.getElementById('xorgateresult').innerText = xorgate
+                inverter = '0, 1'
+                document.getElementById('inverterresult').innerText = inverter
+            }
+            else if (!buttonA.checked && buttonB.checked) {
+                andgate = '0'
+                document.getElementById('andgateresult').innerText = andgate
+                nandgate = '1'
+                document.getElementById('nandgateresult').innerText = nandgate
+                orgate = '1'
+                document.getElementById('orgateresult').innerText = orgate
+                norgate = '0'
+                document.getElementById('norgateresult').innerText = norgate
+                xorgate = '1'
+                document.getElementById('xorgateresult').innerText = xorgate
+                inverter = '1, 0'
+                document.getElementById('inverterresult').innerText = inverter
+            }
+            else if (!buttonA.checked && !buttonB.checked) {
+                andgate = '0'
+                document.getElementById('andgateresult').innerText = andgate
+                nandgate = '1'
+                document.getElementById('nandgateresult').innerText = nandgate
+                orgate = '0'
+                document.getElementById('orgateresult').innerText = orgate
+                norgate = '1'
+                document.getElementById('norgateresult').innerText = norgate
+                xorgate = '0'
+                document.getElementById('xorgateresult').innerText = xorgate
+                inverter = '1, 1'
+                document.getElementById('inverterresult').innerText = inverter
+            }
+        })
+    </script>
     <script>
         var andgate = "0";
         var nandgate = "0";
@@ -344,13 +410,92 @@ add new images (ie PNGs) to project -->
         var norgate = "0";
         var xorgate = "0";
         var inverter = "0";
-        let button = document.getElementById('submission')
-        button.onclick = alert('function work')
+        var buttonA = document.getElementById('checkA')
+        var buttonB = document.getElementById('checkB')
+        buttonB.addEventListener("change", function() {
+            if (buttonB.checked && buttonA.checked) {
+                andgate = "1"
+                document.getElementById('andgateresult').innerText = andgate
+                nandgate = "0"
+                document.getElementById('nandgateresult').innerText = nandgate
+                orgate = "1"
+                document.getElementById('orgateresult').innerText = orgate
+                norgate = "0"
+                document.getElementById('norgateresult').innerText = norgate
+                xorgate = "0"
+                document.getElementById('xorgateresult').innerText = xorgate
+                inverter = "0, 0"
+                document.getElementById('inverterresult').innerText = inverter
+            }
+        else if (buttonB.checked && !buttonA.checked) {
+            andgate = '0'
+            document.getElementById('andgateresult').innerText = andgate
+            nandgate = '1'
+            document.getElementById('nandgateresult').innerText = nandgate
+            orgate = '1'
+            document.getElementById('orgateresult').innerText = orgate
+            norgate = '0'
+            document.getElementById('norgateresult').innerText = norgate
+            xorgate = '1'
+            document.getElementById('xorgateresult').innerText = xorgate
+            inverter = '0, 1'
+            document.getElementById('inverterresult').innerText = inverter
+        }
+        else if (!buttonB.checked && buttonA.checked) {
+            andgate = '0'
+            document.getElementById('andgateresult').innerText = andgate
+            nandgate = '1'
+            document.getElementById('nandgateresult').innerText = nandgate
+            orgate = '1'
+            document.getElementById('orgateresult').innerText = orgate
+            norgate = '0'
+            document.getElementById('norgateresult').innerText = norgate
+            xorgate = '1'
+            document.getElementById('xorgateresult').innerText = xorgate
+            inverter = '1, 0'
+            document.getElementById('inverterresult').innerText = inverter
+        }
+        else if (!buttonB.checked && !buttonA.checked) {
+            andgate = '0'
+            document.getElementById('andgateresult').innerText = andgate
+            nandgate = '1'
+            document.getElementById('nandgateresult').innerText = nandgate
+            orgate = '0'
+            document.getElementById('orgateresult').innerText = orgate
+            norgate = '1'
+            document.getElementById('norgateresult').innerText = norgate
+            xorgate = '0'
+            document.getElementById('xorgateresult').innerText = xorgate
+            inverter = '1, 1'
+            document.getElementById('inverterresult').innerText = inverter
+        }
+    })
+    </script>
+    <script>
+        function convertStoI() {
+            var a = {{name}};
+            var bitint = parseInt(a);
+            document.write(bitint)
+        }
+        convertStoI();
+    </script>
+    <!-- <script>
+        let andgate = "0";
+        var nandgate = "0";
+        var orgate = "0";
+        var norgate = "0";
+        var xorgate = "0";
+        var inverter = "0";
+        var button = document.getElementById('submission')
+        button.addEventListener("click", function(){
+            alert("working")
+        })
+        button.onclick = LogicGatesChecker('checkA', 'checkB');
         function LogicGatesChecker(checkboxA, checkboxB) {
             alert('function worked')
             var Abox = document.getElementById(checkboxA);
             var Bbox = document.getElementById(checkboxB);
-            if (!Abox.checked) {
+            if (Abox.checked == 0) {
                 andgate = "0"
                 nandgate = "1"
                 document.getElementById('nandgateresult').innerText = nandgate
@@ -360,7 +505,7 @@ add new images (ie PNGs) to project -->
                 inverter = "1"
             }
             else {
-                if (!Bbox.checked) {
+                if (Bbox.checked == 0) {
                     andgate = "0"
                     nandgate = "1"
                     orgate = "1"
@@ -375,15 +520,7 @@ add new images (ie PNGs) to project -->
                     xorgate = "0"
                 }
             }
+            return andgate
         }
-
-        //BITS = convertStoI();
-        function convertStoI() {
-            var a = {{name}};
-            var bitint = parseInt(a);
-            document.write(bitint)
-        }
-
-        convertStoI();
-    </script>
+    </script> -->
 {% endblock %}
