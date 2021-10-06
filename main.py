@@ -138,6 +138,19 @@ def lab4():
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
 
 
+@app.route('/lab4_colorCode/', methods={'GET', 'POST'})
+def lab4_colorcode():
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("our_work/lab4_colorCode.html", BITS=int(name))
+    # starting and empty input default
+    return render_template("our_work/lab4_colorCode.html", imgBulbOn="/static/assets/bulb_on.gif",
+                           imgBulbOff="/static/assets"
+                                      "/bulb_off.png",
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
+
+
 @app.route('/tpts/')
 def tpts():
     return render_template("our_work/tpts.html")
