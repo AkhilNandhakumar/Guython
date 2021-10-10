@@ -7,6 +7,7 @@
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio#sprint-12-code-tangibles)
 2. [Weeks 3,4](https://github.com/JakubPonulak/flask_portfolio#sprint-34-code-tangibles)
 3. [Weeks 5,6](https://github.com/JakubPonulak/flask_portfolio#sprint-56-code-tangibles)
+4. [Weeks 7,8](https://github.com/JakubPonulak/flask_portfolio#sprint-78-code-tangibles)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
 ## Contributors:
 Team Member | Anika | Jakub | Tristan | Vunsh |
@@ -36,7 +37,14 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
    1. [Frontend](templates/our_work/lab3.html) (Dynamic Greyscale lines 79-92, 101)
    2. [Backend](image.py) (Pillow Image Write lines 33-34, Big O Notation lines 47-60) 
    3. [New Development](templates/our_work/lab3.html) (Image Manipulation lines 104-110, 147-157) 
-   
+### Sprint 7,8 (code tangibles)
+1. Logic Gates Lab:
+   1. ASCII to Unicode
+   2. Shift
+   3. Logic Gates
+   4. Unsigned Addition
+   5. Signed Addition
+   6. Color Codes
 In each section, there is a label (comment) indicating which team member(s) worked on it.
 ### Scores (9/3/21)
 Team: 4/4   
