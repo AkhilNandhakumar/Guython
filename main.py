@@ -156,7 +156,7 @@ def lab4_unsignedadd():
     return render_template("our_work/lab4_unsignedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=24)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=16,)
 
 
 @app.route('/lab4_signedAdd/')
@@ -164,7 +164,7 @@ def lab4_signedadd():
     return render_template("our_work/lab4_signedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=24)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=24,)
 
 
 @app.route('/tpts/')

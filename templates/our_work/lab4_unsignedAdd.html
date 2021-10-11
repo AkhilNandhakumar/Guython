@@ -14,8 +14,8 @@ add new images (ie PNGs) to project -->
 <!-- use your PNGs as default -->
 {% set imgBulbOn = "/static/assets/bulb_on.gif" %}
 {% set imgBulbOff = "/static/assets/bulb_off.png" %}
-{% set msgTurnOn = "Turn On" %}
-{% set msgTurnOff = "Turn Off" %}
+{% set msgTurnOn = "Off" %}
+{% set msgTurnOff = "On" %}
 
 {% block meta %}
     <title>Binary page</title>
@@ -32,15 +32,15 @@ add new images (ie PNGs) to project -->
         }
         function getBits2() {
             let bits = "";
-            for(let i = 0; i < BITS; i++) {
-                bits = bits + document.getElementById('digit' + i).value;
+            for(let i = 0; i < 2*BITS; i++) {
+                bits = bits + document.getElementById('digit2' + i).value;
             }
             return bits;
         }
         function getBitsSum() {
             let bits = "";
-            for(let i = 0; i < BITS; i++) {
-                bits = bits + document.getElementById('digit' + i).value;
+            for(let i = 0; i < 3*BITS; i++) {
+                bits = bits + document.getElementById('digitSum' + i).value
             }
             return bits;
         }
@@ -50,16 +50,17 @@ add new images (ie PNGs) to project -->
             // DOM assignment to Octal conversion
             document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString(10)
         }
-        function setConversions(binary2) {
+        function setConversions2(binary2) {
             document.getElementById('binary2').innerHTML = binary2;
             // DOM assignment to Octal conversion
             document.getElementById('decimal2').innerHTML = parseInt(binary2, 2).toString(10)
         }
-        function setConversions(binarySum) {
-            document.getElementById('binarySum').innerHTML = binarySum;
-            // DOM assignment to Octal conversion
-            document.getElementById('decimalSum').innerHTML = parseInt(binarySum, 2).toString(10)
+        function setConversionsSum(binary, binary2) {
+            var binaryValue1 = binary
+            var binaryValue2 = binary2
+            document.getElementById('binarySum').innerHTML = binarySum(binaryValue1, binaryValue2)
         }
+        function binarySum() {}
 
         // algorithm to convert decimal to base using division and remainder
 
@@ -83,6 +84,25 @@ add new images (ie PNGs) to project -->
             const binary = getBits();
             setConversions(binary);
         }
+        function toggleBit2(i) {
+            //alert("Digit action: " + i );
+            const dig = document.getElementById('digit2' + i);
+            const image = document.getElementById('bulb2' + i);
+            const butt = document.getElementById('butt2' + i);
+            // Change digit and visual
+            if (image.src.match("{{ imgBulbOn }}")) {
+                dig.value = 0;
+                image.src = "{{ imgBulbOff }}";
+                butt.innerHTML = "{{ msgTurnOn }}";
+            } else {
+                dig.value = 1;
+                image.src = "{{ imgBulbOn }}";
+                butt.innerHTML = "{{ msgTurnOff }}";
+            }
+            // Binary numbers
+            const binary2 = getBits2();
+            setConversions2(binary2);
+        }
         // add is positive integer, subtract is negative integer
     </script>
 {% endblock %}
@@ -96,9 +116,9 @@ add new images (ie PNGs) to project -->
                 <table class="table">
                     <tr id="table">
                         <th>Binary</th>
-                        <th>Decimal</th>
-                        <th>Decimal 2</th>
-                        <th>Decimal Sum</th>
+                        <th>Decimal (Row 1)</th>
+                        <th>Decimal (Row 2)</th>
+                        <th>Sum</th>
                     </tr>
                     <tr>
                         <td id="binary">00000000</td>
@@ -112,20 +132,33 @@ add new images (ie PNGs) to project -->
 
             <div class="col-12">
                 <table class="table">
-                <!-- code to add rows for bits -->
+                    <!-- code to add rows for bits -->
                     <div>
-                    {% for i in range(BITS) %} {# 8 bits / row #}
-                        {% if i % 8 == 0 %} {# if "i" is divisible by 8, table row gets created #}
-                        <tr>
-                        {% endif %}
-                            <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
-                            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="40" height="Auto"> {# sets default image off and creates id for image #}
-                                <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button> {# sets default message to off and calls function "toggleBit" on click of button which is found on lines 68-85 #}
-                            </td>
-                        {% if i + 1 % 8 == 0 or i == BITS %} {# if "i" + 1 is divisible by 8 then table row is ended#}
-                        </tr>
-                        {% endif %}
-                    {% endfor %}
+                        {% for i in range(BITS) %} {# 8 bits / row #}
+                            {% if i % 8 == 0 %} {# if "i" is divisible by 8, table row gets created #}
+                                <tr>
+                            {% endif %}
+                                <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
+                                <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="40" height="Auto"> {# sets default image off and creates id for image #}
+                                    <button type="button" id="butt{{i}}" onclick="toggleBit('{{i}}')">{{ msgTurnOn }}</button> {# sets default message to off and calls function "toggleBit" on click of button which is found on lines 68-85 #}
+                                </td>
+                            {% if i + 1 % 8 == 0 or i == BITS %} {# if "i" + 1 is divisible by 8 then table row is ended#}
+                            </tr>
+                            {% endif %}
+                        {% endfor %}
+                        {% for i in range(9) %} {# 8 bits / row #}
+                            {% if i % 9 == 0 %} {# if "i" is divisible by 8, table row gets created #}
+                                <tr>
+                            {% endif %}
+                                <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
+                                <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="40" height="Auto"> {# sets default image off and creates id for image #
+                            {# sets default message to off and calls function "toggleBit" on click of button which is found on lines 68-85 #}
+                                </td>
+                            {% if i + 1 % 8 == 0 or i == BITS %} {# if "i" + 1 is divisible by 8 then table row is ended#}
+                            </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </table>
             </div>
 
