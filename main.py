@@ -148,7 +148,7 @@ def lab4_colorcode():
     return render_template("our_work/lab4_colorCode.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=24)
 
 
 @app.route('/lab4_unsignedAdd/')
