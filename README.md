@@ -37,6 +37,7 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
    1. [Frontend](templates/our_work/lab3.html) (Dynamic Greyscale lines 79-92, 101)
    2. [Backend](image.py) (Pillow Image Write lines 33-34, Big O Notation lines 47-60) 
    3. [New Development](templates/our_work/lab3.html) (Image Manipulation lines 104-110, 147-157) 
+   
 In each section, there is a label (comment) indicating which team member(s) worked on it.
 ### Sprint 7,8 (code tangibles)
 1. Logic Gates Lab:
