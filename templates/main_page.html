@@ -8,12 +8,22 @@
 {% block body %}
     <!- Try building a new body here ->
     <h1>Temperature in San Diego</h1>
-
-    <p>Temp in Degrees Celsius: {{temp}}</p>
-    <p name = "temp" id = "temp"></p>
-
+        <div class = "textWeather">
+            <p>Temp in Degrees Fahrenheit: {{temp}}</p>
+            <p>{{desc}}</p>
+            <p name = "temp" id = "temp"></p>
+            <p name = "desc" id = "desc"></p>
+        </div>
     </div>
-
+    <style>
+         body {
+    text-align:center;
+    color: light gray;
+      background: linear-gradient(-45deg, #f3feed, #5c8be4, #fbb73a);
+      background-size: 400% 400%;
+      animation: gradient 14s ease infinite;
+  }
+    </style>
     <div style="font-size: 35px">
         <p></p>
         <p></p>

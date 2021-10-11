@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends "layouts/base.html" %}
 
-{% set project = "Mini-Lab 4: Logic Gates: Color Coding" %}
+{% set project = "Signed Addition" %}
 
 
 <!--Anika
@@ -156,7 +156,7 @@ add new images (ie PNGs) to project -->
 {% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Logic Gates Lab</h1>
+    <h1 class="text-center">Signed Addition</h1>
     <div class="container">
         <div class="row justify-content-md-center" style="border-style: none">
 
@@ -216,16 +216,7 @@ add new images (ie PNGs) to project -->
 
     <br>
 
-    <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
-        <div class="col-12">
-            <form action="/lab4/" id="stub" method="POST" >
-                <label for="name" style="color: white">Select a number of bits</label>
-                <input type="number" step="1" name="name" id="name" min="1">
-                <input type="submit" value="Submit">
-                <p>Bits: {{ BITS }}</p>
-            </form>
-        </div>
-    </div>
+
 
     <br>
 

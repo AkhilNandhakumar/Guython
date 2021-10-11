@@ -19,6 +19,10 @@ add new images (ie PNGs) to project -->
 
 {% block meta %}
 <style>
+    :root {
+        --colorVal: rgb(0, 0, 0)
+    }
+
     .leftColText {
         width: 48%;
     }
@@ -28,7 +32,11 @@ add new images (ie PNGs) to project -->
     }
     .colorDisplay
     {
-        background-color: --var(color)
+        width: 120%;
+        height: 120px;
+        background-color: var(--colorVal);
+        font-size: 24px;
+        text-align: center;
     }
 </style>
 
@@ -70,6 +78,16 @@ add new images (ie PNGs) to project -->
         }
         // setter for DOM values
         function setConversions(binary) {
+
+            // Reassigns Color
+            binaryOne = getBits().substring(0,8)
+            binaryTwo = getBits().substring(8,16)
+            binaryThree = getBits().substring(16,24)
+            col1 = parseInt(binaryOne, 2).toString(10);
+            col2 = parseInt(binaryTwo, 2).toString(10);
+            col3 = parseInt(binaryThree, 2).toString(10);
+            document.documentElement.style.setProperty('--colorVal', 'rgb(' + col1 + ", " + col2 + ", " + col3 + ')')
+
             document.getElementById('binary').innerHTML = binary;
             // DOM assignment to Octal conversion
             document.getElementById('octal').innerHTML = parseInt(binary, 2).toString(8);
@@ -268,6 +286,13 @@ add new images (ie PNGs) to project -->
                     </div>
                 </table>
             </div>
+            <div class="colorDisplay">Display Color</div>
+            <br>
+            <br>
+            <br><br>
+            <br>
+
+
         </div>
     </div>
 
