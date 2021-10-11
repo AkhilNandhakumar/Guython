@@ -222,18 +222,7 @@ def weather3():
 def weather4():
     return render_template("weather_info/weather4.html")
 
-@app.route('/unsignedAddition/')
-def unsignedAddition():
-    return render_template("our_work/unsignedAddition.html")
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("our_work/unsignedAddition.html", BITS=int(name))
-        # starting and empty input default
-    return render_template("our_work/unsignedAddition.html", imgBulbOn="/static/assets/bulb_on.gif",
-                           imgBulbOff="/static/assets"
-                                      "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
+
 
 
 
