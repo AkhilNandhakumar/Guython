@@ -6,7 +6,6 @@ from tkinter import *
 from flask import Flask, render_template, request
 from flask import Blueprint, render_template
 from image import image_data
-from pathlib import Path  # https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
 
 # create a Flask instance
 app = Flask(__name__)
@@ -121,9 +120,7 @@ def lab2():
 
 @app.route('/lab3/', methods=['GET', 'POST'])
 def rgb():
-    path = Path(app.root_path) / "static" / "assets"
-    return render_template("our_work/lab3.html", images=image_data(path))
-
+    return render_template("our_work/lab3.html", images=image_data())
 
 @app.route('/lab4/', methods={'GET', 'POST'})
 def lab4():
@@ -182,7 +179,7 @@ def tt3():
     return render_template("our_work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITSRED = 8, BITSGREEN = 8, BITSBLUE = 8)
 
 
 @app.route('/wireframe/')
