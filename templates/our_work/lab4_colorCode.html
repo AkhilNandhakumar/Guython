@@ -271,18 +271,6 @@ add new images (ie PNGs) to project -->
                         </tr>
                         {% endif %}
                     {% endfor %}
-                    {% for i in range(8) %} {# 8 bits / row #}
-                        {% if i % 8 == 0 %} {# if "i" is divisible by 8, table row gets created #}
-                        <tr>
-                        {% endif %}
-                            <td><input type='text' id='digit{{i}}' Value="0" size="1" readonly></td>
-                            <td><img class="img-responsive py-3" id="bulb{{i}}" src="{{ imgBulbOff }}" alt="" width="40" height="Auto"> {# sets default image off and creates id for image #
-                            {# sets default message to off and calls function "toggleBit" on click of button which is found on lines 68-85 #}
-                            </td>
-                        {% if i + 1 % 8 == 0 or i == BITS %} {# if "i" + 1 is divisible by 8 then table row is ended#}
-                        </tr>
-                        {% endif %}
-                    {% endfor %}
                     </div>
                 </table>
             </div>
