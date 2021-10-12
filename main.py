@@ -225,7 +225,19 @@ def weather4():
     return render_template("weather_info/weather4.html")
 
 
+@app.route('/wtd1/')
+def wtd1():
+    return render_template("weather_info/wtd1.html")
 
+
+@app.route('/wtd2/')
+def wtd2():
+    return render_template("weather_info/wtd2.html")
+
+
+@app.route('/wtd3/')
+def wtd3():
+    return render_template("weather_info/wtd3.html")
 
 
 # runs the application on the development server
