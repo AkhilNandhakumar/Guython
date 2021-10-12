@@ -40,15 +40,14 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
    
 In each section, there is a label (comment) indicating which team member(s) worked on it.
 ### Sprint 7,8 (code tangibles)
-1. Logic Gates Lab:
+1. Logic Gates Lab: [Video](https://drive.google.com/file/d/1AAfIs2JjC0yYFxao3muscZ1gik-CBAAY/view?usp=sharing)
    1. [ASCII to Unicode](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4.html) - Tristan
    2. [Shift](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4.html) - Tristan
    3. [Logic Gates](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4.html) - Jakub/Vunsh
-   4. Unsigned Addition - Anika
-   5. Signed Addition - Anika/Jakub
-   6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_colorCode.html) - Vunsh
-  
-Showcase [Video]()
+   4. [Unsigned Addition](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_unsignedAdd.html) - Anika/Jakub
+   5. [Signed Addition](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_signedAdd.html) - Vunsh
+   6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
+
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
