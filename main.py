@@ -161,12 +161,17 @@ def lab4_signedadd():
     return render_template("our_work/lab4_signedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=24,)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=16,)
 
 
 @app.route('/tpts/')
 def tpts():
-    return render_template("our_work/tpts.html")
+    return render_template("our_work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
+                           imgBulbOff="/static/assets"
+                                      "/bulb_off.png",
+                        msgTurnOn="Turn On", msgTurnOff="Turn Off", BITSRED = 8, BITSGREEN = 8, BITSBLUE = 8)
+
+
 
 
 @app.route('/hackathontt3/', methods={'GET', 'POST'})
