@@ -1,9 +1,7 @@
-<!-- Navigation Bar from bootstrap
-This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
--->
+
 <style>
     pList:hover {
-        color: #91cdfa;
+        color: mediumaquamarine;
         cursor: pointer;
     }
     pList {
@@ -16,6 +14,14 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
     }
     a {
         color: #000000;
+    }
+    .navbar-nav {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .dropdown {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,7 +66,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
             </div>
         </div>
 
-           <!-- # Second dropdown menu -->
+        <!-- # Second dropdown menu -->
         <div class="dropdown">
             <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Weather Information
@@ -72,7 +78,7 @@ This HTML is setup as a fragment allowing it to be "included" by other HTML file
                 <a class="dropdown-item" href="/weather4">Water</a>
             </div>
         </div>
-        <img src="/static/assets/logo.png" style="max-height: 125px;
+        <img src="/static/scholarly_weather_report_50.png" style="max-height: 125px;
       max-width: 75px;
       margin-left: 40%;
       margin-right: 0%;
