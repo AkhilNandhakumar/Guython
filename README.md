@@ -10,7 +10,7 @@
 4. [Weeks 7,8](https://github.com/JakubPonulak/flask_portfolio#sprint-78-code-tangibles)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
 ## Contributors:
-Team Member | Anika | Jakub | Tristan | Vunsh |
+Team Member | Anika S. | Jakub | Tristan | Vunsh |
 --- | --- | --- | --- | ---
 GitHub ID: | anika1sharma1 | JakubPonulak | senTristanC | vunsh
 GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Avunsh+is%3Aopen)
