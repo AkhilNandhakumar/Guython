@@ -48,6 +48,7 @@ In each section, there is a label (comment) indicating which team member(s) work
    5. [Signed Addition](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_signedAdd.html) - Vunsh
    6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
 
+[Review Ticket](https://github.com/JakubPonulak/flask_portfolio/issues/57)
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
