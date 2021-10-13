@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2d67dd4-720f-4843-b260-3ec64ba694ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="e2d67dd4-720f-4843-b260-3ec64ba694ea" name="Changes" comment="ReadME test push" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,11 +30,62 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634148335181</updated>
-      <workItem from="1634148340207" duration="300000" />
+      <workItem from="1634148340207" duration="689000" />
     </task>
+    <task id="LOCAL-00001" summary="ReadME test push">
+      <created>1634148657621</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634148657621</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ReadME test push">
+      <created>1634148741199</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634148741199</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ReadME test push">
+      <created>1634148869692</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634148869692</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ReadME test push">
+      <created>1634148914351</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634148914353</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ReadME test push">
+      <created>1634148953837</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634148953838</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ReadME test push" />
+    <option name="LAST_COMMIT_MESSAGE" value="ReadME test push" />
   </component>
 </project>
