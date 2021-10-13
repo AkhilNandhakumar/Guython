@@ -1,21 +1,21 @@
 
 # Number 1 Hackers
-## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio)
-## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
+## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio_hackers)
+## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1)
 ## [Documentation](https://docs.google.com/document/d/12Wc6Z9wMwf0dZz3SWHhZ5onLveiV20Ybi1M7fdX0deA/edit?usp=sharing)
 ## Table of Contents:
-1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio#sprint-12-code-tangibles)
-2. [Weeks 3,4](https://github.com/JakubPonulak/flask_portfolio#sprint-34-code-tangibles)
-3. [Weeks 5,6](https://github.com/JakubPonulak/flask_portfolio#sprint-56-code-tangibles)
-4. [Weeks 7,8](https://github.com/JakubPonulak/flask_portfolio#sprint-78-code-tangibles)
+1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
+2. [Weeks 3,4](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-34-code-tangibles)
+3. [Weeks 5,6](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-56-code-tangibles)
+4. [Weeks 7,8](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-78-code-tangibles)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
 ## Contributors:
 Team Member | Anika | Jakub | Tristan | Vunsh |
 --- | --- | --- | --- | ---
 GitHub ID: | anika1sharma1 | JakubPonulak | senTristanC | vunsh
-GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio/issues?q=assignee%3Avunsh+is%3Aopen)
-Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Aanika1sharma1)| [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3AsenTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio/projects/1?card_filter_query=assignee%3Avunsh)
-GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio/commits?author=vunsh)
+GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Avunsh+is%3Aopen)
+Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Aanika1sharma1)| [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AsenTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Avunsh)
+GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=vunsh)
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/senTristanC) | [Link](https://github.com/vunsh)
 ## Time Box:
 ### Sprint 1,2 (code tangibles)
@@ -41,13 +41,14 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 In each section, there is a label (comment) indicating which team member(s) worked on it.
 ### Sprint 7,8 (code tangibles)
 1. Logic Gates Lab: [Video](https://drive.google.com/file/d/1AAfIs2JjC0yYFxao3muscZ1gik-CBAAY/view?usp=sharing)
-   1. [ASCII to Unicode](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4.html) - Tristan
-   2. [Shift](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4.html) - Tristan
-   3. [Logic Gates](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4.html) - Jakub/Vunsh
-   4. [Unsigned Addition](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_unsignedAdd.html) - Anika/Jakub
-   5. [Signed Addition](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_signedAdd.html) - Vunsh
-   6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
+   1. [ASCII to Unicode](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4.html) - Tristan
+   2. [Shift](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4.html) - Tristan
+   3. [Logic Gates](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4.html) - Jakub/Vunsh
+   4. [Unsigned Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_unsignedAdd.html) - Anika/Jakub
+   5. [Signed Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_signedAdd.html) - Vunsh
+   6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
 
+[Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
