@@ -52,9 +52,9 @@ In each section, there is a label (comment) indicating which team member(s) work
 Team Member | Assignment | Issue |
 --- | --- | ---
 Anika | What to do: Hot | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/4) |
-Jakub | What to do: Storm | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/6) |
-Tristan | What to do: Cold | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/5) |
-Vunsh | Weather Info: Water | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/3) |
+Jakub | What to do: Storm | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/2) |
+Tristan | What to do: Cold | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/3) |
+Vunsh | Weather Info: Water | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/7) |
 
 [Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
 ### Scores (9/3/21)
