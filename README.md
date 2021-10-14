@@ -49,10 +49,12 @@ In each section, there is a label (comment) indicating which team member(s) work
    6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
 2. PBL Design improvements (week 8)
 
-Team Member | Anika | Jakub | Tristan | Vunsh |
---- | --- | --- | --- | ---
-Assignment | What to do: Hot | What to do: Storm | What to do: Cold | Weather info: Water
-Issue | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Avunsh+is%3Aopen)
+Team Member | Assignment | Issue |
+--- | --- | ---
+Anika | What to do: Hot | Link |
+Jakub | What to do: Storm | Link |
+Tristan | What to do: Cold | Link |
+Vunsh | Weather Info: Water | Link |
 
 [Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
 ### Scores (9/3/21)
