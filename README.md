@@ -47,6 +47,11 @@ In each section, there is a label (comment) indicating which team member(s) work
    4. [Unsigned Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_unsignedAdd.html) - Anika/Jakub
    5. [Signed Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_signedAdd.html) - Vunsh
    6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
+2. PBL Design improvements (week 8)
+Team Member | Anika | Jakub | Tristan | Vunsh |
+--- | --- | --- | --- | ---
+Assignment | What to do: Hot | What to do: Storm | What to do: Cold | Weather info: Water
+Issue | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Avunsh+is%3Aopen)
 
 [Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
 ### Scores (9/3/21)
