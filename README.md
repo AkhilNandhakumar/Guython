@@ -48,6 +48,7 @@ In each section, there is a label (comment) indicating which team member(s) work
    5. [Signed Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_signedAdd.html) - Vunsh
    6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
 2. PBL Design improvements (week 8)
+
 Team Member | Anika | Jakub | Tristan | Vunsh |
 --- | --- | --- | --- | ---
 Assignment | What to do: Hot | What to do: Storm | What to do: Cold | Weather info: Water
