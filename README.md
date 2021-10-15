@@ -2,6 +2,7 @@
 # Number 1 Hackers
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1)
+### [Old Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
 ## [Documentation](https://docs.google.com/document/d/12Wc6Z9wMwf0dZz3SWHhZ5onLveiV20Ybi1M7fdX0deA/edit?usp=sharing)
 ## Table of Contents:
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
@@ -47,6 +48,14 @@ In each section, there is a label (comment) indicating which team member(s) work
    4. [Unsigned Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_unsignedAdd.html) - Anika/Jakub
    5. [Signed Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_signedAdd.html) - Vunsh
    6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
+2. PBL Design improvements (week 8)
+
+Team Member | Assignment | Issue |
+--- | --- | ---
+Anika | What to do: Hot | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/4) |
+Jakub | What to do: Storm | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/2) |
+Tristan | What to do: Cold | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/3) |
+Vunsh | Weather Info: Water | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/7) |
 
 [Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
 ### Scores (9/3/21)
