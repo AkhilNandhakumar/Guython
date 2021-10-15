@@ -4,6 +4,7 @@ import base64
 from io import BytesIO
 from flask import Flask, render_template, request
 from flask import Blueprint, render_template
+from pathlib import Path
 
 
 # image (PNG, JPG) to base64 conversion (string), learn about base64 on wikipedia https://en.wikipedia.org/wiki/Base64
@@ -19,7 +20,7 @@ def image_formatter(img, img_type):
 
 
 # color_data prepares a series of images for data analysis
-def image_data(path='static/assets/', img_list=None):  # path of static images is defaulted
+def image_data(path=Path('static/assets/'), img_list=None):  # path of static images is defaulted
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
             {'source': "shutterstock.com", 'label': "Website Logo", 'file': "clouds.jpg"},

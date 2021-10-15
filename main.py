@@ -6,6 +6,7 @@ from tkinter import *
 from flask import Flask, render_template, request
 from flask import Blueprint, render_template
 from image import image_data
+from pathlib import Path
 
 # create a Flask instance
 app = Flask(__name__)
@@ -119,8 +120,10 @@ def lab2():
 
 
 @app.route('/lab3/', methods=['GET', 'POST'])
-def rgb():
-    return render_template("our_work/lab3.html", images=image_data())
+def lab3():
+    path = Path(app.root_path) / "static" / "assets"
+    return render_template("our_work/lab3.html", images=image_data(path))
+
 
 @app.route('/lab4/', methods={'GET', 'POST'})
 def lab4():
@@ -166,12 +169,7 @@ def lab4_signedadd():
 
 @app.route('/tpts/')
 def tpts():
-    return render_template("our_work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
-                           imgBulbOff="/static/assets"
-                                      "/bulb_off.png",
-                        msgTurnOn="Turn On", msgTurnOff="Turn Off", BITSRED = 8, BITSGREEN = 8, BITSBLUE = 8)
-
-
+    return render_template("our_work/tpts.html")
 
 
 @app.route('/hackathontt3/', methods={'GET', 'POST'})
@@ -184,7 +182,7 @@ def tt3():
     return render_template("our_work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITSRED = 8, BITSGREEN = 8, BITSBLUE = 8)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
 
 
 @app.route('/wireframe/')
