@@ -6,20 +6,82 @@
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
-    <!- Try building a new body here ->
-    <style>
-        body {
+<!- Try building a new body here ->
+<!--
+
+-->
+
+<style>
+    body {
         background-color: #a7ecf2;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .titleOfHomePage {
+        background-color: #7d8aff;
+        font-family: Raleway, sans-serif;
+        padding: 2%;
+        font-size: 40px;
+    }
+
+    .container1 {
+        background-color: #b175ff;
+        margin-top: 4%;
+        padding:5%;
+        font-family: Raleway, sans-serif;
+        font-size: 25px;
+    }
+
+    .water_image {
+
         }
 
-        .titleOfHomePage {
-        color: red;
-        margin-left: 10px;
-        }
+    .first_comment {
+        margin-top: 60px;
 
-    </style>
-<p class="titleOfHomePage">Water</p>
+    }
+
+    .container2 {
+        background-color: #96daff;
+        margin-top: 4%;
+        padding:6%;
+        font-family: Raleway, sans-serif;
+        font-size: 25px;
+    }
+
+    .water_cycle_img {
+
+    }
+
+    .water_cycle {
+        margin-top: 50px;
+        color: black;
+    }
+
+
+
+</style>
+<div class="titleOfHomePage">
+    <p1>Water</p1>
+</div>
+
+        <div class="container1">
+            <img class="water_image" style="max-width: 300px; max-height: 300px; float: middle" src="https://cdn.hswstatic.com/gif/water-update.jpg">
+            <p class="first_comment"> Water, otherwise known as H20, is an essential aspect to life on Earth. Without water, life would not be able to exist. The Earth's weather cycles and temperatures are also directly affected by water.</p>
+        </div>
+
+        <div class="container2">
+            <img class="water_cycle_img" style="max-width: 500px; max-height: 500px; float: middle" src="https://biologydictionary.net/wp-content/uploads/2020/04/The-water-cycle.jpg">
+            <p class = "water_cycle"> The Water Cycle is a very important process that dictates the amount of rain and precipitation that occurs. As depicted, the water is involved in all stages of the cycle. It is important for rainfall to happen as most living creatures require water to survive. Water also affects humidity levels, which are different depending on the amount of water vapor in the air. </p>
+        </div>
+
+
+
+
+
 {% endblock %}
+
 
 <!- This is turning off birds background from base.html -->
 {% block background %}
