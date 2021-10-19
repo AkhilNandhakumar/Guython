@@ -58,6 +58,7 @@ Jakub | What to do: Storm | [Link](https://github.com/JakubPonulak/flask_portfol
 Tristan | What to do: Cold | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/3) |
 Vunsh | Weather Info: Water | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/7) |
 
+[Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
 ### Sprint 9,10
 1. Individual Final Video
 
@@ -68,7 +69,6 @@ Jakub | b | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issue
 Tristan | c | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/3) |
 Vunsh | d | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/7) |
 
-[Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
