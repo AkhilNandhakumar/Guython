@@ -12,6 +12,9 @@
     body {
         font-size: 15px;
         text-align: center;
+        background: {{ background }};
+        background-size: 800% 800%;
+        animation: gradient 14s ease infinite;
     }
 
     .titleOfHomePage {
@@ -21,12 +24,12 @@
     .row {
         border-style: solid;
         border-width: 2px;
-        border-color: rgb(0,0,0,0);
+        border-color: rgba(0,0,0,0);
     }
     .col-sm {
         border-style: solid;
         border-width: 2px;
-        border-color: rgb(0,0,0,0);
+        border-color: rgba(0,0,0,0);
         padding: 70px 0;
     }
     .col-lg {
@@ -44,13 +47,13 @@
 </div>
 <div class="row">
     <form action="/lab4/" id="stub" method="POST" ></form>
-    <div id="text1" class="col-sm">
+    <div style="font-size: 25px" class="col-sm">
         Type of Weather:
     </div>
-    <div class="col-sm">
+    <div style="font-size: 25px" class="col-sm">
         What it looks like:
     </div>
-    <div class="col-sm">
+    <div style="font-size: 25px" class="col-sm">
         What to wear:
     </div>
     <div class="w-100"></div>
@@ -70,7 +73,7 @@
     <div class="col-sm">
         <label for="checkC" style="color: white">Raining</label>
         <input type="checkbox" id="checkC">
-        <label for="checkD" style="color: white">Snowing</label>
+        <label for="checkD" style="color: white">Snow</label>
         <input type="checkbox" id="checkD">
     </div>
     <div class="col-lg">
@@ -81,7 +84,7 @@
     </div>
     <div class="w-100"></div>
     <div class="col-sm">
-        <label for="checkE" style="color: white">Raining Ash</label>
+        <label for="checkE" style="color: white">Volcano Eruption</label>
         <input type="checkbox" id="checkE">
         <label for="checkF" style="color: white">Raining Acid</label>
         <input type="checkbox" id="checkF">
@@ -101,6 +104,7 @@
         if (buttonA.checked && buttonB.checked) {
             document.getElementById('pic1').src = "/static/sunny_cloudy.png"
             document.getElementById('pic2').src = "/static/sunny_cloudy_clothes.png"
+            {#background === "linear-gradient(-45deg, #f3feed, #5c8be4, #fbb73a)"#}
         } else if (buttonA.checked && !buttonB.checked) {
             document.getElementById('pic1').src = "/static/sunny.png"
             document.getElementById('pic2').src = "/static/sunny_clothes.png"
@@ -140,14 +144,14 @@
     var buttonD = document.getElementById('checkD');
     buttonC.addEventListener("change", function() {
         if (buttonC.checked && buttonD.checked) {
-            document.getElementById('img3').src = "/static/sunny_cloudy.png"
-            document.getElementById('img4').src = "/static/sunny_cloudy_clothes.png"
+            document.getElementById('img3').src = "/static/blizzard.png"
+            document.getElementById('img4').src = "/static/blizzard_clothes.png"
         } else if (buttonC.checked && !buttonD.checked) {
-            document.getElementById('img3').src = "/static/sunny.png"
-            document.getElementById('img4').src = "/static/sunny_clothes.png"
+            document.getElementById('img3').src = "/static/raining.png"
+            document.getElementById('img4').src = "/static/raining_clothes.png"
         } else if (!buttonC.checked && buttonD.checked) {
-            document.getElementById('img3').src = "/static/cloudy.png"
-            document.getElementById('img4').src = "/static/cloudy_clothing.png"
+            document.getElementById('img3').src = "/static/snowing.png"
+            document.getElementById('img4').src = "/static/snowing_clothes.png"
         } else {
             document.getElementById('img3').src = "/static/question.png"
             document.getElementById('img4').src = "/static/question.png"
@@ -159,14 +163,14 @@
     var buttonD = document.getElementById('checkD');
     buttonD.addEventListener("change", function() {
         if (buttonD.checked && buttonC.checked) {
-            document.getElementById('img3').src = "/static/sunny_cloudy.png"
-            document.getElementById('img4').src = "/static/sunny_cloudy_clothes.png"
+            document.getElementById('img3').src = "/static/blizzard.png"
+            document.getElementById('img4').src = "/static/blizzard_clothes.png"
         } else if (!buttonD.checked && buttonC.checked) {
-            document.getElementById('img3').src = "/static/sunny.png"
-            document.getElementById('img4').src = "/static/sunny_clothes.png"
+            document.getElementById('img3').src = "/static/raining.png"
+            document.getElementById('img4').src = "/static/raining_clothes.png"
         } else if (buttonD.checked && !buttonC.checked) {
-            document.getElementById('img3').src = "/static/cloudy.png"
-            document.getElementById('img4').src = "/static/cloudy_clothing.png"
+            document.getElementById('img3').src = "/static/snowing.png"
+            document.getElementById('img4').src = "/static/snowing_clothes.png"
         } else {
             document.getElementById('img3').src = "/static/question.png"
             document.getElementById('img4').src = "/static/question.png"
@@ -178,14 +182,14 @@
     var buttonF = document.getElementById('checkF');
     buttonE.addEventListener("change", function() {
         if (buttonE.checked && buttonF.checked) {
-            document.getElementById('img5').src = "/static/sunny_cloudy.png"
-            document.getElementById('img6').src = "/static/sunny_cloudy_clothes.png"
+            document.getElementById('img5').src = "/static/wasteland.png"
+            document.getElementById('img6').src = "/static/headstone.png"
         } else if (buttonE.checked && !buttonF.checked) {
-            document.getElementById('img5').src = "/static/sunny.png"
-            document.getElementById('img6').src = "/static/sunny_clothes.png"
+            document.getElementById('img5').src = "/static/volcano.png"
+            document.getElementById('img6').src = "/static/volcano_suit.png"
         } else if (!buttonE.checked && buttonF.checked) {
-            document.getElementById('img5').src = "/static/cloudy.png"
-            document.getElementById('img6').src = "/static/cloudy_clothing.png"
+            document.getElementById('img5').src = "/static/acid.png"
+            document.getElementById('img6').src = "/static/hazmat.png"
         } else {
             document.getElementById('img5').src = "/static/question.png"
             document.getElementById('img6').src = "/static/question.png"
@@ -197,14 +201,14 @@
     var buttonF = document.getElementById('checkF');
     buttonF.addEventListener("change", function() {
         if (buttonF.checked && buttonE.checked) {
-            document.getElementById('img5').src = "/static/sunny_cloudy.png"
-            document.getElementById('img6').src = "/static/sunny_cloudy_clothes.png"
+            document.getElementById('img5').src = "/static/wasteland.png"
+            document.getElementById('img6').src = "/static/headstone.png"
         } else if (!buttonF.checked && buttonE.checked) {
-            document.getElementById('img5').src = "/static/sunny.png"
-            document.getElementById('img6').src = "/static/sunny_clothes.png"
+            document.getElementById('img5').src = "/static/volcano.png"
+            document.getElementById('img6').src = "/static/volcano_suit.png"
         } else if (buttonF.checked && !buttonE.checked) {
-            document.getElementById('img5').src = "/static/cloudy.png"
-            document.getElementById('img6').src = "/static/cloudy_clothing.png"
+            document.getElementById('img5').src = "/static/acid.png"
+            document.getElementById('img6').src = "/static/hazmat.png"
         } else {
             document.getElementById('img5').src = "/static/question.png"
             document.getElementById('img6').src = "/static/question.png"

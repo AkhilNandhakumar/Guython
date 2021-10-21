@@ -156,7 +156,7 @@ def lab4_unsignedadd():
     return render_template("our_work/lab4_unsignedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=16,)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=16, )
 
 
 @app.route('/lab4_signedAdd/')
@@ -164,7 +164,7 @@ def lab4_signedadd():
     return render_template("our_work/lab4_signedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
-                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=16,)
+                           msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=16, )
 
 
 @app.route('/tpts/')
@@ -240,8 +240,8 @@ def wtd3():
 
 @app.route('/weather_checks/')
 def wchecks():
-    return render_template("weather_info/weather_checks.html")
-
+    return render_template("weather_info/weather_checks.html", background='linear-gradient(-45deg, #f3feed, #5c8be4, '
+                                                                   '#fbb73a)')
 
 
 # runs the application on the development server
