@@ -48,9 +48,10 @@ In each section, there is a label (comment) indicating which team member(s) work
    4. [Unsigned Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_unsignedAdd.html) - Anika/Jakub
    5. [Signed Addition](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_signedAdd.html) - Vunsh
    6. [Color Codes](https://github.com/JakubPonulak/flask_portfolio_hackers/blob/main/templates/our_work/lab4_colorCode.html) - Tristan
+  
 2. PBL Design improvements (week 8)
 
-Team Member | Assignment | Issue |
+   Team Member | Assignment | Issue |
 --- | --- | ---
 Anika | What to do: Hot | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/4) |
 Jakub | What to do: Storm | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/2) |
@@ -58,6 +59,16 @@ Tristan | What to do: Cold | [Link](https://github.com/JakubPonulak/flask_portfo
 Vunsh | Weather Info: Water | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/7) |
 
 [Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
+### Sprint 9,10
+1. Individual Final Video
+
+Team Member | Assignment | Issue |
+--- | --- | ---
+Anika | a| [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/4) |
+Jakub | b | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/2) |
+Tristan | c | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/3) |
+Vunsh | d | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/7) |
+
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
