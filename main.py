@@ -238,6 +238,12 @@ def wtd3():
     return render_template("weather_info/wtd3.html")
 
 
+@app.route('/weather_checks/')
+def wchecks():
+    return render_template("weather_info/weather_checks.html")
+
+
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)

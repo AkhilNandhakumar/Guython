@@ -1,0 +1,223 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Weather Checks" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+
+
+<style>
+    body {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .titleOfHomePage {
+        padding: 2%;
+        font-size: 40px;
+    }
+    .row {
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgb(0,0,0,0);
+    }
+    .col-sm {
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgb(0,0,0,0);
+        padding: 70px 0;
+    }
+    .col-lg {
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgba(0,0,0,0);
+        padding: 10px 0;
+        max-height: 175px;
+    }
+
+
+</style>
+<div class="titleOfHomePage">
+    <p1>Weather Checker & Tips</p1>
+</div>
+<div class="row">
+    <form action="/lab4/" id="stub" method="POST" ></form>
+    <div id="text1" class="col-sm">
+        Type of Weather:
+    </div>
+    <div class="col-sm">
+        What it looks like:
+    </div>
+    <div class="col-sm">
+        What to wear:
+    </div>
+    <div class="w-100"></div>
+    <div class="col-sm">
+        <label for="checkA" style="color: white">Sunny</label>
+        <input type="checkbox" id="checkA">
+        <label for="checkB" style="color: white">Cloudy</label>
+        <input type="checkbox" id="checkB">
+    </div>
+    <div class="col-lg">
+        <img src="/static/question.png" id="pic1" style="width: 150px; height: 150px">
+    </div>
+    <div class="col-lg">
+        <img src="/static/question.png" id="pic2" style="width: 150px; height: 150px">
+    </div>
+    <div class="w-100"></div>
+    <div class="col-sm">
+        <label for="checkC" style="color: white">Raining</label>
+        <input type="checkbox" id="checkC">
+        <label for="checkD" style="color: white">Snowing</label>
+        <input type="checkbox" id="checkD">
+    </div>
+    <div class="col-lg">
+        <img src="/static/question.png" id="img3" style="width: 150px; height: 150px">
+    </div>
+    <div class="col-lg">
+        <img src="/static/question.png" id="img4" style="width: 150px; height: 150px">
+    </div>
+    <div class="w-100"></div>
+    <div class="col-sm">
+        <label for="checkE" style="color: white">Raining Ash</label>
+        <input type="checkbox" id="checkE">
+        <label for="checkF" style="color: white">Raining Acid</label>
+        <input type="checkbox" id="checkF">
+    </div>
+    <div class="col-lg">
+        <img src="/static/question.png" id="img5" style="width: 150px; height: 150px">
+    </div>
+    <div class="col-lg">
+        <img src="/static/question.png" id="img6" style="width: 150px; height: 150px">
+    </div>
+</div>
+
+<script>
+    var buttonA = document.getElementById('checkA');
+    var buttonB = document.getElementById('checkB');
+    buttonA.addEventListener("change", function() {
+        if (buttonA.checked && buttonB.checked) {
+            document.getElementById('pic1').src = "/static/sunny_cloudy.png"
+            document.getElementById('pic2').src = "/static/sunny_cloudy_clothes.png"
+        } else if (buttonA.checked && !buttonB.checked) {
+            document.getElementById('pic1').src = "/static/sunny.png"
+            document.getElementById('pic2').src = "/static/sunny_clothes.png"
+        } else if (!buttonA.checked && buttonB.checked) {
+            document.getElementById('pic1').src = "/static/cloudy.png"
+            document.getElementById('pic2').src = "/static/cloudy_clothing.png"
+        } else {
+            document.getElementById('pic1').src = "/static/question.png"
+            document.getElementById('pic2').src = "/static/question.png"
+        }
+    })
+</script>
+<script>
+    var buttonA = document.getElementById('checkA');
+    var buttonB = document.getElementById('checkB');
+    buttonB.addEventListener("change", function() {
+        if (buttonB.checked && buttonA.checked) {
+            document.getElementById('pic1').src = "/static/sunny_cloudy.png"
+            document.getElementById('pic2').src = "/static/sunny_cloudy_clothes.png"
+        }
+        else if (!buttonB.checked && buttonA.checked) {
+            document.getElementById('pic1').src = "/static/sunny.png"
+            document.getElementById('pic2').src = "/static/sunny_clothes.png"
+        }
+        else if (buttonB.checked && !buttonA.checked) {
+            document.getElementById('pic1').src = "/static/cloudy.png"
+            document.getElementById('pic2').src = "/static/cloudy_clothing.png"
+        }
+        else {
+            document.getElementById('pic1').src = "/static/question.png"
+            document.getElementById('pic2').src = "/static/question.png"
+        }
+    })
+</script>
+<script>
+    var buttonC = document.getElementById('checkC');
+    var buttonD = document.getElementById('checkD');
+    buttonC.addEventListener("change", function() {
+        if (buttonC.checked && buttonD.checked) {
+            document.getElementById('img3').src = "/static/sunny_cloudy.png"
+            document.getElementById('img4').src = "/static/sunny_cloudy_clothes.png"
+        } else if (buttonC.checked && !buttonD.checked) {
+            document.getElementById('img3').src = "/static/sunny.png"
+            document.getElementById('img4').src = "/static/sunny_clothes.png"
+        } else if (!buttonC.checked && buttonD.checked) {
+            document.getElementById('img3').src = "/static/cloudy.png"
+            document.getElementById('img4').src = "/static/cloudy_clothing.png"
+        } else {
+            document.getElementById('img3').src = "/static/question.png"
+            document.getElementById('img4').src = "/static/question.png"
+        }
+    })
+</script>
+<script>
+    var buttonC = document.getElementById('checkC');
+    var buttonD = document.getElementById('checkD');
+    buttonD.addEventListener("change", function() {
+        if (buttonD.checked && buttonC.checked) {
+            document.getElementById('img3').src = "/static/sunny_cloudy.png"
+            document.getElementById('img4').src = "/static/sunny_cloudy_clothes.png"
+        } else if (!buttonD.checked && buttonC.checked) {
+            document.getElementById('img3').src = "/static/sunny.png"
+            document.getElementById('img4').src = "/static/sunny_clothes.png"
+        } else if (buttonD.checked && !buttonC.checked) {
+            document.getElementById('img3').src = "/static/cloudy.png"
+            document.getElementById('img4').src = "/static/cloudy_clothing.png"
+        } else {
+            document.getElementById('img3').src = "/static/question.png"
+            document.getElementById('img4').src = "/static/question.png"
+        }
+    })
+</script>
+<script>
+    var buttonE = document.getElementById('checkE');
+    var buttonF = document.getElementById('checkF');
+    buttonE.addEventListener("change", function() {
+        if (buttonE.checked && buttonF.checked) {
+            document.getElementById('img5').src = "/static/sunny_cloudy.png"
+            document.getElementById('img6').src = "/static/sunny_cloudy_clothes.png"
+        } else if (buttonE.checked && !buttonF.checked) {
+            document.getElementById('img5').src = "/static/sunny.png"
+            document.getElementById('img6').src = "/static/sunny_clothes.png"
+        } else if (!buttonE.checked && buttonF.checked) {
+            document.getElementById('img5').src = "/static/cloudy.png"
+            document.getElementById('img6').src = "/static/cloudy_clothing.png"
+        } else {
+            document.getElementById('img5').src = "/static/question.png"
+            document.getElementById('img6').src = "/static/question.png"
+        }
+    })
+</script>
+<script>
+    var buttonE = document.getElementById('checkE');
+    var buttonF = document.getElementById('checkF');
+    buttonF.addEventListener("change", function() {
+        if (buttonF.checked && buttonE.checked) {
+            document.getElementById('img5').src = "/static/sunny_cloudy.png"
+            document.getElementById('img6').src = "/static/sunny_cloudy_clothes.png"
+        } else if (!buttonF.checked && buttonE.checked) {
+            document.getElementById('img5').src = "/static/sunny.png"
+            document.getElementById('img6').src = "/static/sunny_clothes.png"
+        } else if (buttonF.checked && !buttonE.checked) {
+            document.getElementById('img5').src = "/static/cloudy.png"
+            document.getElementById('img6').src = "/static/cloudy_clothing.png"
+        } else {
+            document.getElementById('img5').src = "/static/question.png"
+            document.getElementById('img6').src = "/static/question.png"
+        }
+    })
+</script>
+
+
+
+
+{% endblock %}
+
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
