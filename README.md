@@ -9,6 +9,7 @@
 2. [Weeks 3,4](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-34-code-tangibles)
 3. [Weeks 5,6](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-56-code-tangibles)
 4. [Weeks 7,8](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-78-code-tangibles)
+5. [Weeks 9, 10](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-910-code-tangibles)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
 ## Contributors:
 Team Member | Anika | Jakub | Tristan | Vunsh |
@@ -59,7 +60,7 @@ Tristan | What to do: Cold | [Link](https://github.com/JakubPonulak/flask_portfo
 Vunsh | Weather Info: Water | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/7) |
 
 [Review Ticket](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/57)
-### Sprint 9,10
+### Sprint 9,10 (code tangibles)
 1. Individual Final Video
 
 Team Member | Assignment | Issue |
