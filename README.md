@@ -63,12 +63,12 @@ Vunsh | Weather Info: Water | [Link](https://github.com/JakubPonulak/flask_portf
 ### Sprint 9,10 (code tangibles)
 1. Individual Final Video
 
-Team Member | Assignment | Issue |
---- | --- | ---
-Anika | Final Video| [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) |
-Jakub | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) |
-Tristan | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) |
-Vunsh | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) |
+Team Member | Assignment | Issue | Total Score |
+--- | --- | --- | ---
+Anika | Final Video| [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
+Jakub | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
+Tristan | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
+Vunsh | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
 
 ### Scores (9/3/21)
 Team: 4/4   
