@@ -6,52 +6,97 @@
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
-    <!- Try building a new body here ->
+<!- Try building a new body here ->
+
+<!-- Bug Fix Board (Preferable Ordered by importance / occurrence
+
+Issue #1 : When dragging one window onto another, windows bug out due to both trying to be dragged (Make only one draggable at a time)
+    Resolved: No
+Issue #2 : TBD
+
+-->
+
+<!-- Bug graveyard (Copy-paste bug info for future reminiscence ability)
+
+Empty
+
+
+-->
 <style>
     :root {
-        --sViewer_xPos: 90px;
-        --sViewer_yPos: 90px;
+        --sView_xPos: 90px;
+        --sView_yPos: 90px;
+
+        --sEx_xPos: 900px;
+        --sEx_yPos: 90px;
     }
     .stockGraphWindow {
         font-family: monospace;
         border-style: solid;
         border-color: black;
-        width: 400px;
-        height: 400px;
+        width: 800px;
+        height: 800px;
         text-align: left;
         position: absolute;
-        margin-left: var(--sViewer_xPos);
-        margin-top: var(--sViewer_yPos);
+        margin-left: var(--sView_xPos);
+        margin-top: var(--sView_yPos);
 
     }
+    .stockExchangeWindow {
+        font-family: monospace;
+        border-style: solid;
+        border-color: black;
+        width: 800px;
+        height: 800px;
+        text-align: left;
+        position: absolute;
+        margin-left: var(--sEx_xPos);
+        margin-top: var(--sEx_yPos);
+    }
+
 
     .bg {
         background-color: rgb(1,130,129);
         width: 100%;
         height: 100%;
         position: absolute;
+        overflow: hidden; /* Fixed Scroll amount */
     }
 
 </style>
 
 <div class="bg">
+    <div class="stockGraphWindow">
+        <p id="stockGraph">Stock Viewer</p>
+    </div>
+    <div class="stockExchangeWindow">
+        <p id="stockExchange">Stock Exchanger</p>
+    </div>
+
 
     <p class="test0" id="test0">null</p> <!-- Used for verifying the game loop is running-->
     <p class="test1" id="test1">null</p> <!-- Used for verifying mouse action-->
-    <p id="screen-log"></p>
-
-    <div class="stockGraphWindow">
-        <p class="drawGraph" id="stockGraph">null</p>
-    </div>
-
+    <p class="test1" id="test2">null</p> <!-- Used for verifying mouse movement-->
 </div>
+
 
 <script>
     // Declare functions and variables
 
     let test0 = 0 // To prove the loop is running
-    let sViewerX = 90; let sViewerY = 90; // Declares sViewer position
-    var mouseDown = [0, 0, 0, 0, 0, 0, 0, 0, 0]; let mouseDownCount = 0;
+    let sViewX = 90; let sViewY = 90; // Declares stockViewer position
+    let sExX = 900; let sExY = 90; // Declares stockExchanger position
+    let mouseDown = [0, 0, 0, 0, 0, 0, 0, 0, 0]; let mouseDownCount = 0; let mouseX = 0; let mouseY = 0; // Declare mouse variables
+    let navbarHeight = 90 // Represent pixel width of navbar
+    let sVeXMouseGap = 0; let sVeYMouseGap = 0; // Gap between stock viewer and mouse
+    let sExXMouseGap = 0; let sExYMouseGap = 0; // Gap between stock exchanger and mouse
+
+    document.addEventListener('mousemove', logMouse); // Updates mouseX and mouseY when the mouse moves
+
+    function logMouse(e) { // Logs mouse data in e
+        mouseX = e.pageX;
+        mouseY = e.pageY - navbarHeight;
+    }
 
     function detectLeftButton() {
         // On mouse down display the current mouse action in a list
@@ -77,21 +122,43 @@
     }
 
     function updateWindowPositions() {
-        // Draggable windows code
 
+        // Draggable windows code
         detectLeftButton() // Gather left click info
+
         if (mouseDown[0] == 1) {
-            document.addEventListener('mousemove', logMouse);
-            function logMouse(e) { // Logs mouse data in e
-                document.documentElement.style.setProperty('--sViewer_xPos', e.screenX + "px");
-                document.documentElement.style.setProperty('--sViewer_yPos', e.screenY + "px");
+
+            if (mouseX >= sViewX && mouseX <= sViewX + 800 && mouseY >= sViewY && mouseY <= sViewY + 800) { // Updates drag for sView
+                sViewX = mouseX - sVeXMouseGap;
+                sViewY = mouseY - sVeYMouseGap;
             }
+
+            if (mouseX >= sExX && mouseX <= sExX + 800 && mouseY >= sExY && mouseY <= sExY + 800) { // Updates drag for sEx
+                sExX = mouseX - sExXMouseGap;
+                sExY = mouseY - sExYMouseGap;
+            }
+
+            // Moves windows
+
+            document.documentElement.style.setProperty('--sView_xPos', sViewX + "px");
+            document.documentElement.style.setProperty('--sView_yPos', sViewY + "px");
+
+            document.documentElement.style.setProperty('--sEx_xPos', sExX + "px");
+            document.documentElement.style.setProperty('--sEx_yPos', sExY + "px");
+
+        }   else {
+
+            // Updates gaps
+
+            sVeXMouseGap = mouseX - sViewX;
+            sVeYMouseGap = mouseY - sViewY;
+            sExXMouseGap = mouseX - sExX;
+            sExYMouseGap = mouseY - sExY;
         }
 
         // Update Positions
         document.getElementById('test1').innerHTML = mouseDown; // Check for mouse activity (dev)
-        document.documentElement.style.setProperty('--sViewer_xPos', 1 + "px");
-        document.documentElement.style.setProperty('--sViewer_yPos', 1 + "px");
+        document.getElementById('test2').innerHTML = mouseX + " " + mouseY; // Check for mouse activity (dev)
     }
     function thread() { // Game loop
 
@@ -99,7 +166,7 @@
         updateWindowPositions();
 
 
-        setTimeout(function(){ thread(); }, 33); // Loops tick
+        setTimeout(function(){ thread(); }, 15); // Loops tick
     }
 
     thread() // Initiate game
