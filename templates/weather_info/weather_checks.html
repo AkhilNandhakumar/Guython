@@ -12,9 +12,8 @@
     body {
         font-size: 15px;
         text-align: center;
-        background: {{ background }};
-        background-size: 800% 800%;
-        animation: gradient 14s ease infinite;
+        background-size: 300% 300%;
+        animation: gradient 35s ease infinite;
     }
 
     .titleOfHomePage {
@@ -96,21 +95,51 @@
         <img src="/static/question.png" id="img6" style="width: 150px; height: 150px">
     </div>
 </div>
-
 <script>
+    function bgChanger(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://wallpaperaccess.com/full/2312673.jpg')"
+    }
+    function bgChanger2(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://wallpaperaccess.com/full/862202.png')"
+    }
+    function bgChanger3(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://ichef.bbci.co.uk/news/976/cpsprodpb/62EB/production/_107832352_66753558_10219668449930342_4040915041229209600_o.jpg')"
+    }
+    function bgChanger4(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://ichef.bbci.co.uk/news/976/cpsprodpb/62EB/production/_107832352_66753558_10219668449930342_4040915041229209600_o.jpg')"
+    }
+    function bgChanger5(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://ichef.bbci.co.uk/news/976/cpsprodpb/62EB/production/_107832352_66753558_10219668449930342_4040915041229209600_o.jpg')"
+    }
+    function bgChanger6(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://ichef.bbci.co.uk/news/976/cpsprodpb/62EB/production/_107832352_66753558_10219668449930342_4040915041229209600_o.jpg')"
+    }
     var buttonA = document.getElementById('checkA');
     var buttonB = document.getElementById('checkB');
     buttonA.addEventListener("change", function() {
         if (buttonA.checked && buttonB.checked) {
             document.getElementById('pic1').src = "/static/sunny_cloudy.png"
             document.getElementById('pic2').src = "/static/sunny_cloudy_clothes.png"
-            {#background === "linear-gradient(-45deg, #f3feed, #5c8be4, #fbb73a)"#}
+            bgChanger()
         } else if (buttonA.checked && !buttonB.checked) {
             document.getElementById('pic1').src = "/static/sunny.png"
             document.getElementById('pic2').src = "/static/sunny_clothes.png"
         } else if (!buttonA.checked && buttonB.checked) {
             document.getElementById('pic1').src = "/static/cloudy.png"
             document.getElementById('pic2').src = "/static/cloudy_clothing.png"
+            bgChanger2()
         } else {
             document.getElementById('pic1').src = "/static/question.png"
             document.getElementById('pic2').src = "/static/question.png"
@@ -124,7 +153,8 @@
         if (buttonB.checked && buttonA.checked) {
             document.getElementById('pic1').src = "/static/sunny_cloudy.png"
             document.getElementById('pic2').src = "/static/sunny_cloudy_clothes.png"
-        }
+            bgChanger()
+            }
         else if (!buttonB.checked && buttonA.checked) {
             document.getElementById('pic1').src = "/static/sunny.png"
             document.getElementById('pic2').src = "/static/sunny_clothes.png"
@@ -132,6 +162,7 @@
         else if (buttonB.checked && !buttonA.checked) {
             document.getElementById('pic1').src = "/static/cloudy.png"
             document.getElementById('pic2').src = "/static/cloudy_clothing.png"
+            bgChanger2()
         }
         else {
             document.getElementById('pic1').src = "/static/question.png"
