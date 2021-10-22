@@ -1,0 +1,112 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Economy x Weather Simulation" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here ->
+<style>
+    :root {
+        --sViewer_xPos: 90px;
+        --sViewer_yPos: 90px;
+    }
+    .stockGraphWindow {
+        font-family: monospace;
+        border-style: solid;
+        border-color: black;
+        width: 400px;
+        height: 400px;
+        text-align: left;
+        position: absolute;
+        margin-left: var(--sViewer_xPos);
+        margin-top: var(--sViewer_yPos);
+
+    }
+
+    .bg {
+        background-color: rgb(1,130,129);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+</style>
+
+<div class="bg">
+
+    <p class="test0" id="test0">null</p> <!-- Used for verifying the game loop is running-->
+    <p class="test1" id="test1">null</p> <!-- Used for verifying mouse action-->
+    <p id="screen-log"></p>
+
+    <div class="stockGraphWindow">
+        <p class="drawGraph" id="stockGraph">null</p>
+    </div>
+
+</div>
+
+<script>
+    // Declare functions and variables
+
+    let test0 = 0 // To prove the loop is running
+    let sViewerX = 90; let sViewerY = 90; // Declares sViewer position
+    var mouseDown = [0, 0, 0, 0, 0, 0, 0, 0, 0]; let mouseDownCount = 0;
+
+    function detectLeftButton() {
+        // On mouse down display the current mouse action in a list
+        document.body.onmousedown = function(evt) {
+            ++mouseDown[evt.button];
+            ++mouseDownCount;
+        }
+        document.body.onmouseup = function(evt) {
+            --mouseDown[evt.button];
+            --mouseDownCount;
+        }
+
+        // When clicking multiple buttons, this code sometimes glitches. If statement resets list
+        if (mouseDown[0] <= -1 || mouseDown[0] >= 2) {
+            mouseDown[0] = 0
+        }
+    }
+
+
+    function test() {
+        test0 += 1
+        document.getElementById('test0').innerHTML = test0;
+    }
+
+    function updateWindowPositions() {
+        // Draggable windows code
+
+        detectLeftButton() // Gather left click info
+        if (mouseDown[0] == 1) {
+            document.addEventListener('mousemove', logMouse);
+            function logMouse(e) { // Logs mouse data in e
+                document.documentElement.style.setProperty('--sViewer_xPos', e.screenX + "px");
+                document.documentElement.style.setProperty('--sViewer_yPos', e.screenY + "px");
+            }
+        }
+
+        // Update Positions
+        document.getElementById('test1').innerHTML = mouseDown; // Check for mouse activity (dev)
+        document.documentElement.style.setProperty('--sViewer_xPos', 1 + "px");
+        document.documentElement.style.setProperty('--sViewer_yPos', 1 + "px");
+    }
+    function thread() { // Game loop
+
+        test(); // Tests loop activity
+        updateWindowPositions();
+
+
+        setTimeout(function(){ thread(); }, 33); // Loops tick
+    }
+
+    thread() // Initiate game
+
+</script>
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}

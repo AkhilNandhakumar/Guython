@@ -39,6 +39,9 @@ def mainpage():
     final = str(temp) + "°C"
     return render_template("main_page.html", temp=final)
 
+@app.route('/game')
+def gamepage():
+    return render_template("game.html")
 
 # connects /kangaroos path to render kangaroos.html
 @app.route('/kangaroos/')
