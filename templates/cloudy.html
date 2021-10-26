@@ -1,0 +1,87 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Home" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+<!- Try building a new body here ->
+<div id = "first-block">
+    <p id="weather">Weather </p>
+    <p id="today">Today: </p>
+    <p>{{temp}}</p>
+    <p class = "desc">partly cloudy</p>
+    <p name = "temp" id = "temp"></p>
+    <p name = "desc" id = "desc"></p>
+</div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chivo&family=Londrina+Outline&family=Londrina+Shadow&display=swap');
+         body {
+    text-align:center;
+    color: lightgray;
+      background: linear-gradient(-45deg, #ffd587, #cbff94, #b8f8ff);
+      background-size: 800% 800%;
+      animation: gradient 14s ease infinite;
+      }
+
+        #first-block{
+            text-align:middle;
+            color: Red;
+            font-family: 'Londrina Shadow', cursive;
+            font-size: 280px;
+
+      }
+
+      #first-block .desc{
+            text-align:middle;
+            color: Red;
+            font-family: 'Londrina Shadow', cursive;
+            font-size: 230px;
+            margin-top:-7%;
+
+      }
+
+      #first-block #weather{
+            text-align:middle;
+            color: Red;
+            font-family: 'Londrina Shadow', cursive;
+            font-size: 200px;
+
+      }
+
+      #first-block #today{
+            text-align:middle;
+            color: Red;
+            font-family: 'Londrina Shadow', cursive;
+            font-size: 200px;
+            margin-top:-7%;
+
+      }
+  }
+    </style>
+<br>
+<div style=" font-size: 50px; color: white; color: 35px">
+    <p>Design Wireframe</p>
+</div>
+
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin: 0% 15% 0%; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+    <iframe loading="lazy" style="position: absolute; width: 70%; height: 70%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAEoIwJCS6I&#x2F;view?embed"
+    </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAEoIwJCS6I&#x2F;view?utm_content=DAEoIwJCS6I&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">wireframe</a> by Anika Sharma
+
+
+
+
+
+
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}

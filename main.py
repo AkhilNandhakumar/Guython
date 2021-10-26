@@ -19,25 +19,37 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     response = requests.get(
-        "https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
+        "https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=-117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
     text = response.json()
     temp = text["data"][0]["temp"]
     imagee = text["data"][0]["weather"]["icon"]
+    desc = text["data"][0]["weather"]["description"]
     final = str(temp) + "°C"
     ffinal = str(temp * 9 / 5 + 32) + "°F"
     img = "https://www.weatherbit.io/static/img/icons/" + imagee + ".png"
 
-    return render_template("main_page.html", temp=final, tempf=ffinal, image=img)
+    if desc.lower() == "sunny":
+        return render_template("Sunny.html", temp=ffinal)
+    else:
+        return render_template("cloudy.html", temp=ffinal)
 
 
 @app.route('/main_page')
 def mainpage():
+    # Getting API Response based on San Diego Longitude and Latitude.
     response = requests.get(
-        "https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
+        "https://api.weatherbit.io/v2.0/current?lat=33.0167&lon=-117.1115&key=eeb67b06f33d4a3db7ae9df9d3518f4d")
+    # Converting api response into a readable JSON file
     text = response.json()
+    # Navigating through the lists to reach temperature value.
     temp = text["data"][0]["temp"]
+    # Making a string that will display the temperature as ex. 13 °C
     final = str(temp) + "°C"
-    return render_template("main_page.html", temp=final)
+    # Returning the html template for the main page with the temperature variable from the api.
+    imagee = text["data"][0]["weather"]["icon"]
+    ffinal = str(temp * 9 / 5 + 32) + "°F"
+    img = "https://www.weatherbit.io/static/img/icons/" + imagee + ".png"
+    return render_template("Sunny.html", temp=ffinal)
 
 @app.route('/game')
 def gamepage():
