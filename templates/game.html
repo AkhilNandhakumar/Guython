@@ -91,8 +91,10 @@ Empty
 
 
     <p class="test0" id="test0">null</p> <!-- Used for verifying the game loop is running-->
-    <p class="test1" id="test1">null</p> <!-- Used for verifying mouse action-->
-    <p class="test1" id="test2">null</p> <!-- Used for verifying mouse movement-->
+    <p class="test0" id="test1">null</p> <!-- Used for verifying mouse action-->
+    <p class="test0" id="test2">null</p> <!-- Used for verifying mouse movement-->
+    <p class="test0" id="test3">null</p> <!-- Used for testing with an array-->
+    <p class="test0" id="test4">null</p> <!-- Used for testing with an array-->
 </div>
 
 
@@ -108,6 +110,13 @@ Empty
     let sExXMouseGap = 0; let sExYMouseGap = 0; // Gap between stock exchanger and mouse
     let windowDragged = 0; // Used for determining which window is being currently dragged
     let sExZ = 1; let sGrZ = 0; // Stores windows Z Index
+    let stockData = [["Candy Morse", 30, "Serving candy since white vans were a thing!"], ["Ramanujan's Perfect Gelato", 15, "Replacing Frost since 2021"], ["Moore's Chicken", 67, "Better than KFC!"]];
+    let stockHistory = [[],[],[]];
+    // stockData = stockData.concat(["Jakub's Burgers",2]) // Example of how to create a new stock an associated information
+    // stockData[3][2] = "Best Burger's ever!" // Example of how to append new information to a specific stock
+    for (let i = 0; i < 10; i++) {
+        stockData = stockData.concat(Math.floor(100 * Math.random()))
+    }
 
     document.addEventListener('mousemove', logMouse); // Updates mouseX and mouseY when the mouse moves
 
@@ -137,6 +146,9 @@ Empty
     function test() {
         test0 += 1
         document.getElementById('test0').innerHTML = test0;
+
+        document.getElementById('test3').innerHTML = stockData;
+        document.getElementById('test4').innerHTML = stockData[1][0];
     }
 
     function updateWindowPositions() {
