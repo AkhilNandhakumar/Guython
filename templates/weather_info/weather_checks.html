@@ -18,8 +18,9 @@
     }
 
     .titleOfHomePage {
-        padding: 2%;
+        padding: 3%;
         font-size: 40px;
+        margin-bottom: 5px;
     }
     .row {
         border-style: solid;
@@ -47,12 +48,23 @@
         -1px 1px 0 #000,
         1px 1px 0 #000;
     }
+    .disco {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        margin-left: -145px;
+        margin-top: 0px;
+        z-index: -1;
+        display: none;
+    }
 
 
 </style>
+<img id="disco" class="disco" src="https://img1.picmix.com/output/stamp/normal/4/6/2/5/505264_37792.gif">
 <div class="titleOfHomePage">
     <p1 style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" >Weather Checker & Tips</p1>
 </div>
+<p style="font-size: 23px;text-align: center; padding-left: 200px; padding-right: 200px;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Everyday, our lives are affected by the weather. But how can you tell what the weather is like without looking outside? Don't worry, this page will help you understand weather better. First, check off the correct checkboxes regarding what the weather is like. Checking these boxes reveals images that show what the weather looks like, and what you should wear. Always make sure to check the weather before going outside.</p>
 <div class="row">
     <form action="/lab4/" id="stub" method="POST" ></form>
     <div style="font-size: 25px" class="col-sm">
@@ -110,60 +122,87 @@
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://wallpaperaccess.com/full/2312673.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     // cloudy background
     function bgChanger2(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://wallpaperaccess.com/full/862202.png')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     // sunny background
     function bgChanger3(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://www.pngmagic.com/product_images/all-free-download-blue-gradient-background.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     // default background
     function bgChanger4(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp4465199.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     // rain background
     function bgChanger5(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/D8qa-2E/blurry-city-skyline-window-view-sad-bad-weather-rain-drops-background_rzeld4gxs_thumbnail-1080_01.png')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     // snow background
     function bgChanger6(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://ak.picdn.net/shutterstock/videos/14184539/thumb/1.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     // blizzard background
     function bgChanger7(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://ak.picdn.net/shutterstock/videos/14844505/thumb/1.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     // lava background
     function bgChanger8(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://cdn.wallpapersafari.com/36/1/y73Nqt.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     // acid background
     function bgChanger9(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://ak.picdn.net/shutterstock/videos/31938277/thumb/1.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
     }
     //wasteland background
     function bgChanger10(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/9a/df/e0/9adfe0dbdf5170923090a6955cd7c702.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'none'
+    }
+    function Surprise() {
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://www.guinnessworldrecords.com/Images/Largest-Easter-Egg-decoration_tcm25-567653.jpg')"
+        var img = document.getElementById('disco');
+        img.style.display = 'inline'
     }
     var buttonA = document.getElementById('checkA');
     var buttonB = document.getElementById('checkB');
@@ -260,6 +299,10 @@
     })
 </script>
 <script>
+    var buttonA = document.getElementById('checkA');
+    var buttonB = document.getElementById('checkB');
+    var buttonC = document.getElementById('checkC');
+    var buttonD = document.getElementById('checkD');
     var buttonE = document.getElementById('checkE');
     var buttonF = document.getElementById('checkF');
     buttonE.addEventListener("change", function() {
@@ -275,7 +318,8 @@
             document.getElementById('img5').src = "/static/acid.png"
             document.getElementById('img6').src = "/static/hazmat.png"
             bgChanger9()
-        } else {
+        }
+        else {
             document.getElementById('img5').src = "/static/question.png"
             document.getElementById('img6').src = "/static/question.png"
             bgChanger4()
@@ -302,6 +346,27 @@
             document.getElementById('img5').src = "/static/question.png"
             document.getElementById('img6').src = "/static/question.png"
             bgChanger4()
+        }
+    })
+</script>
+<script>
+    var buttonA = document.getElementById('checkA');
+    var buttonB = document.getElementById('checkB');
+    var buttonC = document.getElementById('checkC');
+    var buttonD = document.getElementById('checkD');
+    var buttonE = document.getElementById('checkE');
+    var buttonF = document.getElementById('checkF');
+    buttonB.addEventListener("change", function() {
+        if (buttonB.checked && buttonE.checked) {
+            buttonF.addEventListener("change", function() {
+                if (buttonF.checked && buttonD.checked) {
+                    buttonA.addEventListener("change", function() {
+                        if (buttonA.checked && buttonC.checked) {
+                            Surprise()
+                        }
+                    })
+                }
+            })
         }
     })
 </script>
