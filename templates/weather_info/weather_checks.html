@@ -12,8 +12,9 @@
     body {
         font-size: 15px;
         text-align: center;
-        background-size: 300% 300%;
-        animation: gradient 35s ease infinite;
+        background-image: url("https://wallpapercave.com/wp/wp4465199.jpg");
+        background-size: 200% 200%;
+        animation: none;
     }
 
     .titleOfHomePage {
@@ -30,6 +31,10 @@
         border-width: 2px;
         border-color: rgba(0,0,0,0);
         padding: 70px 0;
+        text-shadow: -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
     }
     .col-lg {
         border-style: solid;
@@ -37,12 +42,16 @@
         border-color: rgba(0,0,0,0);
         padding: 10px 0;
         max-height: 175px;
+        text-shadow: -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
     }
 
 
 </style>
 <div class="titleOfHomePage">
-    <p1>Weather Checker & Tips</p1>
+    <p1 style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" >Weather Checker & Tips</p1>
 </div>
 <div class="row">
     <form action="/lab4/" id="stub" method="POST" ></form>
@@ -96,35 +105,65 @@
     </div>
 </div>
 <script>
+    // sunny/cloudy background
     function bgChanger(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://wallpaperaccess.com/full/2312673.jpg')"
     }
+    // cloudy background
     function bgChanger2(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
         document.body.style.backgroundImage = "url('https://wallpaperaccess.com/full/862202.png')"
     }
+    // sunny background
     function bgChanger3(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
-        document.body.style.backgroundImage = "url('https://ichef.bbci.co.uk/news/976/cpsprodpb/62EB/production/_107832352_66753558_10219668449930342_4040915041229209600_o.jpg')"
+        document.body.style.backgroundImage = "url('https://www.pngmagic.com/product_images/all-free-download-blue-gradient-background.jpg')"
     }
+    // default background
     function bgChanger4(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
-        document.body.style.backgroundImage = "url('https://ichef.bbci.co.uk/news/976/cpsprodpb/62EB/production/_107832352_66753558_10219668449930342_4040915041229209600_o.jpg')"
+        document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp4465199.jpg')"
     }
+    // rain background
     function bgChanger5(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
-        document.body.style.backgroundImage = "url('https://ichef.bbci.co.uk/news/976/cpsprodpb/62EB/production/_107832352_66753558_10219668449930342_4040915041229209600_o.jpg')"
+        document.body.style.backgroundImage = "url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/D8qa-2E/blurry-city-skyline-window-view-sad-bad-weather-rain-drops-background_rzeld4gxs_thumbnail-1080_01.png')"
     }
+    // snow background
     function bgChanger6(){
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
-        document.body.style.backgroundImage = "url('https://ichef.bbci.co.uk/news/976/cpsprodpb/62EB/production/_107832352_66753558_10219668449930342_4040915041229209600_o.jpg')"
+        document.body.style.backgroundImage = "url('https://ak.picdn.net/shutterstock/videos/14184539/thumb/1.jpg')"
+    }
+    // blizzard background
+    function bgChanger7(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://ak.picdn.net/shutterstock/videos/14844505/thumb/1.jpg')"
+    }
+    // lava background
+    function bgChanger8(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://cdn.wallpapersafari.com/36/1/y73Nqt.jpg')"
+    }
+    // acid background
+    function bgChanger9(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://ak.picdn.net/shutterstock/videos/31938277/thumb/1.jpg')"
+    }
+    //wasteland background
+    function bgChanger10(){
+        document.body.style.backgroundSize = "150% 150%"
+        document.body.style.animation = 'none'
+        document.body.style.backgroundImage = "url('https://i.pinimg.com/originals/9a/df/e0/9adfe0dbdf5170923090a6955cd7c702.jpg')"
     }
     var buttonA = document.getElementById('checkA');
     var buttonB = document.getElementById('checkB');
@@ -136,6 +175,7 @@
         } else if (buttonA.checked && !buttonB.checked) {
             document.getElementById('pic1').src = "/static/sunny.png"
             document.getElementById('pic2').src = "/static/sunny_clothes.png"
+            bgChanger3()
         } else if (!buttonA.checked && buttonB.checked) {
             document.getElementById('pic1').src = "/static/cloudy.png"
             document.getElementById('pic2').src = "/static/cloudy_clothing.png"
@@ -143,6 +183,7 @@
         } else {
             document.getElementById('pic1').src = "/static/question.png"
             document.getElementById('pic2').src = "/static/question.png"
+            bgChanger4()
         }
     })
 </script>
@@ -158,6 +199,7 @@
         else if (!buttonB.checked && buttonA.checked) {
             document.getElementById('pic1').src = "/static/sunny.png"
             document.getElementById('pic2').src = "/static/sunny_clothes.png"
+            bgChanger3()
         }
         else if (buttonB.checked && !buttonA.checked) {
             document.getElementById('pic1').src = "/static/cloudy.png"
@@ -167,6 +209,7 @@
         else {
             document.getElementById('pic1').src = "/static/question.png"
             document.getElementById('pic2').src = "/static/question.png"
+            bgChanger4()
         }
     })
 </script>
@@ -177,15 +220,19 @@
         if (buttonC.checked && buttonD.checked) {
             document.getElementById('img3').src = "/static/blizzard.png"
             document.getElementById('img4').src = "/static/blizzard_clothes.png"
+            bgChanger7()
         } else if (buttonC.checked && !buttonD.checked) {
             document.getElementById('img3').src = "/static/raining.png"
             document.getElementById('img4').src = "/static/raining_clothes.png"
+            bgChanger5()
         } else if (!buttonC.checked && buttonD.checked) {
             document.getElementById('img3').src = "/static/snowing.png"
             document.getElementById('img4').src = "/static/snowing_clothes.png"
+            bgChanger6()
         } else {
             document.getElementById('img3').src = "/static/question.png"
             document.getElementById('img4').src = "/static/question.png"
+            bgChanger4()
         }
     })
 </script>
@@ -196,15 +243,19 @@
         if (buttonD.checked && buttonC.checked) {
             document.getElementById('img3').src = "/static/blizzard.png"
             document.getElementById('img4').src = "/static/blizzard_clothes.png"
+            bgChanger7()
         } else if (!buttonD.checked && buttonC.checked) {
             document.getElementById('img3').src = "/static/raining.png"
             document.getElementById('img4').src = "/static/raining_clothes.png"
+            bgChanger5()
         } else if (buttonD.checked && !buttonC.checked) {
             document.getElementById('img3').src = "/static/snowing.png"
             document.getElementById('img4').src = "/static/snowing_clothes.png"
+            bgChanger6()
         } else {
             document.getElementById('img3').src = "/static/question.png"
             document.getElementById('img4').src = "/static/question.png"
+            bgChanger4()
         }
     })
 </script>
@@ -215,15 +266,19 @@
         if (buttonE.checked && buttonF.checked) {
             document.getElementById('img5').src = "/static/wasteland.png"
             document.getElementById('img6').src = "/static/headstone.png"
+            bgChanger10()
         } else if (buttonE.checked && !buttonF.checked) {
             document.getElementById('img5').src = "/static/volcano.png"
             document.getElementById('img6').src = "/static/volcano_suit.png"
+            bgChanger8()
         } else if (!buttonE.checked && buttonF.checked) {
             document.getElementById('img5').src = "/static/acid.png"
             document.getElementById('img6').src = "/static/hazmat.png"
+            bgChanger9()
         } else {
             document.getElementById('img5').src = "/static/question.png"
             document.getElementById('img6').src = "/static/question.png"
+            bgChanger4()
         }
     })
 </script>
@@ -234,15 +289,19 @@
         if (buttonF.checked && buttonE.checked) {
             document.getElementById('img5').src = "/static/wasteland.png"
             document.getElementById('img6').src = "/static/headstone.png"
+            bgChanger10()
         } else if (!buttonF.checked && buttonE.checked) {
             document.getElementById('img5').src = "/static/volcano.png"
             document.getElementById('img6').src = "/static/volcano_suit.png"
+            bgChanger8()
         } else if (buttonF.checked && !buttonE.checked) {
             document.getElementById('img5').src = "/static/acid.png"
             document.getElementById('img6').src = "/static/hazmat.png"
+            bgChanger9()
         } else {
             document.getElementById('img5').src = "/static/question.png"
             document.getElementById('img6').src = "/static/question.png"
+            bgChanger4()
         }
     })
 </script>
