@@ -33,30 +33,38 @@ Empty
         --sExW_zIndex: 1;
         --sGrW_zIndex: auto;
     }
+    .stockGraph {
+        padding-left: 8px;
+        line-height : 10px;
+        letter-spacing: 2px;
+        font-size: 14px
+    }
     .stockGraphWindow {
         border: 1px solid white;
         font-family: monospace;
-        width: 800px;
-        height: 800px;
+        width: 600px;
+        height: 600px;
         text-align: left;
         position: absolute;
         margin-left: var(--sView_xPos);
         margin-top: var(--sView_yPos);
         z-index: var(--sGrW_zIndex);
         background-color: black;
+        background: none; /* Testing purposes */
     }
 
     .stockExchangeWindow {
         border: 1px solid white;
         font-family: monospace;
-        width: 800px;
-        height: 800px;
+        width: 600px;
+        height: 600px;
         text-align: left;
         position: absolute;
         margin-left: var(--sEx_xPos);
         margin-top: var(--sEx_yPos);
         z-index: var(--sExW_zIndex);
         background-color: black;
+        background: none; /* Testing purposes */
     }
 
     .windowNavbar {
@@ -83,6 +91,10 @@ Empty
 
     <div class="stockGraphWindow">
         <p class="windowNavbar">Stock Viewer</p>
+
+        <!-- Graph -->
+        <p class="stockGraph" id="stockGraphData">stock graph (null)</p>
+
     </div>
 
     <div class="stockExchangeWindow">
@@ -91,17 +103,23 @@ Empty
 
 
     <p class="test0" id="test0">null</p> <!-- Used for verifying the game loop is running-->
+    <p class="test0" id="test6">null</p> <!-- Used for time-->
     <p class="test0" id="test1">null</p> <!-- Used for verifying mouse action-->
     <p class="test0" id="test2">null</p> <!-- Used for verifying mouse movement-->
     <p class="test0" id="test3">null</p> <!-- Used for testing with an array-->
     <p class="test0" id="test4">null</p> <!-- Used for testing with an array-->
+    <p class="test0" id="test5">null</p> <!-- Used for testing with an array-->
 </div>
 
 
 <script>
     // Declare functions and variables
 
-    let test0 = 0 // To prove the loop is running
+    let ticks = 0 // To prove the loop is running
+    let hour = 0 // To prove the loop is running
+
+    let seed = 9 // Starting seed to seed everything else
+
     let sViewX = 90; let sViewY = 90; // Declares stockViewer position
     let sExX = 900; let sExY = 90; // Declares stockExchanger position
     let mouseDown = [0, 0, 0, 0, 0, 0, 0, 0, 0]; let mouseDownCount = 0; let mouseX = 0; let mouseY = 0; // Declare mouse variables
@@ -110,15 +128,47 @@ Empty
     let sExXMouseGap = 0; let sExYMouseGap = 0; // Gap between stock exchanger and mouse
     let windowDragged = 0; // Used for determining which window is being currently dragged
     let sExZ = 1; let sGrZ = 0; // Stores windows Z Index
-    let stockData = [["Candy Morse", 30, "Serving candy since white vans were a thing!"], ["Ramanujan's Perfect Gelato", 15, "Replacing Frost since 2021"], ["Moore's Chicken", 67, "Better than KFC!"]];
-    let stockHistory = [[],[],[]];
-    // stockData = stockData.concat(["Jakub's Burgers",2]) // Example of how to create a new stock an associated information
-    // stockData[3][2] = "Best Burger's ever!" // Example of how to append new information to a specific stock
-    for (let i = 0; i < 10; i++) {
-        stockData = stockData.concat(Math.floor(100 * Math.random()))
+    let stockGraphData = "" // Declares stockGraphData
+    let stockGraphSize = 50 // Graph Size
+
+    let stockCount = 15 // Number of stocks ### IMPORTANT TO KEEP RIGHT ###
+
+    // Declaration of stock variables
+
+    let stockData = [
+        ["Candy Morse", noise(seed + 9) * 100, "Serving candy since white vans were a thing!"],
+        ["Ramanujan's Perfect Gelato", noise(seed + 17) * 100, "Replacing Frost since 2021"],
+        ["Moore's Chicken", noise(seed + 31) * 100, "Better than KFC!"]
+    ];
+
+    let stockHistory = [[],[],[],[],[],[],[],[],[],[]];
+
+    for (let y = 0; y < 100; y++) { // Creates starting randomness for the stocks (Stock History Length)
+        for (let x = 0; x < 10; x++) { // Stock number
+            stockHistory[x][y] = 50 + Math.floor(50 * Math.random())
+        }
     }
 
+    // stockData = stockData.push(["Jakub's Burgers",2]) // Example of how to create a new stock an associated information
+    // stockData[3][2] = "Best Burger's ever!" // Example of how to append new information to a specific stock
+
+    // Noise Function
+
+    let noiseData = []
+    for (let y = 0; y < stockCount; y++){ // y = len of stock list
+        noiseData.push([])
+        for (let x = 0; x < 3; x++) {
+            noiseData[y].push(newSeed(6))
+        }
+    }
+
+    // End of declaration
+
     document.addEventListener('mousemove', logMouse); // Updates mouseX and mouseY when the mouse moves
+
+    function noise(seed) {
+        return (((seed * 604211) + 667588) % 1048573) / 1048572
+    }
 
     function logMouse(e) { // Logs mouse data in e
         mouseX = e.pageX;
@@ -144,11 +194,31 @@ Empty
 
 
     function test() {
-        test0 += 1
-        document.getElementById('test0').innerHTML = test0;
+        document.getElementById('test0').innerHTML = ticks;
+        document.getElementById('test6').innerHTML = hour;
 
-        document.getElementById('test3').innerHTML = stockData;
+        document.getElementById('test3').innerHTML = noiseData;
         document.getElementById('test4').innerHTML = stockData[1][0];
+        document.getElementById('test5').innerHTML = stockHistory;
+    }
+
+    function updateGraphAndDisplay() {
+        stockGraphData = ""
+        for (let y = 0; y < stockGraphSize; y++) { // Creates starting randomness for the stocks
+            for (let x = hour; x < stockGraphSize + hour; x++) {
+
+                if (stockHistory[0][x] / 2 === 50 - y) { //(First is company, second is history)
+                    stockGraphData = stockGraphData.concat("#")
+                } else if (stockHistory[0][x] / 2 >= 50 - y) {
+                    stockGraphData = stockGraphData.concat("=")
+                } else {
+                    stockGraphData = stockGraphData.concat(".")
+                }
+            }
+            stockGraphData = stockGraphData.concat("<br>")
+        }
+
+        document.getElementById('stockGraphData').innerHTML = stockGraphData;
     }
 
     function updateWindowPositions() {
@@ -158,7 +228,7 @@ Empty
 
         if (mouseDown[0] === 1) {
 
-            if (mouseX >= sViewX && mouseX <= sViewX + 800 && mouseY >= sViewY && mouseY <= sViewY + 800 && sGrZ === 1 && windowDragged === 0 || windowDragged === 1) { // Updates drag for sView
+            if (mouseX >= sViewX && mouseX <= sViewX + 600 && mouseY >= sViewY && mouseY <= sViewY + 600 && sGrZ === 1 && windowDragged === 0 || windowDragged === 1) { // Updates drag for sView
                 sViewX = mouseX - sVeXMouseGap;
                 sViewY = mouseY - sVeYMouseGap;
 
@@ -171,7 +241,7 @@ Empty
                 sExZ = 0
             }
 
-            if (mouseX >= sExX && mouseX <= sExX + 800 && mouseY >= sExY && mouseY <= sExY + 800 && sExZ === 1 && windowDragged === 0 || windowDragged === 2) { // Updates drag for sEx
+            if (mouseX >= sExX && mouseX <= sExX + 600 && mouseY >= sExY && mouseY <= sExY + 600 && sExZ === 1 && windowDragged === 0 || windowDragged === 2) { // Updates drag for sEx
                 sExX = mouseX - sExXMouseGap;
                 sExY = mouseY - sExYMouseGap;
 
@@ -183,7 +253,7 @@ Empty
                 sGrZ = 0
             }
 
-            if (mouseX >= sViewX && mouseX <= sViewX + 800 && mouseY >= sViewY && mouseY <= sViewY + 800 && windowDragged === 0 || windowDragged === 1) { // Updates drag for sView
+            if (mouseX >= sViewX && mouseX <= sViewX + 600 && mouseY >= sViewY && mouseY <= sViewY + 600 && windowDragged === 0 || windowDragged === 1) { // Updates drag for sView
                 sViewX = mouseX - sVeXMouseGap;
                 sViewY = mouseY - sVeYMouseGap;
 
@@ -196,7 +266,7 @@ Empty
                 sExZ = 0
             }
 
-            if (mouseX >= sExX && mouseX <= sExX + 800 && mouseY >= sExY && mouseY <= sExY + 800 && windowDragged === 0 || windowDragged === 2) { // Updates drag for sEx
+            if (mouseX >= sExX && mouseX <= sExX + 600 && mouseY >= sExY && mouseY <= sExY + 600 && windowDragged === 0 || windowDragged === 2) { // Updates drag for sEx
                 sExX = mouseX - sExXMouseGap;
                 sExY = mouseY - sExYMouseGap;
 
@@ -217,7 +287,8 @@ Empty
             document.documentElement.style.setProperty('--sEx_yPos', sExY + "px");
 
 
-        }   else {
+        } else {
+
             // Resets windowDragged
             windowDragged = 0
 
@@ -234,11 +305,18 @@ Empty
         document.getElementById('test1').innerHTML = mouseDown; // Check for mouse activity (dev)
         document.getElementById('test2').innerHTML = mouseX + " " + mouseY; // Check for mouse activity (dev)
     }
+    function elapseTime() {
+        ticks += 1 // Elapses time
+        if (ticks % 100 === 0) {
+            hour += 1
+        }
+    }
     function thread() { // Game loop
-
+        elapseTime(); // Timing
         test(); // Tests loop activity
         updateWindowPositions();
 
+        updateGraphAndDisplay();
 
         setTimeout(function(){ thread(); }, 15); // Loops tick
     }
