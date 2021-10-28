@@ -96,6 +96,7 @@
         <input type="checkbox" id="checkC">
         <label for="checkD" style="color: white">Snow</label>
         <input type="checkbox" id="checkD">
+        <!-- Checkboxes for Raining and Snow -->
     </div>
     <div class="col-lg">
         <img src="/static/question.png" id="img3" style="width: 150px; height: 150px">
@@ -109,6 +110,7 @@
         <input type="checkbox" id="checkE">
         <label for="checkF" style="color: white">Raining Acid</label>
         <input type="checkbox" id="checkF">
+        <!-- Checkboxes for Volcano Erupation and Raining Acid -->
     </div>
     <div class="col-lg">
         <img src="/static/question.png" id="img5" style="width: 150px; height: 150px">
@@ -198,6 +200,7 @@
         var img = document.getElementById('disco');
         img.style.display = 'none'
     }
+    //easter egg background, also changes 'disco' image to appear on screen
     function Surprise() {
         document.body.style.backgroundSize = "150% 150%"
         document.body.style.animation = 'none'
@@ -205,6 +208,7 @@
         var img = document.getElementById('disco');
         img.style.display = 'inline'
     }
+    // this event listener checks the status of checkboxes "Sunny" and "Cloudy" (A and B), and changes the image source of the question marks to match the information given
     var buttonA = document.getElementById('checkA');
     var buttonB = document.getElementById('checkB');
     buttonA.addEventListener("change", function() {
@@ -228,6 +232,8 @@
     })
 </script>
 <script>
+    // also checks "Sunny" and "Cloudy", but in the opposite order
+    // having two event listeners per row allows the checkboxes to give the same results no matter what order they're checked in
     var buttonA = document.getElementById('checkA');
     var buttonB = document.getElementById('checkB');
     buttonB.addEventListener("change", function() {
@@ -254,6 +260,7 @@
     })
 </script>
 <script>
+// checks "Raining" and "Snow"
     var buttonC = document.getElementById('checkC');
     var buttonD = document.getElementById('checkD');
     buttonC.addEventListener("change", function() {
@@ -277,6 +284,7 @@
     })
 </script>
 <script>
+// checks "Snow" and "Raining"
     var buttonC = document.getElementById('checkC');
     var buttonD = document.getElementById('checkD');
     buttonD.addEventListener("change", function() {
@@ -300,10 +308,7 @@
     })
 </script>
 <script>
-    var buttonA = document.getElementById('checkA');
-    var buttonB = document.getElementById('checkB');
-    var buttonC = document.getElementById('checkC');
-    var buttonD = document.getElementById('checkD');
+// checks "Volcano Eruption" and "Raining Acid"
     var buttonE = document.getElementById('checkE');
     var buttonF = document.getElementById('checkF');
     buttonE.addEventListener("change", function() {
@@ -328,6 +333,7 @@
     })
 </script>
 <script>
+// checks "Raining Acid" and "Volcano Eruption"
     var buttonE = document.getElementById('checkE');
     var buttonF = document.getElementById('checkF');
     buttonF.addEventListener("change", function() {
@@ -351,6 +357,8 @@
     })
 </script>
 <script>
+// event listener for easter egg, if the checkboxes are checked in the correct order, then the background is changed to a large easter egg
+// the clues for activating this easter egg are hidden in the paragraph at the top of the page
     var buttonA = document.getElementById('checkA');
     var buttonB = document.getElementById('checkB');
     var buttonC = document.getElementById('checkC');
@@ -363,7 +371,7 @@
                 if (buttonF.checked && buttonD.checked) {
                     buttonA.addEventListener("change", function() {
                         if (buttonA.checked && buttonC.checked) {
-                            Surprise()
+                           Surprise()
                         }
                     })
                 }
