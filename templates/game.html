@@ -50,7 +50,7 @@ Empty
         margin-top: var(--sView_yPos);
         z-index: var(--sGrW_zIndex);
         background-color: black;
-        background: none; /* Testing purposes */
+        /* background: none; /* Testing purposes */
     }
 
     .stockExchangeWindow {
@@ -64,7 +64,7 @@ Empty
         margin-top: var(--sEx_yPos);
         z-index: var(--sExW_zIndex);
         background-color: black;
-        background: none; /* Testing purposes */
+        /* background: none; /* Testing purposes */
     }
 
     .windowNavbar {
@@ -93,7 +93,7 @@ Empty
         <p class="windowNavbar">Stock Viewer</p>
 
         <!-- Graph -->
-        <p class="stockGraph" id="stockGraphData">stock graph (null)</p>
+        <p class="stockGraph" id="stockGraphData">error</p>
 
     </div>
 
@@ -109,6 +109,8 @@ Empty
     <p class="test0" id="test3">null</p> <!-- Used for testing with an array-->
     <p class="test0" id="test4">null</p> <!-- Used for testing with an array-->
     <p class="test0" id="test5">null</p> <!-- Used for testing with an array-->
+    <p class="test0" id="test7">null</p> <!-- Used for testing with an array-->
+    <p class="test0" id="test8">null</p> <!-- Used for testing with an array-->
 </div>
 
 
@@ -117,8 +119,9 @@ Empty
 
     let ticks = 0 // To prove the loop is running
     let hour = 0 // To prove the loop is running
+    let test69 = 0
 
-    let seed = 9 // Starting seed to seed everything else
+    let seed = Math.random() // Starting seed to seed everything else
 
     let sViewX = 90; let sViewY = 90; // Declares stockViewer position
     let sExX = 900; let sExY = 90; // Declares stockExchanger position
@@ -128,24 +131,31 @@ Empty
     let sExXMouseGap = 0; let sExYMouseGap = 0; // Gap between stock exchanger and mouse
     let windowDragged = 0; // Used for determining which window is being currently dragged
     let sExZ = 1; let sGrZ = 0; // Stores windows Z Index
-    let stockGraphData = "" // Declares stockGraphData
-    let stockGraphSize = 50 // Graph Size
+    let stockGraphData = ""; // Declares stockGraphData
+    let stockGraphSize = 50; // Graph Size
 
-    let stockCount = 15 // Number of stocks ### IMPORTANT TO KEEP RIGHT ###
+    let stockCount = 4; // Number of stocks ### IMPORTANT TO KEEP RIGHT ###
+    let currentStockGraphed = 0;
 
     // Declaration of stock variables
+    // Seed + consecutive fibonacci number please!
 
     let stockData = [
-        ["Candy Morse", noise(seed + 9) * 100, "Serving candy since white vans were a thing!"],
-        ["Ramanujan's Perfect Gelato", noise(seed + 17) * 100, "Replacing Frost since 2021"],
-        ["Moore's Chicken", noise(seed + 31) * 100, "Better than KFC!"]
+        ["Candy Morse", ((noise(seed + 2, 1) * 12 ) ** 2 + 9).toFixed(2), "Serving candy since white vans were a thing!"],
+        ["Ramanujan's Perfect Gelato", ((noise(seed + 3, 1) * 12 ) ** 2 + 9).toFixed(2), "Replacing Frost since 2021"],
+        ["Moore's Chicken", ((noise(seed + 5, 1) * 12 ) ** 2 + 9).toFixed(2), "Better than KFC!"],
+        ["Jakub's Fishies", ((noise(seed + 7, 1) * 12 ) ** 2 + 9).toFixed(2), "Fishy???"]
     ];
 
-    let stockHistory = [[],[],[],[],[],[],[],[],[],[]];
+    let stockHistory = [];
 
-    for (let y = 0; y < 100; y++) { // Creates starting randomness for the stocks (Stock History Length)
-        for (let x = 0; x < 10; x++) { // Stock number
-            stockHistory[x][y] = 50 + Math.floor(50 * Math.random())
+    for (let i = 0; i < stockCount; i++) {
+        stockHistory.push([])
+    }
+
+    for (let y = 0; y < 50; y++) { // Creates starting randomness for the stocks (Stock History Length)
+        for (let x = 0; x < stockCount; x++) { // Stock number
+            stockHistory[x][y] =  100 * noise(stockData[x][1], y) //Math.round(100 * noise(1, 1))
         }
     }
 
@@ -154,11 +164,11 @@ Empty
 
     // Noise Function
 
-    let noiseData = []
+    let noiseData = [];
     for (let y = 0; y < stockCount; y++){ // y = len of stock list
         noiseData.push([])
         for (let x = 0; x < 3; x++) {
-            noiseData[y].push(newSeed(6))
+            noiseData[y].push(noise(6, 1))
         }
     }
 
@@ -166,8 +176,12 @@ Empty
 
     document.addEventListener('mousemove', logMouse); // Updates mouseX and mouseY when the mouse moves
 
-    function noise(seed) {
-        return (((seed * 604211) + 667588) % 1048573) / 1048572
+    function noise(seed, iterations) {
+        let noise = seed;
+        for (let i = 0; i <= iterations; i++) {
+            noise = ((noise * 604211) + 667588) % 1048573
+        }
+        return noise / 1048572
     }
 
     function logMouse(e) { // Logs mouse data in e
@@ -198,22 +212,27 @@ Empty
         document.getElementById('test6').innerHTML = hour;
 
         document.getElementById('test3').innerHTML = noiseData;
-        document.getElementById('test4').innerHTML = stockData[1][0];
+        document.getElementById('test4').innerHTML = stockData;
         document.getElementById('test5').innerHTML = stockHistory;
+        document.getElementById('test7').innerHTML = findInterpolatedPoint(1, 2, 0.5);;
+        //document.getElementById('test8').innerHTML = stockHistory;
     }
-
+    function findInterpolatedPoint(x1, x2, x) {
+        return x1 * (-3 * (x ** 2) + 2 * (x ** 3) + 1) + x2 * (3 * (x ** 2) - 2 * (x ** 3))
+    }
     function updateGraphAndDisplay() {
+        // y1 (-3(x) ** 2 + 2(x) ** 3 + y2 (3(x) ** 2 - 2(x) ** 3
         stockGraphData = ""
         for (let y = 0; y < stockGraphSize; y++) { // Creates starting randomness for the stocks
-            for (let x = hour; x < stockGraphSize + hour; x++) {
-
-                if (stockHistory[0][x] / 2 === 50 - y) { //(First is company, second is history)
+            for (let x = hour; x < 50 + hour; x++) {
+                if (Math.floor(findInterpolatedPoint(stockHistory[currentStockGraphed][Math.floor(x)], stockHistory[currentStockGraphed][Math.ceil(x)], x) / 2) === 50 - y) { //(First is company, second is history)
                     stockGraphData = stockGraphData.concat("#")
-                } else if (stockHistory[0][x] / 2 >= 50 - y) {
+                } else if (Math.floor(findInterpolatedPoint(stockHistory[currentStockGraphed][Math.floor(x)], stockHistory[currentStockGraphed][Math.ceil(x)], x) / 2) >= 50 - y) {
                     stockGraphData = stockGraphData.concat("=")
                 } else {
                     stockGraphData = stockGraphData.concat(".")
                 }
+
             }
             stockGraphData = stockGraphData.concat("<br>")
         }
@@ -309,6 +328,7 @@ Empty
         ticks += 1 // Elapses time
         if (ticks % 100 === 0) {
             hour += 1
+            slowThread();
         }
     }
     function thread() { // Game loop
@@ -316,9 +336,11 @@ Empty
         test(); // Tests loop activity
         updateWindowPositions();
 
-        updateGraphAndDisplay();
-
         setTimeout(function(){ thread(); }, 15); // Loops tick
+    }
+
+    function slowThread() {
+        updateGraphAndDisplay();
     }
 
     thread() // Initiate game
