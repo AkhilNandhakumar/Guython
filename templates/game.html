@@ -215,20 +215,23 @@ Issue #1 : When dragging one window onto another, windows bug out due to both tr
         document.getElementById('test3').innerHTML = noiseData;
         document.getElementById('test4').innerHTML = stockData;
         document.getElementById('test5').innerHTML = stockHistory;
-        document.getElementById('test7').innerHTML = findInterpolatedPoint(1, 2, 0.5);;
-        //document.getElementById('test8').innerHTML = stockHistory;
+        document.getElementById('test7').innerHTML = findInterpolatedPoint(3, 2, 0.5);
+        //document.getElementById('test8').innerHTML =
     }
+
     function findInterpolatedPoint(x1, x2, x) {
         return x1 * (-3 * (x ** 2) + 2 * (x ** 3) + 1) + x2 * (3 * (x ** 2) - 2 * (x ** 3))
     }
+    function GintNoise(x) {
+        return findInterpolatedPoint(stockHistory[currentStockGraphed][Math.floor(x)], stockHistory[currentStockGraphed][Math.ceil(x)], (x) % 1)
+    }
     function updateGraphAndDisplay() {
-        // y1 (-3(x) ** 2 + 2(x) ** 3 + y2 (3(x) ** 2 - 2(x) ** 3
         stockGraphData = ""
         for (let y = 0; y < stockGraphSize; y++) { // Creates starting randomness for the stocks
-            for (let x = hour; x < 50 + hour; x++) {
-                if (Math.floor(findInterpolatedPoint(stockHistory[currentStockGraphed][Math.floor(x)], stockHistory[currentStockGraphed][Math.ceil(x)], x) / 2) === 50 - y) { //(First is company, second is history)
+            for (let x = hour; x < stockGraphSize + hour; x++) {
+                if (Math.floor(GintNoise(x / 20) / 2) === 50 - y) { //(First is company, second is history)
                     stockGraphData = stockGraphData.concat("#")
-                } else if (Math.floor(findInterpolatedPoint(stockHistory[currentStockGraphed][Math.floor(x)], stockHistory[currentStockGraphed][Math.ceil(x)], x) / 2) >= 50 - y) {
+                } else if (Math.floor(GintNoise(x / 20) / 2) >= 50 - y) {
                     stockGraphData = stockGraphData.concat("=")
                 } else {
                     stockGraphData = stockGraphData.concat(".")
@@ -327,7 +330,7 @@ Issue #1 : When dragging one window onto another, windows bug out due to both tr
     }
     function elapseTime() {
         ticks += 1 // Elapses time
-        if (ticks % 100 === 0) {
+        if (ticks % 20 === 0) {
             hour += 1
             slowThread();
         }
