@@ -23,7 +23,8 @@ def image_formatter(img, img_type):
 def image_data(path=Path('static/assets/'), img_list=None):  # path of static images is defaulted
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            {'source': "shutterstock.com", 'label': "Website Logo", 'file': "clouds.jpg"},
+            {'source': "sh"
+                       "utterstock.com", 'label': "Website Logo", 'file': "clouds.jpg"},
         ]
     # gather analysis data and meta data for each image, adding attributes to each row in table
     for img_dict in img_list:
