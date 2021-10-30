@@ -70,6 +70,14 @@ Jakub | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hac
 Tristan | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
 Vunsh | Final Video | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
 
+### Draft N@TM Final (Tri 1)
+Team Member | Assignment | Issue | Total Score |
+--- | --- | --- | ---
+Anika | | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
+Jakub | Weather Checker & Tips Page | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
+Tristan | Weather Stock Video Game | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
+Vunsh | | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) | |
+
 ### Scores (9/3/21)
 Team: 4/4   
 Jakub: 3.5/4  
