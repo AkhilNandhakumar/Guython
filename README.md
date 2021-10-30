@@ -10,7 +10,7 @@
 3. [Weeks 5,6](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-56-code-tangibles)
 4. [Weeks 7,8](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-78-code-tangibles)
 5. [Weeks 9, 10](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-910-code-tangibles)
-6. [Draft N@TM Final](https://github.com/JakubPonulak/flask_portfolio_hackers#draft-n@tm-final)
+6. [Draft N@TM Final](https://github.com/JakubPonulak/flask_portfolio_hackers#draft-ntm-final-tri-1)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
 ## Contributors:
 Team Member | Anika | Jakub | Tristan | Vunsh |
