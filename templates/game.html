@@ -8,16 +8,19 @@
 {% block body %}
 <!- Try building a new body here ->
 
-<!-- Bug Fix Board (Preferable Ordered by importance / occurrence
-
-Issue #2 : No idea how to draw interpolated points onto ASCII graph
-    Resolved: No
+<!-- Bug Fix / Item Board (Preferable Ordered by importance / occurrence
 
 -->
 
-<!-- Bug graveyard (Copy-paste bug info for future reminiscence ability)
+<!-- Bug / Item graveyard (Copy-paste bug info for future reminiscence ability)
 
 Issue #1 : When dragging one window onto another, windows bug out due to both trying to be dragged (Make only one draggable at a time)
+    Resolved: Yes
+
+Issue #2 : No idea how to draw interpolated points onto ASCII graph
+    Resolved: Yes
+
+Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated noise for perlin noise function
     Resolved: Yes
 
 
@@ -111,6 +114,7 @@ Issue #1 : When dragging one window onto another, windows bug out due to both tr
     <p class="test0" id="test5">null</p> <!-- Used for testing with an array-->
     <p class="test0" id="test7">null</p> <!-- Used for testing with an array-->
     <p class="test0" id="test8">null</p> <!-- Used for testing with an array-->
+    <a href="/main_page">Home</a>
 </div>
 
 
@@ -118,7 +122,7 @@ Issue #1 : When dragging one window onto another, windows bug out due to both tr
     // Declare functions and variables
 
     let ticks = 0 // To prove the loop is running
-    let hour = 0 // To prove the loop is running
+    let hour = 100 // To prove the loop is running
     let stepTime = 50 // Time for one hour to go by
 
     let seed = Math.random() // Starting seed to seed everything else
@@ -136,7 +140,7 @@ Issue #1 : When dragging one window onto another, windows bug out due to both tr
 
     let stockCount = 7; // Number of stocks ### IMPORTANT TO KEEP RIGHT ###
     let currentStockGraphed = 6;
-    let zoom = 15; // How stretched on the X axis the stocks are (This is a constant of which should only be changed to either shorten or lengthen the overall time to play
+    let zoom = 6; // How stretched on the X axis the stocks are (This is a constant of which should only be changed to either shorten or lengthen the overall time to play
     let scale = 2; //
     // Declaration of stock variables
     // Seed + consecutive fibonacci number
@@ -158,9 +162,9 @@ Issue #1 : When dragging one window onto another, windows bug out due to both tr
         stockHistory.push([])
     }
 
-    for (let y = 0; y < 50; y++) { // Creates starting randomness for the stocks (Stock History Length)
+    for (let y = 0; y <= 100; y++) { // Creates starting randomness for the stocks (Stock History Length)
         for (let x = 0; x < stockCount; x++) { // Stock number
-            stockHistory[x][y] =  100 * noise(stockData[x][1], y) //Math.round(100 * noise(1, 1)) 557
+            stockHistory[x][y] = 100 * findPointModifiers((y) / 100)[0] // 100 * noise(stockData[x][1], y) //Math.round(100 * noise(1, 1)) 557
         }
     }
 
@@ -214,15 +218,18 @@ Issue #1 : When dragging one window onto another, windows bug out due to both tr
         //document.getElementById('test8').innerHTML =
     }
 
+    function findPointModifiers(x) {
+        return [(3 * (x ** 2) - 2 * (x ** 3) + (((x - 0.903) / (2 * Math.abs(x - 0.903)) + 0.5) * 23.4 * (-1 * (((x - 0.903) ** 2) + 0.01) ** 0.5 + 0.1))) * (3 * ((x + 0.2) ** 2) - 2 * ((x + 0.2) ** 3)), (3 * (x + 0.2) ** 2 - 2 * (x + 0.2) ** 3)]
+    }
+
     function findInterpolatedPoint(x1, x2, x) {
-        return x1 * (-3 * (x ** 2) + 2 * (x ** 3) + 1) + x2 * (3 * (x ** 2) - 2 * (x ** 3))
+        return x1 * (-3 * (x ** 2) + 2 * (x ** 3) + 1) + x2 * (3 * (x ** 2) - 2 * (x ** 3)) // Smoothly non-linearly interpolates between two points
     }
-    function findModifiedPoint(x) {
-        return ((x / 1.876 - Math.floor(x / 1.876 + 0.5)) * ((1 - x % 1) ** 0.1) ** 2) * 6.88
-    }
+
     function GintNoise(x) {
         return findInterpolatedPoint(stockHistory[currentStockGraphed][Math.floor(x)], stockHistory[currentStockGraphed][Math.ceil(x)], (x) % 1)
     }
+
     function returnSpace(x){
         let n = ""
         for (let i = 0; i < x; i++) {
