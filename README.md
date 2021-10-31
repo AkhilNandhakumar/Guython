@@ -77,7 +77,7 @@ Team Member | Assignment | Issue |
 Anika | | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) |
 Jakub | Weather Checker & Tips Page | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/11) |
 Tristan | Weather Stock Video Game | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/14) |
-Vunsh | | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/13) |
+Vunsh | API Communication and CSS cchanges based on response | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues/15) |
 
 ### Scores (9/3/21)
 Team: 4/4   
