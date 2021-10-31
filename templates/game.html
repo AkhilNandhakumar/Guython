@@ -1,5 +1,5 @@
 <!-- Extending the predefined project layout -->
-{% extends "layouts/base.html" %}
+{% extends "layouts/game_base.html" %}
 
 <!- This variable sets name of browser tab  -->
 {% set project = "Economy x Weather Simulation" %}
@@ -160,7 +160,7 @@ Issue #1 : When dragging one window onto another, windows bug out due to both tr
 
     for (let y = 0; y < 50; y++) { // Creates starting randomness for the stocks (Stock History Length)
         for (let x = 0; x < stockCount; x++) { // Stock number
-            stockHistory[x][y] =  557 * noise(stockData[x][1], y) //Math.round(100 * noise(1, 1))
+            stockHistory[x][y] =  100 * noise(stockData[x][1], y) //Math.round(100 * noise(1, 1)) 557
         }
     }
 
