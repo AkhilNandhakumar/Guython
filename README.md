@@ -1,5 +1,7 @@
 
 # Number 1 Hackers
+## Our Purpose:
+The purpose of our website is to educate students and other readers about weather phenomena. We aim to teach users by giving them a fun and interactive way to learn more about things like the Sun or Clouds.
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1)
 ### [Old Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
