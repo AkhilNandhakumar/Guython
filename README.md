@@ -2,6 +2,8 @@
 # Number 1 Hackers
 ## Our Purpose:
 The purpose of our website is to educate students and other readers about weather phenomena. We aim to teach users by giving them a fun and interactive way to learn more about things like the Sun or Clouds.
+## Project History: 
+Our project started at the beginning of the trimester. As time passed we added more and more pages, starting with the "About Me" section, and ending with our "Night At the Musuem" showcases. As time went on, our pages became more complex, as a result of the lessons we were given, so through comparing our first pages to our newest ones ,the user can see the amount of knowledge we have gained, and how we applied it to our website.
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1)
 ### [Old Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
