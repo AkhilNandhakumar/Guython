@@ -4,6 +4,14 @@
 The purpose of our website is to educate students and other readers about weather phenomena. We aim to teach users by giving them a fun and interactive way to learn more about things like the Sun or Clouds. We also aim to show users what we have learned in "Computer Science: Principles " through our technical pages, such as our mini-labs. 
 ## Project History: 
 Our project started at the beginning of the trimester. As time passed we added more and more pages, starting with the "About Me" section, and ending with our "Night At the Musuem" showcases. As time went on, our pages became more complex, as a result of the lessons we were given, so through comparing our first pages to our newest ones ,the user can see the amount of knowledge we have gained, and how we applied it to our website.
+## Contributors:
+Team Member | Anika | Jakub | Tristan | Vunsh |
+--- | --- | --- | --- | ---
+GitHub ID: | anika1sharma1 | JakubPonulak | senTristanC | vunsh
+GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Avunsh+is%3Aopen)
+Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Aanika1sharma1)| [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AsenTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Avunsh)
+GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=vunsh)
+GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/senTristanC) | [Link](https://github.com/vunsh)
 ## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1)
 ### [Old Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
@@ -16,14 +24,6 @@ Our project started at the beginning of the trimester. As time passed we added m
 5. [Weeks 9, 10](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-910-code-tangibles)
 6. [Draft N@TM Final](https://github.com/JakubPonulak/flask_portfolio_hackers#draft-ntm-final-tri-1)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
-## Contributors:
-Team Member | Anika | Jakub | Tristan | Vunsh |
---- | --- | --- | --- | ---
-GitHub ID: | anika1sharma1 | JakubPonulak | senTristanC | vunsh
-GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Avunsh+is%3Aopen)
-Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Aanika1sharma1)| [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AsenTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Avunsh)
-GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=vunsh)
-GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/senTristanC) | [Link](https://github.com/vunsh)
 ## Time Box:
 ### Sprint 1,2 (code tangibles)
 1. Greet integration in "about me" pages: [Anika](templates/about_us/anika.html), [Jakub](templates/about_us/jakub.html), [Tristan](templates/about_us/tristan.html), [Vunsh](templates/about_us/vunsh.html)
