@@ -51,6 +51,13 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         font-size: 7px
     }
 
+    .stockExchange {
+        padding-left: 8px;
+        line-height : 10px;
+        letter-spacing: 2px;
+        font-size: 14px
+    }
+
     .stockGraphWindow {
         border: 1px solid white;
         font-family: monospace;
@@ -106,6 +113,9 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
 
     <div class="stockExchangeWindow">
         <p class="windowNavbar">Stock Exchanger</p>
+
+        <!-- Exchanger -->
+        <p class="stockExchange" id="stockExchangerData">error</p>
     </div>
 
     <p class="test0" id="test0">null</p> <!-- Used for verifying the game loop is running-->
@@ -128,7 +138,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
     let hour = 0 // To prove the loop is running
     let stepTime = 1 // Time for one hour to go by
 
-    let seed = 2 // Math.random() // Starting seed to seed everything else
+    let seed = Math.random() // Starting seed to seed everything else
 
     let sViewX = 90; let sViewY = 90; // Declares stockViewer position
     let sExX = 900; let sExY = 90; // Declares stockExchanger position
@@ -148,6 +158,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         initRandom.push(557 * noise(seed + i, i))
     }
 
+    let currentStock
     let currentStockGraphed = 0;
     let zoom = 24; // How stretched on the X axis the stocks are (This is a constant of which should only be changed to either shorten or lengthen the overall time to play
     let scale = 2; //
@@ -167,13 +178,15 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
 
     ];
 
+    let stockList = [0, 1, 2, 3, 4, 5, 6];
+
     for (let i = 0; i < stockCount; i++) { // Adds raw stats to stocks
         addNewStats(i)
     }
 
     function addNewStats(stock) {
         stockData[stock][1] = initNoise(initRandom[stock]).toFixed(2)
-        stockData[stock][3] = Math.round(557 * noise(initRandom[stock], 2))
+        stockData[stock][3] = Math.round(7 * noise(initRandom[stock], 2)) + 1
         stockData[stock][4] = ((8 * noise(3 * initRandom[stock], 3)) + 13) ** 2
         stockData[stock][5] = 50
         stockData[stock][6] = 0
@@ -245,7 +258,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         // document.getElementById('test3').innerHTML = ;
         document.getElementById('test4').innerHTML = stockData;
         document.getElementById('test5').innerHTML = stockHistory;
-        document.getElementById('test7').innerHTML = findInterpolatedPoint(3, 2, 0.5);
+        document.getElementById('test7').innerHTML = stockData[currentStockGraphed][5] + " " + stockData[currentStockGraphed][6];
         document.getElementById('test8').innerHTML = stockHistory[0].length
     }
 
@@ -274,7 +287,6 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         for (let i = 0; i < stacks; i++) {
             stackedNoise += (GintNoise(x / (zoom / (2 ** i))) / (2 ** i)) - (50 / (2 ** i))
         }
-
         return Math.floor(stackedNoise += (6 * noise(x, 1) - 3))
     }
 
@@ -282,7 +294,15 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         let num1 = 0
         let num2 = 0
         let num3 = 0
-        scale = 2
+
+        let graphOffset = Math.floor((stockData[currentStockGraphed][6] - 50) / scale) //stockData[currentStockGraphed][6]
+
+        if (graphOffset <= 0) {
+            graphOffset = 0
+        }
+
+        stockData[currentStockGraphed][5] = 0
+        stockData[currentStockGraphed][6] = 99999
 
         stockGraphData = "Name: " + stockData[currentStockGraphed][0] + "<br>"
         for (let i = 0; i < stockGraphSize + 7; i++) {
@@ -290,16 +310,18 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         }
 
         stockGraphData = stockGraphData.concat("<br>")
-        for (let y = 50 - stockGraphSize; y < 50; y++) { // Creates starting randomness for the stocks
+        for (let y = 50 - stockGraphSize - graphOffset; y < 50 - graphOffset; y++) { // Creates starting randomness for the stocks
             stockGraphData = stockGraphData.concat("|" + ('....' + Math.floor(scale * (50 - y))).slice(-4) + "|")
             for (let x = hour - stockData[currentStockGraphed][2]; x < stockGraphSize + hour - stockData[currentStockGraphed][2]; x++) {
-                let temp = (stockData[currentStockGraphed][1] * findPointModifiers((x + 20) / stockData[currentStockGraphed][4])[0] + ((stackNoise(x, 4) / 2) * findPointModifiers((x + 20) / stockData[currentStockGraphed][4])[1]))
-
+                let temp = (stockData[currentStockGraphed][1] * findPointModifiers((x + 20) / stockData[currentStockGraphed][4])[0] + ((stockData[currentStockGraphed][3] * stackNoise(x, 4) / 2) * findPointModifiers((x + 20) / stockData[currentStockGraphed][4])[1]))
+                if (temp <= 0) {
+                    temp = 0
+                }
                 if (x === hour - stockData[currentStockGraphed][2]) {
                     num1 = Math.floor(temp)
                 } else if (x === hour - stockData[currentStockGraphed][2] + Math.floor(stockGraphSize / 2)) {
                     num2 = Math.floor(temp)
-                } else if (x === stockGraphSize + hour - stockData[currentStockGraphed][2] - 1) {
+                } else if (x === stockGraphSize + hour - stockData[currentStockGraphed][2] - 5) {
                     num3 = Math.floor(temp)
                 }
 
@@ -311,16 +333,16 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
                     stockGraphData = stockGraphData.concat(".")
                 }
 
-                if (temp + 50 > stockData[currentStockGraphed][5]) {
-                    stockData[currentStockGraphed][5] = temp + 50
+                if (temp + 10 > stockData[currentStockGraphed][5]) {
+                    stockData[currentStockGraphed][5] = temp + 10
                 }
 
-                if (temp - 10 < stockData[currentStockGraphed][5]) { // I gave up on doing min and max automatically of graph do later at home
-                    stockData[currentStockGraphed][5] = temp + 50
+                if ((temp - 10) / scale < stockData[currentStockGraphed][6] && temp - 10 >= 0) { // I gave up on doing min and max automatically of graph do later at home
+                    stockData[currentStockGraphed][6] = Math.floor((temp - 10) / scale)
                 }
 
             }
-
+            stockData[currentStockGraphed][6] = num3
             stockGraphData = stockGraphData.concat("|<br>")
         }
 
@@ -337,6 +359,19 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         }
 
         document.getElementById('stockGraphData').innerHTML = stockGraphData;
+    }
+    function nextCurrentStock() {
+        if (currentStock === stockList.length) {
+            currentStock = 0
+        } else {
+            currentStock += 1
+        }
+        currentStockGraphed = stockList[currentStock]
+        currentStockGraphed = 2
+    }
+    function updateExchanger() {
+        let stockExchangerData = "Name: " + stockData[currentStockGraphed][0] + "<a onClick={nextCurrentStock();} style={cursor:   ;}>*click here*</a>" +"<br>"
+        document.getElementById('stockExchangerData').innerHTML = stockExchangerData;
     }
 
     function updateWindowPositions() {
@@ -447,6 +482,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
 
     function slowThread() {
         updateGraphAndDisplay();
+        updateExchanger();
     }
 
     thread() // Initiate game
