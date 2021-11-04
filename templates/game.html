@@ -113,7 +113,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
 
     <div class="stockExchangeWindow">
         <p class="windowNavbar">Stock Exchanger</p>
-
+        <!-- <a id="nextStock" onClick="nextCurrentStock();" style="cursor: pointer;">*click here*</a> -->
         <!-- Exchanger -->
         <p class="stockExchange" id="stockExchangerData">error</p>
     </div>
@@ -136,7 +136,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
 
     let ticks = 0 // To prove the loop is running
     let hour = 0 // To prove the loop is running
-    let stepTime = 1 // Time for one hour to go by
+    let stepTime = 70 // Time for one hour to go by
 
     let seed = Math.random() // Starting seed to seed everything else
 
@@ -158,7 +158,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         initRandom.push(557 * noise(seed + i, i))
     }
 
-    let currentStock
+    let currentStock = 0
     let currentStockGraphed = 0;
     let zoom = 24; // How stretched on the X axis the stocks are (This is a constant of which should only be changed to either shorten or lengthen the overall time to play
     let scale = 2; //
@@ -174,11 +174,10 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         ["Big Tony Pizza Factory", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Buy some, or else.", "Mamma mia! This ain't good.","Life in the mafia doesn't look so bad right now...","Pizza never gets old.","Business is good, but I wouldn't mind some more customers.","I can finally buy that fancy suit I wanted!","I bet my cousin Luigi wishes he worked here now!", "<br>"],
         ["Anika's Lightsabers", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "This weapon is your life.", "Fear is the path to the dark side. Fear leads to anger; anger leads to hate; hate leads to suffering. I sense much fear in you.","What if I told you that the Republic was now under the control of a Dark Lord of the Sith?","You were my brother, Anakin. I loved you.","You are the Chosen One. You have brought balance to this world. Stay on this path, and you will do it again for the galaxy. But beware your heart.","I am one with the Force and the Force is with me.","Aren't you a little short for a stormtrooper?", "<br>"],
         ["Energix", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Energized. Addicted. Broke.", "Stock price is down due to poor work ethic.","Y'all some lazy b!+@#$ for real.","Drugs!","Buy our stock. Buy our stock. Buy our stock. Buy our stock. Buy our stock.","This sure beats selling percs on the street corner back in the 90s...","All I'm $eeing right now is dolla $ign$!", "<br>"],
-        // ["company name", ((noise(seed + PRIME NUMBER, 1) * 12 ) ** 2 + 9).toFixed(2), 0, "Slogan", "Stock price down text","Stock price down text","Stock price neutral text","Stock price neutral text","Stock price up text","Stock price up text", "<br>"],
-
     ];
 
-    let stockList = [0, 1, 2, 3, 4, 5, 6];
+    let stockList = [3, 1, 5];
+
 
     for (let i = 0; i < stockCount; i++) { // Adds raw stats to stocks
         addNewStats(i)
@@ -212,9 +211,11 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
     // stockData[3][2] = "Best Burger's ever!" // Example of how to append new information to a specific stock
 
     // End of declaration
-
+    updateExchangerHeaderData(); // Updates Exchanger Header
     document.addEventListener('mousemove', logMouse); // Updates mouseX and mouseY when the mouse moves
-
+    function sus() {
+        alert("Sus")
+    }
     function initNoise(x){
         return 10 * ((noise(seed + x, 1) * 6) ** 2 + 13)
     }
@@ -256,8 +257,8 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         document.getElementById('test6').innerHTML = hour;
 
         // document.getElementById('test3').innerHTML = ;
-        document.getElementById('test4').innerHTML = stockData;
-        document.getElementById('test5').innerHTML = stockHistory;
+        document.getElementById('test4').innerHTML = currentStock;
+        document.getElementById('test5').innerHTML = stockList;
         document.getElementById('test7').innerHTML = stockData[currentStockGraphed][5] + " " + stockData[currentStockGraphed][6];
         document.getElementById('test8').innerHTML = stockHistory[0].length
     }
@@ -321,7 +322,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
                     num1 = Math.floor(temp)
                 } else if (x === hour - stockData[currentStockGraphed][2] + Math.floor(stockGraphSize / 2)) {
                     num2 = Math.floor(temp)
-                } else if (x === stockGraphSize + hour - stockData[currentStockGraphed][2] - 5) {
+                } else if (x === stockGraphSize + hour - stockData[currentStockGraphed][2] - 3) {
                     num3 = Math.floor(temp)
                 }
 
@@ -361,17 +362,21 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         document.getElementById('stockGraphData').innerHTML = stockGraphData;
     }
     function nextCurrentStock() {
-        if (currentStock === stockList.length) {
-            currentStock = 0
-        } else {
-            currentStock += 1
-        }
-        currentStockGraphed = stockList[currentStock]
-        currentStockGraphed = 2
+            if (currentStock === stockList.length - 1) {
+                currentStock = 0
+            } else {
+                currentStock += 1
+            }
+
+            currentStockGraphed = stockList[currentStock]
+
+            updateExchangerHeaderData()
+            updateGraphAndDisplay()
     }
-    function updateExchanger() {
-        let stockExchangerData = "Name: " + stockData[currentStockGraphed][0] + "<a onClick={nextCurrentStock();} style={cursor:   ;}>*click here*</a>" +"<br>"
-        document.getElementById('stockExchangerData').innerHTML = stockExchangerData;
+    function updateExchangerHeaderData() {
+        let stockExchangerHeaderData = "Name: " + stockData[currentStockGraphed][0] + '<a id="nextStock" onClick="nextCurrentStock();" style="cursor: pointer;">*click here*</a>' + "<br>"
+
+        document.getElementById('stockExchangerData').innerHTML = stockExchangerHeaderData;
     }
 
     function updateWindowPositions() {
@@ -465,7 +470,6 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
             hour += 1
             slowThread();
         }
-
         //if (ticks %  (10 * stepTime)  === 0) {
         //    currentStockGraphed++
         //    currentStockGraphed = currentStockGraphed % (stockCount)
@@ -477,14 +481,14 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         test(); // Tests loop activity
         updateWindowPositions();
 
+
         setTimeout(function(){ thread(); }, 15); // Loops tick
+
     }
 
     function slowThread() {
         updateGraphAndDisplay();
-        updateExchanger();
     }
-
     thread() // Initiate game
 
 </script>
