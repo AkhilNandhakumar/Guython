@@ -51,29 +51,29 @@ def mainpage():
     img = "https://www.weatherbit.io/static/img/icons/" + imagee + ".png"
     return render_template("Sunny.html", temp=ffinal)
 
-@app.route('/surfReport/')
-def sReport():
-    return render_template("weather_info/surfReport.html")
-
-    start = arrow.now().floor('day')
-    end = arrow.now().shift(days=1).floor('day')
-
-    response = requests.get(
-        'https://api.stormglass.io/v2/weather/point',
-        params={
-            'lat': 32.7157,
-            'lng': 117.1611,
-            'start': start.to('UTC').timestamp,  # Convert to UTC timestamp
-            'end': end.to('UTC').timestamp,  # Convert to UTC timestamp
-        },
-        headers={
-            'Authorization': ffd9670a-3d11-11ec-bf98-0242ac130002-ffd9676e-3d11-11ec-bf98-0242ac130002
-        }
-    )
-
-    surf = response.json()
-
-    # Do something with response data.
+# @app.route('/surfReport/')
+# def sReport():
+#     return render_template("weather_info/surfReport.html")
+#
+#     start = arrow.now().floor('day')
+#     end = arrow.now().shift(days=1).floor('day')
+#
+#     response = requests.get(
+#         'https://api.stormglass.io/v2/weather/point',
+#         params={
+#             'lat': 32.7157,
+#             'lng': 117.1611,
+#             'start': start.to('UTC').timestamp,  # Convert to UTC timestamp
+#             'end': end.to('UTC').timestamp,  # Convert to UTC timestamp
+#         },
+#         headers={
+#             'Authorization': ffd9670a-3d11-11ec-bf98-0242ac130002-ffd9676e-3d11-11ec-bf98-0242ac130002
+#         }
+#     )
+#
+#     surf = response.json()
+#
+#     # Do something with response data.
 
 
 @app.route('/game')
