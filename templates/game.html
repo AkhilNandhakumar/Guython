@@ -44,7 +44,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         font-size: 14px
     }
 
-    stockGraph2 {
+    .stockGraph2 {
         padding-left: 4px;
         line-height : 5px;
         letter-spacing: 1px;
@@ -113,9 +113,11 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
 
     <div class="stockExchangeWindow">
         <p class="windowNavbar">Stock Exchanger</p>
-        <!-- <a id="nextStock" onClick="nextCurrentStock();" style="cursor: pointer;">*click here*</a> -->
+
         <!-- Exchanger -->
-        <p class="stockExchange" id="stockExchangerData">error</p>
+        <p class="stockExchange" id="stockExchangerHeader">error</p> <!-- Header -->
+        <p class="stockExchange" id="stockExchangerFlavorText">error</p> <!-- Flavor Text ticker -->
+        <p class="stockExchange" id="stockExchangerUI">error</p> <!-- Interactive UI -->
     </div>
 
     <p class="test0" id="test0">null</p> <!-- Used for verifying the game loop is running-->
@@ -136,7 +138,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
 
     let ticks = 0 // To prove the loop is running
     let hour = 0 // To prove the loop is running
-    let stepTime = 70 // Time for one hour to go by
+    let stepTime = 100 // Time for one hour to go by
 
     let seed = Math.random() // Starting seed to seed everything else
 
@@ -150,13 +152,10 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
     let sExZ = 1; let sGrZ = 0; // Stores windows Z Index
     let stockGraphData = ""; // Declares stockGraphData
     let stockGraphSize = 50; // Graph Size
+    let money = 0 // Money
+    let liquid = 0 // Money
 
-    let stockCount = 7; // Number of stocks ### IMPORTANT TO KEEP RIGHT ###
     let initRandom = []
-
-    for (let i = 0; i < stockCount; i++) {
-        initRandom.push(557 * noise(seed + i, i))
-    }
 
     let currentStock = 0
     let currentStockGraphed = 0;
@@ -170,18 +169,30 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         ["Candy Morse", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Serving candy since white vans were a thing!", "One wrong order and we lose money?", "This business isn't as sweet as they said it would be...", "I mean, I guess it could be worse.", "Thing are going well. I hope I didn't Jinx myself.", "Our company is finally getting the credit it deserves!", "If this keeps up, I might buy myself a yacht!", "<br>"],
         ["Ramanujan's Perfect Gelato", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Replacing Frost since 2021", "I guess adding mustard as a flavor wasn't a good idea.","Brain freeze isn't good for business.", "At least we aren't losing any money.", "Gelato is always popular.", "We might need to add a couple new locations!", "Money is raining down on us!", "<br>"],
         ["Moore's Chicken", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Better than KFC!", "Those new three-legged chickens aren't selling too well.", "Apparently, we're not better than KFC...", "Just a regular day, looks like.", "Selling chicken pays pretty well.", "Take that, Colonel Sanders!", "And they said chicken was overrated. Look at us now!", "<br>"],
-        ["Jakub's Fishies", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "The fishiest fish on the market","Those blasted whales are stealing all our goods!","I don't think our fish taste good...","Fishing is fun only when you make money","Hopefully this new species of see-through fish will sell.","As a certain crab once said, Money Money Money!","All this fish money makes me feel good.", "<br>"],
+        ["Jakub's Fishies", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "The fishiest fish on the market","Those blasted whales are stealing all our goods!","I don't think our fish taste good...","Fishing is fun only when you make money","Hopefully this new species of see-through fish will sell.","As a certain crab once said, Money Money Money!","All this fish money makes me feel good.", "<br>"],
         ["Big Tony Pizza Factory", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Buy some, or else.", "Mamma mia! This ain't good.","Life in the mafia doesn't look so bad right now...","Pizza never gets old.","Business is good, but I wouldn't mind some more customers.","I can finally buy that fancy suit I wanted!","I bet my cousin Luigi wishes he worked here now!", "<br>"],
         ["Anika's Lightsabers", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "This weapon is your life.", "Fear is the path to the dark side. Fear leads to anger; anger leads to hate; hate leads to suffering. I sense much fear in you.","What if I told you that the Republic was now under the control of a Dark Lord of the Sith?","You were my brother, Anakin. I loved you.","You are the Chosen One. You have brought balance to this world. Stay on this path, and you will do it again for the galaxy. But beware your heart.","I am one with the Force and the Force is with me.","Aren't you a little short for a stormtrooper?", "<br>"],
         ["Energix", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Energized. Addicted. Broke.", "Stock price is down due to poor work ethic.","Y'all some lazy b!+@#$ for real.","Drugs!","Buy our stock. Buy our stock. Buy our stock. Buy our stock. Buy our stock.","This sure beats selling percs on the street corner back in the 90s...","All I'm $eeing right now is dolla $ign$!", "<br>"],
-        ["Avinh's Acrobatic Aardvarks", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Best Bouncing Birds", "I've been bamboozled!", "Mom was right... why would an animal circus ever work. I spent my life committed to this; yet.. yet, it was all for naught. I have nothing left now. I have no where to go... adios... Atticus", "Avinh's Acrobat-est Aardvark 's Atticus", "Come on down to Avinh's Acrobatic Aardvarks - the only place with Atticus the Airborne Animal!", "The amount of wealth I've accumulated from this business is immaculate; commoners would have no idea XD", "Jeepers!", "<br>"],
+        ["Avinh's Acrobatic Aardvarks", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Best Bouncing Birds", "I've been bamboozled!", "Mom was right... why would an animal circus ever work. I spent my life committed to this; yet.. yet, it was all for naught. I have nothing left now. I have no where to go... adios... Atticus", "Avinh's Acrobat-est Aardvark 's Atticus", "Come on down to Avinh's Acrobatic Aardvarks - the only place with Atticus the Airborne Animal!", "The amount of wealth I've accumulated from this business is immaculate; commoners would have no idea XD", "Jeepers!", "<br>"],
         ["Racket Dash", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "The Go-to Tennis Shop, No faults guaranteed!", "Man I'm missing so many forehands…. this is not looking good.","These stocks are plummeting like my first serve percentage…","The smell of a fresh can of tennis balls never gets old.","Stocks look average, average like Nakul's tennis skills I guess.","Game, set match baby! Woohoo I'm gonna be rich!","With these stock prices, I'd buy myself row seats at Wimbeldon!", "<br>"],
         ["Mort Corp", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "SLASH SLASH SLASH!","DOWN DOWN DOWN!","HEY HEY HEY!","CODE CODE CODE!","UP UP UP!","AAAAAAAAAAAAA!", "<br>"],
         ["NWG Pro Bono Pentesting", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Quality that can be smelt.", "The stench is weakening.", "The smell is growing weaker.", "Don't check your logs.", "Hello fellow Cyber-Renegades...", "The stench is growing.", "The smell is getting stronger.", "<br>"],
+        ["Shinra Electric Power Company", "Stock price", 0, "Volatility", "Lifespan", "Highpoint", "Low-point", "Using fear and power to create a better future.", "ATTENTION ALL CITIZENS: Can't handle your crippling financial failures?  Do the same thing... but in Neo-Midgard!  Reserve your spot today for the affordable price of 10000M Gil.", "ATTENTION ALL CITIZENS: AVALANCHE has blown up another mako reactor, DO NOT PANIC", "Join the fight.  Keep Midgar safe.  Enlist in SOLDIER at your nearest recruiter today.", "Expand the slums!", "Shinra News: Another decisive victory against Wutai!  Come out and celebrate!", "Shinra News: Project S is a success!  The Promised Land is closer than ever!", "<br>"],
     ];
 
-    let stockList = [3, 1, 5];
+    let stockCount = stockData.length; // Number of stocks ### IMPORTANT TO KEEP RIGHT ###
 
+    for (let i = 0; i < stockCount; i++) {
+        initRandom.push(557 * noise(seed + i, i))
+    }
+
+    let stockList = [];
+    let stockInventory = []; // Stock count of each company in stock list. If a stock in stock list goes to 0 the associated stock in inventory is terminated.
+    addStockToList()
+    addStockToList()
+    addStockToList()
+
+    let stockCreateQueued = -1 // If an available stock is not created on tick it is queued for it is then requeued for creation on the next tick using this variable
 
     for (let i = 0; i < stockCount; i++) { // Adds raw stats to stocks
         addNewStats(i)
@@ -210,16 +221,55 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
             stockHistory[x][y] =  100 * noise(stockHistory[x][stockHistory[x].length - 1], 1) // 100 * findPointModifiers((y + 10) / 100)[0] // 100 * noise(stockData[x][1], y) //Math.round(100 * noise(1, 1)) 557
         }
     }
+    let scrollBuffer = 0
+    let flavorTextBar = ""
 
+    flavorTextBar = ""
+    flavorTextBar = flavorTextBar.concat("Slogan: " + stockData[currentStockGraphed][7])
+
+    for (let i = 0; i < 60 - flavorTextBar.length; i++) {
+        flavorTextBar = flavorTextBar.concat(" ")
+    }
+
+    let flavorData = ""
     // stockData = stockData.push(["Jakub's Burgers",2]) // Example of how to create a new stock an associated information
     // stockData[3][2] = "Best Burger's ever!" // Example of how to append new information to a specific stock
 
     // End of declaration
     updateExchangerHeaderData(); // Updates Exchanger Header
     document.addEventListener('mousemove', logMouse); // Updates mouseX and mouseY when the mouse moves
-    function sus() {
-        alert("Sus")
+
+    function createStock(stock) {
+        let stockToReplace = 0;
+        let stockPresent = false
+        for (let i = 0; i < stockList.length * 40; i++) {
+            stockPresent = false
+            stockToReplace = Math.floor((stockCount - 0.01) * noise(seed + ticks + 7 * i, 1))
+
+            for (let x = 0; x < stockList.length; x++) {
+                if (stockToReplace === stockList[x]) {
+                    stockPresent = true
+                }
+            }
+
+            if (stockPresent === false) {
+                i = stockList.length * 40
+                stockList[stock] = stockToReplace
+                return
+            }
+        }
+        if (stockPresent === true) {
+            stockList[stock] = stockToReplace
+        }
     }
+
+    function addStockToList() {
+        stockList.push(-1)
+        createStock((stockList.length - 1))
+    }
+
+    nextCurrentStock()
+
     function initNoise(x){
         return 10 * ((noise(seed + x, 1) * 6) ** 2 + 13)
     }
@@ -264,7 +314,7 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         document.getElementById('test4').innerHTML = currentStock;
         document.getElementById('test5').innerHTML = stockList;
         document.getElementById('test7').innerHTML = stockData[currentStockGraphed][5] + " " + stockData[currentStockGraphed][6];
-        document.getElementById('test8').innerHTML = stockHistory[0].length
+        document.getElementById('test8').innerHTML = flavorTextBar
     }
 
     function findPointModifiers(x) {
@@ -292,13 +342,14 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         for (let i = 0; i < stacks; i++) {
             stackedNoise += (GintNoise(x / (zoom / (2 ** i))) / (2 ** i)) - (50 / (2 ** i))
         }
-        return Math.floor(stackedNoise += (6 * noise(x, 1) - 3))
+        return Math.floor(stackedNoise + (6 * noise(x, 1) - 3))
     }
 
     function updateGraphAndDisplay() {
         let num1 = 0
         let num2 = 0
         let num3 = 0
+        let num4 = 0
 
         let graphOffset = Math.floor((stockData[currentStockGraphed][6] - 50) / scale) //stockData[currentStockGraphed][6]
 
@@ -318,16 +369,20 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         for (let y = 50 - stockGraphSize - graphOffset; y < 50 - graphOffset; y++) { // Creates starting randomness for the stocks
             stockGraphData = stockGraphData.concat("|" + ('....' + Math.floor(scale * (50 - y))).slice(-4) + "|")
             for (let x = hour - stockData[currentStockGraphed][2]; x < stockGraphSize + hour - stockData[currentStockGraphed][2]; x++) {
-                let temp = (stockData[currentStockGraphed][1] * findPointModifiers((x + 20) / stockData[currentStockGraphed][4])[0] + ((stockData[currentStockGraphed][3] * stackNoise(x, 4) / 2) * findPointModifiers((x + 20) / stockData[currentStockGraphed][4])[1]))
+                let temp = (stockData[currentStockGraphed][1] * findPointModifiers((x + 10) / stockData[currentStockGraphed][4])[0] + ((stockData[currentStockGraphed][3] * stackNoise(x, 4) / 2) * findPointModifiers((x + 10) / stockData[currentStockGraphed][4])[1]))
+
                 if (temp <= 0) {
                     temp = 0
                 }
+
                 if (x === hour - stockData[currentStockGraphed][2]) {
                     num1 = Math.floor(temp)
                 } else if (x === hour - stockData[currentStockGraphed][2] + Math.floor(stockGraphSize / 2)) {
                     num2 = Math.floor(temp)
                 } else if (x === stockGraphSize + hour - stockData[currentStockGraphed][2] - 3) {
                     num3 = Math.floor(temp)
+                } else if (x === stockGraphSize + hour - stockData[currentStockGraphed][2] - 1) {
+                    num4 = Math.floor(temp)
                 }
 
                 if (Math.floor(temp / scale) === 50 - y) { //(First is company, second is history)
@@ -358,29 +413,79 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         for (let i = 0; i < stockGraphSize + 7; i++) {
             stockGraphData = stockGraphData.concat("—")
         }
-        stockGraphData = stockGraphData.concat("<br>|"+ ('....' + (hour - stockData[currentStockGraphed][2])).slice(-4) + "|" + ('....' + num1).slice(-4) + returnSpace(stockGraphSize / 2 - 8) + ('....' + num2).slice(-4) + returnSpace(stockGraphSize / 2 - 4) + ('....' + num3).slice(-4) + "|<br>")
+        stockGraphData = stockGraphData.concat("<br>|"+ ('....' + (hour - stockData[currentStockGraphed][2])).slice(-4) + "|" + ('....' + num1).slice(-4) + returnSpace(stockGraphSize / 2 - 8) + ('....' + num2).slice(-4) + returnSpace(stockGraphSize / 2 - 4) + ('....' + num4).slice(-4) + "|<br>")
         for (let i = 0; i < stockGraphSize + 7; i++) {
             stockGraphData = stockGraphData.concat("—")
         }
 
         document.getElementById('stockGraphData').innerHTML = stockGraphData;
     }
-    function nextCurrentStock() {
-            if (currentStock === stockList.length - 1) {
-                currentStock = 0
-            } else {
-                currentStock += 1
+    function updateFlavorTextBar() {
+        flavorData = ""
+
+        flavorTextBar = flavorTextBar.replace(/ /gi, " "); // Turns spaces into invisible character
+
+        for (let i = 0; i < 60; i++) {
+            flavorData = flavorData.concat("—")
+        }
+        flavorData = flavorData.concat("<br>")
+        flavorData = flavorData.concat(flavorTextBar.substring(0, 60))
+
+        for (let i = 0; i < 60; i++) {
+            flavorData = flavorData.concat("—")
+        }
+
+        flavorTextBar = flavorTextBar.substring(1, flavorTextBar.length)
+
+        if (flavorTextBar.length <= 60) {
+            for (let i = 0; i < 20; i++) {
+                flavorTextBar = flavorTextBar.concat(" ")
             }
+            flavorTextBar = flavorTextBar.concat(stockData[currentStockGraphed][8])
+        }
 
-            currentStockGraphed = stockList[currentStock]
-
-            updateExchangerHeaderData()
-            updateGraphAndDisplay()
+        document.getElementById('stockExchangerFlavorText').innerHTML = flavorData
     }
     function updateExchangerHeaderData() {
-        let stockExchangerHeaderData = "Name: " + stockData[currentStockGraphed][0] + '<a id="nextStock" onClick="nextCurrentStock();" style="cursor: pointer;">*click here*</a>' + "<br>"
 
-        document.getElementById('stockExchangerData').innerHTML = stockExchangerHeaderData;
+        document.getElementById('stockExchangerHeader').innerHTML = "Name: " + stockData[currentStockGraphed][0] + returnSpace(42 - (stockData[currentStockGraphed][0].length)) +'<a id="nextStock" onClick="nextCurrentStock();" style="cursor: pointer;">[Next Stock]</a>' + "<br>"
+
+    }
+    function updateUI() {
+        let uiData = "Forecast: <br><br> Temperature: 72.5F <br><br> Likelihood of catastrophic disaster: 0% <br><br><br><br> Buy <br><br> Sell <br><br> COMING #SOON <br><br><br><br><br><br> Stock Inventory: ALSO COMING #SOON"
+        // Put in a table of stocks you have an the quantity and the net price
+        // Put above it what you want to buy or sell the stock (MAKE PRETTY)
+        for (let i = 0; i < 31; i++) {
+            uiData = uiData.concat("<br>")
+        }
+
+        uiData = uiData.concat("Net Worth: $" + money + " " + "Liquid Cash: $" + liquid)
+        document.getElementById('stockExchangerUI').innerHTML = uiData
+    }
+    function nextCurrentStock() {
+        if (currentStock === stockList.length - 1) {
+            currentStock = 0
+        } else {
+            currentStock += 1
+        }
+
+        currentStockGraphed = stockList[currentStock]
+
+        flavorTextBar = ""
+        flavorTextBar = flavorTextBar.concat("Slogan: " + stockData[currentStockGraphed][7])
+
+        for (let i = 0; i < 60 - flavorTextBar.length; i++) {
+            flavorTextBar = flavorTextBar.concat(" ")
+        }
+
+        scrollBuffer = 120
+
+        updateExchangerHeaderData()
+        updateGraphAndDisplay()
+        updateGraphAndDisplay()
+        updateFlavorTextBar()
+        updateUI()
+
     }
 
     function updateWindowPositions() {
@@ -474,17 +579,23 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
             hour += 1
             slowThread();
         }
-        //if (ticks %  (10 * stepTime)  === 0) {
-        //    currentStockGraphed++
-        //    currentStockGraphed = currentStockGraphed % (stockCount)
-        //}
+        if (ticks %  (3 * stepTime)  === 0) {
+            addStockToList()
+        }
+
+        if (ticks %  8  === 0 && scrollBuffer === 0) {
+            updateFlavorTextBar()
+        }
+
+        if (scrollBuffer > 0) {
+            scrollBuffer--
+        }
     }
 
     function thread() { // Game loop
         elapseTime(); // Timing
         test(); // Tests loop activity
         updateWindowPositions();
-
 
         setTimeout(function(){ thread(); }, 15); // Loops tick
 
@@ -493,6 +604,8 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
     function slowThread() {
         updateGraphAndDisplay();
     }
+
+    slowThread()
     thread() // Initiate game
 
 </script>
