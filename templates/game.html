@@ -356,11 +356,10 @@ Issue #3 : Feeling to lazy to implement point modifier for stacking interpolated
         if (graphOffset <= 0) {
             graphOffset = 0
         }
-
         stockData[currentStockGraphed][5] = 0
         stockData[currentStockGraphed][6] = 99999
 
-        stockGraphData = "Name: " + stockData[currentStockGraphed][0] + "<br>"
+        stockGraphData = ('<img src="/static/assets/q.png" style="width: 30px; height: 30px">').replace(/q/gi, currentStockGraphed) + " " + stockData[currentStockGraphed][0] + "<br>"
         for (let i = 0; i < stockGraphSize + 7; i++) {
             stockGraphData = stockGraphData.concat("—")
         }
