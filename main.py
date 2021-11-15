@@ -47,7 +47,7 @@ def mainpage():
     final = str(temp) + "°C"
     # Returning the html template for the main page with the temperature variable from the api.
     imagee = text["data"][0]["weather"]["icon"]
-    ffinal = str(temp * 9 / 5 + 32) + "°F"
+    ffinal = str(round(temp * 9 / 5 + 32)) + "°F"
     img = "https://www.weatherbit.io/static/img/icons/" + imagee + ".png"
     return render_template("Sunny.html", temp=ffinal)
 
