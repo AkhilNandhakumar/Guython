@@ -10,18 +10,12 @@ GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/
 Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Aanika1sharma1)| [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AsenTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Avunsh) |
 GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=vunsh) |
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/senTristanC) | [Link](https://github.com/vunsh) |
-## [GitHub Repository](https://github.com/JakubPonulak/flask_portfolio_hackers)
-## [Scrum Board](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1)
-### [Old Scrum Board](https://github.com/JakubPonulak/flask_portfolio/projects/1)
+## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
+## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/1TdBNp9JPyNSbcwWtPAHtlgM1XWtLP30hLIq9HZhdGtY/edit#slide=id.p)
 ## [Documentation](https://docs.google.com/document/d/12Wc6Z9wMwf0dZz3SWHhZ5onLveiV20Ybi1M7fdX0deA/edit?usp=sharing)
 ## Table of Contents:
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
-2. [Weeks 3,4](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-34-code-tangibles)
-3. [Weeks 5,6](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-56-code-tangibles)
-4. [Weeks 7,8](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-78-code-tangibles)
-5. [Weeks 9, 10](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-910-code-tangibles)
-6. [Draft N@TM Final](https://github.com/JakubPonulak/flask_portfolio_hackers#draft-ntm-final-tri-1)
 ## Time Box:
 ### Sprint 1,2 (code tangibles)
 1. Greet integration in "about me" pages: [Anika](templates/about_us/anika.html), [Jakub](templates/about_us/jakub.html), [Tristan](templates/about_us/tristan.html), [Vunsh](templates/about_us/vunsh.html)
