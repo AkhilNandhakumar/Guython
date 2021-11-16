@@ -5,7 +5,8 @@
 ## Contributors:
 Team Member | Hamza | Jakub | Kevin | Sreeja | Tristan |
 --- | --- | --- | --- | --- | ---
-GitHub ID: | anika1sharma1 | JakubPonulak | senTristanC | | senTristanC |
+GitHub ID: |  | JakubPonulak |  | | senTristanC |
+Team Role: | Primary Designer | GitHub Admin | Technical Officer | Deployment Manager | Scrum Master |
 GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Avunsh+is%3Aopen) | 
 Scrum Board: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Aanika1sharma1)| [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3AsenTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/projects/1?card_filter_query=assignee%3Avunsh) |
 GitHub commits: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=anika1sharma1) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=senTristanC) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/commits?author=vunsh) |
