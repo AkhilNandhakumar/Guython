@@ -1,5 +1,5 @@
 
-# 5 Hackers ---
+# Number 1 Hackers
 ## Our Purpose:
 The purpose of our website is to educate Del Norte students and other readers about weather phenomena. Weather affects everyone, including high school students. Though everyone knows what weather is, not everyone knows a lot of information about it. We aim to teach users by giving them a fun and interactive way to learn more about aspects of weather such as the Sun or Clouds. In addition, we strive to show users what we have learned in "Computer Science: Principles" through our technical pages, such as our mini-labs. 
 ## Project History: 
