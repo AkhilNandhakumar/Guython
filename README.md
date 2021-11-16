@@ -1,11 +1,9 @@
 
-# 5 hackers
+# 5 Hackers
 ## Our Purpose:
-The purpose of our website is to educate Del Norte students and other readers about weather phenomena. Weather affects everyone, including high school students. Though everyone knows what weather is, not everyone knows a lot of information about it. We aim to teach users by giving them a fun and interactive way to learn more about aspects of weather such as the Sun or Clouds. In addition, we strive to show users what we have learned in "Computer Science: Principles" through our technical pages, such as our mini-labs. 
 ## Project History: 
-We started creating our website at the beginning of the trimester. As time passed we added more pages and programs, starting with the "About Me" section, and ending with our "Night At the Musuem" showcases. As time went on, our pages became more complex as a result of the lessons we were given. Through comparing our first pages to our newest ones, the user can see the amount of knowledge we have gained, and how we applied it to our website.
 ## Contributors:
-Team Member | Anika | Jakub | Tristan | Vunsh |
+Team Member | Hamza | Jakub | Kevin | Sreeja |
 --- | --- | --- | --- | ---
 GitHub ID: | anika1sharma1 | JakubPonulak | senTristanC | vunsh
 GitHub Issues: | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Aanika1sharma1+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AJakubPonulak+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3AsenTristanC+is%3Aopen) | [Link](https://github.com/JakubPonulak/flask_portfolio_hackers/issues?q=assignee%3Avunsh+is%3Aopen)
