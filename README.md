@@ -1,6 +1,7 @@
 
 # 5 Hackers
 ## Our Purpose:
+The purpose of our wesbite is to help students stay organized, both virtually and in real life. Our website offers embeds to important sites such as Google Drive, Canvas, or Synergy. We also offer To-Do Lists or Reminders to help students stay on task throughout the day.
 ## Project History: 
 ## Contributors:
 Team Member | Hamza | Jakub | Kevin | Sreeja | Tristan |
