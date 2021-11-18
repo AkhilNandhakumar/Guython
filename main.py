@@ -103,15 +103,30 @@ def stub():
 
 # The code below creates the custom about me pages for each team member
 
-@app.route('/jakub/', methods=['GET', 'POST'])
-def greet0():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("about_us/jakub.html", name=name)
-    # starting and empty input default
-    return render_template("about_us/jakub.html", name="World")
+@app.route('/jakub/')
+def jakub():
+    response = requests.get("http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key"
+                            "=4E07A0ABAE258C00B17B9EBDEE265FE0&steamid=76561198988285392")
+    text = response.json()
+    game1 = text['response']['games'][0]['name']
+    game1time = str(round(text['response']['games'][0]['playtime_2weeks']/60, 1))
+    game1timeTotal = str(round(text['response']['games'][0]['playtime_forever']/60, 1))
+    game1img = text['response']['games'][0]['img_logo_url']
+    game1ID = text['response']['games'][0]['appid']
+    game2 = text['response']['games'][1]['name']
+    game2time = str(round(text['response']['games'][1]['playtime_2weeks']/60, 1))
+    game2timeTotal = str(round(text['response']['games'][1]['playtime_forever']/60, 1))
+    game2img = text['response']['games'][1]['img_logo_url']
+    game2ID = text['response']['games'][1]['appid']
+    game3 = text['response']['games'][2]['name']
+    game3time = str(round(text['response']['games'][2]['playtime_2weeks']/60, 1))
+    game3timeTotal = str(round(text['response']['games'][2]['playtime_forever']/60, 1))
+    game3img = text['response']['games'][2]['img_logo_url']
+    game3ID = text['response']['games'][2]['appid']
+    return render_template("about_us/jakub.html", text=text, g1=game1, g1t=game1time, g1img=game1img,
+                           g1tT=game1timeTotal, g1ID=game1ID, g2=game2, g2t=game2time, g2tT=game2timeTotal,
+                           g2ID=game2ID, g2img=game2img, g3=game3, g3t=game3time, g3tT=game3timeTotal,
+                           g3ID=game3ID, g3img=game3img)
 
 
 @app.route('/anika/', methods=['GET', 'POST'])

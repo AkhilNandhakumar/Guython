@@ -6,13 +6,62 @@
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
-    <!- Try building a new body here ->
+    <style>
+        body {
+            background: linear-gradient(-45deg, #01438f, #430c7a, #d90dd4);
+            background-size: 800% 800%;
+            text-align: center;
+            animation: gradient 14s ease infinite;
+        }
+        .col-12 {
+            font-family: Chalkboard
+        }
+        .col-lg {
+            border-color: white;
+            border-style: solid;
+            max-width: 900px;
+            font-family: Arial;
+            font-size: 30px;
+            background-color:#2a475e;
+            border-width: 1px;
+        }
+        .col-sm {
+            border-color: white;
+            border-style: solid;
+            max-width: 300px;
+            font-family: Arial;
+            font-size: 15px;
+            background-color:#2a475e;
+            border-width: 1px;
+        }
+    </style>
+    <p style="font-size:45px">Welcome, my name is Jakub Ponulak!</p>
+    <a style="margin-left: 0%; font-family: Chalkboard; font-size: 30px; font-family: 'Roboto', sans-serif; color: lightblue;" href="https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing">Link to Journal</a>
+    <div class="row justify-content-center">
+        <div class="col-lg">
+            Recently played games on Steam (using Steam's API)
+        </div>
+        <div class="w-100"></div>
+        <div class="col-sm">Game</div>
+        <div class="col-sm">Time Played (2 weeks)</div>
+        <div class="col-sm">Time Played (Lifetime)</div>
+        <div class="w-100"></div>
+        <div class="col-sm">{{ g1 }}</div>
+        <div class="col-sm">{{ g1t }} hours</div>
+        <div class="col-sm">{{ g1tT }} hours</div>
+        <div class="w-100"></div>
+        <div class="col-sm">{{ g2 }}</div>
+        <div class="col-sm">{{ g2t }} hours</div>
+        <div class="col-sm">{{ g2tT }} hours</div>
+        <div class="w-100"></div>
+        <div class="col-sm">{{ g3 }}</div>
+        <div class="col-sm">{{ g3t }} hours</div>
+        <div class="col-sm">{{ g3tT }} hours</div>
+    </div>
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: verdana,sans-serif;">
         <div class="col-12">
-            <p style="font-size:45px">Welcome, my name is Jakub Ponulak!</p>
-            <p>This page is all about me:</p>
-            <p style="font-size:29px">Who I am:</p>
-            <p>I am a Junior at Del Norte High School. My family is from Poland, which I am very proud of (that's why my name is spelled J-A-K-U-B instead of the normal J-A-C-O-B). I am roughly 5'11'', with dark brown hair and blue eyes.</p>
+            <p style="font-size:29px">Who I am</p>
+            <p>I am a Junior at Del Norte High School. My family is from Poland, which I am very proud of (that's why my name is spelled J-A-K-U-B instead of the normal J-A-C-O-B). I am roughly 5'11'', with dark brown hair and blue eyes. </p>
             <img src="https://1z8qih1l8tj53pg8zi3f9dif-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/Del-Norte-HS-Poway-K12-Structural-San-Diego-1200x600.jpg" width="240" height="160">
             <img src="https://m.media-amazon.com/images/I/61xvFPfQUwL._AC_SX425_.jpg" width="240" height="160">
             <p></p>
@@ -27,38 +76,13 @@
             <p>In the near future I want to do well in school so that I can attend a good college. I want to major in mechanical engineering, so I am hoping to get into such schools like the California Institute of Technology or the California Polytechnic State University. When I graduate from college, I want to find a good job: Not an easy one, nor a lucrative one, but rather a job that I look forward to every day. I want to be able to apply what I know to the real world, helping people solve their problems through mechanical engineering.</p>
             <img src="https://www.calpoly.edu/sites/calpoly.edu/files/2021-02/Lawn%20Sign_CPBOUND.jpg" width="240" height="170">
             <img src="https://www.mw.tum.de/fileadmin/w00btx/mw/Forschung/Schwerpunktthemen/Mechanical-Engineering/Mechanical-Engineering_Work-at-MSRM.jpg" width="360" height="170">
-            <p></p>
-            <p style="font-size:29px">Twitter Timeline</p>
-            <a class="twitter-timeline" data-width="800" data-height="550" href="https://twitter.com/JakubPonulak?ref_src=twsrc%5Etfw">Tweets by JakubPonulak</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            <p style="font-size:29px">Page Wireframing</p>
         </div>
-    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-        <iframe loading="lazy" style="position: absolute; width: 70%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAEpcoUtqSU&#x2F;view?embed">
-        </iframe>
-    </div>
-    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAEpcoUtqSU&#x2F;view?utm_content=DAEpcoUtqSU&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Jakub's About Me Wireframe</a> by Anika Sharma
-    <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
-        <div class="col-12">
-            <p></p>
-            <p style="font-size:29px; font-family: verdana, sans-serif">Greet Function</p>
-            <p></p>
-            <p>Hello, {{name}}!</p>
-        </div>
-        <div class="col-12">
-            <form action="/jakub/" id="stub" method="POST" >
-                <label for="name">Type a greeting name?</label>
-                <input name="name" id="name">
-                <input type="submit" value="Greetings!">
-            </form>
-        </div>
-
-        <div class="col-12">
-            <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
-        </div>
-    </div>
+    <p>{{ g1 }} : {{ g1t }} hours. {{ g1tT }} hours total. </p>
+    <p>{{ g2 }} : {{ g2t }} hours. {{ g2tT }} hours total.</p>
+    <p>{{ g3 }} : {{ g3t }} hours. {{ g3tT }} hours total.</p>
+    <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g1ID }}/{{ g1img }}.jpg">
+    <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g2ID }}/{{ g2img }}.jpg">
+    <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g3ID }}/{{ g3img }}.jpg">
 {% endblock %}
 
 <!- This is turning off birds background from base.html -->
