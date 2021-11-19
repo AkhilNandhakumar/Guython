@@ -13,7 +13,6 @@ GitHub Issues: | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigne
 Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3Ahamzahakak)| [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AKevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3ASreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AsenTristanC)
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=Kevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=senTristanC)
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/senTristanC)
-## Time Table
 ## Table of Contents:
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
