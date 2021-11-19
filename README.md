@@ -21,10 +21,10 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 ## Time Box:
 ### Sprint 1,2 (code tangibles)
   
-Team Member | Assignment | Issue | Total Score |
+Team Member | Assignment | Issue |
 --- | --- | --- | ---
-Hamza | | | |
-Jakub | | | |
-Kevin | | | |
-Sreeja | | | |
-Tristan | | | |
+Hamza | Individual Home Page, CB Quizzes, Wireframing | |
+Jakub | Individual Home Page, CB Quizzes, GitHub Policy | |
+Kevin | Individual Home Page, CB Quizzes| | |
+Sreeja | Individual Home Page, CB Quizzes, Brain Write| |
+Tristan | Individual Home Page, CB Quizzes | |
