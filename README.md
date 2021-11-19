@@ -23,7 +23,7 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
   
 Team Member | Assignment | Issue |
 --- | --- | --- 
-Hamza | Individual Home Page, CB Quizzes, Wireframing | [Home Page](https://github.com/JakubPonulak/5_hackers/issues/1), [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6), [Wireframing](https://github.com/JakubPonulak/5_hackers/issues/4) |
+Hamza | Individual Home Page, CB Quizzes, Wireframing | [Home Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6), [Wireframing](https://github.com/JakubPonulak/5_hackers/issues/4) |
 Jakub | Individual Home Page, CB Quizzes, GitHub Policy | [Policy](https://github.com/JakubPonulak/5_hackers/issues/2) |
 Kevin | Individual Home Page, CB Quizzes| |
 Sreeja | Individual Home Page, CB Quizzes, Brain Write| [Brain Write](https://github.com/JakubPonulak/5_hackers/issues/3) |
