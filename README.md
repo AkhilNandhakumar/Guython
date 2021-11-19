@@ -3,7 +3,7 @@
 ## Our Purpose:
 The purpose of our wesbite is to help students stay organized, both virtually and in real life. Our website offers embeds to important sites such as Google Drive, Canvas, or Synergy. We also offer To-Do Lists or Reminders to help students stay on task throughout the day.
 ## Project History:
-Our website on project is built off of "flask_portfolio_hackers", the repository that Jakub and Tristan used in Trimester 1. However, besides basic layouts, are wesbite and project is different, as it offers a completely new and unrelated theme. Our work on this project started at the beginning of Trimester 2.
+Our website on project is built off of "flask_portfolio_hackers", the repository that Jakub and Tristan used in Trimester 1. However, besides basic layouts, are website and project is different, as it offers a completely new and unrelated theme. Our work on this project started at the beginning of Trimester 2.
 ## Contributors:
 Team Member | Hamzah | Jakub | Kevin | Sreeja | Tristan |
 --- | --- | --- | --- | --- | ---
