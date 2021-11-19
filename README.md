@@ -13,15 +13,15 @@ GitHub Issues: | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigne
 Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3Ahamzahakak)| [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AKevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3ASreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AsenTristanC)
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=Kevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=senTristanC)
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/senTristanC)
+## Table of Contents:
+1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing)
 ### [TPT Journal](https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing)
 ## Table of Contents:
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
-## Time Box:
-### Sprint 1,2 (code tangibles)
-
+  
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | Individual Home Page, CB Quizzes, Wireframing | [Home Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6), [Wireframing](https://github.com/JakubPonulak/5_hackers/issues/4) |
