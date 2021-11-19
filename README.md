@@ -21,7 +21,7 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
 ## Time Box:
 ### Sprint 1,2 (code tangibles)
-  
+
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | Individual Home Page, CB Quizzes, Wireframing | [Home Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6), [Wireframing](https://github.com/JakubPonulak/5_hackers/issues/4) |

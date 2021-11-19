@@ -8,102 +8,105 @@
         font-size: 22px;
         margin: -2.8% 0% -4%;
         color: #55ACEE;
-        line-height: 1.2px;
         text-align: center;
     }
     a {
         color: #000000;
     }
     .navbar-nav {
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .dropdown {
         padding-left: 10px;
         padding-right: 10px;
     }
+    .navbar-brand {
+        margin-top: -6px;
+    }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a style="font-family: Luminari, fantasy; font-size: 30px; color: #fbb73a"  class="navbar-brand" href="/main_page">{{basename}}</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-hazard">
+    <a style="font-family: Impact; font-size: 38px; color: #ffffff"  class="navbar-brand" href="/main_page">Backpack Pro</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div style="font-family: Copperplate,fantasy" class="navbar-nav">
+        <div style="font-family: Helvetica" class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-            <a class="nav-link" style="font-size: 30px; margin: -4.8% 4% -4% " href="/main_page">Home</a>
+            <a class="nav-link" style="font-size: 30px" href="/">Home</a>
             <!-- stub is shown using the name of the route -->
         </div>
 
 
         <div class="dropdown">
-            <pList style="font-family: Copperplate,fantasy; margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <pList style="font-size: 28px;font-family: Helvetica;" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About Us
             </pList>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href="/anika">Anika</a>
+                <a class="dropdown-item" href="/jakub">Hamza</a>
                 <a class="dropdown-item" href="/jakub">Jakub</a>
+                <a class="dropdown-item" href="/jakub">Kevin</a>
+                <a class="dropdown-item" href="/jakub">Sreeja</a>
                 <a class="dropdown-item" href="/tristan">Tristan</a>
-                <a class="dropdown-item" href="/vunsh">Vunsh</a>
             </div>
         </div>
         <!-- # The code below creates drop down menus which we utilize for more efficient and flush navbar usage. -->
 
 
-        <div class="dropdown">
-            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Our Work
-            </pList>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href="/lab1/">Mini-Lab 1: Greet</a>
-                <a class="dropdown-item" href="/lab2/">Mini-Lab 2: Journal 0 Videos</a>
-                <a class="dropdown-item" href="/lab3/">Mini-Lab 3: RGB</a>
-                <a class="dropdown-item" href="/lab4/">Mini-Lab 4: Logic Gates</a>
-                <a class="dropdown-item" href="/tpts/">Test Prep Tuesdays</a>
-                <a class="dropdown-item" href="/hackathontt3/">TT3: Hack-a-thon</a>
-                <a class="dropdown-item" href="/wireframe/">Website Wireframe</a>
-            </div>
-        </div>
+{#        <div class="dropdown">#}
+{#            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                Our Work#}
+{#            </pList>#}
+{#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
+{#                <a class="dropdown-item" href="/lab1/">Mini-Lab 1: Greet</a>#}
+{#                <a class="dropdown-item" href="/lab2/">Mini-Lab 2: Journal 0 Videos</a>#}
+{#                <a class="dropdown-item" href="/lab3/">Mini-Lab 3: RGB</a>#}
+{#                <a class="dropdown-item" href="/lab4/">Mini-Lab 4: Logic Gates</a>#}
+{#                <a class="dropdown-item" href="/tpts/">Test Prep Tuesdays</a>#}
+{#                <a class="dropdown-item" href="/hackathontt3/">TT3: Hack-a-thon</a>#}
+{#                <a class="dropdown-item" href="/wireframe/">Website Wireframe</a>#}
+{#            </div>#}
+{#        </div>#}
 
-        <!-- # Second dropdown menu -->
-        <div class="dropdown">
-            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Weather Information
-            </pList>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href="/weather1">Clouds</a>
-                <a class="dropdown-item" href="/weather2">Sun</a>
-                <a class="dropdown-item" href="/weather3">Wind</a>
-                <a class="dropdown-item" href="/weather4">Water</a>
-                <a class="dropdown-item" href="/weather_checks">Weather Checks</a>
-                <a class="dropdown-item" href="/surfReport">Surf Report</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                What to do:
-            </pList>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href="/wtd1">When it's Hot</a>
-                <a class="dropdown-item" href="/wtd2">When it's Cold</a>
-                <a class="dropdown-item" href="/wtd3">When there's a storm</a>
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div style="font-family: Copperplate,fantasy" class="navbar-nav">
-                <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-                <a class="nav-link" style="font-size: 20px; margin: -2% -0% -8% " href="/game">Wekkonomics</a>
-                <!-- stub is shown using the name of the route -->
-            </div>
-        </div>
+{#        <!-- # Second dropdown menu -->#}
+{#        <div class="dropdown">#}
+{#            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                Weather Information#}
+{#            </pList>#}
+{#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
+{#                <a class="dropdown-item" href="/weather1">Clouds</a>#}
+{#                <a class="dropdown-item" href="/weather2">Sun</a>#}
+{#                <a class="dropdown-item" href="/weather3">Wind</a>#}
+{#                <a class="dropdown-item" href="/weather4">Water</a>#}
+{#                <a class="dropdown-item" href="/weather_checks">Weather Checks</a>#}
+{#                <a class="dropdown-item" href="/surfReport">Surf Report</a>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="dropdown">#}
+{#            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                What to do:#}
+{#            </pList>#}
+{#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
+{#                <a class="dropdown-item" href="/wtd1">When it's Hot</a>#}
+{#                <a class="dropdown-item" href="/wtd2">When it's Cold</a>#}
+{#                <a class="dropdown-item" href="/wtd3">When there's a storm</a>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">#}
+{#            <div style="font-family: Copperplate,fantasy" class="navbar-nav">#}
+{#                <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->#}
+{#                <a class="nav-link" style="font-size: 20px; margin: -2% -0% -8% " href="/game">Wekkonomics</a>#}
+{#                <!-- stub is shown using the name of the route -->#}
+{#            </div>#}
+{#        </div>#}
 
 
-        <img src="/static/scholarly_weather_report_50.png" style="max-height: 125px;
-      max-width: 75px;
-      margin-left: 20%;
-      margin-right: 0%;
-      alignment: right;
-      object-fit: cover;" >
+{#        <img src="/static/scholarly_weather_report_50.png" style="max-height: 125px;#}
+{#      max-width: 75px;#}
+{#      margin-left: 20%;#}
+{#      margin-right: 0%;#}
+{#      alignment: right;#}
+{#      object-fit: cover;" >#}
     </div>
 </nav>
