@@ -21,7 +21,8 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 ### [TPT Journal](https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing)
 ## Table of Contents:
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
-Team Links: [Home Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6),
+Team Links: [Home Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6)
+
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | Individual Home Page, CB Quizzes, Wireframing | [Wireframing](https://github.com/JakubPonulak/5_hackers/issues/4) |
