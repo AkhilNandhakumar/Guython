@@ -16,6 +16,7 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing)
+### [TPT Journal](https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing)
 ## Table of Contents:
 1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
 ## Time Box:
