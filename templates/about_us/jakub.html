@@ -34,10 +34,22 @@
             background-color:#2a475e;
             border-width: 1px;
         }
+        .col-8 {
+            border-color: white;
+            border-style: solid;
+            max-width: 300px;
+            padding: 40px;
+            font-family: Arial;
+            font-size: 15px;
+            background-color:#2a475e;
+            border-width: 1px;
+        }
     </style>
-    <p style="font-size:45px">Welcome, my name is Jakub Ponulak!</p>
-    <a style="margin-left: 0%; font-family: Chalkboard; font-size: 30px; font-family: 'Roboto', sans-serif; color: lightblue;" href="https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing">Link to Journal</a>
-    <div class="row justify-content-center">
+    <p style="margin-top:10px;font-size:45px; font-family: Chalkboard">Welcome, my name is Jakub Ponulak!</p>
+    <a style="font-family: Chalkboard; font-size: 30px; font-family: 'Roboto', sans-serif; color: lightblue" href="https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing">Team Journal</a>
+    <br>
+    <a style="font-family: Chalkboard; font-size: 30px; font-family: 'Roboto', sans-serif; color: lightblue" href="https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing">TPT Journal</a>
+    <div style="margin-top: 25px" class="row justify-content-center">
         <div class="col-lg">
             Recently played games on Steam (using Steam's API)
         </div>
@@ -46,17 +58,48 @@
         <div class="col-sm">Time Played (2 weeks)</div>
         <div class="col-sm">Time Played (Lifetime)</div>
         <div class="w-100"></div>
-        <div class="col-sm">{{ g1 }}</div>
-        <div class="col-sm">{{ g1t }} hours</div>
-        <div class="col-sm">{{ g1tT }} hours</div>
+        <div class="col-sm">
+            {{ g1 }}
+            <br>
+            <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g1ID }}/{{ g1img }}.jpg">
+        </div>
+        <div class="col-8">{{ g1t }} hours</div>
+        <div class="col-8">{{ g1tT }} hours</div>
         <div class="w-100"></div>
-        <div class="col-sm">{{ g2 }}</div>
-        <div class="col-sm">{{ g2t }} hours</div>
-        <div class="col-sm">{{ g2tT }} hours</div>
+        <div class="col-sm">
+            {{ g2 }}
+            <br>
+            <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g2ID }}/{{ g2img }}.jpg">
+        </div>
+        <div class="col-8">{{ g2t }} hours</div>
+        <div class="col-8">{{ g2tT }} hours</div>
         <div class="w-100"></div>
-        <div class="col-sm">{{ g3 }}</div>
-        <div class="col-sm">{{ g3t }} hours</div>
-        <div class="col-sm">{{ g3tT }} hours</div>
+        <div class="col-sm">
+            {{ g3 }}
+            <br>
+            <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g3ID }}/{{ g3img }}.jpg">
+        </div>
+        <div class="col-8">{{ g3t }} hours</div>
+        <div class="col-8">{{ g3tT }} hours</div>
+    </div>
+    <br>
+    <div>
+    <script>
+        function changeSrc() {
+            var img = document.getElementById("image1")
+            img.src="https://itsnothouitsme.com/2017/11/04/best-pizza-in-houston/img_6859/"
+            return false
+        }
+        function changeSrc2() {
+            var img = document.getElementById("image1")
+            img.src="https://cdn.abcotvs.com/dip/images/4504840_101718-dd-dunn-in-n-out-burger-houston-vid.jpg?w=1600"
+            return false
+        }
+    </script>
+    <img style="max-width: 500px; max-height: 200px" id="image1" src="https://cdn.abcotvs.com/dip/images/4504840_101718-dd-dunn-in-n-out-burger-houston-vid.jpg?w=1600">
+    <br>
+    <button onclick="changeSrc()">Favorite Food 1</button>
+    <button onclick="changeSrc2()">Favorite Food 2</button>
     </div>
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: verdana,sans-serif;">
         <div class="col-12">
@@ -77,14 +120,5 @@
             <img src="https://www.calpoly.edu/sites/calpoly.edu/files/2021-02/Lawn%20Sign_CPBOUND.jpg" width="240" height="170">
             <img src="https://www.mw.tum.de/fileadmin/w00btx/mw/Forschung/Schwerpunktthemen/Mechanical-Engineering/Mechanical-Engineering_Work-at-MSRM.jpg" width="360" height="170">
         </div>
-    <p>{{ g1 }} : {{ g1t }} hours. {{ g1tT }} hours total. </p>
-    <p>{{ g2 }} : {{ g2t }} hours. {{ g2tT }} hours total.</p>
-    <p>{{ g3 }} : {{ g3t }} hours. {{ g3tT }} hours total.</p>
-    <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g1ID }}/{{ g1img }}.jpg">
-    <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g2ID }}/{{ g2img }}.jpg">
-    <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ g3ID }}/{{ g3img }}.jpg">
-{% endblock %}
-
-<!- This is turning off birds background from base.html -->
-{% block background %}
+    </div>
 {% endblock %}
