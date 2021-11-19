@@ -22,7 +22,7 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 ### Sprint 1,2 (code tangibles)
   
 Team Member | Assignment | Issue |
---- | --- | --- | ---
+--- | --- | --- 
 Hamza | Individual Home Page, CB Quizzes, Wireframing | |
 Jakub | Individual Home Page, CB Quizzes, GitHub Policy | |
 Kevin | Individual Home Page, CB Quizzes| | |
