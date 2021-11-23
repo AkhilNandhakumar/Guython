@@ -31,3 +31,4 @@ Jakub | Individual Home Page, CB Quizzes, GitHub Policy | [Policy](https://githu
 Kevin | Individual Home Page, CB Quizzes| |
 Sreeja | Individual Home Page, CB Quizzes, Brain Write| [Brain Write](https://github.com/JakubPonulak/5_hackers/issues/3) |
 Tristan | Individual Home Page, CB Quizzes| |
+
