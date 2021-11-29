@@ -14,19 +14,19 @@ Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=Kevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=senTristanC)
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/senTristanC)
 ## Table of Contents:
-1. [Week 0](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint--code-tangibles)
+1. [Week 0](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint0)
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing)
 ### [TPT Journal](https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing)
-### Week 0
-Team Links: [Home Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6)
+### Sprint 0
+Team Links: [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6)
 
 Team Member | Assignment | Issue |
 --- | --- | --- 
-Hamza | Individual Home Page, CB Quizzes, Wireframing | [Wireframing](https://github.com/JakubPonulak/5_hackers/issues/4) |
-Jakub | Individual Home Page, CB Quizzes, GitHub Policy | [Policy](https://github.com/JakubPonulak/5_hackers/issues/2) |
-Kevin | Individual Home Page, CB Quizzes| |
-Sreeja | Individual Home Page, CB Quizzes, Brain Write| [Brain Write](https://github.com/JakubPonulak/5_hackers/issues/3) |
-Tristan | Individual Home Page, CB Quizzes| |
+Hamza | CB Quizzes | |
+Jakub | CB Quizzes | |
+Kevin | CB Quizzes | |
+Sreeja | CB Quizzes | |
+Tristan | CB Quizzes | |
 
