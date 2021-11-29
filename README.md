@@ -44,3 +44,13 @@ Sreeja | Scrum Team Project Review, TPT Work | |
 Tristan | Scrum Team Project Review, TPT Work | |
 
 #### Week 2
+Team Links: [Scrum Team Project Review](https://github.com/JakubPonulak/5_hackers/issues/7), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/8)
+
+Team Member | Assignment | Issue |
+--- | --- | --- 
+Hamza | About Pages, TPT Work | |
+Jakub | About Pages, TPT Work | |
+Kevin | About Pages, TPT Work | |
+Sreeja | About Pages, TPT Work | |
+Tristan | About Pages, TPT Work | |
+
