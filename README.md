@@ -16,6 +16,7 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 ## Table of Contents:
 1. [Sprint 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
 2. [Sprint 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-12)
+3. [Sprint 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing)
@@ -54,3 +55,13 @@ Kevin | About Pages, TPT Work | |
 Sreeja | About Pages, TPT Work | |
 Tristan | About Pages, TPT Work | |
 
+### Sprint 3
+Team Links: [Scrum Team Project Review](https://github.com/JakubPonulak/5_hackers/issues/7), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/8)
+
+Team Member | Assignment | Issue |
+--- | --- | --- 
+Hamza | Bootstrap layouts & frontends, TPT Work | |
+Jakub | Highlight commits / pull requests, TPT Work | |
+Kevin | Highlight asynchronous access, TPT Work | |
+Sreeja | Deployment & update process, TPT Work | |
+Tristan | Progress overview, TPT Work | |
