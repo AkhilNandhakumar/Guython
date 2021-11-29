@@ -32,6 +32,7 @@ Sreeja | CB Quizzes | |
 Tristan | CB Quizzes | |
 
 ### Sprint 1,2
+#### Week 1
 Team Links: [Scrum Team Project Review](https://github.com/JakubPonulak/5_hackers/issues/7), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/8)
 
 Team Member | Assignment | Issue |
@@ -41,3 +42,5 @@ Jakub | Scrum Team Project Review, TPT Work | |
 Kevin | Scrum Team Project Review, TPT Work | |
 Sreeja | Scrum Team Project Review, TPT Work | |
 Tristan | Scrum Team Project Review, TPT Work | |
+
+#### Week 2
