@@ -14,7 +14,8 @@ Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=Kevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=senTristanC)
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/senTristanC)
 ## Table of Contents:
-1. [Week 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
+1. [Sprint 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
+2. [Sprint 1,2]()
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing)
@@ -30,3 +31,13 @@ Kevin | CB Quizzes | |
 Sreeja | CB Quizzes | |
 Tristan | CB Quizzes | |
 
+### Sprint 1,2
+Team Links: [Scrum Team Project Review](https://github.com/JakubPonulak/5_hackers/issues/6), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/8)
+
+Team Member | Assignment | Issue |
+--- | --- | --- 
+Hamza | Scrum Team Project Review, TPT Work | |
+Jakub | Scrum Team Project Review, TPT Work | |
+Kevin | Scrum Team Project Review, TPT Work | |
+Sreeja | Scrum Team Project Review, TPT Work | |
+Tristan | Scrum Team Project Review, TPT Work | |
