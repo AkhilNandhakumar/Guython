@@ -56,12 +56,12 @@ Sreeja | About Pages, TPT Work | |
 Tristan | About Pages, TPT Work | |
 
 ### Sprint 3
-Team Links: [Scrum Team Project Review](https://github.com/JakubPonulak/5_hackers/issues/7), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/8)
+Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16)
 
 Team Member | Assignment | Issue |
 --- | --- | --- 
-Hamza | Bootstrap layouts & frontends, TPT Work | |
-Jakub | Highlight commits / pull requests, TPT Work | |
-Kevin | Highlight asynchronous access, TPT Work | |
-Sreeja | Deployment & update process, TPT Work | |
-Tristan | Progress overview, TPT Work | |
+Hamza | Bootstrap layouts & frontends, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Jakub | Highlight commits / pull requests, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Kevin | Highlight asynchronous access, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Sreeja | Deployment & update process, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Tristan | Progress overview, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
