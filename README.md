@@ -26,11 +26,11 @@ Team Links: [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6)
 
 Team Member | Assignment | Issue |
 --- | --- | --- 
-Hamza | CB Quizzes | |
-Jakub | CB Quizzes | |
-Kevin | CB Quizzes | |
-Sreeja | CB Quizzes | |
-Tristan | CB Quizzes | |
+Hamza | CB Quizzes (slide 2) | |
+Jakub | CB Quizzes (slide 2)| |
+Kevin | CB Quizzes (slide 3)| |
+Sreeja | CB Quizzes (slide 3)| |
+Tristan | CB Quizzes (slide 4)| |
 
 ### Sprint 1,2
 #### Week 1
