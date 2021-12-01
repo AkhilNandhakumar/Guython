@@ -25,26 +25,6 @@ def mainpage():
 def gamepage():
     return render_template("game.html")
 
-# connects /kangaroos path to render kangaroos.html
-@app.route('/kangaroos/')
-def kangaroos():
-    return render_template("kangaroos.html")
-
-
-@app.route('/walruses/')
-def walruses():
-    return render_template("walruses.html")
-
-
-@app.route('/hawkers/')
-def hawkers():
-    return render_template("hawkers.html")
-
-
-@app.route('/stub/')
-def stub():
-    return render_template("about_us/jakub.html")
-
 
 # The code below creates the custom about me pages for each team member
 
@@ -74,15 +54,9 @@ def jakub():
                            g3ID=game3ID, g3img=game3img)
 
 
-@app.route('/anika/', methods=['GET', 'POST'])
-def greet1():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("about_us/anika.html", name=name)
-    # starting and empty input default
-    return render_template("about_us/anika.html", name="World")
+@app.route('/kevin/', methods=['GET', 'POST'])
+def kevin():
+    return render_template("about_us/kevin.html")
 
 
 @app.route('/tristan/', methods=['GET', 'POST'])
