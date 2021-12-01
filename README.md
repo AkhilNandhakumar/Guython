@@ -14,21 +14,54 @@ Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=Kevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=senTristanC)
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/senTristanC)
 ## Table of Contents:
-1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
+1. [Sprint 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
+2. [Sprint 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-12)
+3. [Sprint 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing)
 ### [TPT Journal](https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing)
-## Table of Contents:
-1. [Weeks 1,2](https://github.com/JakubPonulak/flask_portfolio_hackers#sprint-12-code-tangibles)
-
-Team Links: [Home Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6)
+### Sprint 0
+Team Links: [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6)
 
 Team Member | Assignment | Issue |
 --- | --- | --- 
-Hamza | Individual Home Page, CB Quizzes, Wireframing | [Wireframing](https://github.com/JakubPonulak/5_hackers/issues/4) |
-Jakub | Individual Home Page, CB Quizzes, GitHub Policy | [Policy](https://github.com/JakubPonulak/5_hackers/issues/2) |
-Kevin | Individual Home Page, CB Quizzes| |
-Sreeja | Individual Home Page, CB Quizzes, Brain Write| [Brain Write](https://github.com/JakubPonulak/5_hackers/issues/3) |
-Tristan | Individual Home Page, CB Quizzes| |
+Hamza | CB Quizzes | |
+Jakub | CB Quizzes | |
+Kevin | CB Quizzes | |
+Sreeja | CB Quizzes | |
+Tristan | CB Quizzes | |
 
+### Sprint 1,2
+#### Week 1
+Team Links: [Scrum Team Project Review](https://github.com/JakubPonulak/5_hackers/issues/7), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/8)
+
+Team Member | Assignment | Issue |
+--- | --- | --- 
+Hamza | Scrum Team Project Review, TPT Work | |
+Jakub | Scrum Team Project Review, TPT Work | |
+Kevin | Scrum Team Project Review, TPT Work | |
+Sreeja | Scrum Team Project Review, TPT Work | |
+Tristan | Scrum Team Project Review, TPT Work | |
+
+#### Week 2
+Team Links: [About Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/9)
+
+Team Member | Assignment | Issue |
+--- | --- | --- 
+Hamza | About Pages, TPT Work | |
+Jakub | About Pages, TPT Work | |
+Kevin | About Pages, TPT Work | |
+Sreeja | About Pages, TPT Work | |
+Tristan | About Pages, TPT Work | |
+
+### Sprint 3
+Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16)
+
+Team Member | Assignment | Issue |
+--- | --- | --- 
+Hamza | Bootstrap layouts & frontends, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Jakub | Highlight commits / pull requests, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Kevin | Highlight asynchronous access, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Sreeja | Deployment & update process, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Tristan | Progress overview, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
