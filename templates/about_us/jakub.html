@@ -7,11 +7,11 @@
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <style>
+        /* this part of style allows me to change the default background of the page, along with font and font sizes for the text */
         body {
-            background: linear-gradient(-45deg, #01438f, #430c7a, #d90dd4);
-            background-size: 100% 100%;
+            background-size: 100% 500%;
             text-align: center;
-            background-image: url("https://iphone-wallpaper-hd.art/wp-content/uploads/iPhone-wallpapers-abstract-painting-blue-green.png");
+            background-image: url("https://media.idownloadblog.com/wp-content/uploads/2021/06/abstract-iphone-wallpaper-idownloadblog-saumil8200-space.jpg");
         }
         .col-12 {
             font-family: Chalkboard
@@ -46,10 +46,12 @@
         }
     </style>
     <p style="margin-top:10px;font-size:45px; font-family: Chalkboard">Welcome, my name is Jakub Ponulak!</p>
+    <!-- These links go to our regular Journal and our TPT journal, which have our work and notes for this trimester -->
     <a style="font-family: Chalkboard; font-size: 30px; font-family: 'Roboto', sans-serif; color: lightblue" href="https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing">Team Journal</a>
     <br>
     <a style="font-family: Chalkboard; font-size: 30px; font-family: 'Roboto', sans-serif; color: lightblue" href="https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing">TPT Journal</a>
     <div style="margin-top: 25px" class="row justify-content-center">
+    <!-- This section below allows me to print metadata from my API, which in this case contains information about my recently-played games -->
         <div class="col-lg">
             Recently played games on Steam (using Steam's API)
         </div>
@@ -85,21 +87,20 @@
     <br>
     <div>
     <script>
+        // this function enables me to toggle between two images, showing my favorite places to go
+        var toggle = false
         function changeSrc() {
-            var img = document.getElementById("image1")
-            img.src="https://itsnothouitsme.com/2017/11/04/best-pizza-in-houston/img_6859/"
-            return false
-        }
-        function changeSrc2() {
-            var img = document.getElementById("image1")
-            img.src="https://cdn.abcotvs.com/dip/images/4504840_101718-dd-dunn-in-n-out-burger-houston-vid.jpg?w=1600"
-            return false
+            if (toggle === true) {
+                document.getElementById("image1").src = "http://cdn.cnn.com/cnnnext/dam/assets/181010131059-australia-best-beaches-cossies-beach-cocos3.jpg"
+            } else {
+                document.getElementById("image1").src = "https://davidsuzuki.org/wp-content/uploads/2020/03/forest-walks.jpg"
+            }
+            toggle = !toggle
         }
     </script>
-    <img style="max-width: 500px; max-height: 200px" id="image1" src="https://cdn.abcotvs.com/dip/images/4504840_101718-dd-dunn-in-n-out-burger-houston-vid.jpg?w=1600">
+    <img style="max-width: 500px; max-height: 200px" id="image1" src="https://davidsuzuki.org/wp-content/uploads/2020/03/forest-walks.jpg">
     <br>
-    <button onclick="changeSrc()">Favorite Food 1</button>
-    <button onclick="changeSrc2()">Favorite Food 2</button>
+    <button onclick="changeSrc()">Toggle Favorite Place</button>
     </div>
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: verdana,sans-serif;">
         <div class="col-12">
