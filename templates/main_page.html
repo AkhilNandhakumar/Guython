@@ -9,42 +9,61 @@
  h1 {
      margin-top: 25px;
      font-size: 60px;
-     font-family: Impact;
+     font-family: Impact, serif;
+     animation: fadeInFromNone 0.9s 0s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
  }
  .itemContainer {
      display: flex;
      flex-direction: row;
  }
- .math, .history, .science, .english {
+ #mathIcon, #historyIcon, #scienceIcon, #literatureIcon {
      align-items: center;
      width: 25%;
+     opacity: 0;
  }
-#imageIcon {
-    border-color: black;
-    border-width: 10px;
-    border-style: solid;
- }
- #textIcon {
-     color: black;
+
+ #mathIcon {animation: fadeInFromNone 0.9s 600ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;}
+ #historyIcon {animation: fadeInFromNone 0.9s 700ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;}
+ #scienceIcon {animation: fadeInFromNone 0.9s 800ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;}
+ #literatureIcon {animation: fadeInFromNone 0.9s 900ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;}
+
+ .textIcon {
+     color: white;
      font-size: 40px;
      font-weight: bold;
  }
  #containerFlavorText {
      color: white;
      font-size: 40px;
+     opacity: 0;
+     animation: fadeInFromNone 0.9s 400ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
  }
  .t1 {
-     text-align: right;
      margin-left: 200px;
      margin-right: 200px;
      margin-top: 20px;
      font-size: 25px;
      text-align: center;
+     opacity: 0;
+     animation: fadeInFromNone 0.9s 200ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+ }
+ @-webkit-keyframes fadeInFromNone {
+     0% {
+         opacity: 0;
+     }
+
+     1% {
+         opacity: 0;
+     }
+
+     100% {
+         opacity: 1;
+     }
  }
 </style>
 <h1>Backpack Pro+</h1>
 <div class="t1">
-    Backpack Pro is a website meant to help high school students around the world.
+    Backpack Pro is a website meant to help high school students around the US.
     <br>
     Learn about important topics such as Math, Science, History, and many more.
     <br>
@@ -58,26 +77,27 @@
 <body>
 
 <div class="itemContainer">
-    <div class="math" id="itemIcon">
+    <div id="mathIcon">
         <img src="static/assets/iconography/mathsSubjectIcon.png" id="imageIcon1" alt='Website Error'> <br>
-        <p id="textIcon">Math</p>
+        <p class="textIcon" id='mathText'>Mathematics</p>
     </div>
-    <div class="history" id="itemIcon">
+    <div id="historyIcon">
         <img src="static/assets/iconography/historySubjectIcon.png" id="imageIcon2" alt='Website Error'> <br>
-        <p id="textIcon">Math</p>
+        <p class="textIcon" id='historyText'>American History</p>
     </div>
-    <div class="science" id="itemIcon">
+    <div id="scienceIcon">
         <img src="static/assets/iconography/scienceSubjectIcon.png" id="imageIcon3" alt='Website Error'> <br>
-        <p id="textIcon">Math</p>
+        <p class="textIcon" id='scienceText'>Science</p>
     </div>
-    <div class="english" id="itemIcon">
+    <div id="literatureIcon">
         <img src="static/assets/iconography/literatureSubjectIcon.png" id="imageIcon4" alt='Website Error'> <br>
-        <p id="textIcon">Math</p>
+        <p class="textIcon" id='literatureText'>English Literature</p>
     </div>
 </div>
 
 </body>
     <script>
+        let image1 = 0;
         let previousTime = 0.0;
 
         const loop = time => {
@@ -99,8 +119,8 @@
         });
 
         function update() {
-            let iconWidth = document.getElementById("itemIcon").clientWidth;
-            document.getElementById("itemIcon").style.height = iconWidth + "px";
+            let iconWidth = document.getElementById("mathIcon").clientWidth;
+            document.getElementById("mathIcon").style.height = iconWidth + "px";
             document.getElementById("imageIcon1").style.height = iconWidth / 2 + "px";
             document.getElementById("imageIcon1").style.width = iconWidth / 2 + "px";
             document.getElementById("imageIcon2").style.height = iconWidth / 2 + "px";
@@ -109,7 +129,15 @@
             document.getElementById("imageIcon3").style.width = iconWidth / 2 + "px";
             document.getElementById("imageIcon4").style.height = iconWidth / 2 + "px";
             document.getElementById("imageIcon4").style.width = iconWidth / 2 + "px";
+
+            image1 > 0 ? image1-- : image1
         }
+
+        let mathDiv = document.getElementById("imageIcon1")
+        mathDiv.addEventListener("mouseover", function() {
+            document.getElementById("mathText").style.color = 'red';
+        });
+
     </script>
 {% endblock %}
 <!- This is turning off birds background from base.html -->
