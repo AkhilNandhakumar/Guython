@@ -11,6 +11,28 @@
      font-size: 60px;
      font-family: Impact;
  }
+ .itemContainer {
+     display: flex;
+     flex-direction: row;
+ }
+ .math, .history, .science, .english {
+     align-items: center;
+     width: 25%;
+ }
+#imageIcon {
+    border-color: black;
+    border-width: 10px;
+    border-style: solid;
+ }
+ #textIcon {
+     color: black;
+     font-size: 40px;
+     font-weight: bold;
+ }
+ #containerFlavorText {
+     color: white;
+     font-size: 40px;
+ }
  .t1 {
      text-align: right;
      margin-left: 200px;
@@ -32,9 +54,65 @@
     <br>
     So what are you waiting for? Start using Backpack Pro and get your grades up today!
 </div>
+    <br><br><br> <p id="containerFlavorText"> Click on any of these subjects to receive homework help</p> <br><br><br>
+<body>
 
+<div class="itemContainer">
+    <div class="math" id="itemIcon">
+        <img src="https://cdn-icons-png.flaticon.com/512/43/43102.png" id="imageIcon1"> <br>
+        <p id="textIcon">Math</p>
+    </div>
+    <div class="history" id="itemIcon">
+        <img src="https://www.pngfind.com/pngs/m/183-1835543_globe-europe-africa-and-middle-east-map-hd.png"> <br>
+        <p id="textIcon">Math</p>
+    </div>
+    <div class="science" id="itemIcon">
+        <img src="https://cdn-icons-png.flaticon.com/512/43/43102.png" id="imageIcon3"> <br>
+        <p id="textIcon">Math</p>
+    </div>
+    <div class="english" id="itemIcon">
+        <img src="https://cdn-icons-png.flaticon.com/512/43/43102.png" id="imageIcon4"> <br>
+        <p id="textIcon">Math</p>
+    </div>
+</div>
+
+</body>
+    <script>
+        let previousTime = 0.0;
+
+        const loop = time => {
+            // Compute the delta-time against the previous time
+            const dt = time - previousTime; previousTime = time;
+
+            // Update game
+            update(dt);
+
+            // Repeat
+            window.requestAnimationFrame(loop);
+        };
+
+        // Launch
+        window.requestAnimationFrame(time => {
+            previousTime = time;
+
+            window.requestAnimationFrame(loop);
+        });
+
+        function update() {
+            let iconWidth = document.getElementById("itemIcon").clientWidth;
+            document.getElementById("itemIcon").style.height = iconWidth + "px";
+            document.getElementById("imageIcon1").style.height = iconWidth / 2 + "px";
+            document.getElementById("imageIcon1").style.width = iconWidth / 2 + "px";
+            document.getElementById("imageIcon2").style.height = iconWidth / 2 + "px";
+            document.getElementById("imageIcon2").style.width = iconWidth / 2 + "px";
+            document.getElementById("imageIcon3").style.height = iconWidth / 2 + "px";
+            document.getElementById("imageIcon3").style.width = iconWidth / 2 + "px";
+            document.getElementById("imageIcon4").style.height = iconWidth / 2 + "px";
+            document.getElementById("imageIcon4").style.width = iconWidth / 2 + "px";
+        }
+
+    </script>
 {% endblock %}
-
 <!- This is turning off birds background from base.html -->
 {% block background %}
 {% endblock %}
