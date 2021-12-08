@@ -70,9 +70,9 @@ def greet2():
     return render_template("about_us/tristan.html", name="World")
 
 
-@app.route('/vunsh/', methods=['GET', 'POST'])
-def greet3():
-    return render_template("about_us/vunsh.html")
+@app.route('/sreeja/', methods=['GET', 'POST'])
+def sreeja():
+    return render_template("about_us/sreeja.html")
 
 
 # The code below creates the lab pages
