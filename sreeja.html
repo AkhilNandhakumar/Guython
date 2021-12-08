@@ -1,0 +1,88 @@
+{% extends "layouts/base.html" %}
+
+{% set project = "Sreeja" %}
+
+{% block body %}
+    <style>
+        body {
+            background-image: linear-gradient(90deg, #CEC8E4, #A4BCE0);
+            background-size: 800% 800%;
+            text-align: center;
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+
+    <body>
+    <div class="w3-container w3-sand">
+        <h2 style="text-align:center;margin: 45px;">A Little About Me</h2>
+        <p style="text-align:center;margin: 45px;">Hi! I'm Sreeja and I am a junior! I am 16 years old and I've lived
+            in San Diego my whole life with my parents and older brother. I have a dog named Bandit who is 3 and I love
+            to relax with him after a long day. When I'm not hanging out with my friends, I'm taking pictures, playing
+            volleyball, painting, or reading. As of right now, I don't really know what I want to be when I'm older, however,
+            I'm leaning towards becoming a psychiatrist or a biotech engineer. These are some pictures of me! </p>
+        <p style="text-align:center;margin: 45px;">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS2ACXY_8427bQnLWY4aMNA2XbCYH9dUcgF_VnFKCnpNpExb8c8yx7a5pZa3MdGnMxEYNbqKpqO1SGm/embed?start=false&loop=false&delayms=3000" style="height: 200px; width: 400px;"></iframe>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSHGuWhFW_xb7dW54CySo_nj7tly9BzT_YY495xK5yeHGOdpes8BH-FBAY5usbDJ4CNIzVSGAFPpLrJ/embed?start=false&loop=false&delayms=3000" style="height: 200px; width: 400px;"></iframe>
+        </p>
+    </div>
+    </body>
+    <script>
+        // this function enables me to toggle between two images, showing my favorite places to go
+        var toggle = false
+        function changeSrc() {
+            if (toggle === true) {
+                document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja2.jpg"
+            } else {
+                document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja4.jpg"
+            }
+            toggle = !toggle
+        }
+    </script>
+
+    <div style="text-align: center;">
+        <img src="/static/assets/sreejaImages/sreeja3.JPG" height="500" width="370"/>
+        <img style="max-width: 370px; max-height: 500px" id="image1" src="/static/assets/sreejaImages/sreeja2.jpg">
+        <img src="/static/assets/sreejaImages/sreeja1.jpg" height="500" width="370"/>
+        <br><button onclick="changeSrc()">Toggle Old/Young Picture</button>
+    </div>
+
+    <script>
+        var axios = require("axios").default;
+
+        var options = {
+            method: 'GET',
+            url: 'https://shazam.p.rapidapi.com/songs/list-recommendations',
+            params: {key: '484129036', locale: 'en-US'},
+            headers: {
+                'x-rapidapi-host': 'shazam.p.rapidapi.com',
+                'x-rapidapi-key': '05cd5ecb69msh65f30850019e80dp124961jsn1cec22cef625'
+            }
+        };
+        axios.request(options).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+    </script>
+
+    <div style="text-align:center;margin: 45px;">
+        <h2>Song Generator</h2>
+        <table>
+            <th>
+                <form action="/starter/concerts" id="concertz" method="POST" >
+                    <label for="concertz">Search for a song</label>
+                    <input name="concertz" id="concertz">
+                    <input type="submit" value="Click to enter">
+                    {{fact}} <br>
+                </form>
+            </th>
+        </table>
+    </div>
+
+
+{% endblock %}
+
+{% block background %}
+{% endblock %}
