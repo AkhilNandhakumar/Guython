@@ -50,10 +50,10 @@ Team Links: [About Pages](https://github.com/JakubPonulak/5_hackers/issues/1), [
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | About Pages, TPT Work | |
-Jakub | About Pages, TPT Work, Help update Scrum Board / README | |
+Jakub | About Pages, TPT Work, Help update Scrum Board / README | [Updates](https://github.com/JakubPonulak/5_hackers/issues/23) |
 Kevin | About Pages, TPT Work | |
-Sreeja | About Pages, TPT Work, Deploy Website, Deployment Policy | |
-Tristan | About Pages, TPT Work, Update Scrum Board / README | |
+Sreeja | About Pages, TPT Work, Deploy Website, Deployment Policy |[Deployment](https://github.com/JakubPonulak/5_hackers/issues/10), [Policy](https://github.com/JakubPonulak/5_hackers/issues/23) |
+Tristan | About Pages, TPT Work, Update Scrum Board / README | [Updates](https://github.com/JakubPonulak/5_hackers/issues/23) |
 
 ### Sprint 3
 Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16)
