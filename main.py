@@ -56,8 +56,18 @@ def jakub():
 
 @app.route('/kevin/', methods=['GET', 'POST'])
 def kevin():
-    return render_template("about_us/kevin.html")
 
+    url = "https://dad-jokes.p.rapidapi.com/random/joke"
+
+    headers = {
+    'x-rapidapi-host': "dad-jokes.p.rapidapi.com",
+    'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+
+    text = response.text
+    return render_template("about_us/kevin.html", text=text)
 
 @app.route('/tristan/', methods=['GET', 'POST'])
 def greet2():
