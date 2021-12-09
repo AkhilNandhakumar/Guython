@@ -47,6 +47,14 @@
      opacity: 0;
      animation: fadeInFromNone 0.9s 200ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
  }
+ #vfx {
+     position: absolute;
+     margin: 0;
+     padding: 0;
+     top: 0;
+     left: 0;
+     z-index: -1;
+ }
  @-webkit-keyframes fadeInFromNone {
      0% {
          opacity: 0;
@@ -95,8 +103,42 @@
     </div>
 </div>
 
+<canvas id='vfx'></canvas>
 </body>
     <script>
+        let c  = document.getElementById('vfx');
+        let ctx = c.getContext('2d');
+        c.width = screen.width;
+        c.height = screen.height;
+        particles = [];
+        class Particle {
+            constructor() {
+                this.xPos = Math.random() * c.width;
+                this.yPos = Math.random() * c.height;
+                this.xVel = Math.random() * 10 - 5;
+                this.yVel = Math.random() * 10 - 5;
+                this.size = Math.random() * 3 + 2;
+                this.lifetime = 0;
+                this.decay = Math.random() * 2 + 1;
+                this.opacity = 0;
+                this.deletion = false;
+            }
+            update(dt) {
+                this.xPos += this.xVel;
+                this.yPos += this.yVel;
+                this.lifetime += this.decay;
+                this.opacity = (0.4 * ((this.lifetime / 40 - 5) ** 2) + 10) / 10;
+
+                if (this.lifetime > 300) {this.deletion = true}
+            }
+            draw() {
+                ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
+                ctx.fillRect(this.xPos - this.size / 2, this.yPos - this.size / 2, this.size, this.size);
+            }
+        }
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle())
+        }
         let image1 = 0;
         let previousTime = 0.0;
 
@@ -118,7 +160,7 @@
             window.requestAnimationFrame(loop);
         });
 
-        function update() {
+        function update(dt) {
             let iconWidth = document.getElementById("mathIcon").clientWidth;
             document.getElementById("mathIcon").style.height = iconWidth + "px";
             document.getElementById("imageIcon1").style.height = iconWidth / 2 + "px";
@@ -131,13 +173,19 @@
             document.getElementById("imageIcon4").style.width = iconWidth / 2 + "px";
 
             image1 > 0 ? image1-- : image1
+
+            ctx.clearRect(0,0,screen.width, screen.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update(dt)
+                particles[i].draw()
+
+            }
         }
 
         let mathDiv = document.getElementById("imageIcon1")
         mathDiv.addEventListener("mouseover", function() {
             document.getElementById("mathText").style.color = 'red';
         });
-
     </script>
 {% endblock %}
 <!- This is turning off birds background from base.html -->
