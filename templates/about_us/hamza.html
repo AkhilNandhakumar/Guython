@@ -1,0 +1,79 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Hamza" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here ->
+    <p>{{ text }}</p>
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+        <div>
+            <h1 id="hamzaHead">About me</h1>
+            <p id="intro_hamza"> Hey! My name is Hamza Hakak, but you can call me Hamza (pronounced: Haum-zah). I am a current Del Norte senior. I was born in Dubai on September 10th, 2004. I lived in Dubai and Muscat, Oman, until the 5th grade. That's when I moved to The Golden State. I speak Arabic at home, and English at school. I am of arabic origin, and I enjoy arab things such as, foods, music, shows, literature, and the overall culture. I am interested in soccer, business, politics, and philosophy. In my free time I enjoy socializing with friends, studying, researching politics, researching business, and investing. I also love traveling. My favorite traveling destinations are Abu Dhabi, Muscat, and Doha. Some places that I really want to go to are Socotra and Baghdad. I am interested in a career in computer science, so I took this class. I plan on majoring in CS in college and my ultimate goal is to create a business revolving around this field. </p>
+        </div>
+            <div class="buttons_hamza">
+                <style>
+                .buttons_hamza{
+                    text-align:center;
+                    }
+                </style>
+        <a href="https://twitter.com/vuneesh" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com/channel/UCc2-ENMh311Xyb8VAxau5CQ" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/vuneesh/" class="fa fa-instagram"></a>
+        <a href="https://open.spotify.com/user/4oyjh2n50rd3x23r6aqgpg5z0?si=57c02739306c4951" class="fa fa-spotify"></a>
+        </div>
+    </div>
+
+    <div class = "playlist_embed_hamza">
+
+        <iframe src="https://open.spotify.com/embed/playlist/79sWKpi4zOGu6IsviDqg5T" width="250" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    </div>
+    <p style="font-size:29px">Page Wireframing</p>
+    </div>
+    <script>
+        // this function enables me to toggle between two images, showing my favorite places to go
+        var toggle = false
+        function changeSrc() {
+            if (toggle === true) {
+                document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja2.jpg"
+            } else {
+                document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja4.jpg"
+            }
+            toggle = !toggle
+        }
+    </script>
+
+    <div style="text-align: center;">
+        <img style="max-width: 370px; max-height: 500px" id="image1" src="/static/assets/sreejaImages/sreeja2.jpg">
+        <br><button onclick="changeSrc()">Toggle Old/Young Picture</button>
+    </div>
+
+</div>
+<br />
+<br />
+<p style="font-size:29px">Greet Integration:</p>
+<div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
+    <div class="col-12">
+        <p>Hello, {{name}}!</p>
+    </div>
+    <div class="col-12">
+        <form action="/tristan/" id="stub" method="POST" >
+            <label for="name">Type a greeting name?</label>
+            <input name="name" id="name">
+            <input type="submit" value="Greetings!">
+        </form>
+    </div>
+
+    <div class="col-12">
+        <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
+    </div>
+</div>
+
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
