@@ -2,19 +2,20 @@
 {% extends "layouts/base.html" %}
 
 <!- This variable sets name of browser tab  -->
-{% set project = "Vunsh" %}
+{% set project = "Hamza" %}
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here ->
+    <p>{{ text }}</p>
     <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
         <div>
-            <h1 id="vunshHead">About me</h1>
-            <p id="intro_vunsh">Hi! My name is Vunsh Mehta and I am an 11th grader at Del Norte High School. I love to code, video edit, bike, and sleep. Below you can find some things that describe me, I hope you enjoy!</p>
+            <h1 id="hamzaHead">About me</h1>
+            <p id="intro_hamza">Hi! My name is Vunsh Mehta and I am an 11th grader at Del Norte High School. I love to code, video edit, bike, and sleep. Below you can find some things that describe me, I hope you enjoy!</p>
         </div>
-            <div class="buttons_vunsh">
+            <div class="buttons_hamza">
                 <style>
-                .buttons_vunsh{
+                .buttons_hamza{
                     text-align:center;
                     }
                 </style>
@@ -25,20 +26,30 @@
         </div>
     </div>
 
-    <div class = "playlist_embed_vunsh">
+    <div class = "playlist_embed_hamza">
 
         <iframe src="https://open.spotify.com/embed/playlist/79sWKpi4zOGu6IsviDqg5T" width="250" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
     </div>
     <p style="font-size:29px">Page Wireframing</p>
     </div>
+    <script>
+        // this function enables me to toggle between two images, showing my favorite places to go
+        var toggle = false
+        function changeSrc() {
+            if (toggle === true) {
+                document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja2.jpg"
+            } else {
+                document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja4.jpg"
+            }
+            toggle = !toggle
+        }
+    </script>
 
-<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
- padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAEpcjyIKrI&#x2F;view?embed">
-    </iframe>
+    <div style="text-align: center;">
+        <img style="max-width: 370px; max-height: 500px" id="image1" src="/static/assets/sreejaImages/sreeja2.jpg">
+        <br><button onclick="changeSrc()">Toggle Old/Young Picture</button>
+    </div>
 
 </div>
 <br />
