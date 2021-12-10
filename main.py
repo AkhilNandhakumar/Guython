@@ -56,7 +56,6 @@ def jakub():
 
 @app.route('/kevin/', methods=['GET', 'POST'])
 def kevin():
-
     url = "https://dad-jokes.p.rapidapi.com/random/joke"
 
     headers = {
@@ -68,6 +67,7 @@ def kevin():
 
     text = response.text
     return render_template("about_us/kevin.html", text=text)
+
 
 @app.route('/tristan/', methods=['GET', 'POST'])
 def greet2():
