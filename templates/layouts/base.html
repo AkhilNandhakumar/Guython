@@ -26,6 +26,15 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
         @import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Londrina+Outline&family=Raleway:wght@100&display=swap');
 
+        #vfx {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
         body, html {
             max-width: 100%;
             overflow-x: hidden;
@@ -286,6 +295,9 @@ This HTML is setup as as a Jinja2 layout, coders use layouts for:
             window.scroll(0, window.pageYOffset)
         }
         window.addEventListener("scroll", scrollEventHandler, false);
+        let winWidth = window.innerWidth;
+        let winHeight = window.innerHeight;
+        window.addEventListener('resize', function (){winWidth = window.innerWidth; winHeight = window.innerHeight;});
     </script>
 {% endblock %}
 

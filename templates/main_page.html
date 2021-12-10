@@ -47,13 +47,9 @@
      opacity: 0;
      animation: fadeInFromNone 0.9s 200ms cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
  }
- #vfx {
-     position: absolute;
-     margin: 0;
-     padding: 0;
-     top: 0;
-     left: 0;
-     z-index: -1;
+ ::-webkit-scrollbar {
+     width: 0;  /* Remove scrollbar space */
+     background: transparent;  /* Optional: just make scrollbar invisible */
  }
  @-webkit-keyframes fadeInFromNone {
      0% {
@@ -104,13 +100,15 @@
 </div>
 
 <canvas id='vfx'></canvas>
+
 </body>
     <script>
         let c  = document.getElementById('vfx');
         let ctx = c.getContext('2d');
-        c.width = screen.width;
-        c.height = screen.height;
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
         particles = [];
+        let stuff1 = 0
         class Particle {
             constructor() {
                 this.xPos = Math.random() * c.width;
@@ -136,11 +134,22 @@
                 ctx.fillRect(this.xPos - this.size / 2, this.yPos - this.size / 2, this.size, this.size);
             }
         }
+
         for (let i = 0; i < 100; i++) {
             particles.push(new Particle())
         }
-        let image1 = 0;
+
         let previousTime = 0.0;
+
+        let literatureTextSize = 0;
+        let mathTextSize = 0;
+        let historyTextSize = 0;
+        let scienceTextSize = 0;
+
+        let mouseOn1 = false;
+        let mouseOn2 = false;
+        let mouseOn3 = false;
+        let mouseOn4 = false;
 
         const loop = time => {
             // Compute the delta-time against the previous time
@@ -161,6 +170,7 @@
         });
 
         function update(dt) {
+
             let iconWidth = document.getElementById("mathIcon").clientWidth;
             document.getElementById("mathIcon").style.height = iconWidth + "px";
             document.getElementById("imageIcon1").style.height = iconWidth / 2 + "px";
@@ -172,20 +182,58 @@
             document.getElementById("imageIcon4").style.height = iconWidth / 2 + "px";
             document.getElementById("imageIcon4").style.width = iconWidth / 2 + "px";
 
-            image1 > 0 ? image1-- : image1
-
-            ctx.clearRect(0,0,screen.width, screen.height);
+            ctx.clearRect(0, 0, c.width, c.height);
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update(dt)
                 particles[i].draw()
-
             }
+
+            mathTextSize *= 0.95;
+            literatureTextSize *= 0.95;
+            historyTextSize *= 0.95;
+            scienceTextSize *= 0.95;
+
+            if (mouseOn1 === true) {mathTextSize += 1}
+            if (mouseOn2 === true) {literatureTextSize += 1}
+            if (mouseOn3 === true) {historyTextSize += 1}
+            if (mouseOn4 === true) {scienceTextSize += 1}
+
+            ctx.font = 'Arial 40'
+
         }
 
         let mathDiv = document.getElementById("imageIcon1")
         mathDiv.addEventListener("mouseover", function() {
-            document.getElementById("mathText").style.color = 'red';
+            mouseOn1 = true;
         });
+        mathDiv.addEventListener("mouseout", function() {
+            mouseOn1 = false;
+        });
+
+        let literatureDiv = document.getElementById("imageIcon2")
+        literatureDiv.addEventListener("mouseover", function() {
+            mouseOn2 = true;
+        });
+        literatureDiv.addEventListener("mouseout", function() {
+            mouseOn2 = false;
+        });
+
+        let historyDiv = document.getElementById("imageIcon3")
+       historyDiv.addEventListener("mouseover", function() {
+            mouseOn3 = true;
+        });
+        historyDiv.addEventListener("mouseout", function() {
+            mouseOn3 = false;
+        });
+
+        let scienceDiv = document.getElementById("imageIcon4")
+        scienceDiv.addEventListener("mouseover", function() {
+            mouseOn4 = true;
+        });
+        scienceDiv.addEventListener("mouseout", function() {
+            mouseOn4 = false;
+        });
+
     </script>
 {% endblock %}
 <!- This is turning off birds background from base.html -->

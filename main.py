@@ -70,14 +70,17 @@ def kevin():
 
 
 @app.route('/tristan/', methods=['GET', 'POST'])
-def greet2():
-    # submit button has been pushed
-    if request.form:
-        name = request.form.get("name")
-        if len(name) != 0:  # input field has content
-            return render_template("about_us/tristan.html", name=name)
-    # starting and empty input default
-    return render_template("about_us/tristan.html", name="World")
+def tristan():
+    url = "https://genius.p.rapidapi.com/artists/16775/songs"
+
+    headers = {
+        'x-rapidapi-host': "genius.p.rapidapi.com",
+        'x-rapidapi-key': "deb5e7f2d3mshad8ffd0c6263400p144918jsnd5cede3b7ac9"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+    text = response.text
+    return render_template("about_us/tristan.html", text=text)
 
 
 @app.route('/sreeja/', methods=['GET', 'POST'])
@@ -85,8 +88,8 @@ def sreeja():
     url = "https://brooklyn-nine-nine-quotes.p.rapidapi.com/api/v1/quotes/random"
 
     headers = {
-    'x-rapidapi-host': "brooklyn-nine-nine-quotes.p.rapidapi.com",
-    'x-rapidapi-key': "05cd5ecb69msh65f30850019e80dp124961jsn1cec22cef625"
+        'x-rapidapi-host': "brooklyn-nine-nine-quotes.p.rapidapi.com",
+        'x-rapidapi-key': "05cd5ecb69msh65f30850019e80dp124961jsn1cec22cef625"
     }
     response = requests.request("GET", url, headers=headers)
 
