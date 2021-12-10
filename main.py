@@ -82,7 +82,19 @@ def greet2():
 
 @app.route('/sreeja/', methods=['GET', 'POST'])
 def sreeja():
-    return render_template("about_us/sreeja.html")
+    url = "https://motivational-quotes1.p.rapidapi.com/motivation"
+
+    payload = "{\"key1\": \"value\",\"key2\": \"value\"}"
+    headers = {
+        'content-type': "application/json",
+        'x-rapidapi-host': "motivational-quotes1.p.rapidapi.com",
+        'x-rapidapi-key': "6aa5930ddamsh4e21c56a3045ce9p1aaf49jsn2e14280f30bb"
+    }
+
+    response = requests.request("POST", url, data=payload, headers=headers)
+
+    text = response.text
+    return render_template("about_us/sreeja.html", text=text)
 
 
 @app.route('/hamza/', methods=['GET', 'POST'])
