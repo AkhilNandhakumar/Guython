@@ -35,7 +35,7 @@ Tristan | CB Quizzes | |
 ### Sprint 1,2
 #### Week 1
 Team Links: [Scrum Team Project Review](https://github.com/JakubPonulak/5_hackers/issues/7), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/8)
-
+[Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/21)
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | Scrum Team Project Review, TPT Work | |
