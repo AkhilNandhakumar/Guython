@@ -19,35 +19,29 @@
                     text-align:center;
                     }
                 </style>
-        <a href="https://twitter.com/vuneesh" class="fa fa-twitter"></a>
-        <a href="https://www.youtube.com/channel/UCc2-ENMh311Xyb8VAxau5CQ" class="fa fa-youtube"></a>
-        <a href="https://www.instagram.com/vuneesh/" class="fa fa-instagram"></a>
-        <a href="https://open.spotify.com/user/4oyjh2n50rd3x23r6aqgpg5z0?si=57c02739306c4951" class="fa fa-spotify"></a>
+
+        <a href="https://instagram.com/designedbyhamza/" class="fa fa-instagram"></a>
+        <a href="https://feelthemusi.com/playlist/809b93" class="fa fa-spotify"></a>
         </div>
     </div>
 
-    <div class = "playlist_embed_hamza">
-
-        <iframe src="https://open.spotify.com/embed/playlist/79sWKpi4zOGu6IsviDqg5T" width="250" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-    </div>
-    <p style="font-size:29px">Page Wireframing</p>
+    <p style="font-size:29px">Young Hamza vs Younger Hamza</p>
     </div>
     <script>
         // this function enables me to toggle between two images, showing my favorite places to go
         var toggle = false
         function changeSrc() {
             if (toggle === true) {
-                document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja2.jpg"
+                document.getElementById("image1").src ="/static/assets/hamzaImages/hamza.jpg"
             } else {
-                document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja4.jpg"
+                document.getElementById("image1").src ="/static/assets/hamzaImages/hamoozi.jpg"
             }
             toggle = !toggle
         }
     </script>
 
     <div style="text-align: center;">
-        <img style="max-width: 370px; max-height: 500px" id="image1" src="/static/assets/sreejaImages/sreeja2.jpg">
+        <img style="max-width: 370px; max-height: 500px" id="image1" src="/static/assets/hamzaImages/hamza.jpg">
         <br><button onclick="changeSrc()">Toggle Old/Young Picture</button>
     </div>
 
