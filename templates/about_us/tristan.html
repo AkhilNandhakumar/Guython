@@ -106,19 +106,19 @@
         c.height = window.innerHeight - 1;
         particles = [];
         let scrollAmount = 0;
-        let posX = -100;
-        let posY = -100;
+        let posX = c.width / 2;
+        let posY = c.height / 2;
         window.addEventListener("scroll", function(){
             scrollAmount = window.scrollY;
         });
 
         class Particle {
             constructor() {
-                this.xPos = Math.random() * c.width;
-                this.yPos = Math.random() * c.height;
+                this.xPos = Math.random() * (c.width * 1.1) - c.width * 0.1;
+                this.yPos = Math.random() * (c.height * 1.1) - c.height * 0.1;
                 this.xVel = Math.random() * 3 - 1.5;
                 this.yVel = Math.random() * 3 - 1.5;
-                this.size = Math.random() * 3 + 2;
+                this.size = Math.random() * 5 + 2;
                 this.lifetime = 0;
                 this.decay = Math.random() * 2 + 1;
                 this.opacity = 0;
@@ -128,9 +128,9 @@
                 this.xPos += this.xVel;
                 this.yPos += this.yVel;
 
-                let distance = (this.xPos - posX) ** 2
-                this.xPos += 4 * (this.xPos - posX) / (Math.abs(this.yPos - posY) + Math.abs(this.xPos - posX))
-                this.yPos += 4 * (this.yPos - posY) / (Math.abs(this.yPos - posY) + Math.abs(this.xPos - posX))
+                let distance = Math.sqrt((this.xPos - posX) * (this.xPos - posX) + (this.yPos - posY) * (this.yPos - posY))
+                this.xPos += 400 * (this.xPos - posX) / (Math.abs(this.yPos - posY) + Math.abs(this.xPos - posX)) / (distance + 10)
+                this.yPos += 400 * (this.yPos - posY) / (Math.abs(this.yPos - posY) + Math.abs(this.xPos - posX)) / (distance + 10)
 
                 this.lifetime += this.decay;
                 this.opacity = -((this.lifetime / 150) - 1) + 1
@@ -142,9 +142,15 @@
             draw() {
                 ctx.fillStyle = `rgba(0,0,0,${this.opacity})`;
                 ctx.fillRect(this.xPos - this.size / 2, this.yPos - this.size / 2, this.size, this.size);
+                let particle = Math.round(Math.random() * (particles.length - 1));
+                ctx.strokeStyle = 'rgba(0,0,0,0.05)';
+                ctx.beginPath();
+                ctx.moveTo(this.xPos, this.yPos);
+                ctx.lineTo(particles[particle].xPos, particles[particle].yPos);
+                ctx.stroke();
             }
         }
-        for (let i = 0; i < 5000; i++) {
+        for (let i = 0; i < 4000; i++) {
             particles.push(new Particle())
         }
         let previousTime = 0.0;
@@ -171,7 +177,6 @@
             ctx.clearRect(0,0,c.width, c.height);
             ctx.fillStyle = 'rgba(128,0,0,0.5)';
             ctx.fillRect(0,0,c.width, c.height);
-            ctx.fillStyle = 'white';
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update(dt)
                 particles[i].draw()
@@ -179,8 +184,6 @@
                     particles[i] = new Particle()
                 }
             }
-            ctx.fillStyle = 'red';
-            ctx.fillText(`${posX} ${posY}`, 10,10)
         }
         addEventListener('mousemove', e => {
             posX = e.pageX;

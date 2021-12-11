@@ -8,6 +8,15 @@
             background-image: linear-gradient(90deg, #CEC8E4, #A4BCE0);
             background-size: 800% 800%;
             text-align: center;
+        }
+        #aboutCanvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 0;
+            margin: 0;
+            z-index: -1;
+        }
     </style>
     <head>
         <meta charset="UTF-8">
@@ -32,7 +41,7 @@
     </body>
     <script>
         // this function enables me to toggle between two images, showing my favorite places to go
-        var toggle = false
+        let toggle = false
         function changeSrc() {
             if (toggle === true) {
                 document.getElementById("image1").src ="/static/assets/sreejaImages/sreeja2.jpg"
@@ -44,13 +53,95 @@
     </script>
 
     <div style="text-align: center;">
-        <img src="/static/assets/sreejaImages/sreeja3.JPG" height="500" width="370"/>
-        <img style="max-width: 370px; max-height: 500px" id="image1" src="/static/assets/sreejaImages/sreeja2.jpg">
-        <img src="/static/assets/sreejaImages/sreeja1.jpg" height="500" width="370"/>
+        <img src="/static/assets/sreejaImages/sreeja3.JPG" height="500" width="370" alt='null'>
+        <img style="max-width: 370px; max-height: 500px" id="image1" src="/static/assets/sreejaImages/sreeja2.jpg" alt='null'>
+        <img src="/static/assets/sreejaImages/sreeja1.jpg" height="500" width="370" alt='null'>
         <br><button onclick="changeSrc()">Toggle Old/Young Picture</button>
     </div>
     <br><br/>
+    <canvas id='aboutCanvas'></canvas>
+    <script>
+        let c = document.getElementById('aboutCanvas');
+        let ctx = c.getContext('2d');
+        let frame= 0;
+        let draw = 0;
+        c.width = window.innerWidth;
+        c.height = window.innerHeight - 1;
+        fallingCharacters = [];
+        let posX = c.width / 2;
+        let posY = c.height / 2;
+        let characters = 'abcdefghijklmnopqrstuvwx\.yz0123456789!@#$%^&*/\\()_+-=,?><:"}{|\'ﺼﺒﺓﺔﺕﺖﺗㄳㄵㄶㄺㄻㄼㄽㄾㄿㅀㅄ東京とうきょうトーキョー'
+        let fontSize = 20
+        class fallingCharacter {
+            constructor(y) {
+                this.xPos = Math.floor(Math.random() * c.width / fontSize * 2) * fontSize / 2;
+                this.yPos = y;
+                this.character = characters.substr(Math.round(Math.random() * (characters.length - 1)),1)
+                this.special = Math.random();
+                this.special = this.special > 0.5 ? 'true' : 'false';
+            }
+            update() {
+                this.yPos += fontSize
 
+                if (this.special === 'true') {
+                    this.character = characters.substr(Math.round(Math.random() * (characters.length - 1)),1)
+                }
+            }
+            draw() {
+                ctx.fillText(this.character, this.xPos, this.yPos);
+            }
+        }
+        for (let i = 0; i < 700; i++) {
+            fallingCharacters.push(new fallingCharacter(Math.floor(Math.random() * c.height / fontSize) * fontSize));
+        }
+        {#ctx.fillStyle = 'rgb(54,134,224)'
+        ctx.fillRect(0, 0, c.width, c.height);#}
+        let previousTime = 0.0;
+
+        const loop = time => {
+            // Compute the delta-time against the previous time
+            const dt = time - previousTime; previousTime = time;
+
+            // Update game
+            update(dt);
+
+            // Repeat
+            window.requestAnimationFrame(loop);
+        };
+
+        // Launch
+        window.requestAnimationFrame(time => {
+            previousTime = time;
+
+            window.requestAnimationFrame(loop);
+        });
+
+        function update(dt) {
+            frame += dt
+            if (frame > 20) {
+                frame = frame % 20
+                draw++
+                ctx.fillStyle = 'rgb(77,120,201, 0.01)'
+                ctx.fillRect(0, 0, c.width, c.height);
+            }
+            if (draw === 3) {
+                ctx.fillStyle = 'rgb(54,134,224)'
+                ctx.font = `${fontSize}px Verdana`;
+                for (let i = 0; i < fallingCharacters.length; i++) {
+                    fallingCharacters[i].update()
+                    fallingCharacters[i].draw()
+                    if (fallingCharacters[i].yPos > c.height) {
+                        fallingCharacters[i] = new fallingCharacter(0)
+                    }
+                }
+                draw = 0
+            }
+        }
+        addEventListener('mousemove', e => {
+            posX = e.pageX;
+            posY = e.pageY;
+        });
+    </script>
 {% endblock %}
 
 {% block background %}
