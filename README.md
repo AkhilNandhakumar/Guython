@@ -60,8 +60,8 @@ Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16)
 
 Team Member | Assignment | Issue |
 --- | --- | --- 
-Hamza | Bootstrap layouts & frontends, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/11) |
-Jakub | Highlight commits / pull requests, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/15) |
+Hamza | Bootstrap layouts & frontends, TPT Work | [Layouts / Frontends](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Jakub | Highlight commits / pull requests, TPT Work | [Highlights](https://github.com/JakubPonulak/5_hackers/issues/15) |
 Kevin | Highlight asynchronous access, Asynchronous Data Access Video, TPT Work | [Highlights](https://github.com/JakubPonulak/5_hackers/issues/13), [Video](https://github.com/JakubPonulak/5_hackers/issues/17) |
-Sreeja | Deployment & update process, TPT Work | [Link](https://github.com/JakubPonulak/5_hackers/issues/14) |
+Sreeja | Deployment & update process, TPT Work | [Deployment Process](https://github.com/JakubPonulak/5_hackers/issues/14) |
 Tristan | Progress overview, Asynchronous Data Access Video, TPT Work | [Overview](https://github.com/JakubPonulak/5_hackers/issues/12), [Video](https://github.com/JakubPonulak/5_hackers/issues/17) |
