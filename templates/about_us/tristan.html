@@ -156,6 +156,7 @@
         let previousTime = 0.0;
 
         const loop = time => {
+
             // Compute the delta-time against the previous time
             const dt = time - previousTime; previousTime = time;
 
@@ -164,6 +165,7 @@
 
             // Repeat
             window.requestAnimationFrame(loop);
+
         };
 
         // Launch
