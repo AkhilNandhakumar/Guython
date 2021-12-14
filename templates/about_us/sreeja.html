@@ -51,7 +51,9 @@
             toggle = !toggle
         }
     </script>
-
+    <script type="text/javascript">
+        document.body.style.cursor = 'none';
+    </script>
     <div style="text-align: center;">
         <img src="/static/assets/sreejaImages/sreeja3.JPG" height="500" width="370" alt='null'>
         <img style="max-width: 370px; max-height: 500px" id="image1" src="/static/assets/sreejaImages/sreeja2.jpg" alt='null'>
@@ -65,6 +67,8 @@
         let ctx = c.getContext('2d');
         let frame= 0;
         let draw = 0;
+        let oldPosX;
+        let oldPosY;
         c.width = window.innerWidth;
         c.height = window.innerHeight - 1;
         fallingCharacters = [];
@@ -136,8 +140,12 @@
                 }
                 draw = 0
             }
+            ctx.fillStyle = 'red'
+            ctx.fillRect(posX - 5, posY - 5,10,10);
         }
         addEventListener('mousemove', e => {
+            oldPosX = posX
+            oldPosY = posY
             posX = e.pageX;
             posY = e.pageY;
         });
