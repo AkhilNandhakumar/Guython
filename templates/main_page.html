@@ -122,9 +122,9 @@
                 this.deletion = false;
             }
             update(dt) {
-                this.xPos += this.xVel;
-                this.yPos += this.yVel;
-                this.lifetime += this.decay;
+                this.xPos += this.xVel * dt * 0.2;
+                this.yPos += this.yVel * dt * 0.2;
+                this.lifetime += this.decay * dt * 0.2;
                 this.opacity = (0.4 * ((this.lifetime / 40 - 5) ** 2) + 10) / 10;
 
                 if (this.lifetime > 300) {this.deletion = true}
