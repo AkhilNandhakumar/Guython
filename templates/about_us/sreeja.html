@@ -67,8 +67,8 @@
         let ctx = c.getContext('2d');
         let frame= 0;
         let draw = 0;
-        let oldPosX;
-        let oldPosY;
+        let oldPosX = c.width / 2;
+        let oldPosY = c.height / 2;
         c.width = window.innerWidth;
         c.height = window.innerHeight - 1;
         fallingCharacters = [];
@@ -140,12 +140,16 @@
                 }
                 draw = 0
             }
-            ctx.fillStyle = 'red'
-            ctx.fillRect(posX - 5, posY - 5,10,10);
+            ctx.strokeStyle = 'red'
+            ctx.beginPath();
+            ctx.lineWidth=10;
+            ctx.moveTo(oldPosX,oldPosY);
+            ctx.lineTo(posX,posY);
+            ctx.stroke();
         }
         addEventListener('mousemove', e => {
-            oldPosX = posX
-            oldPosY = posY
+            oldPosX = posX;
+            oldPosY = posY;
             posX = e.pageX;
             posY = e.pageY;
         });
