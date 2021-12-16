@@ -260,6 +260,17 @@ def wchecks():
 def sci():
     return render_template("homepagestuff/sci.html")
 
+@app.route('/history/')
+def history():
+    return render_template("homepagestuff/history.html")
+
+@app.route('/math/')
+def math():
+    return render_template("homepagestuff/math.html")
+
+@app.route('/lit/')
+def lit():
+    return render_template("homepagestuff/lit.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
