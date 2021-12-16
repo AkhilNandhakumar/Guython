@@ -256,7 +256,9 @@ def wtd3():
 def wchecks():
     return render_template("weather_info/weather_checks.html", background='linear-gradient(-45deg, #f3feed, #5c8be4, '
                                                                           '#fbb73a)')
-
+@app.route('/sci/')
+def sci():
+    return render_template("homepagestuff/sci.html")
 
 
 # runs the application on the development server
