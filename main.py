@@ -261,7 +261,7 @@ def wchecks():
 
 @app.route('/bootstrapLayouts/')
 def bootstrapLayouts():
-    return render_template("our_work/bootstrapLayouts.html")
+    return render_template("classProjects/bootstrapLayouts.html")
 
 
 @app.route('/sci/')
