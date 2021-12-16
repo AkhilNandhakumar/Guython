@@ -56,7 +56,7 @@ Sreeja | About Pages, TPT Work, Deploy Website, Deployment Policy |[Deployment](
 Tristan | About Pages, TPT Work, Update Scrum Board / README | [Updates](https://github.com/JakubPonulak/5_hackers/issues/23) |
 
 ### Sprint 3
-Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16)
+Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/32)
 
 Team Member | Assignment | Issue |
 --- | --- | --- 

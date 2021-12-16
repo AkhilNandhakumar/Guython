@@ -261,24 +261,27 @@ def wchecks():
 
 @app.route('/bootstrapLayouts/')
 def bootstrapLayouts():
-    return render_template("our_work/bootstrapLayouts.html")
+    return render_template("classProjects/bootstrapLayouts.html")
 
 
 @app.route('/sci/')
 def sci():
-    return render_template("homepagestuff/sci.html")
+    return render_template("class_topics/sci.html")
+
 
 @app.route('/history/')
 def history():
-    return render_template("homepagestuff/history.html")
+    return render_template("class_topics/history.html")
+
 
 @app.route('/math/')
 def math():
-    return render_template("homepagestuff/math.html")
+    return render_template("class_topics/math.html")
+
 
 @app.route('/lit/')
 def lit():
-    return render_template("homepagestuff/lit.html")
+    return render_template("class_topics/lit.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
