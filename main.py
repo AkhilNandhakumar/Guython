@@ -61,8 +61,8 @@ def kevin():
     url = "https://dad-jokes.p.rapidapi.com/random/joke"
 
     headers = {
-    'x-rapidapi-host': "dad-jokes.p.rapidapi.com",
-    'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
+        'x-rapidapi-host': "dad-jokes.p.rapidapi.com",
+        'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
     }
 
     response = requests.request("GET", url, headers=headers)
@@ -105,15 +105,16 @@ def hamza():
 
     payload = "{\"key1\": \"value\",\"key2\": \"value\"}"
     headers = {
-    'content-type': "application/json",
-    'x-rapidapi-host': "motivational-quotes1.p.rapidapi.com",
-    'x-rapidapi-key': "6aa5930ddamsh4e21c56a3045ce9p1aaf49jsn2e14280f30bb"
+        'content-type': "application/json",
+        'x-rapidapi-host': "motivational-quotes1.p.rapidapi.com",
+        'x-rapidapi-key': "6aa5930ddamsh4e21c56a3045ce9p1aaf49jsn2e14280f30bb"
     }
 
     response = requests.request("POST", url, data=payload, headers=headers)
 
     text = response.text
     return render_template("about_us/hamza.html", text=text)
+
 
 # The code below creates the lab pages
 
@@ -123,20 +124,20 @@ def greet5():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("our_work/lab1.html", name=name)
+            return render_template("our_workOLD/lab1.html", name=name)
     # starting and empty input default
-    return render_template("our_work/lab1.html", name="World")
+    return render_template("our_workOLD/lab1.html", name="World")
 
 
 @app.route('/lab2/')
 def lab2():
-    return render_template("our_work/lab2.html")
+    return render_template("our_workOLD/lab2.html")
 
 
 @app.route('/lab3/', methods=['GET', 'POST'])
 def lab3():
     path = Path(app.root_path) / "static" / "assets"
-    return render_template("our_work/lab3.html", images=image_data(path))
+    return render_template("our_workOLD/lab3.html", images=image_data(path))
 
 
 @app.route('/lab4/', methods={'GET', 'POST'})
@@ -144,9 +145,9 @@ def lab4():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("our_work/lab4.html", BITS=int(name))
+            return render_template("our_workOLD/lab4.html", BITS=int(name))
     # starting and empty input default
-    return render_template("our_work/lab4.html", imgBulbOn="/static/assets/bulb_on.gif",
+    return render_template("our_workOLD/lab4.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
@@ -157,9 +158,9 @@ def lab4_colorcode():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("our_work/lab4_colorCode.html", BITS=int(name))
+            return render_template("our_workOLD/lab4_colorCode.html", BITS=int(name))
     # starting and empty input default
-    return render_template("our_work/lab4_colorCode.html", imgBulbOn="/static/assets/bulb_on.gif",
+    return render_template("our_workOLD/lab4_colorCode.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=24)
@@ -167,7 +168,7 @@ def lab4_colorcode():
 
 @app.route('/lab4_unsignedAdd/')
 def lab4_unsignedadd():
-    return render_template("our_work/lab4_unsignedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
+    return render_template("our_workOLD/lab4_unsignedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=16, )
@@ -175,7 +176,7 @@ def lab4_unsignedadd():
 
 @app.route('/lab4_signedAdd/')
 def lab4_signedadd():
-    return render_template("our_work/lab4_signedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
+    return render_template("our_workOLD/lab4_signedAdd.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=16, )
@@ -183,7 +184,7 @@ def lab4_signedadd():
 
 @app.route('/tpts/')
 def tpts():
-    return render_template("our_work/tpts.html")
+    return render_template("our_workOLD/tpts.html")
 
 
 @app.route('/hackathontt3/', methods={'GET', 'POST'})
@@ -191,9 +192,9 @@ def tt3():
     if request.form:
         name = request.form.get("name")
         if len(name) != 0:  # input field has content
-            return render_template("our_work/hackathontt3.html", BITS=int(name))
+            return render_template("our_workOLD/hackathontt3.html", BITS=int(name))
     # starting and empty input default
-    return render_template("our_work/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
+    return render_template("our_workOLD/hackathontt3.html", imgBulbOn="/static/assets/bulb_on.gif",
                            imgBulbOff="/static/assets"
                                       "/bulb_off.png",
                            msgTurnOn="Turn On", msgTurnOff="Turn Off", BITS=8)
@@ -201,7 +202,7 @@ def tt3():
 
 @app.route('/wireframe/')
 def wireframe():
-    return render_template("our_work/wireframe.html")
+    return render_template("our_workOLD/wireframe.html")
 
 
 @app.route('/greet', methods=['GET', 'POST'])
@@ -256,6 +257,13 @@ def wtd3():
 def wchecks():
     return render_template("weather_info/weather_checks.html", background='linear-gradient(-45deg, #f3feed, #5c8be4, '
                                                                           '#fbb73a)')
+
+
+@app.route('/bootstrapLayouts/')
+def bootstrapLayouts():
+    return render_template("our_work/bootstrapLayouts.html")
+
+
 @app.route('/sci/')
 def sci():
     return render_template("homepagestuff/sci.html")

@@ -26,7 +26,7 @@
             <p style="font-size:45px">Welcome, my name is Tristan Copley!</p>
             <p>This page is all about me:</p>
             <p style="font-size:29px">Who is Tristan?:</p>
-            <p>I am a Junior at Del Norte High School. My dad's side of the family has been in America for a long time, however Mother's side of the family are from East-India. I am roughly 5'9'', with dirty blonde hair and blue eyes.</p>
+            <p>I am a Junior at Del Norte High School. My dad's side of the family has been in America for a long time, however Mother's side of the family is from India. I am roughly 5'9'', with dirty blonde hair and blue eyes.</p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Del_norte_wiki.png" width="240" height="160">
             <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="240" height="160">
             <p></p>
@@ -81,7 +81,7 @@
     <br />
     <br />
     <p style="font-size:29px">Greet Integration:</p>
-    <div class="center-block" style="margin: 0% 0% 0%; text-align:left; font-family: gilroy,serif;">
+    <div class="center-block" style="margin: 0 0 0; text-align:left; font-family: gilroy,serif;">
         <div class="col-12" id="stuff">
             <p>Hello, {{name}}!</p>
         </div>
@@ -100,31 +100,46 @@
         {{ text }} </p>
     <canvas id='aboutCanvas'></canvas>
     <script>
+
         let c = document.getElementById('aboutCanvas');
         let ctx = c.getContext('2d');
+
         c.width = window.innerWidth;
         c.height = window.innerHeight - 1;
+
         particles = [];
+
         let scrollAmount = 0;
+
         let posX = c.width / 2;
         let posY = c.height / 2;
+
         window.addEventListener("scroll", function(){
             scrollAmount = window.scrollY;
         });
 
         class Particle {
+
             constructor() {
+
                 this.xPos = Math.random() * (c.width * 1.1) - c.width * 0.1;
                 this.yPos = Math.random() * (c.height * 1.1) - c.height * 0.1;
                 this.xVel = Math.random() * 3 - 1.5;
                 this.yVel = Math.random() * 3 - 1.5;
                 this.size = Math.random() * 5 + 2;
+
                 this.lifetime = 0;
+
                 this.decay = Math.random() * 2 + 1;
+
                 this.opacity = 0;
+
                 this.deletion = false;
+
             }
+
             update(dt) {
+
                 this.xPos += this.xVel;
                 this.yPos += this.yVel;
 
@@ -133,26 +148,39 @@
                 this.yPos += 400 * (this.yPos - posY) / (Math.abs(this.yPos - posY) + Math.abs(this.xPos - posX)) / (distance + 10)
 
                 this.lifetime += this.decay;
-                this.opacity = -((this.lifetime / 150) - 1) + 1
+                this.opacity = -((this.lifetime / 150) - 1) +
+                    1
                 if (this.lifetime > 300) {this.deletion = true}
+
                 if(this.xPos < scroll) {
+
                     this.deletion = true
+
                 }
+
             }
+
             draw() {
+
                 ctx.fillStyle = `rgba(0,0,0,${this.opacity})`;
                 ctx.fillRect(this.xPos - this.size / 2, this.yPos - this.size / 2, this.size, this.size);
                 let particle = Math.round(Math.random() * (particles.length - 1));
-                ctx.strokeStyle = 'rgba(0,0,0,0.05)';
+                ctx.strokeStyle = 'rgba(148,48,48,0.05)';
                 ctx.beginPath();
                 ctx.moveTo(this.xPos, this.yPos);
                 ctx.lineTo(particles[particle].xPos, particles[particle].yPos);
                 ctx.stroke();
+
             }
+
         }
+
         for (let i = 0; i < 4000; i++) {
+
             particles.push(new Particle())
+
         }
+
         let previousTime = 0.0;
 
         const loop = time => {
@@ -170,27 +198,41 @@
 
         // Launch
         window.requestAnimationFrame(time => {
+
             previousTime = time;
 
             window.requestAnimationFrame(loop);
+
         });
 
         function update(dt) {
+
             ctx.clearRect(0,0,c.width, c.height);
             ctx.fillStyle = 'rgba(128,0,0,0.5)';
             ctx.fillRect(0,0,c.width, c.height);
+
             for (let i = 0; i < particles.length; i++) {
+
                 particles[i].update(dt)
                 particles[i].draw()
+
                 if (particles[i].deletion === true) {
+
                     particles[i] = new Particle()
+
                 }
+
             }
+
         }
+
         addEventListener('mousemove', e => {
+
             posX = e.pageX;
             posY = e.pageY;
+
         });
+
     </script>
 {% endblock %}
 
