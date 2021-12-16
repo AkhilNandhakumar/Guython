@@ -32,6 +32,7 @@ def gamepage():
 def jakub():
     # response = requests.get("http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key"
     #                         "=4E07A0ABAE258C00B17B9EBDEE265FE0&steamid=76561198988285392")
+    # API REMAINS COMMENTED OUT SO THAT JAKUB.HTML CAN WORK WITHOUT A VPN
     # text = response.json()
     # game1 = text['response']['games'][0]['name']
     # game1time = str(round(text['response']['games'][0]['playtime_2weeks']/60, 1))
