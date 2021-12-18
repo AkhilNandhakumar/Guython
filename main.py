@@ -283,6 +283,10 @@ def math():
 def lit():
     return render_template("class_topics/lit.html")
 
+@app.route('/crud/')
+def crud():
+    return render_template("homepagestuff/crud.html")
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
