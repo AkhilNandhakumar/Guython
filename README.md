@@ -17,6 +17,7 @@ GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://gith
 1. [Sprint 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
 2. [Sprint 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-12)
 3. [Sprint 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
+
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing)
