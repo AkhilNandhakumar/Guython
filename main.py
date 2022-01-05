@@ -289,11 +289,6 @@ def crud():
     return render_template("homepagestuff/crud.html")
 
 
-@app.route('/miniquizzes/')
-def miniq():
-    return render_template("class_topics/miniquizzes.html")
-
-
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
