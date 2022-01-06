@@ -14,15 +14,17 @@ GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?autho
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/TristanCopley)
 
 ## Table of Contents:
-1. [Sprint 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
-2. [Sprint 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-12)
-3. [Sprint 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
+1. [Week 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
+2. [Weeks 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-12)
+3. [Week 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
+4. [Week 4](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
+
 
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
 ## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing)
 ### [TPT Journal](https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing)
-### Sprint 0
+### Week 0
 Team Links: [CB Quizzes](https://github.com/JakubPonulak/5_hackers/issues/6)
 
 Team Member | Assignment | Issue |
@@ -33,7 +35,7 @@ Kevin | CB Quizzes | |
 Sreeja | CB Quizzes | |
 Tristan | CB Quizzes | |
 
-### Sprint 1,2
+### Weeks 1,2
 #### Week 1
 Team Links: [Scrum Team Project Review](https://github.com/JakubPonulak/5_hackers/issues/7), [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/8)
 
@@ -56,7 +58,7 @@ Kevin | About Pages, TPT Work | |
 Sreeja | About Pages, TPT Work, Deploy Website, Deployment Policy |[Deployment](https://github.com/JakubPonulak/5_hackers/issues/10), [Policy](https://github.com/JakubPonulak/5_hackers/issues/23) |
 Tristan | About Pages, TPT Work, Update Scrum Board / README | [Updates](https://github.com/JakubPonulak/5_hackers/issues/23) |
 
-### Sprint 3
+### Week 3
 Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/32)
 
 Team Member | Assignment | Issue |
@@ -67,7 +69,7 @@ Kevin | Highlight asynchronous access, Asynchronous Data Access Video, TPT Work 
 Sreeja | Deployment & update process, TPT Work | [Deployment Process](https://github.com/JakubPonulak/5_hackers/issues/14) |
 Tristan | Progress overview, Asynchronous Data Access Video, TPT Work | [Overview](https://github.com/JakubPonulak/5_hackers/issues/12), [Video](https://github.com/JakubPonulak/5_hackers/issues/17) |
 
-### Sprint 4
+### Week 4
 Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/32)
 
 Team Member | Assignment | Issue |
