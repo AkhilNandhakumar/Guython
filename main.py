@@ -266,8 +266,15 @@ def bootstrapLayouts():
 
 @app.route('/sci/')
 def sci():
-    return render_template("class_topics/sci.html")
+    url = "https://periodictable.p.rapidapi.com/"
 
+    headers = {
+        'x-rapidapi-host': "periodictable.p.rapidapi.com",
+        'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
+    }
+    response = requests.request("GET", url, headers=headers)
+    text = response.text
+    return render_template("class_topics/sci.html", text=text)
 
 @app.route('/history/')
 def history():
@@ -288,6 +295,10 @@ def lit():
 def crud():
     return render_template("homepagestuff/crud.html")
 
+
+@app.route('/miniquizzes/')
+def miniq():
+    return render_template("class_topics/miniquizzes.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
