@@ -6,7 +6,7 @@ Our website on project is built off of "flask_portfolio_hackers", the repository
 
 Team Member | Hamza | Jakub | Kevin | Sreeja | Tristan |
 --- | --- | --- | --- | --- | ---
-GitHub ID: | hamzahakak | JakubPonulak | Kevinc023032 | SreejaVad | senTristanC |
+GitHub ID: | hamzahakak | JakubPonulak | Kevinc023032 | SreejaVad | TristanCopley |
 Team Role: | Primary Designer | GitHub Admin | Technical Officer | Deployment Manager | Scrum Master |
 GitHub Issues: | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/hamzahakak) | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/Kevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/SreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/senTristanC)
 Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3Ahamzahakak)| [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AKevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3ASreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AsenTristanC)
