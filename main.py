@@ -266,13 +266,18 @@ def bootstrapLayouts():
 
 @app.route('/sci/')
 def sci():
-    url = "https://periodictable.p.rapidapi.com/"
+
+    url = "https://community-open-weather-map.p.rapidapi.com/weather"
+
+    querystring = {"q":"California ,us","lat":"0","lon":"0","callback":"test","id":"2172797","lang":"null","units":"imperial","mode":"xml"}
 
     headers = {
-        'x-rapidapi-host': "periodictable.p.rapidapi.com",
+        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
         'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
     }
-    response = requests.request("GET", url, headers=headers)
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
     text = response.text
     return render_template("class_topics/sci.html", text=text)
 
