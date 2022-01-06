@@ -70,12 +70,11 @@ Sreeja | Deployment & update process, TPT Work | [Deployment Process](https://gi
 Tristan | Progress overview, Asynchronous Data Access Video, TPT Work | [Overview](https://github.com/JakubPonulak/5_hackers/issues/12), [Video](https://github.com/JakubPonulak/5_hackers/issues/17) |
 
 ### Week 4
-Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/32)
-
+Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16)
 Team Member | Assignment | Issue |
 --- | --- | --- 
-Hamza | API Integration, TPT Work | [Layouts / Frontends](https://github.com/JakubPonulak/5_hackers/issues/11) |
-Jakub | Jekyll Challanges, Mini-Quizzes, TPT Work | [Highlights](https://github.com/JakubPonulak/5_hackers/issues/15) |
-Kevin | API Integration, TPT Work | [Highlights](https://github.com/JakubPonulak/5_hackers/issues/13), [Video](https://github.com/JakubPonulak/5_hackers/issues/17) |
-Sreeja | Deployment & update process, TPT Work | [Deployment Process](https://github.com/JakubPonulak/5_hackers/issues/14) |
-Tristan | Progress overview, Asynchronous Data Access Video, TPT Work | [Overview](https://github.com/JakubPonulak/5_hackers/issues/12), [Video](https://github.com/JakubPonulak/5_hackers/issues/17) |
+Hamza | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/11) |
+Jakub | Jekyll Challanges, Mini-Quizzes, TPT Work | [Jekyll](https://github.com/JakubPonulak/5_hackers/issues/15) |
+Kevin | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/13) |
+Sreeja | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/14) |
+Tristan | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/12) |
