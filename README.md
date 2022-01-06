@@ -70,11 +70,11 @@ Sreeja | Deployment & update process, TPT Work | [Deployment Process](https://gi
 Tristan | Progress overview, Asynchronous Data Access Video, TPT Work | [Overview](https://github.com/JakubPonulak/5_hackers/issues/12), [Video](https://github.com/JakubPonulak/5_hackers/issues/17) |
 
 ### Week 4
-Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/16)
+Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/37)
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/25), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
 Jakub | Jekyll Challanges, Mini-Quizzes, TPT Work | [Jekyll](https://github.com/JakubPonulak/5_hackers/issues/15), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
-Kevin | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/25) |
-Sreeja | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24) |
-Tristan | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24) |
+Kevin | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/25), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
+Sreeja | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
+Tristan | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
