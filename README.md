@@ -74,7 +74,7 @@ Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/37)
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/25), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
-Jakub | Jekyll Challanges, Mini-Quizzes, TPT Work | [Jekyll](https://github.com/JakubPonulak/5_hackers/issues/15), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
+Jakub | Jekyll Challanges, Mini-Quizzes, TPT Work | [Jekyll 1](https://github.com/JakubPonulak/5_hackers/issues/33), [Jekyll 2](https://github.com/JakubPonulak/5_hackers/issues/34), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
 Kevin | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/25), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
 Sreeja | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
 Tristan | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/36) |
