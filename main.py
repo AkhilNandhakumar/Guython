@@ -116,7 +116,52 @@ def hamza():
     return render_template("about_us/hamza.html", text=text)
 
 
-# The code below creates the lab pages
+@app.route('/bootstrapLayouts/')
+def bootstrapLayouts():
+    return render_template("our_work/bootstrapLayouts.html")
+
+
+@app.route('/sci/')
+def sci():
+
+    url = "https://community-open-weather-map.p.rapidapi.com/weather"
+
+    querystring = {"q":"California ,us","lat":"0","lon":"0","callback":"test","id":"2172797","lang":"null","units":"imperial","mode":"xml"}
+
+    headers = {
+        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+        'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    text = response.text
+    return render_template("class_topics/sci.html", text=text)
+
+@app.route('/history/')
+def history():
+    return render_template("class_topics/history.html")
+
+
+@app.route('/math/')
+def math():
+    return render_template("class_topics/math.html")
+
+
+@app.route('/lit/')
+def lit():
+    return render_template("class_topics/lit.html")
+
+
+@app.route('/crud/')
+def crud():
+    return render_template("homepagestuff/crud.html")
+
+
+@app.route('/miniquizzes/')
+def miniq():
+    return render_template("class_topics/miniquizzes.html")
+
 
 @app.route('/lab1/', methods=['GET', 'POST'])
 def greet5():
@@ -127,6 +172,15 @@ def greet5():
             return render_template("our_workOLD/lab1.html", name=name)
     # starting and empty input default
     return render_template("our_workOLD/lab1.html", name="World")
+
+#
+#
+#
+# ALL APP ROUTES BELOW ARE FOR OLD PAGES WE DON'T CURRENTLY USE
+# WE CAN DELETE THEM OR KEEP THEM TO ACCESS RUNTIME OF PAGES
+#
+#
+#
 
 
 @app.route('/lab2/')
@@ -258,52 +312,6 @@ def wchecks():
     return render_template("weather_info/weather_checks.html", background='linear-gradient(-45deg, #f3feed, #5c8be4, '
                                                                           '#fbb73a)')
 
-
-@app.route('/bootstrapLayouts/')
-def bootstrapLayouts():
-    return render_template("our_work/bootstrapLayouts.html")
-
-
-@app.route('/sci/')
-def sci():
-
-    url = "https://community-open-weather-map.p.rapidapi.com/weather"
-
-    querystring = {"q":"California ,us","lat":"0","lon":"0","callback":"test","id":"2172797","lang":"null","units":"imperial","mode":"xml"}
-
-    headers = {
-        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
-        'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    text = response.text
-    return render_template("class_topics/sci.html", text=text)
-
-@app.route('/history/')
-def history():
-    return render_template("class_topics/history.html")
-
-
-@app.route('/math/')
-def math():
-    return render_template("class_topics/math.html")
-
-
-@app.route('/lit/')
-def lit():
-    return render_template("class_topics/lit.html")
-
-
-@app.route('/crud/')
-def crud():
-    return render_template("homepagestuff/crud.html")
-
-
-@app.route('/miniquizzes/')
-def miniq():
-    return render_template("class_topics/miniquizzes.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
