@@ -27,6 +27,22 @@ def gamepage():
 
 
 # The code below creates the custom about me pages for each team member
+@app.route('/hamza/', methods=['GET', 'POST'])
+def hamza():
+    url = "https://motivational-quotes1.p.rapidapi.com/motivation"
+
+    payload = "{\"key1\": \"value\",\"key2\": \"value\"}"
+    headers = {
+        'content-type': "application/json",
+        'x-rapidapi-host': "motivational-quotes1.p.rapidapi.com",
+        'x-rapidapi-key': "6aa5930ddamsh4e21c56a3045ce9p1aaf49jsn2e14280f30bb"
+    }
+
+    response = requests.request("POST", url, data=payload, headers=headers)
+
+    text = response.text
+    return render_template("about_us/hamza.html", text=text)
+
 
 @app.route('/jakub/')
 def jakub():
@@ -71,20 +87,6 @@ def kevin():
     return render_template("about_us/kevin.html", text=text)
 
 
-@app.route('/tristan/', methods=['GET', 'POST'])
-def tristan():
-    url = "https://genius.p.rapidapi.com/artists/16775/songs"
-
-    headers = {
-        'x-rapidapi-host': "genius.p.rapidapi.com",
-        'x-rapidapi-key': "deb5e7f2d3mshad8ffd0c6263400p144918jsnd5cede3b7ac9"
-    }
-
-    response = requests.request("GET", url, headers=headers)
-    text = response.text
-    return render_template("about_us/tristan.html", text=text)
-
-
 @app.route('/sreeja/', methods=['GET', 'POST'])
 def sreeja():
     url = "https://brooklyn-nine-nine-quotes.p.rapidapi.com/api/v1/quotes/random"
@@ -99,21 +101,18 @@ def sreeja():
     return render_template("about_us/sreeja.html", text=text)
 
 
-@app.route('/hamza/', methods=['GET', 'POST'])
-def hamza():
-    url = "https://motivational-quotes1.p.rapidapi.com/motivation"
+@app.route('/tristan/', methods=['GET', 'POST'])
+def tristan():
+    url = "https://genius.p.rapidapi.com/artists/16775/songs"
 
-    payload = "{\"key1\": \"value\",\"key2\": \"value\"}"
     headers = {
-        'content-type': "application/json",
-        'x-rapidapi-host': "motivational-quotes1.p.rapidapi.com",
-        'x-rapidapi-key': "6aa5930ddamsh4e21c56a3045ce9p1aaf49jsn2e14280f30bb"
+        'x-rapidapi-host': "genius.p.rapidapi.com",
+        'x-rapidapi-key': "deb5e7f2d3mshad8ffd0c6263400p144918jsnd5cede3b7ac9"
     }
 
-    response = requests.request("POST", url, data=payload, headers=headers)
-
+    response = requests.request("GET", url, headers=headers)
     text = response.text
-    return render_template("about_us/hamza.html", text=text)
+    return render_template("about_us/tristan.html", text=text)
 
 
 @app.route('/bootstrapLayouts/')
@@ -138,6 +137,7 @@ def sci():
     text = response.text
     return render_template("class_topics/sci.html", text=text)
 
+
 @app.route('/history/')
 def history():
     return render_template("class_topics/history.html")
@@ -158,9 +158,15 @@ def crud():
     return render_template("homepagestuff/crud.html")
 
 
-@app.route('/miniquizzes/')
-def miniq():
-    return render_template("class_topics/miniquizzes.html")
+
+#
+#
+#
+# ALL APP ROUTES BELOW ARE FOR OLD PAGES WE DON'T CURRENTLY USE
+# WE CAN DELETE THEM OR KEEP THEM TO ACCESS RUNTIME OF PAGES
+#
+#
+#
 
 
 @app.route('/lab1/', methods=['GET', 'POST'])
@@ -172,15 +178,6 @@ def greet5():
             return render_template("our_workOLD/lab1.html", name=name)
     # starting and empty input default
     return render_template("our_workOLD/lab1.html", name="World")
-
-#
-#
-#
-# ALL APP ROUTES BELOW ARE FOR OLD PAGES WE DON'T CURRENTLY USE
-# WE CAN DELETE THEM OR KEEP THEM TO ACCESS RUNTIME OF PAGES
-#
-#
-#
 
 
 @app.route('/lab2/')
