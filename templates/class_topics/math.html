@@ -99,6 +99,16 @@
 
     }
 
+    function writeText(text, x, y, cutoff) {
+
+        for (let i = 0; i < Math.ceil(text.length / cutoff); i++) {
+
+            ctx.fillText(text.substr(i * cutoff, cutoff), x, y + 30 * i)
+
+        }
+
+    }
+
     let question = miniQuizzesData.math[Math.floor(Math.random() * miniQuizzesData.math.length)]
 
     //question = miniQuizzesData.math[8]
@@ -123,11 +133,7 @@
     ctx.fillStyle = 'red'
     ctx.font = 'bold 32px serif';
 
-    for (let i = 0; i < Math.ceil(question[1].length / 25); i++) {
-
-        ctx.fillText(question[1].substr(i * 26, 26), 40, 80 + 30 * i)
-
-    }
+    writeText(question[1], 40, 80, 26)
 
     let questionCount = question.length - 2
     for (let i = 1; i < question.length - 1; i++) {
