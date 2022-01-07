@@ -3,8 +3,7 @@ import requests, json
 
 from tkinter import *
 
-from flask import Flask, render_template, request
-from flask import Blueprint, render_template
+from flask import Flask, request, Blueprint, render_template
 from image import image_data
 from pathlib import Path
 
@@ -116,16 +115,16 @@ def tristan():
 
 
 @app.route('/bootstrapLayouts/')
-def bootstrapLayouts():
+def bootstrap_layouts():
     return render_template("our_work/bootstrapLayouts.html")
 
 
 @app.route('/sci/')
 def sci():
-
     url = "https://community-open-weather-map.p.rapidapi.com/weather"
 
-    querystring = {"q":"California ,us","lat":"0","lon":"0","callback":"test","id":"2172797","lang":"null","units":"imperial","mode":"xml"}
+    querystring = {"q": "California ,us", "lat": "0", "lon": "0", "callback": "test", "id": "2172797", "lang": "null",
+                   "units": "imperial", "mode": "xml"}
 
     headers = {
         'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
@@ -158,7 +157,6 @@ def crud():
     return render_template("homepagestuff/crud.html")
 
 
-
 #
 #
 #
@@ -167,7 +165,6 @@ def crud():
 #
 #
 #
-
 
 @app.route('/lab1/', methods=['GET', 'POST'])
 def greet5():
