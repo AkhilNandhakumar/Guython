@@ -74,8 +74,10 @@
 
         science: [
 
-            [2, 'question', 'correct answer', 'correct answer2', ]
-
+            [1, 'What element has the atomic number    80?', 'Mercury', 'Oxygen', 'Nitrogen', 'Arsenic'],
+            [1, 'What is the atomic mass   for Gold?', '196.97', '148.4', '156.92' , '123.1'],
+            [1, 'What part of the cell contains the DNA and RNA?', 'Nucleus', 'cells', 'proteins', 'virus'],
+            [1, 'What is the threadlike structure that carries our genetic information? ', 'Chromosomes' , 'DNA' , 'Nucleus' , 'cells'],
         ],
 
         history: [
@@ -106,7 +108,17 @@
 
     }
 
-    let question = miniQuizzesData.literature[Math.floor(Math.random() * miniQuizzesData.literature.length)]
+    function writeText(text, x, y, cutoff) {
+
+        for (let i = 0; i < Math.ceil(text.length / cutoff); i++) {
+
+            ctx.fillText(text.substr(i * cutoff, cutoff), x, y + 30 * i)
+
+        }
+
+    }
+
+    let question = miniQuizzesData.science[Math.floor(Math.random() * miniQuizzesData.science.length)]
 
     //question = miniQuizzesData.math[8]
 
@@ -130,11 +142,7 @@
     ctx.fillStyle = 'red'
     ctx.font = 'bold 32px serif';
 
-    for (let i = 0; i < Math.ceil(question[1].length / 25); i++) {
-
-        ctx.fillText(question[1].substr(i * 26, 26), 40, 80 + 30 * i)
-
-    }
+    writeText(question[1], 40, 80, 26)
 
     let questionCount = question.length - 2
     for (let i = 1; i < question.length - 1; i++) {
