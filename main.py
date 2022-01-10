@@ -4,16 +4,19 @@ import requests, json
 from tkinter import *
 
 from flask import Flask, request, Blueprint, render_template
+from flask_socketio import SocketIO
 from image import image_data
 from pathlib import Path
 
 # create a Flask instance
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
 
 # connects default URL to render index.html
 
 # The code below creates the default pages that we have hidden from view on our website
+
 
 @app.route('/')
 def mainpage():
@@ -307,54 +310,14 @@ def wchecks():
                                                                           '#fbb73a)')
 
 
-@app.route('/bootstrapLayouts/')
-def bootstrapLayouts():
-    return render_template("our_work/bootstrapLayouts.html")
+# Socket.io code
+@socketio.on('testing')
+def handle_message(data):
+    print('received message: ' + data)
 
-
-@app.route('/sci/')
-def sci():
-
-    url = "https://community-open-weather-map.p.rapidapi.com/weather"
-
-    querystring = {"q":"California ,us","lat":"0","lon":"0","callback":"test","id":"2172797","lang":"null","units":"imperial","mode":"xml"}
-
-    headers = {
-        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
-        'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    text = response.text
-    return render_template("class_topics/sci.html", text=text)
-
-
-
-@app.route('/history/')
-def history():
-    return render_template("class_topics/history.html")
-
-
-@app.route('/math/')
-def math():
-    return render_template("class_topics/math.html")
-
-
-@app.route('/lit/')
-def lit():
-    return render_template("class_topics/lit.html")
-
-
-@app.route('/crud/')
-def crud():
-    return render_template("homepagestuff/crud.html")
-
-
-@app.route('/miniquizzes/')
-def miniq():
-    return render_template("class_topics/miniquizzes.html")
+if __name__ == '__main__':
+    socketio.run(app)
 
 # runs the application on the development server
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
