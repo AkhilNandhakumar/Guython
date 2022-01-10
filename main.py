@@ -3,18 +3,20 @@ import requests, json
 
 from tkinter import *
 
-from flask import Flask, render_template, request
-from flask import Blueprint, render_template
+from flask import Flask, request, Blueprint, render_template
+from flask_socketio import SocketIO
 from image import image_data
 from pathlib import Path
 
 # create a Flask instance
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
 
 # connects default URL to render index.html
 
 # The code below creates the default pages that we have hidden from view on our website
+
 
 @app.route('/')
 def mainpage():
@@ -27,6 +29,22 @@ def gamepage():
 
 
 # The code below creates the custom about me pages for each team member
+@app.route('/hamza/', methods=['GET', 'POST'])
+def hamza():
+    url = "https://motivational-quotes1.p.rapidapi.com/motivation"
+
+    payload = "{\"key1\": \"value\",\"key2\": \"value\"}"
+    headers = {
+        'content-type': "application/json",
+        'x-rapidapi-host': "motivational-quotes1.p.rapidapi.com",
+        'x-rapidapi-key': "6aa5930ddamsh4e21c56a3045ce9p1aaf49jsn2e14280f30bb"
+    }
+
+    response = requests.request("POST", url, data=payload, headers=headers)
+
+    text = response.text
+    return render_template("about_us/hamza.html", text=text)
+
 
 @app.route('/jakub/')
 def jakub():
@@ -71,20 +89,6 @@ def kevin():
     return render_template("about_us/kevin.html", text=text)
 
 
-@app.route('/tristan/', methods=['GET', 'POST'])
-def tristan():
-    url = "https://genius.p.rapidapi.com/artists/16775/songs"
-
-    headers = {
-        'x-rapidapi-host': "genius.p.rapidapi.com",
-        'x-rapidapi-key': "deb5e7f2d3mshad8ffd0c6263400p144918jsnd5cede3b7ac9"
-    }
-
-    response = requests.request("GET", url, headers=headers)
-    text = response.text
-    return render_template("about_us/tristan.html", text=text)
-
-
 @app.route('/sreeja/', methods=['GET', 'POST'])
 def sreeja():
     url = "https://brooklyn-nine-nine-quotes.p.rapidapi.com/api/v1/quotes/random"
@@ -99,24 +103,71 @@ def sreeja():
     return render_template("about_us/sreeja.html", text=text)
 
 
-@app.route('/hamza/', methods=['GET', 'POST'])
-def hamza():
-    url = "https://motivational-quotes1.p.rapidapi.com/motivation"
+@app.route('/tristan/', methods=['GET', 'POST'])
+def tristan():
+    url = "https://genius.p.rapidapi.com/artists/16775/songs"
 
-    payload = "{\"key1\": \"value\",\"key2\": \"value\"}"
     headers = {
-        'content-type': "application/json",
-        'x-rapidapi-host': "motivational-quotes1.p.rapidapi.com",
-        'x-rapidapi-key': "6aa5930ddamsh4e21c56a3045ce9p1aaf49jsn2e14280f30bb"
+        'x-rapidapi-host': "genius.p.rapidapi.com",
+        'x-rapidapi-key': "deb5e7f2d3mshad8ffd0c6263400p144918jsnd5cede3b7ac9"
     }
 
-    response = requests.request("POST", url, data=payload, headers=headers)
+    response = requests.request("GET", url, headers=headers)
+    text = response.text
+    return render_template("about_us/tristan.html", text=text)
+
+
+@app.route('/bootstrapLayouts/')
+def bootstrap_layouts():
+    return render_template("our_work/bootstrapLayouts.html")
+
+
+@app.route('/sci/')
+def sci():
+    url = "https://community-open-weather-map.p.rapidapi.com/weather"
+
+    querystring = {"q": "California ,us", "lat": "0", "lon": "0", "callback": "test", "id": "2172797", "lang": "null",
+                   "units": "imperial", "mode": "xml"}
+
+    headers = {
+        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+        'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
 
     text = response.text
-    return render_template("about_us/hamza.html", text=text)
+    return render_template("class_topics/sci.html", text=text)
 
 
-# The code below creates the lab pages
+@app.route('/history/')
+def history():
+    return render_template("class_topics/history.html")
+
+
+@app.route('/math/')
+def math():
+    return render_template("class_topics/math.html")
+
+
+@app.route('/lit/')
+def lit():
+    return render_template("class_topics/lit.html")
+
+
+@app.route('/crud/')
+def crud():
+    return render_template("homepagestuff/crud.html")
+
+
+#
+#
+#
+# ALL APP ROUTES BELOW ARE FOR OLD PAGES WE DON'T CURRENTLY USE
+# WE CAN DELETE THEM OR KEEP THEM TO ACCESS RUNTIME OF PAGES
+#
+#
+#
 
 @app.route('/lab1/', methods=['GET', 'POST'])
 def greet5():
@@ -259,52 +310,14 @@ def wchecks():
                                                                           '#fbb73a)')
 
 
-@app.route('/bootstrapLayouts/')
-def bootstrapLayouts():
-    return render_template("our_work/bootstrapLayouts.html")
+# Socket.io code
+@socketio.on('testing')
+def handle_message(data):
+    print('received message: ' + data)
 
-
-@app.route('/sci/')
-def sci():
-
-    url = "https://community-open-weather-map.p.rapidapi.com/weather"
-
-    querystring = {"q":"California ,us","lat":"0","lon":"0","callback":"test","id":"2172797","lang":"null","units":"imperial","mode":"xml"}
-
-    headers = {
-        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
-        'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    text = response.text
-    return render_template("class_topics/sci.html", text=text)
-
-@app.route('/history/')
-def history():
-    return render_template("class_topics/history.html")
-
-
-@app.route('/math/')
-def math():
-    return render_template("class_topics/math.html")
-
-
-@app.route('/lit/')
-def lit():
-    return render_template("class_topics/lit.html")
-
-
-@app.route('/crud/')
-def crud():
-    return render_template("homepagestuff/crud.html")
-
-
-@app.route('/miniquizzes/')
-def miniq():
-    return render_template("class_topics/miniquizzes.html")
+if __name__ == '__main__':
+    socketio.run(app)
 
 # runs the application on the development server
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
