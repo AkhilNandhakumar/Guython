@@ -109,45 +109,75 @@
 
     }
 
-    let question = miniQuizzesData.math[Math.floor(Math.random() * miniQuizzesData.math.length)]
-
-    //question = miniQuizzesData.math[8]
+    let mouseX;
+    let mouseY;
 
     c = document.getElementById('miniQuiz');
+
+    c.addEventListener('mousemove', e => {
+            mouseX = e.offsetX;
+            mouseY = e.offsetY;
+
+            console.log(mouseX)
+    });
+
+    let question = miniQuizzesData.math[Math.floor(Math.random() * miniQuizzesData.math.length)]
 
     c.width = 1000
     c.height = 500
 
     ctx = c.getContext("2d");
 
-    ctx.fillStyle = 'white';
-    ctx.lineWidth = 18
-    ctx.strokeStyle = 'black';
-    drawRoundedRect(20, 20, c.width - 40, c.height - 40, 0.2)
-    ctx.lineWidth = 10;
-    ctx.strokeStyle = 'lightblue';
-    drawRoundedRect(20, 20, c.width - 40, c.height - 40, 0.2)
+    function animate() {
+        requestAnimationFrame( animate )
 
-    console.log(question)
 
-    ctx.fillStyle = 'red'
-    ctx.font = 'bold 32px serif';
+        ctx.fillStyle = 'white';
+        ctx.lineWidth = 18
+        ctx.strokeStyle = 'black';
+        drawRoundedRect(20, 20, c.width - 40, c.height - 40, 0.2)
 
-    writeText(question[1], 40, 80, 26)
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = 'lightblue';
+        drawRoundedRect(20, 20, c.width - 40, c.height - 40, 0.2)
 
-    let questionCount = question.length - 2
-    for (let i = 1; i < question.length - 1; i++) {
+        ctx.fillStyle = 'red'
+        ctx.font = 'bold 32px serif';
 
-        ctx.fillText(`${i}: ${question[i + 1]}`, 500, 80 + (i - 1) * ((c.height - 200) / questionCount))
+        writeText(question[1], 40, 80, 26)
+
+        let questionCount = question.length - 2
+
+
+
+        for (let i = 1; i < question.length - 1; i++) {
+
+            ctx.fillStyle = 'lightblue'
+            ctx.strokeStyle = 'lightblue'
+            if (
+                mouseX > 500 &&
+                mouseX < 1500 &&
+                mouseY > -30 + 80 + (i - 1) * ((c.height - 200) / questionCount) &&
+                mouseY < -30 + 80 + (i) * ((c.height - 200) / questionCount)
+            ) drawRoundedRect(500, -25 + 80 + (i - 1) * ((c.height - 200) / questionCount), 300, 30, 0.1)
+
+            ctx.fillStyle = 'black'
+            writeText(i + ': ', 500,  80 + (i - 1) * ((c.height - 200) / questionCount), 25)
+            ctx.fillStyle = 'red'
+            writeText(question[i + 1], 515 + i.toString().length * 25,  80 + (i - 1) * ((c.height - 200) / questionCount), 25)
+
+        }
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.moveTo(c.width / 2 - 30, 50);
+        ctx.lineTo(c.width / 2 - 30, c.height - 50);
+        ctx.stroke();
 
     }
 
-    ctx.beginPath();
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = 5;
-    ctx.moveTo(c.width / 2 - 30, 50);
-    ctx.lineTo(c.width / 2 - 30, c.height - 50);
-    ctx.stroke();
+    animate()
 
 </script>
 {% endblock %}
