@@ -281,6 +281,8 @@ def sci():
     text = response.text
     return render_template("class_topics/sci.html", text=text)
 
+    
+
 @app.route('/history/')
 def history():
     return render_template("class_topics/history.html")
