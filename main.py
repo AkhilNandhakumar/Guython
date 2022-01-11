@@ -155,9 +155,9 @@ def lit():
     return render_template("class_topics/lit.html")
 
 
-@app.route('/crud/')
+@app.route('/crud_page/')
 def crud():
-    return render_template("homepagestuff/crud.html")
+    return render_template("../crud/crud.html")
 
 
 #
@@ -311,9 +311,9 @@ def wchecks():
 
 
 # Socket.io code
-@socketio.on('testing')
-def handle_message(data):
-    print('received message: ' + data)
+# @socketio.on('testing')
+# def handle_message(data):
+#     print('received message: ' + data)
 
 if __name__ == '__main__':
     socketio.run(app)
