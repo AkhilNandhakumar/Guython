@@ -13,6 +13,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
+
 # connects default URL to render index.html
 
 # The code below creates the default pages that we have hidden from view on our website
@@ -23,8 +24,8 @@ def mainpage():
     return render_template("main_page.html")
 
 
-@app.route('/game')
-def gamepage():
+@app.route('/forums')
+def forums():
     return render_template("forums.html")
 
 
@@ -310,10 +311,11 @@ def wchecks():
                                                                           '#fbb73a)')
 
 
-# Socket.io code
-# @socketio.on('testing')
-# def handle_message(data):
-#     print('received message: ' + data)
+# Forums socket.io code
+@socketio.on('testing')
+def handle_message(data):
+    print('received message: ' + data)
+
 
 if __name__ == '__main__':
     socketio.run(app)

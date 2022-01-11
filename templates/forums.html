@@ -1,5 +1,18 @@
 <!-- Extending the predefined project layout -->
 {% extends "layouts/forum_base.html" %}
-
 <!- This variable sets name of browser tab  -->
-{% set project = "Wekkonomics" %}
+{% set project = "Forums" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+
+    <body>
+
+    <p>Dudes</p>
+
+    </body>
+
+{% endblock %}
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
