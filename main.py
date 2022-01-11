@@ -25,7 +25,7 @@ def mainpage():
 
 @app.route('/game')
 def gamepage():
-    return render_template("game.html")
+    return render_template("forums.html")
 
 
 # The code below creates the custom about me pages for each team member
