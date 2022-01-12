@@ -82,9 +82,14 @@
 
         history: [
 
-            [2, 'question', 'correct answer', 'correct answer2', ]
+            [1, 'What was the first European country to establish permanent settlements in the New World?', 'Britain', 'Spain','India', 'Portugal' ],
+            [1, 'What was the first European country to establish permanent settlements in the New World?', 'Britain', 'Spain','India', 'Portugal' ]
+
+
+
 
         ]
+
 
     }
 
@@ -130,7 +135,7 @@
             console.log(mouseX)
     });
 
-    let question = miniQuizzesData.math[Math.floor(Math.random() * miniQuizzesData.math.length)]
+    let question = miniQuizzesData.history[Math.floor(Math.random() * miniQuizzesData.history.length)]
 
     c.width = 1000
     c.height = 500
