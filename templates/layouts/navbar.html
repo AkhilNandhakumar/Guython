@@ -38,8 +38,11 @@
             <a class="nav-link" style="font-size: 30px" href="/">Home</a>
             <!-- stub is shown using the name of the route -->
         </div>
-
-
+        <div style="font-family: Helvetica" class="navbar-nav">
+            <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
+            <a class="nav-link" style="font-size: 30px; color: red; " href="/forums">Forums</a>
+            <!-- stub is shown using the name of the route -->
+        </div>
         <div class="dropdown">
             <pList style="font-size: 28px;font-family: Helvetica;" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About Us
@@ -65,63 +68,5 @@
                 <a class="dropdown-item" href="/lit">Literature</a>
             </div>
         </div>
-
-        <!-- # The code below creates drop down menus which we utilize for more efficient and flush navbar usage. -->
-
-
-{#        <div class="dropdown">#}
-{#            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                Our Work#}
-{#            </pList>#}
-{#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
-{#                <a class="dropdown-item" href="/lab1/">Mini-Lab 1: Greet</a>#}
-{#                <a class="dropdown-item" href="/lab2/">Mini-Lab 2: Journal 0 Videos</a>#}
-{#                <a class="dropdown-item" href="/lab3/">Mini-Lab 3: RGB</a>#}
-{#                <a class="dropdown-item" href="/lab4/">Mini-Lab 4: Logic Gates</a>#}
-{#                <a class="dropdown-item" href="/tpts/">Test Prep Tuesdays</a>#}
-{#                <a class="dropdown-item" href="/hackathontt3/">TT3: Hack-a-thon</a>#}
-{#                <a class="dropdown-item" href="/wireframe/">Website Wireframe</a>#}
-{#            </div>#}
-{#        </div>#}
-
-{#        <!-- # Second dropdown menu -->#}
-{#        <div class="dropdown">#}
-{#            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                Weather Information#}
-{#            </pList>#}
-{#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
-{#                <a class="dropdown-item" href="/weather1">Clouds</a>#}
-{#                <a class="dropdown-item" href="/weather2">Sun</a>#}
-{#                <a class="dropdown-item" href="/weather3">Wind</a>#}
-{#                <a class="dropdown-item" href="/weather4">Water</a>#}
-{#                <a class="dropdown-item" href="/weather_checks">Weather Checks</a>#}
-{#                <a class="dropdown-item" href="/surfReport">Surf Report</a>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="dropdown">#}
-{#            <pList style="margin: 0% 0% 0%" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                What to do:#}
-{#            </pList>#}
-{#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
-{#                <a class="dropdown-item" href="/wtd1">When it's Hot</a>#}
-{#                <a class="dropdown-item" href="/wtd2">When it's Cold</a>#}
-{#                <a class="dropdown-item" href="/wtd3">When there's a storm</a>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">#}
-{#            <div style="font-family: Copperplate,fantasy" class="navbar-nav">#}
-{#                <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->#}
-{#                <a class="nav-link" style="font-size: 20px; margin: -2% -0% -8% " href="/game">Wekkonomics</a>#}
-{#                <!-- stub is shown using the name of the route -->#}
-{#            </div>#}
-{#        </div>#}
-
-
-{#        <img src="/static/scholarly_weather_report_50.png" style="max-height: 125px;#}
-{#      max-width: 75px;#}
-{#      margin-left: 20%;#}
-{#      margin-right: 0%;#}
-{#      alignment: right;#}
-{#      object-fit: cover;" >#}
     </div>
 </nav>
