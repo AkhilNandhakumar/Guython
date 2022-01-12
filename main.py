@@ -314,9 +314,9 @@ def wchecks():
 
 
 # Forums socket.io code
-@socketio.on('testing')
-def handle_message(data):
-    print('received message: ' + data)
+# @socketio.on('testing')
+# def handle_message(data):
+#     print('received message: ' + data)
 
 
 # if __name__ == '__main__':
