@@ -1,5 +1,6 @@
 # import "packages" from flask
 import requests, json
+from __init__ import app
 
 from tkinter import *
 
@@ -7,11 +8,17 @@ from flask import Flask, request, Blueprint, render_template
 from flask_socketio import SocketIO
 from image import image_data
 from pathlib import Path
+from crud.app_crud import app_crud
+from crud.app_crud_api import app_crud_api
+
+
+app.register_blueprint(app_crud)
+app.register_blueprint(app_crud_api)
 
 # create a Flask instance
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app)
+# app = Flask(__name__)
+# app.config['SECRET_KEY'] = 'secret!'
+# socketio = SocketIO(app)
 
 # connects default URL to render index.html
 
@@ -153,11 +160,6 @@ def math():
 @app.route('/lit/')
 def lit():
     return render_template("class_topics/lit.html")
-
-
-@app.route('/crud_page/')
-def crud():
-    return render_template("../crud/crud.html")
 
 
 #
@@ -315,9 +317,9 @@ def wchecks():
 # def handle_message(data):
 #     print('received message: ' + data)
 
-if __name__ == '__main__':
-    socketio.run(app)
+# if __name__ == '__main__':
+#     socketio.run(app)
 
 # runs the application on the development server
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
