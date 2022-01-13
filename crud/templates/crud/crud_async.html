@@ -54,19 +54,19 @@
                     }
                     resultContainer.appendChild(tr);
                     //Update the Userid drop downs with the new/created userid
-                    let optGrp = document.getElementById("ogr_userid");
+                    let optGrp = document.getElementById("ogr_assignment");
                     //create a DOM element for the option(new userid) in the option group(dropdown)
                     let option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['assignment'];
                     //add the new userid to the dropdown
                     optGrp.appendChild(option);
-                    optGrp = document.getElementById("ogu_userid");
+                    optGrp = document.getElementById("ogu_assignment");
                     option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['assignment'];
                     optGrp.appendChild(option);
-                    optGrp = document.getElementById("ogd_userid");
+                    optGrp = document.getElementById("ogd_'assignment');
                     option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['assignment'];
                     optGrp.appendChild(option);
                     document.getElementById("pswError").innerHTML ="";
                     document.getElementById("assignment").value="";
@@ -78,7 +78,7 @@
         }
         // fetch the record from the database for a chosen userid
         function read_User(){
-            const get_userid = document.getElementById("read_userid");
+            const get_userid = document.getElementById("read_assignment");
             const userID = get_userid.value;
             //url for Read API
             const url='/crud_api/read/' + userID;
@@ -126,9 +126,9 @@
 
         function update_User() {
             const assignment = document.getElementById("update_assignment").value;
-            const assignment # = document.getElementById("update_assignment").value;
+            const assignment = document.getElementById("update_assignment").value;
             //url for Update API
-            const url = '/crud_api/update/' + userid + '/' + username;
+            const url = '/crud_api/update/' + assignment + '/' + assignment;
             const requestOptions = {
                 method: 'PUT',
                 headers: {
@@ -245,8 +245,8 @@
                         <table class="table" id="users">
                             <thead>
                             <tr>
-                                <th>Assignment #</th>
-                                <th>Due</th>
+                                <th>Assignment</th>
+                                <th>Due date</th>
                                 <th>Date</th>
                                 <th>Subject</th>
                             </tr>
@@ -284,10 +284,10 @@
                     <tbody>
                     <tr>
                         <td><input type="text" name="assignment" id="assignment" required></td>
-                        <td><input type="due" name="due" id="due" placeholder="abc@xyz.org" required></td>
+                        <td><input type="due" name="due" id="due" placeholder="1/1/22" required></td>
                         <td><input type="date" name="date" id="date" required></td>
                         <td><input type="tel" name="subject" id="subject" required></td>
-                        <td ><button onclick="create_User()">Create</button></td>
+                        <td ><button onclick="create_assignment()">Create</button></td>
 
                     </tr>
                     </tbody>
