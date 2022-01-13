@@ -12,10 +12,10 @@
         function create_User(){
             //Validate Password (must be 6-20 characters in len)
             verifyPassword("click");
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            const phone = document.getElementById("phone").value;
+            const assignment = document.getElementById("assignment").value;
+            const due = document.getElementById("due").value;
+            const date = document.getElementById("date").value;
+            const subject = document.getElementById("subject").value;
             const requestOptions = {
                 method: 'POST',
                 headers: {
@@ -24,7 +24,7 @@
                 },
             };
             //url for Create API
-            const url='/crud_api/create/' + name + '/' + email+ '/' + password + '/' + phone;
+            const url='/crud_api/create/' + assignment + '/' + due + '/' + date + '/' + subject;
             //Asynch fetch API call to the database to create a new user
             fetch(url, requestOptions).then(response => {
                 // prepare HTML search result container for new output
@@ -69,10 +69,10 @@
                     option.innerText = data['userID'];
                     optGrp.appendChild(option);
                     document.getElementById("pswError").innerHTML ="";
-                    document.getElementById("name").value="";
-                    document.getElementById("email").value="";
-                    document.getElementById("password").value="";
-                    document.getElementById("phone").value="";
+                    document.getElementById("assignment").value="";
+                    document.getElementById("due").value="";
+                    document.getElementById("date").value="";
+                    document.getElementById("subject").value="";
                 })
             })
         }
@@ -125,8 +125,8 @@
         }
 
         function update_User() {
-            const username = document.getElementById("update_name").value;
-            const userid = document.getElementById("update_userid").value;
+            const username = document.getElementById("update_assignemnt #").value;
+            const userid = document.getElementById("update_assignment #").value;
             //url for Update API
             const url = '/crud_api/update/' + userid + '/' + username;
             const requestOptions = {
@@ -235,7 +235,7 @@
                             <td></td>
                             <td></td>
                             <td><a href={{url_for('crud_api.crud_api')}}>Full Table </a></td>
-                            <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud">GitHub Source</a></td>
+                            <td><a href="https://github.com/JakubPonulak/5_hackers/tree/main/crud">GitHub Source</a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -245,27 +245,20 @@
                         <table class="table" id="users">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Phone</th>
+                                <th>Assignment #</th>
+                                <th>Due</th>
+                                <th>Date</th>
+                                <th>Subject</th>
                             </tr>
                             </thead>
                             <tbody id="result">
                             <!-- Loop through rows in table -->
                             {% for row in table %}
-                                <!--
-                                Prepare table for display
-                                    caution: phone number needs "~" format step to force type to string
-                                -->
-                                {% set pn = "" ~ row['phone'] %}
-                                {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
-                                <tr>
-                                    <td>{{ row['userID'] }}</td>
-                                    <td>{{ row['name'] }}</td>
-                                    <td>{{ row['email'] }}</td>
-                                    <td>{{ row['password'] }}</td>
+
+                                    <td>{{ row['assignment #'] }}</td>
+                                    <td>{{ row['due'] }}</td>
+                                    <td>{{ row['date'] }}</td>
+                                    <td>{{ row['subject'] }}</td>
                                     <td>{{ pnf }}</td>
                                 </tr>
                             {% endfor %}
@@ -282,18 +275,18 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th><label for="name">Name</label></th>
-                        <th><label for="email">Email</label></th>
-                        <th><label for="password">Password</label></th>
-                        <th><label for="phone">Phone</label></th>
+                        <th><label for="assignment #">Assignment</label></th>
+                        <th><label for="due">Due</label></th>
+                        <th><label for="date">Date</label></th>
+                        <th><label for="subject">Subject</label></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="text" name="name" id="name" required></td>
-                        <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
-                        <td><input type="password" name="password" id="password" required></td>
-                        <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
+                        <td><input type="text" name="assignment #" id="assignment #" required></td>
+                        <td><input type="due" name="due" id="due" placeholder="abc@xyz.org" required></td>
+                        <td><input type="date" name="date" id="date" required></td>
+                        <td><input type="tel" name="subject" id="subject" required></td>
                         <td ><button onclick="create_User()">Create</button></td>
 
                     </tr>
@@ -312,10 +305,10 @@
                             <tr><th><label for="read_userid">ID</label></th></tr>
                             <tr>
                                 <td>
-                                    <select name="userid" id="read_userid">
-                                        <optgroup id="ogr_userid" label="userid" >
+                                    <select name="assignment" id="read_assignment #">
+                                        <optgroup id="ogr_assignment #" label="assignment #" >
                                             {% for row in table %}
-                                                <option id="option" label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option id="option" label="{{ row['assignment #'] }}">{{ row['assignment #'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
@@ -333,20 +326,20 @@
                         <h2>Update</h2>
                         <table id="update_table">
                             <tr>
-                                <th><label for="update_userid">ID</label></th>
-                                <th><label for="update_name">Name</label></th>
+                                <th><label for="update_assignment">ID</label></th>
+                                <th><label for="update_title">Name</label></th>
                             </tr>
                             <tr>
                                 <td>
-                                    <select name="userid" id="update_userid">
+                                    <select name="assignment" id="update_assignemnt">
                                         <optgroup id="ogu_userid" label="userid" >
                                             {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option label="{{ row['assignemnt #'] }}">{{ row['assignemnt #'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
                                 </td>
-                                <td><input type="text" name="name" id="update_name" required></td>
+                                <td><input type="text" name="assignemnt #" id="assignment #" required></td>
                                 <!-- td><input type="submit" value="Update"></td -->
                                 <td> <button onclick="update_User()">Update</button>
                                 </td>
