@@ -1,9 +1,9 @@
 {% include navigation.html %}
 
 ## Table of Contents:
-1. main_page.html
-2. base.html
-3. bootstrapLayouts.html
+1. [main_page.html](#main_pagehtml)
+2. [base.html](#basehtml)
+3. [bootstrapLayouts.html](#bootstraplayoutshtml)
 
 ### main_page.html
 [Back to Top](#table-of-contents)
