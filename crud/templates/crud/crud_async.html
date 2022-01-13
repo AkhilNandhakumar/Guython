@@ -16,11 +16,6 @@
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             const phone = document.getElementById("phone").value;
-            verify date("click");
-            const assignment = document.getElementById("assignment").value;
-            const due = document.getElementById("due").value;
-            const date = document.getElementById("date").value;
-            const subject = document.getElementById("subject").value;
             const requestOptions = {
                 method: 'POST',
                 headers: {
@@ -59,19 +54,19 @@
                     }
                     resultContainer.appendChild(tr);
                     //Update the Userid drop downs with the new/created userid
-                    let optGrp = document.getElementById("ogr_assignment");
+                    let optGrp = document.getElementById("ogr_userid");
                     //create a DOM element for the option(new userid) in the option group(dropdown)
                     let option = document.createElement("option");
-                    option.innerText = data['assignment'];
+                    option.innerText = data['userID'];
                     //add the new userid to the dropdown
                     optGrp.appendChild(option);
-                    optGrp = document.getElementById("ogu_assignment");
+                    optGrp = document.getElementById("ogu_userid");
                     option = document.createElement("option");
-                    option.innerText = data['assignment'];
+                    option.innerText = data['userID'];
                     optGrp.appendChild(option);
-                    optGrp = document.getElementById("ogd_'assignment');
+                    optGrp = document.getElementById("ogd_userid");
                     option = document.createElement("option");
-                    option.innerText = data['assignment'];
+                    option.innerText = data['userID'];
                     optGrp.appendChild(option);
                     document.getElementById("pswError").innerHTML ="";
                     document.getElementById("name").value="";
@@ -83,7 +78,7 @@
         }
         // fetch the record from the database for a chosen userid
         function read_User(){
-            const get_userid = document.getElementById("read_assignment");
+            const get_userid = document.getElementById("read_userid");
             const userID = get_userid.value;
             //url for Read API
             const url='/crud_api/read/' + userID;
@@ -133,7 +128,7 @@
             const username = document.getElementById("update_name").value;
             const userid = document.getElementById("update_userid").value;
             //url for Update API
-            const url = '/crud_api/update/' + assignment + '/' + assignment;
+            const url = '/crud_api/update/' + userid + '/' + username;
             const requestOptions = {
                 method: 'PUT',
                 headers: {
@@ -160,14 +155,14 @@
                         //search for the required userid starting at row 0, column 0
                         if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
                             //for the selected userid, update the username in column 1
-                            rows[i].cells[1].innerHTML = assignment;
+                            rows[i].cells[1].innerHTML = username;
                         }
                     }
                     //Another way of doing it is with jquery, in the table, find closest tr containing data and get td text
                     //const updateRow = $("#result td:contains("+userid+")").closest("tr").find("td");
                     //updateRow[1].innerHTML = username;
                     //clear the input box after update
-                    document.getElementById("update_assignment").value="";
+                    document.getElementById("update_name").value="";
 
                 })
 
@@ -176,7 +171,7 @@
         }
 
         function delete_User(){
-            const userid = document.getElementById("delete_assignment").value;
+            const userid = document.getElementById("delete_userid").value;
             //url for Delete API
             const url = '/crud_api/delete/' + userid;
             const requestOptions = {
@@ -205,11 +200,11 @@
                         //search for the userid starting at row 0, column 0
                         if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
                             //delete the table row for the matched userid
-                            document.getElementById("assignment").deleteRow(i+1);
+                            document.getElementById("users").deleteRow(i+1);
                             //remove the deleted userid from the dropdowns
-                            document.getElementById("delete_assignment").options[i].style.display = "none";
-                            document.getElementById("read_assignment").options[i].style.display = "none";
-                            document.getElementById("update_assignment").options[i].style.display = "none";
+                            document.getElementById("delete_userid").options[i].style.display = "none";
+                            document.getElementById("read_userid").options[i].style.display = "none";
+                            document.getElementById("update_userid").options[i].style.display = "none";
                         }
                     }
                     //Another way of doing it is with jquery, in the table, find closest tr containing data and delete it
@@ -369,7 +364,7 @@
                                     <select name="userid" id="delete_userid">
                                         <optgroup id="ogd_userid" label="userid">
                                             {% for row in table %}
-                                                <option label="{{ row['assignment'] }}">{{ row['assignment'] }}</option>
+                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
