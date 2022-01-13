@@ -116,7 +116,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th><label for="name">Name</label></th>
+                            <th><label for="assignment">Name</label></th>
                             <th><label for="email">Email</label></th>
                             <th><label for="password">Password</label></th>
                             <th><label for="phone">Phone</label></th>
@@ -124,10 +124,10 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td><input type="text" name="name" id="name" required></td>
-                            <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
-                            <td><input type="password" name="password" id="password" required></td>
-                            <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
+                            <td><input type="assignment" assignment="assignment" id="assignment" required></td>
+                            <td><input type="due" name="due" id="due" placeholder="1/1/22" required></td>
+                            <td><input type="date" name="date" id="date" required></td>
+                            <td><input type="sub" name="subject" id="subject" required></td>
                             <td><input type="submit" value="Create"></td>
                         </tr>
                         </tbody>
@@ -147,13 +147,13 @@
                         <h2>Read</h2>
                         <form method="POST" ID="read" action={{url_for('crud.read')}} >
                             <table id="read_table">
-                                <tr><th><label for="read_userid">ID</label></th></tr>
+                                <tr><th><label for="read_assignment">ID</label></th></tr>
                                 <tr>
                                     <td>
-                                        <select name="userid" id="read_userid">
-                                            <optgroup label="userid">
+                                        <select name="assignment" id="read_assignment">
+                                            <optgroup label="assignment">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['assignment'] }}">{{ row['assignment'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>
@@ -173,15 +173,15 @@
                         <form method="POST" ID="update" action={{url_for('crud.update')}} >
                             <table id="update_table">
                                 <tr>
-                                    <th><label for="update_userid">ID</label></th>
-                                    <th><label for="update_name">Name</label></th>
+                                    <th><label for="update_assignment">ID</label></th>
+                                    <th><label for="update_assignment">Name</label></th>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select name="userid" id="update_userid">
+                                        <select name="assignment" id="update_assignment">
                                             <optgroup label="userid">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['assignment'] }}">{{ row['assignment'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>
@@ -205,7 +205,7 @@
                                         <select name="userid" id="delete_userid">
                                             <optgroup label="userid">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['assignment] }}">{{ row['assignment'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>
@@ -226,19 +226,19 @@
     <!-- Back end SQL data definition code (SQLalchemy) -->
     <div class="container py-4">
         <h1 id="BE-MODEL">Back End Definition Code (Model) </h1>
-        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Fmodel.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script src="https://github.com/JakubPonulak/5_hackers/tree/main/crud&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
     </div>
 
     <!-- Front End HTML, shows this file -->
     <div class="container py-4">
         <h1 id="FE-VIEW">Front End HTML Code (View) </h1>
-        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Ftemplates%2Fcrud%2Fcrud.html&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script src="https://https://github.com/JakubPonulak/5_hackers/tree/main/crud.html&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
     </div>
 
     <!-- Back Route code -->
     <div class="container py-4">
         <h1 id="BE-CONTROL">Back End Form Request and API Code (Control)</h1>
-        <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Fcrud%2Fapp_crud.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script src="https://github.com/JakubPonulak/5_hackers/tree/main/crud"></script>
     </div>
 {% endblock %}
 
