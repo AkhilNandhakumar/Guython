@@ -9,9 +9,9 @@
     <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
 
     <script>
-        function create_User(){
+        function create_assignment(){
             //Validate Password (must be 6-20 characters in len)
-            verifyPassword("click");
+            verify date("click");
             const assignment = document.getElementById("assignment").value;
             const due = document.getElementById("due").value;
             const date = document.getElementById("date").value;
@@ -125,8 +125,8 @@
         }
 
         function update_User() {
-            const username = document.getElementById("update_assignemnt #").value;
-            const userid = document.getElementById("update_assignment #").value;
+            const assignment = document.getElementById("update_assignment").value;
+            const assignment # = document.getElementById("update_assignment").value;
             //url for Update API
             const url = '/crud_api/update/' + userid + '/' + username;
             const requestOptions = {
@@ -155,14 +155,14 @@
                         //search for the required userid starting at row 0, column 0
                         if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
                             //for the selected userid, update the username in column 1
-                            rows[i].cells[1].innerHTML = username;
+                            rows[i].cells[1].innerHTML = assignment;
                         }
                     }
                     //Another way of doing it is with jquery, in the table, find closest tr containing data and get td text
                     //const updateRow = $("#result td:contains("+userid+")").closest("tr").find("td");
                     //updateRow[1].innerHTML = username;
                     //clear the input box after update
-                    document.getElementById("update_name").value="";
+                    document.getElementById("update_assignment").value="";
 
                 })
 
@@ -171,7 +171,7 @@
         }
 
         function delete_User(){
-            const userid = document.getElementById("delete_userid").value;
+            const userid = document.getElementById("delete_assignment").value;
             //url for Delete API
             const url = '/crud_api/delete/' + userid;
             const requestOptions = {
@@ -200,11 +200,11 @@
                         //search for the userid starting at row 0, column 0
                         if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
                             //delete the table row for the matched userid
-                            document.getElementById("users").deleteRow(i+1);
+                            document.getElementById("assignment").deleteRow(i+1);
                             //remove the deleted userid from the dropdowns
-                            document.getElementById("delete_userid").options[i].style.display = "none";
-                            document.getElementById("read_userid").options[i].style.display = "none";
-                            document.getElementById("update_userid").options[i].style.display = "none";
+                            document.getElementById("delete_assignment").options[i].style.display = "none";
+                            document.getElementById("read_assignment").options[i].style.display = "none";
+                            document.getElementById("update_assignment").options[i].style.display = "none";
                         }
                     }
                     //Another way of doing it is with jquery, in the table, find closest tr containing data and delete it
@@ -234,7 +234,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a href={{url_for('crud_api.crud_api')}}>Full Table </a></td>
+                            <td><a href={{url_for('crud.search_term')}}>Full Table </a></td>
                             <td><a href="https://github.com/JakubPonulak/5_hackers/tree/main/crud">GitHub Source</a></td>
                         </tr>
                         </tbody>
@@ -255,7 +255,7 @@
                             <!-- Loop through rows in table -->
                             {% for row in table %}
 
-                                    <td>{{ row['assignment #'] }}</td>
+                                    <td>{{ row['assignment'] }}</td>
                                     <td>{{ row['due'] }}</td>
                                     <td>{{ row['date'] }}</td>
                                     <td>{{ row['subject'] }}</td>
@@ -275,7 +275,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th><label for="assignment #">Assignment</label></th>
+                        <th><label for="assignment">Assignment</label></th>
                         <th><label for="due">Due</label></th>
                         <th><label for="date">Date</label></th>
                         <th><label for="subject">Subject</label></th>
@@ -283,7 +283,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="text" name="assignment #" id="assignment #" required></td>
+                        <td><input type="text" name="assignment" id="assignment" required></td>
                         <td><input type="due" name="due" id="due" placeholder="abc@xyz.org" required></td>
                         <td><input type="date" name="date" id="date" required></td>
                         <td><input type="tel" name="subject" id="subject" required></td>
@@ -305,10 +305,10 @@
                             <tr><th><label for="read_userid">ID</label></th></tr>
                             <tr>
                                 <td>
-                                    <select name="assignment" id="read_assignment #">
-                                        <optgroup id="ogr_assignment #" label="assignment #" >
+                                    <select name="assignment" id="read_assignment">
+                                        <optgroup id="ogr_assignment" label="assignment" >
                                             {% for row in table %}
-                                                <option id="option" label="{{ row['assignment #'] }}">{{ row['assignment #'] }}</option>
+                                                <option id="option" label="{{ row['assignment'] }}">{{ row['assignment'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
@@ -331,15 +331,15 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <select name="assignment" id="update_assignemnt">
+                                    <select name="assignment" id="update_assignment">
                                         <optgroup id="ogu_userid" label="userid" >
                                             {% for row in table %}
-                                                <option label="{{ row['assignemnt #'] }}">{{ row['assignemnt #'] }}</option>
+                                                <option label="{{ row['assignment'] }}">{{ row['assignment'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
                                 </td>
-                                <td><input type="text" name="assignemnt #" id="assignment #" required></td>
+                                <td><input type="text" name="assignment" id="assignment" required></td>
                                 <!-- td><input type="submit" value="Update"></td -->
                                 <td> <button onclick="update_User()">Update</button>
                                 </td>
@@ -357,7 +357,7 @@
                                     <select name="userid" id="delete_userid">
                                         <optgroup id="ogd_userid" label="userid">
                                             {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option label="{{ row['assignment'] }}">{{ row['assignment'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
