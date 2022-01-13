@@ -61,13 +61,20 @@
                 Class Topics
             </pList>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href={{ url_for('crud.crud') }}>CRUD</a>
-                <a class="dropdown-item" href={{ url_for('crud_api.crud_api') }}>CRUD Async</a>
-                <a class="dropdown-item" href={{ url_for('crud.search') }}>Search</a>
                 <a class="dropdown-item" href="/math">Math</a>
                 <a class="dropdown-item" href="/history">US History</a>
                 <a class="dropdown-item" href="/sci">Science</a>
                 <a class="dropdown-item" href="/lit">Literature</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <pList style="font-size: 28px;font-family: Helvetica;" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Database
+            </pList>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" href={{ url_for('crud.crud') }}>CRUD</a>
+                <a class="dropdown-item" href={{ url_for('crud_api.crud_api') }}>CRUD Async</a>
+                <a class="dropdown-item" href={{ url_for('crud.search') }}>Search</a>
             </div>
         </div>
     </div>
