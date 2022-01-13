@@ -1,6 +1,6 @@
 {% include navigation.html %}
 
-## Table of Contents
+## Table of Contents:
 1. [app_crud.py](#app_crudpy)
 2. [app_crud_api.py](#app_crud_apipy)
 3. [model.py](#modelpy)

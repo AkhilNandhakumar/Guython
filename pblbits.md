@@ -1,6 +1,6 @@
 {% include navigation.html %}
 
-## Table of Contents
+## Table of Contents:
 1. [math.html](#mathhtml)
 2. [forums.html](#forumshtml)
 
