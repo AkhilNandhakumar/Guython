@@ -104,6 +104,23 @@
     </div>
 
     <canvas id='vfx'></canvas>
+    <script>
+        setInterval(toggleColor, 1000);
+        function toggleColor() {
+            if (document.getElementById("mathText").style.color=="black"){
+                document.getElementById("mathText").style.color="white";
+                document.getElementById("scienceText").style.color="white";
+                document.getElementById("historyText").style.color="white";
+                document.getElementById("literatureText").style.color="white";
+            }
+            else {
+                document.getElementById("mathText").style.color = "black";
+                document.getElementById("scienceText").style.color = "black";
+                document.getElementById("historyText").style.color = "black";
+                document.getElementById("literatureText").style.color = "black";
+            }
+        }
+    </script>
 
     </body>
     <script>
@@ -239,6 +256,7 @@
         });
 
     </script>
+
 {% endblock %}
 <!- This is turning off birds background from base.html -->
 {% block background %}
