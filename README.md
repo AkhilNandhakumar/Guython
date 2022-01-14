@@ -14,10 +14,12 @@ GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?autho
 GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/TristanCopley)
 
 ## Table of Contents:
-1. [Week 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
-2. [Weeks 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-12)
-3. [Week 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
-4. [Week 4](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
+1. [Week 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#week-0)
+2. [Weeks 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#weeks-12)
+3. [Week 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#week-3)
+4. [Week 4](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#week-4)
+5. [Week 5](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#week-5)
+
 
 
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
