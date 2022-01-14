@@ -78,3 +78,13 @@ Jakub | Jekyll Challanges, TPT Work | [Jekyll 1](https://github.com/JakubPonulak
 Kevin | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/25), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/39) |
 Sreeja | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/40) |
 Tristan | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/41) |
+
+### Week 5
+Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/42)
+Team Member | Assignment | Issue |
+--- | --- | --- 
+Hamza | Theme Work, TPT Work | [Theme Work](https://github.com/JakubPonulak/5_hackers/issues/43) |
+Jakub | CRUD/Database, Jekyll/GitHub Pages, TPT Work | [CRUD/Database](https://github.com/JakubPonulak/5_hackers/issues/22), [Jekyll/GitHub Pages](https://github.com/JakubPonulak/5_hackers/issues/45) |
+Kevin | CRUD/Database, TPT Work | [CRUD/Database](https://github.com/JakubPonulak/5_hackers/issues/22) |
+Sreeja | Async Ops, TPT Work | [Async Ops](https://github.com/JakubPonulak/5_hackers/issues/44) |
+Tristan | PBL Key Features, TPT Work | [PBL Key Features](https://github.com/JakubPonulak/5_hackers/issues/24)|
