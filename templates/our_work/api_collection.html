@@ -1,0 +1,123 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "API Collection" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+<style>
+.col-lg {
+    border-color: white;
+    border-style: solid;
+    max-width: 1200px;
+    font-family: Helvetica;
+    font-size: 50px;
+    border-width: 1px;
+}
+.col-sm {
+    border-color: white;
+    border-style: solid;
+    max-width: 400px;
+    font-family: Helvetica;
+    font-size: 25px;
+    border-width: 1px;
+}
+</style>
+    <div id="table" class="row justify-content-center">
+        <div class="col-lg" id="title">Brightest Stars</div>
+        <div class="w-100"></div>
+        <div class="col-sm" id="header1">Star Name</div>
+        <div class="col-sm" id="header2">Distance (Light years)</div>
+        <div class="col-sm" id="header3">Visual Magnitude</div>
+        <div class="w-100"></div>
+        <div class="col-sm" id="text1">{{ s1n }}</div>
+        <div class="col-sm" id="text2">{{ s1d }}</div>
+        <div class="col-sm" id="text3">{{ s1vm }}</div>
+        <div class="w-100"></div>
+        <div class="col-sm" id="text4">{{ s2n }}</div>
+        <div class="col-sm" id="text5">{{ s2d }}</div>
+        <div class="col-sm" id="text6">{{ s2vm }}</div>
+        <div class="w-100"></div>
+        <div class="col-sm" id="text7">{{ s3n }}</div>
+        <div class="col-sm" id="text8">{{ s3d }}</div>
+        <div class="col-sm" id="text9">{{ s3vm }}</div>
+    </div>
+    <button id="button_left" onclick="button_left()">Go Left</button>
+    <button id="button_right" onclick="button_right()">Go Right</button>
+    <p id="test"></p>
+<script>
+let n = 0
+function button_left() {
+    n = n - 1
+    if (
+        n < 0
+    ) n = 2
+    document.getElementById("test").innerHTML = n
+    API_Display(n)
+}
+function button_right() {
+    n = n + 1
+    if (
+        n > 2
+    ) n = 0
+    document.getElementById("test").innerHTML = n
+    API_Display(n)
+}
+function API_Display(num) {
+    if (
+        num === 0
+    ) document.getElementById('title').innerHTML = "Brightest Stars",
+        document.getElementById('table').style.color = "#ff00ff",
+        document.getElementById('header1').innerHTML = "Star Name",
+        document.getElementById('header2').innerHTML = "Distance (Light years)",
+        document.getElementById('header3').innerHTML = "Visual Magnitude",
+        document.getElementById('text1').innerHTML = "{{s1n}}",
+        document.getElementById('text2').innerHTML = "{{s1d}}",
+        document.getElementById('text3').innerHTML = "{{s1vm}}",
+        document.getElementById('text4').innerHTML = "{{s2n}}",
+        document.getElementById('text5').innerHTML = "{{s2d}}",
+        document.getElementById('text6').innerHTML = "{{s2vm}}",
+        document.getElementById('text7').innerHTML = "{{s3n}}",
+        document.getElementById('text8').innerHTML = "{{s3d}}",
+        document.getElementById('text9').innerHTML = "{{s3vm}}"
+    else if (
+        num === 1
+    ) document.getElementById('title').innerHTML = "Weather Report",
+        document.getElementById('table').style.color = "#ffff00",
+        document.getElementById('header1').innerHTML = "City",
+        document.getElementById('header2').innerHTML = "Temperature",
+        document.getElementById('header3').innerHTML = "Description",
+        document.getElementById('text1').innerHTML = "San Diego",
+        document.getElementById('text2').innerHTML = "{{temp}}",
+        document.getElementById('text3').innerHTML = "{{desc}}",
+        document.getElementById('text4').innerHTML = "New York",
+        document.getElementById('text5').innerHTML = "{{temp2}}",
+        document.getElementById('text6').innerHTML = "{{desc2}}",
+        document.getElementById('text7').innerHTML = "Paris",
+        document.getElementById('text8').innerHTML = "{{temp3}}",
+        document.getElementById('text9').innerHTML = "{{desc3}}"
+    else if (
+        num === 2
+    ) document.getElementById('title').innerHTML = "COVID Information",
+        document.getElementById('table').style.color = "#00ffff",
+        document.getElementById('header1').innerHTML = "Country",
+        document.getElementById('header2').innerHTML = "Number of Cases",
+        document.getElementById('header3').innerHTML = "Number of Deaths",
+        document.getElementById('text1').innerHTML = "{{con1}}",
+        document.getElementById('text2').innerHTML = "{{cases1}}",
+        document.getElementById('text3').innerHTML = "{{d1}}",
+        document.getElementById('text4').innerHTML = "{{con2}}",
+        document.getElementById('text5').innerHTML = "{{cases2}}",
+        document.getElementById('text6').innerHTML = "{{d2}}",
+        document.getElementById('text7').innerHTML = "{{con3}}",
+        document.getElementById('text8').innerHTML = "{{cases3}}",
+        document.getElementById('text9').innerHTML = "{{d3}}"
+}
+
+</script>
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}

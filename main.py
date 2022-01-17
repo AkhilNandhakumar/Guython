@@ -163,6 +163,73 @@ def lit():
     return render_template("class_topics/lit.html")
 
 
+@app.route('/api_collection/')
+def api_collection():
+    # API 1 - Brightest Stars Information
+    url1 = "https://brightest-stars.p.rapidapi.com/brightstars"
+    headers1 = {
+    'x-rapidapi-host': "brightest-stars.p.rapidapi.com",
+    'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"
+    }
+    response1 = requests.request("GET", url1, headers=headers1)
+    text = response1.json()
+    star1name = text[0]['name']
+    star1distance = text[0]['distance']
+    star1vismag = text[0]['visualMagnitude']
+    star2name = text[1]['name']
+    star2distance = text[1]['distance']
+    star2vismag = text[1]['visualMagnitude']
+    star3name = text[2]['name']
+    star3distance = text[2]['distance']
+    star3vismag = text[2]['visualMagnitude']
+    # API 2 - Weather API
+    # url2 = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly"
+    # querystring2_1 = {"lat":"33.01","lon":"-117.12"}
+    # querystring2_2 = {"lat":"40.7","lon":"-74.01"}
+    # querystring2_3 = {"lat":"48.85","lon":"2.34"}
+    # headers2 = {
+    #     'x-rapidapi-host': "weatherbit-v1-mashape.p.rapidapi.com",
+    #     'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"}
+    # response2_1 = requests.request("GET", url2, headers=headers2, params=querystring2_1)
+    # response2_2 = requests.request("GET", url2, headers=headers2, params=querystring2_2)
+    # response2_3 = requests.request("GET", url2, headers=headers2, params=querystring2_3)
+    # text2_1 = response2_1.json()
+    # text2_2 = response2_2.json()
+    # text2_3 = response2_3.json()
+    # temp = text2_1["data"][0]["temp"]
+    # desc = text2_1["data"][0]["weather"]["description"]
+    # temp2 = text2_2["data"][0]["temp"]
+    # desc2 = text2_2["data"][0]["weather"]["description"]
+    # temp3 = text2_3["data"][0]["temp"]
+    # desc3 = text2_3["data"][0]["weather"]["description"]
+    # # API 3 - COVID Information
+    url3 = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total"
+    querystring3_1 = {"country":"US"}
+    querystring3_2 = {"country":"Canada"}
+    querystring3_3 = {"country":"France"}
+    headers3 = {
+        'x-rapidapi-host': "covid-19-coronavirus-statistics.p.rapidapi.com",
+        'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"}
+    response3_1 = requests.request("GET", url3, headers=headers3, params=querystring3_1)
+    response3_2 = requests.request("GET", url3, headers=headers3, params=querystring3_2)
+    response3_3 = requests.request("GET", url3, headers=headers3, params=querystring3_3)
+    text3_1 = response3_1.json()
+    text3_2 = response3_2.json()
+    text3_3 = response3_3.json()
+    country1 = text3_1['data']['location']
+    cases1 = text3_1['data']['confirmed']
+    deaths1 = text3_1['data']['deaths']
+    country2 = text3_2['data']['location']
+    cases2 = text3_2['data']['confirmed']
+    deaths2 = text3_2['data']['deaths']
+    country3 = text3_3['data']['location']
+    cases3 = text3_3['data']['confirmed']
+    deaths3 = text3_3['data']['deaths']
+    return render_template("our_work/api_collection.html", text=text, s1n=star1name, s1d=star1distance, s1vm=star1vismag, s2n=star2name, s2d=star2distance, s2vm=star2vismag, s3n=star3name, s3d=star3distance, s3vm=star3vismag,
+                           # text2=text2_1, temp=temp, desc=desc, temp2=temp2, desc2=desc2, temp3=temp3, desc3=desc3,
+                           text3_1=text3_1, text3_2=text3_2, text3_3=text3_3, con1=country1, cases1=cases1, d1=deaths1, con2=country2, cases2=cases2, d2=deaths2, con3=country3, cases3=cases3, d3=deaths3)
+
+
 #
 #
 #
