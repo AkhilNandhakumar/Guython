@@ -7,6 +7,10 @@
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
 <style>
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg");
+    background-size: 100% 100%;
+}
 .col-lg {
     border-color: white;
     border-style: solid;
@@ -24,8 +28,10 @@
     border-width: 1px;
 }
 </style>
-    <div id="table" class="row justify-content-center">
-        <div class="col-lg" id="title">Brightest Stars</div>
+    <div style="background-color: #000526; color:#f6ff78; margin-left: 200px; margin-right: 200px; max-width: 1200px" id="table" class="row justify-content-center">
+        <div class="col-lg" id="title">
+            Brightest Stars
+        </div>
         <div class="w-100"></div>
         <div class="col-sm" id="header1">Star Name</div>
         <div class="col-sm" id="header2">Distance (Light years)</div>
@@ -45,7 +51,6 @@
     </div>
     <button id="button_left" onclick="button_left()">Go Left</button>
     <button id="button_right" onclick="button_right()">Go Right</button>
-    <p id="test"></p>
 <script>
 let n = 0
 function button_left() {
@@ -53,7 +58,6 @@ function button_left() {
     if (
         n < 0
     ) n = 2
-    document.getElementById("test").innerHTML = n
     API_Display(n)
 }
 function button_right() {
@@ -61,60 +65,74 @@ function button_right() {
     if (
         n > 2
     ) n = 0
-    document.getElementById("test").innerHTML = n
     API_Display(n)
 }
 function API_Display(num) {
     if (
         num === 0
-    ) document.getElementById('title').innerHTML = "Brightest Stars",
-        document.getElementById('table').style.color = "#ff00ff",
-        document.getElementById('header1').innerHTML = "Star Name",
-        document.getElementById('header2').innerHTML = "Distance (Light years)",
-        document.getElementById('header3').innerHTML = "Visual Magnitude",
-        document.getElementById('text1').innerHTML = "{{s1n}}",
-        document.getElementById('text2').innerHTML = "{{s1d}}",
-        document.getElementById('text3').innerHTML = "{{s1vm}}",
-        document.getElementById('text4').innerHTML = "{{s2n}}",
-        document.getElementById('text5').innerHTML = "{{s2d}}",
-        document.getElementById('text6').innerHTML = "{{s2vm}}",
-        document.getElementById('text7').innerHTML = "{{s3n}}",
-        document.getElementById('text8').innerHTML = "{{s3d}}",
-        document.getElementById('text9').innerHTML = "{{s3vm}}"
+    ) text_change1()
     else if (
         num === 1
-    ) document.getElementById('title').innerHTML = "Weather Report",
-        document.getElementById('table').style.color = "#ffff00",
-        document.getElementById('header1').innerHTML = "City",
-        document.getElementById('header2').innerHTML = "Temperature",
-        document.getElementById('header3').innerHTML = "Description",
-        document.getElementById('text1').innerHTML = "San Diego",
-        document.getElementById('text2').innerHTML = "{{temp}}",
-        document.getElementById('text3').innerHTML = "{{desc}}",
-        document.getElementById('text4').innerHTML = "New York",
-        document.getElementById('text5').innerHTML = "{{temp2}}",
-        document.getElementById('text6').innerHTML = "{{desc2}}",
-        document.getElementById('text7').innerHTML = "Paris",
-        document.getElementById('text8').innerHTML = "{{temp3}}",
-        document.getElementById('text9').innerHTML = "{{desc3}}"
+    ) text_change2()
     else if (
         num === 2
-    ) document.getElementById('title').innerHTML = "COVID Information",
-        document.getElementById('table').style.color = "#00ffff",
-        document.getElementById('header1').innerHTML = "Country",
-        document.getElementById('header2').innerHTML = "Number of Cases",
-        document.getElementById('header3').innerHTML = "Number of Deaths",
-        document.getElementById('text1').innerHTML = "{{con1}}",
-        document.getElementById('text2').innerHTML = "{{cases1}}",
-        document.getElementById('text3').innerHTML = "{{d1}}",
-        document.getElementById('text4').innerHTML = "{{con2}}",
-        document.getElementById('text5').innerHTML = "{{cases2}}",
-        document.getElementById('text6').innerHTML = "{{d2}}",
-        document.getElementById('text7').innerHTML = "{{con3}}",
-        document.getElementById('text8').innerHTML = "{{cases3}}",
-        document.getElementById('text9').innerHTML = "{{d3}}"
+    ) text_change3()
 }
-
+function text_change1() {
+    document.getElementById('title').innerHTML = "Brightest Stars",
+    document.getElementById('table').style.backgroundColor = "#000526",
+    document.getElementById('table').style.color = "#f6ff78",
+    document.body.style.backgroundImage = "url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg)",
+    document.getElementById('header1').innerHTML = "Star Name",
+    document.getElementById('header2').innerHTML = "Distance (Light years)",
+    document.getElementById('header3').innerHTML = "Visual Magnitude",
+    document.getElementById('text1').innerHTML = "{{s1n}}",
+    document.getElementById('text2').innerHTML = "{{s1d}}",
+    document.getElementById('text3').innerHTML = "{{s1vm}}",
+    document.getElementById('text4').innerHTML = "{{s2n}}",
+    document.getElementById('text5').innerHTML = "{{s2d}}",
+    document.getElementById('text6').innerHTML = "{{s2vm}}",
+    document.getElementById('text7').innerHTML = "{{s3n}}",
+    document.getElementById('text8').innerHTML = "{{s3d}}",
+    document.getElementById('text9').innerHTML = "{{s3vm}}"
+}
+function text_change2() {
+    document.getElementById('title').innerHTML = "Weather Report",
+    document.getElementById('table').style.backgroundColor = "#0089b3",
+    document.getElementById('table').style.color = "#f0f0f0",
+    document.body.style.backgroundImage = "url(https://m.media-amazon.com/images/I/51y6dy0T8sL._AC_SL1000_.jpg)",
+    document.getElementById('header1').innerHTML = "City",
+    document.getElementById('header2').innerHTML = "Temperature",
+    document.getElementById('header3').innerHTML = "Description",
+    document.getElementById('text1').innerHTML = "San Diego",
+    document.getElementById('text2').innerHTML = "{{temp}}",
+    document.getElementById('text3').innerHTML = "{{desc}}",
+    document.getElementById('text4').innerHTML = "New York",
+    document.getElementById('text5').innerHTML = "{{temp2}}",
+    document.getElementById('text6').innerHTML = "{{desc2}}",
+    document.getElementById('text7').innerHTML = "Paris",
+    document.getElementById('text8').innerHTML = "{{temp3}}",
+    document.getElementById('text9').innerHTML = "{{desc3}}"
+}
+function text_change3() {
+    document.getElementById('title').innerHTML = "COVID Information",
+    document.getElementById('table').style.backgroundColor = "#ffffff",
+    document.getElementById('table').style.color = "#ff0000",
+    document.getElementById('table').style.borderColor = "#000000",
+    document.body.style.backgroundImage = "url(https://images.unsplash.com/photo-1502905704466-2690947baeee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2l0eSUyMHNreWxpbmV8ZW58MHx8MHx8&w=1000&q=80)",
+    document.getElementById('header1').innerHTML = "Country",
+    document.getElementById('header2').innerHTML = "Number of Cases",
+    document.getElementById('header3').innerHTML = "Number of Deaths",
+    document.getElementById('text1').innerHTML = "{{con1}}",
+    document.getElementById('text2').innerHTML = "{{cases1}}",
+    document.getElementById('text3').innerHTML = "{{d1}}",
+    document.getElementById('text4').innerHTML = "{{con2}}",
+    document.getElementById('text5').innerHTML = "{{cases2}}",
+    document.getElementById('text6').innerHTML = "{{d2}}",
+    document.getElementById('text7').innerHTML = "{{con3}}",
+    document.getElementById('text8').innerHTML = "{{cases3}}",
+    document.getElementById('text9').innerHTML = "{{d3}}"
+}
 </script>
 {% endblock %}
 
