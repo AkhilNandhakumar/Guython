@@ -29,7 +29,7 @@
                             <td></td>
                             <td></td>
                             <td><a href={{url_for('crud.crud')}}>Full Table </a></td>
-                            <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud">GitHub Source</a></td>
+                            <td><a href="https://github.com/JakubPonulak/5_hackers/tree/main/crud">GitHub Source</a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -39,11 +39,10 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Phone</th>
+                                <th>assignment</th>
+                                <th>due</th>
+                                <th>date</th>
+                                <th>subject</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -53,13 +52,13 @@
                                 Prepare table for display
                                     caution: phone number needs "~" format step to force type to string
                                 -->
-                                {% set pn = "" ~ row['phone'] %}
+                                {% set pn = "" ~ row['assignment'] %}
                                 {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
                                 <tr>
-                                    <td>{{ row['userID'] }}</td>
-                                    <td>{{ row['name'] }}</td>
-                                    <td>{{ row['email'] }}</td>
-                                    <td>{{ row['password'] }}</td>
+                                    <td>{{ row['assignemnt'] }}</td>
+                                    <td>{{ row['due'] }}</td>
+                                    <td>{{ row['date'] }}</td>
+                                    <td>{{ row['subject'] }}</td>
                                     <td>{{ pnf }}</td>
                                 </tr>
                             {% endfor %}
@@ -79,18 +78,18 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th><label for="name">Name</label></th>
-                            <th><label for="email">Email</label></th>
-                            <th><label for="password">Password</label></th>
-                            <th><label for="phone">Phone</label></th>
+                            <th><label for="assignment">assignment</label></th>
+                            <th><label for="due">due</label></th>
+                            <th><label for="date">date</label></th>
+                            <th><label for="subject">subject</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td><input type="text" name="name" id="name" required></td>
-                            <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
-                            <td><input type="password" name="password" id="password" required></td>
-                            <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
+                            <td><input type="text" name="assignment" id="assignment" required></td>
+                            <td><input type="due" name="due" id="due" placeholder="1/1/22" required></td>
+                            <td><input type="date" name="date" id="date" required></td>
+                            <td><input type="sub" name="subject" id="subject" placeholder="math" required></td>
                             <td><input type="submit" value="Create"></td>
                         </tr>
                         </tbody>
@@ -108,15 +107,15 @@
                 <div class="col-md-3">
                     <div class="p-5 mb-4 bg-info text-dark rounded-3">
                         <h2>Read</h2>
-                        <form method="POST" ID="read" action={{url_for('crud.read')}} >
+                        <form method="POST" id="read" action={{url_for('crud.read')}} >
                             <table id="read_table">
-                                <tr><th><label for="read_userid">ID</label></th></tr>
+                                <tr><th><label for="read_assignment">assignment</label></th></tr>
                                 <tr>
                                     <td>
-                                        <select name="userid" id="read_userid">
-                                            <optgroup label="userid">
+                                        <select name="assignment" assignment="read_assignment">
+                                            <optgroup label="assignment">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['assignment'] }}">{{ row['assignment'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>
@@ -133,23 +132,23 @@
                 <div class="col-md-6">
                     <div class="p-5 mb-4 bg-info text-dark rounded-3">
                         <h2>Update</h2>
-                        <form method="POST" ID="update" action={{url_for('crud.update')}} >
+                        <form method="POST" id="update" action={{url_for('crud.update')}} >
                             <table id="update_table">
                                 <tr>
-                                    <th><label for="update_userid">ID</label></th>
-                                    <th><label for="update_name">Name</label></th>
+                                    <th><label for="update_due">due</label></th>
+                                    <th><label for="update_due">due</label></th>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select name="userid" id="update_userid">
-                                            <optgroup label="userid">
+                                        <select name="assignment" id="update_due">
+                                            <optgroup label="due">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['due'] }}">{{ row['due'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>
                                     </td>
-                                    <td><input type="text" name="name" id="update_name" required></td>
+                                    <td><input type="text" name="due" id="update_due" required></td>
                                     <td><input type="submit" value="Update"></td>
                                 </tr>
                             </table>
@@ -160,15 +159,15 @@
                 <div class="col-md-3">
                     <div class="p-5 mb-4 bg-info text-dark rounded-3">
                         <h2>Delete</h2>
-                        <form method="POST" ID="read" action={{url_for('crud.delete')}} >
+                        <form method="POST" assignment="read" action={{url_for('crud.delete')}} >
                             <table id="read_table">
-                                <tr><th><label for="delete_userid">ID</label></th></tr>
+                                <tr><th><label for="delete_due">assignment</th></tr>
                                 <tr>
                                     <td>
-                                        <select name="userid" id="delete_userid">
-                                            <optgroup label="userid">
+                                        <select name="assignment" id="delete_assignment">
+                                            <optgroup label="assignment">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['assignment'] }}">{{ row['assignment'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>

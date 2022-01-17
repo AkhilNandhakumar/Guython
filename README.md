@@ -11,13 +11,15 @@ Team Role: | Primary Designer | GitHub Admin | Technical Officer | Deployment Ma
 GitHub Issues: | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/hamzahakak) | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/Kevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/SreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigned/TristanCopley)
 Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3Ahamzahakak)| [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3AKevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3ASreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3ATristanCopley)
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=Kevinc023032) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=TristanCopley)
-GitHub profile: | [Link](https://github.com/anika1sharma1) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/TristanCopley)
+GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/Kevinc023032) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/TristanCopley)
 
 ## Table of Contents:
-1. [Week 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-0)
-2. [Weeks 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-12)
-3. [Week 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
-4. [Week 4](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#sprint-3)
+1. [Week 0](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#week-0)
+2. [Weeks 1,2](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#weeks-12)
+3. [Week 3](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#week-3)
+4. [Week 4](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#week-4)
+5. [Week 5](https://github.com/JakubPonulak/5_hackers/blob/main/README.md#week-5)
+
 
 
 ## [GitHub Repository](https://github.com/JakubPonulak/5_hackers)
@@ -78,3 +80,13 @@ Jakub | Jekyll Challanges, TPT Work | [Jekyll 1](https://github.com/JakubPonulak
 Kevin | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/25), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/39) |
 Sreeja | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/40) |
 Tristan | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/41) |
+
+### Week 5
+Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/42)
+Team Member | Assignment | Issue |
+--- | --- | --- 
+Hamza | Theme Work, TPT Work | [Theme Work](https://github.com/JakubPonulak/5_hackers/issues/43) |
+Jakub | CRUD/Database, Jekyll/GitHub Pages, TPT Work | [CRUD/Database](https://github.com/JakubPonulak/5_hackers/issues/22), [Jekyll/GitHub Pages](https://github.com/JakubPonulak/5_hackers/issues/45) |
+Kevin | CRUD/Database, TPT Work | [CRUD/Database](https://github.com/JakubPonulak/5_hackers/issues/22) |
+Sreeja | Async Ops, TPT Work | [Async Ops](https://github.com/JakubPonulak/5_hackers/issues/44) |
+Tristan | PBL Key Features, TPT Work | [PBL Key Features](https://github.com/JakubPonulak/5_hackers/issues/24)|
