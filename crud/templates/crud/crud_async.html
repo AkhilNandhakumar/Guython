@@ -5,17 +5,17 @@
 
 <!-- CONTENT (in <head>), content for this page -->
 {% block meta %}
-    <title>Async CRUD</title>
+    <title>Async CRUD page</title>
     <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
 
     <script>
         function create_User(){
             //Validate Password (must be 6-20 characters in len)
             verifyPassword("click");
-            const name = document.getElementById("assignment").value;
-            const email = document.getElementById("due").value;
-            const password = document.getElementById("date").value;
-            const phone = document.getElementById("subject").value;
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const phone = document.getElementById("phone").value;
             const requestOptions = {
                 method: 'POST',
                 headers: {
@@ -69,10 +69,10 @@
                     option.innerText = data['userID'];
                     optGrp.appendChild(option);
                     document.getElementById("pswError").innerHTML ="";
-                    document.getElementById("assignment").value="";
-                    document.getElementById("due").value="";
-                    document.getElementById("date").value="";
-                    document.getElementById("subject").value="";
+                    document.getElementById("name").value="";
+                    document.getElementById("email").value="";
+                    document.getElementById("password").value="";
+                    document.getElementById("phone").value="";
                 })
             })
         }
@@ -125,10 +125,10 @@
         }
 
         function update_User() {
-            const assignment = document.getElementById("update_assignment").value;
-            const assignment = document.getElementById("update_assignment").value;
+            const username = document.getElementById("update_name").value;
+            const userid = document.getElementById("update_userid").value;
             //url for Update API
-            const url = '/crud_api/update/' + assignment + '/' + assignment;
+            const url = '/crud_api/update/' + userid + '/' + username;
             const requestOptions = {
                 method: 'PUT',
                 headers: {
@@ -153,7 +153,7 @@
                     let rows = table.querySelectorAll('tbody tr');
                     for(let i = 0; i < rows.length; ++i) {
                         //search for the required userid starting at row 0, column 0
-                        if (parseInt(rows[i].cells[0].innerHTML) == parseInt(assignment)) {
+                        if (parseInt(rows[i].cells[0].innerHTML) == parseInt(userid)) {
                             //for the selected userid, update the username in column 1
                             rows[i].cells[1].innerHTML = username;
                         }
@@ -162,7 +162,7 @@
                     //const updateRow = $("#result td:contains("+userid+")").closest("tr").find("td");
                     //updateRow[1].innerHTML = username;
                     //clear the input box after update
-                    document.getElementById("update_due").value="";
+                    document.getElementById("update_name").value="";
 
                 })
 
@@ -221,13 +221,13 @@
     <div class="container py-4 text-light bg-dark">
         <header class="pb-3 mb-4 border-bottom">
             <div class="d-flex align-items-center text-light text-decoration-none">
-                <span class="fs-4">Asynchronous Database CRUD operations</span>
+                <span class="fs-4">Asynchronous CRUD Database Operations</span>
             </div>
         </header>
 
         <div class="container py-4">
             <div class="p-5 mb-4 bg-info text-dark rounded-3">
-                <h2>Backpack Pro Database</h2>
+                <h2>Backpack Pro Database Viewer</h2>
                 <div class="row align-items-md-stretch">
                     <table class="table">
                         <tbody>
