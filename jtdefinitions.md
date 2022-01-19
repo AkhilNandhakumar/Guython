@@ -64,6 +64,7 @@ Hypertext Transfer Protocol (used to connect to Web servers on the Internet or l
 [Greet Function](https://5hackers.tk/lab1)
 
 GET: request method that sends all form data to the server
+
 POST: request method used for sensitive information
 ### MVC
 Model View Controller: software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements
@@ -95,6 +96,7 @@ Objects can be anything: functions, methods, variables, data structures, etc.
 [Mini Quizzes](https://5hackers.tk/math)
 
 Procedure: block of code that accomplishes a certain task, executes commands
+
 Function: similar to a procedure, but also returns a result
 ### Data/procedural Abstraction
 Data: Information translated into a form that is more efficient for processing or moving
