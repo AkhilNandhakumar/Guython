@@ -32,6 +32,7 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 27. Blueprints
 
 ### Binary / Hexadecimal
+
 ### Bit
 ### Nibble / Byte,
 ### Lossless/Lossy Compression
@@ -40,15 +41,20 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 ### Parallel/Distributed computing
 ### Protocol
 ### TCP/IP
+TCP: Transmission Control Protocol (puts IP packets in sequence and checks for errors in transmission)
+IP: Internet Protocol (main delivery system for information on the internet)
 ### HTTP
+Hypertext Transfer Protocol (used to connect to Web servers on the Internet or local networks)
 ### GET / POST
 ### MVC
 ### CRUD
 ### FETCH
 ### Async
 ### REST
+Representational State Transfer (provides standards between computer systems on the web, easier to communicate)
 ### API/Library
 ### OOP
+Object Oriented Programming (organizes software design around data rather than functions)
 ### Class
 ### Attribute
 ### Method
@@ -57,4 +63,7 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 ### Data/procedural Abstraction
 ### Sort
 ### Search-Linear/Binary
+Linear Search: sequentially checking elements in a list, rarely used because of slowness
+Binary Search: searches an array by dividing sections in half until object is found, fast and commonly used
 ### Blueprints
+an alternate method of creating app routes
