@@ -32,11 +32,15 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 27. Blueprints
 
 ### Binary / Hexadecimal
-
+[Binary Lab](5hackers.tk/lab4)
 ### Bit
-### Nibble / Byte,
+[Binary Math with Conversions](5hackers.tk/hackathontt3)
+a single unit of information in a computer (Binary Digit)
+### Nibble / Byte
+A Nibble is 4 bits, while a Byte is 8 bits
 ### Lossless/Lossy Compression
 ### Metadata
+[RGB Lab](5hackers.tk/lab3)
 ### Computer Network
 ### Parallel/Distributed computing
 ### Protocol
@@ -46,13 +50,16 @@ IP: Internet Protocol (main delivery system for information on the internet)
 ### HTTP
 Hypertext Transfer Protocol (used to connect to Web servers on the Internet or local networks)
 ### GET / POST
+[Greet Function](5hackers.tk/lab1)
 ### MVC
 ### CRUD
+[CRUD Operations](5hackers.tk/crud)
 ### FETCH
 ### Async
 ### REST
 Representational State Transfer (provides standards between computer systems on the web, easier to communicate)
 ### API/Library
+[API Collection](5hackers.tk/api_collection)
 ### OOP
 Object Oriented Programming (organizes software design around data rather than functions)
 ### Class
@@ -60,8 +67,10 @@ Object Oriented Programming (organizes software design around data rather than f
 ### Method
 ### Object
 ### Procedures/Functions
+[Mini Quizzes](5hackers.tk/math)
 ### Data/procedural Abstraction
 ### Sort
+[Search Bar](5hackers.tk/crud/search)
 ### Search-Linear/Binary
 Linear Search: sequentially checking elements in a list, rarely used because of slowness
 Binary Search: searches an array by dividing sections in half until object is found, fast and commonly used
