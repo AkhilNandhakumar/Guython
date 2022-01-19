@@ -209,7 +209,7 @@ def api_collection():
     url3 = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total"
     querystring3_1 = {"country":"US"}
     querystring3_2 = {"country":"Canada"}
-    querystring3_3 = {"country":"France"}
+    querystring3_3 = {"country":"Mexico"}
     headers3 = {
         'x-rapidapi-host': "covid-19-coronavirus-statistics.p.rapidapi.com",
         'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"}
