@@ -12,24 +12,24 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 7. [Parallel/Distributed computing](#paralleldistributed-computing)
 8. [Protocol](#protocol)
 9. [TCP/IP](#tcpip)
-10. HTTP
-11. GET / POST
-12. MVC
-13. CRUD
-14. FETCH
+10. [HTTP](#http)
+11. [GET / POST](#get--post)
+12. [MVC](#mvc)
+13. [CRUD](#crud)
+14. [FETCH](#fetch)
 15. [Async](#async-operations)
-16. REST
-17. API/Library
-18. OOP
-19. Class
-20. Attribute
-21. Method
-22. Object
-23. Procedures/Functions
-24. Data/procedural Abstraction
-25. Sort
-26. Search-Linear/Binary
-27. Blueprints
+16. [REST](#rest)
+17. [API/Library](#apilibrary)
+18. [OOP](#oop)
+19. [Class](#class)
+20. [Attribute](#attribute)
+21. [Method](#method)
+22. [Object](#object)
+23. [Procedures/Functions](#proceduresfunctions)
+24. [Data/procedural Abstraction](#dataprocedural-abstraction)
+25. [Sort](#sort)
+26. [Search-Linear/Binary]()
+27. [Blueprints](#blueprints)
 
 ### Binary / Hexadecimal
 [Binary Lab](5hackers.tk/lab4)
@@ -73,11 +73,11 @@ Representational State Transfer (provides standards between computer systems on 
 ### OOP
 Object Oriented Programming (organizes software design around data rather than functions)
 ### Class
-a program/code template for creating objects
+program/code template for creating objects
 ### Attribute
-a changeable property / characterisitic of a part of a program that can be changed to different values
+changeable property / characterisitic of a part of a program that can be changed to different values
 ### Method
-a procedure associated with a message and an object
+procedure associated with a message and an object
 ### Object
 Objects can be anything: functions, methods, variables, data structures, etc.
 ### Procedures/Functions
