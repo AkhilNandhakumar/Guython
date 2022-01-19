@@ -35,6 +35,7 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 [Binary Lab](5hackers.tk/lab4)
 ### Bit
 [Binary Math with Conversions](5hackers.tk/hackathontt3)
+
 a single unit of information in a computer (Binary Digit)
 ### Nibble / Byte
 A Nibble is 4 bits, while a Byte is 8 bits
