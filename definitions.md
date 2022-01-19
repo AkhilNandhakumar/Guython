@@ -3,7 +3,7 @@
 This page serves as a guide to the vocabulary we have learned in Computer Science: Principles. Some terms are shown through examples, while others are defined in simple terms.
 
 ## Table of Contents:
-1. [Binary / Hexadecimal](#binary_hexadecimal)
+1. [Binary / Hexadecimal](#binary--hexadecimal)
 2. Bit
 3. Nibble / Byte,
 4. Lossless/Lossy Compression
