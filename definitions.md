@@ -6,7 +6,7 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 1. [Binary / Hexadecimal](#binary--hexadecimal)
 2. [Bit](#bit)
 3. [Nibble / Byte](#nibble--byte)
-4. [Lossless/Lossy Compression](#losslesslossy-compresion)
+4. [Lossless/Lossy Compression](#losslesslossy-compression)
 5. [Metadata](#metadata)
 6. [Computer Network](#computer-network)
 7. [Parallel/Distributed computing](#paralleldistributed-computing)
