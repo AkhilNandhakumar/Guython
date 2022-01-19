@@ -28,7 +28,7 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 23. [Procedures/Functions](#proceduresfunctions)
 24. [Data/procedural Abstraction](#dataprocedural-abstraction)
 25. [Sort](#sort)
-26. [Search-Linear/Binary]()
+26. [Search-Linear/Binary](#search-linearbinary)
 27. [Blueprints](#blueprints)
 
 ### Binary / Hexadecimal
