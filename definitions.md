@@ -4,14 +4,14 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 
 ## Table of Contents:
 1. [Binary / Hexadecimal](#binary--hexadecimal)
-2. Bit
-3. Nibble / Byte,
-4. Lossless/Lossy Compression
-5. Metadata
-6. Computer Network
-7. Parallel/Distributed computing
-8. Protocol
-9. TCP/IP
+2. [Bit](#bit)
+3. [Nibble / Byte](#nibble--byte)
+4. [Lossless/Lossy Compression](#lossless--lossycompresion)
+5. [Metadata](#metadata)
+6. [Computer Network](#computernetwork)
+7. [Parallel/Distributed computing](#parallel--distributedcomputing)
+8. [Protocol](#protocol)
+9. [TCP/IP](#tcp--ip)
 10. HTTP
 11. GET / POST
 12. MVC
