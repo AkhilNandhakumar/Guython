@@ -32,7 +32,7 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 27. [Blueprints](#blueprints)
 
 ### Binary / Hexadecimal
-[Binary Lab](5hackers.tk/lab4)
+[Binary Lab](https://5hackers.tk/lab4)
 ### Bit
 [Binary Math with Conversions](5hackers.tk/hackathontt3)
 
