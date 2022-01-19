@@ -33,6 +33,8 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 
 ### Binary / Hexadecimal
 [Binary Lab](https://5hackers.tk/lab4)
+
+base 2 number system (0 and 1), used by computers to store information
 ### Bit
 [Binary Math with Conversions](https://5hackers.tk/hackathontt3)
 
@@ -44,6 +46,8 @@ Lossless Compression: data compression algorithm that allows original data to be
 Lossy Compression: data compression algorithm where some amount of data is lost, attempts to eliminate redundant information.
 ### Metadata
 [RGB Lab](https://5hackers.tk/lab3)
+
+data that describes other data
 ### Computer Network
 Computers connected together to share information and resources
 ### Parallel/Distributed computing
@@ -58,10 +62,15 @@ IP: Internet Protocol (main delivery system for information on the internet)
 Hypertext Transfer Protocol (used to connect to Web servers on the Internet or local networks)
 ### GET / POST
 [Greet Function](https://5hackers.tk/lab1)
+
+GET: request method that sends all form data to the server
+POST: request method used for sensitive information
 ### MVC
 Model View Controller: software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements
 ### CRUD
 [CRUD Operations](https://5hackers.tk/crud)
+
+Create, Read, Update, Delete (important functions for a storage application) 
 ### FETCH
 fetching data from one source to another (disk to memory buffer, memory to CPU)
 ### Async Operations
@@ -70,6 +79,8 @@ tasks performed without dependency on each other
 Representational State Transfer (provides standards between computer systems on the web, easier to communicate)
 ### API/Library
 [API Collection](https://5hackers.tk/api_collection)
+
+Applications Program Interface (A library of classes for use in other programs. Provides standard interfaces that hide the details of implementation)
 ### OOP
 Object Oriented Programming (organizes software design around data rather than functions)
 ### Class
@@ -82,11 +93,16 @@ functions or procedures inside a class that can be accesses through objects.
 Objects can be anything: functions, methods, variables, data structures, etc.
 ### Procedures/Functions
 [Mini Quizzes](https://5hackers.tk/math)
+
+Procedure: block of code that accomplishes a certain task, executes commands
+Function: similar to a procedure, but also returns a result
 ### Data/procedural Abstraction
 Data: Information translated into a form that is more efficient for processing or moving
 Procedural Abstraction: writing code sections (procedures) that have variable parameters, allowing them to be used in multiple situations
 ### Sort
 [Search Bar](https://5hackers.tk/crud/search)
+
+Putting elements in a list in a specific order
 ### Search-Linear/Binary
 Linear Search: sequentially checking elements in a list, rarely used because of slowness
 Binary Search: searches an array by dividing sections in half until object is found, fast and commonly used
