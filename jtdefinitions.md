@@ -75,9 +75,9 @@ Object Oriented Programming (organizes software design around data rather than f
 ### Class
 program/code template for creating objects
 ### Attribute
-changeable property / characterisitic of a part of a program that can be changed to different values
+changeable property / characteristic of a part of a program that can be changed to different values
 ### Method
-procedure associated with a message and an object
+functions or procedures inside a class that can be accesses through objects.
 ### Object
 Objects can be anything: functions, methods, variables, data structures, etc.
 ### Procedures/Functions
