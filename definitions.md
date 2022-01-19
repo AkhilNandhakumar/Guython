@@ -17,7 +17,7 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 12. MVC
 13. CRUD
 14. FETCH
-15. Async
+15. [Async](#async-operations)
 16. REST
 17. API/Library
 18. OOP
@@ -40,11 +40,17 @@ a single unit of information in a computer (Binary Digit)
 ### Nibble / Byte
 A Nibble is 4 bits, while a Byte is 8 bits
 ### Lossless/Lossy Compression
+Lossless Compression: data compression algorithm that allows original data to be perfectly reconstructed from compressed data.
+Lossy Compression: data compression algorithm where some amount of data is lost, attempts to eliminate redundant information.
 ### Metadata
 [RGB Lab](5hackers.tk/lab3)
 ### Computer Network
+Computers connected together to share information and resources
 ### Parallel/Distributed computing
+Parallel Computing: mutliple processors executing tasks at the same time to obtain results faster.
+Distributed computing: systems in different locations communicate to complete a task.
 ### Protocol
+set of rules controlling the exchange of data between devices.
 ### TCP/IP
 TCP: Transmission Control Protocol (puts IP packets in sequence and checks for errors in transmission)
 IP: Internet Protocol (main delivery system for information on the internet)
@@ -53,10 +59,13 @@ Hypertext Transfer Protocol (used to connect to Web servers on the Internet or l
 ### GET / POST
 [Greet Function](5hackers.tk/lab1)
 ### MVC
+Model View Controller: software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements
 ### CRUD
 [CRUD Operations](5hackers.tk/crud)
 ### FETCH
-### Async
+fetching data from one source to another (disk to memory buffer, memory to CPU)
+### Async Operations
+tasks performed without dependency on each other
 ### REST
 Representational State Transfer (provides standards between computer systems on the web, easier to communicate)
 ### API/Library
@@ -64,12 +73,18 @@ Representational State Transfer (provides standards between computer systems on 
 ### OOP
 Object Oriented Programming (organizes software design around data rather than functions)
 ### Class
+a program/code template for creating objects
 ### Attribute
+a changeable property / characterisitic of a part of a program that can be changed to different values
 ### Method
+a procedure associated with a message and an object
 ### Object
+Objects can be anything: functions, methods, variables, data structures, etc.
 ### Procedures/Functions
 [Mini Quizzes](5hackers.tk/math)
 ### Data/procedural Abstraction
+Data: Information translated into a form that is more efficient for processing or moving
+Procedural Abstraction: writing code sections (procedures) that have variable parameters, allowing them to be used in multiple situations
 ### Sort
 [Search Bar](5hackers.tk/crud/search)
 ### Search-Linear/Binary
