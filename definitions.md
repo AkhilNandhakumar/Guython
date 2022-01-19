@@ -6,12 +6,12 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 1. [Binary / Hexadecimal](#binary--hexadecimal)
 2. [Bit](#bit)
 3. [Nibble / Byte](#nibble--byte)
-4. [Lossless/Lossy Compression](#lossless--lossycompresion)
+4. [Lossless/Lossy Compression](#losslesslossy-compresion)
 5. [Metadata](#metadata)
-6. [Computer Network](#computernetwork)
-7. [Parallel/Distributed computing](#parallel--distributedcomputing)
+6. [Computer Network](#computer-network)
+7. [Parallel/Distributed computing](#paralleldistributed-computing)
 8. [Protocol](#protocol)
-9. [TCP/IP](#tcp--ip)
+9. [TCP/IP](#tcpip)
 10. HTTP
 11. GET / POST
 12. MVC
