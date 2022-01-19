@@ -183,12 +183,12 @@ def api_collection():
     star3distance = text[2]['distance']
     star3vismag = text[2]['visualMagnitude']
     # API 2 - Weather API
-    url2 = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/3hourly"
-    querystring2_1 = {"lat":"33.01","lon":"-117.12"}
-    querystring2_2 = {"lat":"40.7","lon":"-74.01"}
-    querystring2_3 = {"lat":"48.85","lon":"2.34"}
+    url2 = "https://weatherapi-com.p.rapidapi.com/current.json"
+    querystring2_1 = {"q":"San Diego"}
+    querystring2_2 = {"q":"New York City"}
+    querystring2_3 = {"q":"Moscow"}
     headers2 = {
-        'x-rapidapi-host': "weatherbit-v1-mashape.p.rapidapi.com",
+        'x-rapidapi-host': "weatherapi-com.p.rapidapi.com",
         'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"}
     response2_1 = requests.request("GET", url2, headers=headers2, params=querystring2_1)
     response2_2 = requests.request("GET", url2, headers=headers2, params=querystring2_2)
@@ -196,17 +196,20 @@ def api_collection():
     text2_1 = response2_1.json()
     text2_2 = response2_2.json()
     text2_3 = response2_3.json()
-    temp = text2_1["data"][0]["temp"]
-    desc = text2_1["data"][0]["weather"]["description"]
-    temp2 = text2_2["data"][0]["temp"]
-    desc2 = text2_2["data"][0]["weather"]["description"]
-    temp3 = text2_3["data"][0]["temp"]
-    desc3 = text2_3["data"][0]["weather"]["description"]
+    city_name = text2_1['location']['name']
+    temp = text2_1['current']['temp_f']
+    desc = text2_1['current']['condition']['text']
+    city_name2 = text2_2['location']['name']
+    temp2 = text2_2['current']['temp_f']
+    desc2 = text2_2['current']['condition']['text']
+    city_name3 = text2_3['location']['name']
+    temp3 = text2_3['current']['temp_f']
+    desc3 = text2_3['current']['condition']['text']
     # # API 3 - COVID Information
     url3 = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total"
     querystring3_1 = {"country":"US"}
     querystring3_2 = {"country":"Canada"}
-    querystring3_3 = {"country":"France"}
+    querystring3_3 = {"country":"Mexico"}
     headers3 = {
         'x-rapidapi-host': "covid-19-coronavirus-statistics.p.rapidapi.com",
         'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"}
@@ -226,8 +229,8 @@ def api_collection():
     cases3 = text3_3['data']['confirmed']
     deaths3 = text3_3['data']['deaths']
     return render_template("our_work/api_collection.html", text=text, s1n=star1name, s1d=star1distance, s1vm=star1vismag, s2n=star2name, s2d=star2distance, s2vm=star2vismag, s3n=star3name, s3d=star3distance, s3vm=star3vismag,
-                           text2=text2_1, temp=temp, desc=desc, temp2=temp2, desc2=desc2, temp3=temp3, desc3=desc3,
-                           text3_1=text3_1, text3_2=text3_2, text3_3=text3_3, con1=country1, cases1=cases1, d1=deaths1, con2=country2, cases2=cases2, d2=deaths2, con3=country3, cases3=cases3, d3=deaths3)
+                           temp=temp, desc=desc, temp2=temp2, desc2=desc2, temp3=temp3, desc3=desc3, cn1=city_name, cn2=city_name2, cn3=city_name3,
+                           text2=text2_1, text3_1=text3_1, text3_2=text3_2, text3_3=text3_3, con1=country1, cases1=cases1, d1=deaths1, con2=country2, cases2=cases2, d2=deaths2, con3=country3, cases3=cases3, d3=deaths3)
 
 
 #
