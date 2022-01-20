@@ -34,7 +34,9 @@ This page serves as a guide to the vocabulary we have learned in Computer Scienc
 ### Binary / Hexadecimal
 [Binary Lab](https://5hackers.tk/lab4)
 
-base 2 number system (0 and 1), used by computers to store information
+Binary: base 2 number system (0 and 1), used by computers to store information
+
+Hexadecimal: base 16 number system, uses 0-9 and A-F
 ### Bit
 [Binary Math with Conversions](https://5hackers.tk/hackathontt3)
 
