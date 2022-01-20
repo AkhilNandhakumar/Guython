@@ -45,6 +45,7 @@ a single unit of information in a computer (Binary Digit)
 A Nibble is 4 bits, while a Byte is 8 bits
 ### Lossless/Lossy Compression
 Lossless Compression: data compression algorithm that allows original data to be perfectly reconstructed from compressed data.
+
 Lossy Compression: data compression algorithm where some amount of data is lost, attempts to eliminate redundant information.
 ### Metadata
 [RGB Lab](https://5hackers.tk/lab3)
