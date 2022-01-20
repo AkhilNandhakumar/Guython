@@ -60,6 +60,7 @@ Distributed computing: systems in different locations communicate to complete a 
 set of rules controlling the exchange of data between devices.
 ### TCP/IP
 TCP: Transmission Control Protocol (puts IP packets in sequence and checks for errors in transmission)
+
 IP: Internet Protocol (main delivery system for information on the internet)
 ### HTTP
 Hypertext Transfer Protocol (used to connect to Web servers on the Internet or local networks)
@@ -103,6 +104,7 @@ Procedure: block of code that accomplishes a certain task, executes commands
 Function: similar to a procedure, but also returns a result
 ### Data/procedural Abstraction
 Data: Information translated into a form that is more efficient for processing or moving
+
 Procedural Abstraction: writing code sections (procedures) that have variable parameters, allowing them to be used in multiple situations
 ### Sort
 [Search Bar](https://5hackers.tk/crud/search)
@@ -110,6 +112,7 @@ Procedural Abstraction: writing code sections (procedures) that have variable pa
 Putting elements in a list in a specific order
 ### Search-Linear/Binary
 Linear Search: sequentially checking elements in a list, rarely used because of slowness
+
 Binary Search: searches an array by dividing sections in half until object is found, fast and commonly used
 ### Blueprints
 an alternate method of creating app routes
