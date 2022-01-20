@@ -80,6 +80,7 @@ Create, Read, Update, Delete (important functions for a storage application)
 fetching data from one source to another (disk to memory buffer, memory to CPU)
 ### Async Operations
 [Async CRUD Operations](https://5hackers.tk/crud_api)
+
 tasks performed without dependency on each other
 ### REST
 Representational State Transfer (provides standards between computer systems on the web, easier to communicate)
