@@ -94,7 +94,7 @@ program/code template for creating objects
 ### Attribute
 changeable property / characteristic of a part of a program that can be changed to different values
 ### Method
-functions or procedures inside a class that can be accesses through objects.
+functions or procedures inside a class that can be accessed through objects.
 ### Object
 Objects can be anything: functions, methods, variables, data structures, etc.
 ### Procedures/Functions
