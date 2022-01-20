@@ -71,7 +71,7 @@ GET: request method that sends all form data to the server
 
 POST: request method used for sensitive information
 ### MVC
-Model View Controller: software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements
+Model-View-Controller: software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements
 ### CRUD
 [CRUD Operations](https://5hackers.tk/crud)
 
