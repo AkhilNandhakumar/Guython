@@ -89,6 +89,8 @@ Representational State Transfer (provides standards between computer systems on 
 [API Collection](https://5hackers.tk/api_collection)
 
 Applications Program Interface (A library of classes for use in other programs. Provides standard interfaces that hide the details of implementation)
+
+Library: a collection of resources that are referenced and used by computer programs
 ### OOP
 Object Oriented Programming (organizes software design around objects interacting with each other)
 ### Class
