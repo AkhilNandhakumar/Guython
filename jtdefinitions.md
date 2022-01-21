@@ -55,6 +55,7 @@ data that describes other data
 Computers connected together to share information and resources
 ### Parallel/Distributed computing
 Parallel Computing: mutliple processors executing tasks at the same time to obtain results faster.
+
 Distributed computing: systems in different locations communicate to complete a task.
 ### Protocol
 set of rules controlling the exchange of data between devices.
