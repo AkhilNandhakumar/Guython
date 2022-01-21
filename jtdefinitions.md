@@ -120,4 +120,4 @@ Linear Search: sequentially checking elements in a list, rarely used because of 
 
 Binary Search: searches an array by dividing sections in half until object is found, fast and commonly used
 ### Blueprints
-an alternate method of creating app routes
+an alternate method of creating app routes / a plan or outline used for software development, either documentation for coders or code-generating tools for machines
