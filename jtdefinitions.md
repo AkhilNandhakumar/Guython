@@ -92,7 +92,7 @@ Applications Program Interface (A library of classes for use in other programs. 
 
 Library: a collection of resources that are referenced and used by computer programs
 ### OOP
-Object Oriented Programming (organizes software design around objects interacting with each other)
+Object Oriented Programming: organizes software design around objects interacting with each other, mainly in large or complex programs such as programs for manufacturing, design, or mobile applications. Classes can reuse code from other classes which reduces development time and produces better data analysis.
 ### Class
 program/code template for creating objects
 ### Attribute
