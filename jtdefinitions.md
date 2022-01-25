@@ -81,7 +81,7 @@ Model-View-Controller: software design pattern commonly used for developing user
 
 Create, Read, Update, Delete (important functions for a storage application) 
 ### FETCH
-fetching data from one source to another (disk to memory buffer, memory to CPU)
+fetching data from one source to another (disk to memory buffer, memory to CPU). In JavaScript, the fetch method is used to get resources from a network, such as in APIs.
 ### Async Operations
 [Async CRUD Operations](https://5hackers.tk/crud_api)
 
