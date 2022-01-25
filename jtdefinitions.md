@@ -97,14 +97,30 @@ Applications Program Interface (A library of classes for use in other programs. 
 Library: a collection of resources that are referenced and used by computer programs
 ### OOP
 Object Oriented Programming: organizes software design around objects interacting with each other, mainly in large or complex programs such as programs for manufacturing, design, or mobile applications. Classes can reuse code from other classes which reduces development time and produces better data analysis.
+
+The main selling point of object oriented programming is its modular coding process in which data and methods can be simplified and abstracted into API's which are easily stacked and combined to make complex applications fast and is believed to help with code rot. However the argument of whether OOP is better than procedural is still ongoing.
+
 ### Class
 program/code template for creating objects
+
+A class is one of the most basic and most powerful tools in complex code. Classes allow you to bundle code into a resusable and malleable bits. Classes appear constantly in web programming so programmers can have a place where aethestic can be easily changed globally and modules in the site can be easily unified.
+
 ### Attribute
-changeable property / characteristic of a part of a program that can be changed to different values
+
+An attribute in programming often refers to a piece of data inside an object. Attributes may be constants or variables. Attributes are key to OOP as they allow the unification of functions and data into one place.
+
 ### Method
-functions or procedures inside a class that can be accessed through objects.
+Functions or procedures inside a class that can be accessed through objects.
+
+Methods allow for the alteration of internal or external variables in a clean abstracted way.
+
+Accesing an object may yield a couple methods which may actually be quite deep and complex, however their method is abstracted so it can be more easily reused and repurposed.
+
 ### Object
 Objects can be anything: functions, methods, variables, data structures, etc.
+
+Objects in object oriented programming allow programmers to create API's or modules which are supposed to work both independently and together to form complex maintainable super structures. Objects in procedural programming lack the ability to have both data and method combined in the same area.
+
 ### Procedures/Functions
 [Mini Quizzes](https://5hackers.tk/math)
 
@@ -114,11 +130,14 @@ Function: similar to a procedure, but also returns a result
 ### Data/procedural Abstraction
 Data: Information translated into a form that is more efficient for processing or moving
 
-Procedural Abstraction: writing code sections (procedures) that have variable parameters, allowing them to be used in multiple situations
+Procedural Abstraction: Writing code sections (procedures) that have variable parameters, allowing them to be used in multiple situations
 ### Sort
 [Search Bar](https://5hackers.tk/crud/search)
 
 Putting elements in a list in a specific order
+
+This is highly useful when a function or method needs to methodically access and alter data in a place where order of input matters.
+
 ### Search-Linear/Binary
 Linear Search: sequentially checking elements in a list, rarely used because of slowness
 
