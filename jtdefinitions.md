@@ -52,11 +52,11 @@ Lossy Compression: data compression algorithm where some amount of data is lost,
 
 data that describes other data
 ### Computer Network
-Computers connected together to share information and resources
+Computers connected together to share information and resources. Use communication protocols to to transmit information through physical or wireless methods. Nodes in a computer network can include personal computers, servers, or other hosts.
 ### Parallel/Distributed computing
-Parallel Computing: mutliple processors executing tasks at the same time to obtain results faster.
+Parallel Computing: breaking down larger problems into simpler parts which can be executed at the same time by multiple computers / processors which communicate with each other through shared memory. When combined, these parts make up a completed algorith, usually with a faster run time compared to traditional computing methods. 
 
-Distributed computing: systems in different locations communicate to complete a task.
+Distributed computing: Similarl to parallel computing, main difference is method of communication between devices: distributed computing uses communcation networks, with each device using its own memory.
 ### Protocol
 set of rules controlling the exchange of data between devices.
 ### TCP/IP
