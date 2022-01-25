@@ -76,6 +76,7 @@ Model-View-Controller: software design pattern commonly used for developing user
 - Model is the central component, responsible for managing data, recieves input from controller
 - View is the representation of information, renders model in a particular format
 - Controller responds to inputs and converts it into commands for model or view
+
 ### CRUD
 [CRUD Operations](https://5hackers.tk/crud)
 
