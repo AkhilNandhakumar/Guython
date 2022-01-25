@@ -58,13 +58,13 @@ Parallel Computing: breaking down larger problems into simpler parts which can b
 
 Distributed computing: Similarl to parallel computing, main difference is method of communication between devices: distributed computing uses communcation networks, with each device using its own memory.
 ### Protocol
-set of rules controlling the exchange of data between devices.
+set of rules controlling the exchange of data between devices. Protocols allows computers with different software and hardware to communicate with each other, such as in distributed computing or computer networks.
 ### TCP/IP
-TCP: Transmission Control Protocol (puts IP packets in sequence and checks for errors in transmission)
+Transmission Control Protocol: used with IP, ensures reliable data delivery, puts IP packets in sequence and checks for errors in transmission
 
-IP: Internet Protocol (main delivery system for information on the internet)
+Internet Protocol: main delivery system for information on the internet, delivers network packets from one host to another based on their IP Addresses.
 ### HTTP
-Hypertext Transfer Protocol (used to connect to Web servers on the Internet or local networks)
+Hypertext Transfer Protocol: used to connect to Web servers on the Internet or local networks, puts information into a format that programs such as web browsers can use directly. 
 ### GET / POST
 [Greet Function](https://5hackers.tk/lab1)
 
