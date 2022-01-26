@@ -228,9 +228,14 @@ def api_collection():
     country3 = text3_3['data']['location']
     cases3 = text3_3['data']['confirmed']
     deaths3 = text3_3['data']['deaths']
-    return render_template("our_work/api_collection.html", text=text, s1n=star1name, s1d=star1distance, s1vm=star1vismag, s2n=star2name, s2d=star2distance, s2vm=star2vismag, s3n=star3name, s3d=star3distance, s3vm=star3vismag,
+    return render_template("api_pages/api_collection.html", text=text, s1n=star1name, s1d=star1distance, s1vm=star1vismag, s2n=star2name, s2d=star2distance, s2vm=star2vismag, s3n=star3name, s3d=star3distance, s3vm=star3vismag,
                            temp=temp, desc=desc, temp2=temp2, desc2=desc2, temp3=temp3, desc3=desc3, cn1=city_name, cn2=city_name2, cn3=city_name3,
                            text2=text2_1, text3_1=text3_1, text3_2=text3_2, text3_3=text3_3, con1=country1, cases1=cases1, d1=deaths1, con2=country2, cases2=cases2, d2=deaths2, con3=country3, cases3=cases3, d3=deaths3)
+
+
+@app.route('/quizlet_api/')
+def quizlet_api():
+    return render_template("api_pages/quizlet.html")
 
 
 #
