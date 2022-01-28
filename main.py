@@ -233,9 +233,15 @@ def api_collection():
                            text2=text2_1, text3_1=text3_1, text3_2=text3_2, text3_3=text3_3, con1=country1, cases1=cases1, d1=deaths1, con2=country2, cases2=cases2, d2=deaths2, con3=country3, cases3=cases3, d3=deaths3)
 
 
-@app.route('/quizlet_api/')
-def quizlet_api():
-    return render_template("api_pages/quizlet.html")
+@app.route('/periodictable/')
+def periodictable():
+    url = "https://periodictable.p.rapidapi.com/"
+    headers = {
+        'x-rapidapi-host': "periodictable.p.rapidapi.com",
+        'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"}
+    response = requests.request("GET", url, headers=headers)
+    text = response.json()
+    return render_template("class_topics/periodictable.html", text=text)
 
 
 #
