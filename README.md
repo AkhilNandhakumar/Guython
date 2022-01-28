@@ -72,7 +72,9 @@ Sreeja | Deployment & update process, TPT Work | [Deployment Process](https://gi
 Tristan | Progress overview, Asynchronous Data Access Video, TPT Work | [Overview](https://github.com/JakubPonulak/5_hackers/issues/12), [Video](https://github.com/JakubPonulak/5_hackers/issues/17) |
 
 ### Week 4
+
 Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/37)
+
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | API Integration, TPT Work | [API](https://github.com/JakubPonulak/5_hackers/issues/25), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/38) |
@@ -82,7 +84,9 @@ Sreeja | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak
 Tristan | Mini-Quizzes, TPT Work | [Mini-Quizzes](https://github.com/JakubPonulak/5_hackers/issues/24), [Review Ticket](https://github.com/JakubPonulak/5_hackers/issues/41) |
 
 ### Week 5
+
 Team Links: [TPT Work](https://github.com/JakubPonulak/5_hackers/issues/42)
+
 Team Member | Assignment | Issue |
 --- | --- | --- 
 Hamza | Theme Work, TPT Work | [Theme Work](https://github.com/JakubPonulak/5_hackers/issues/43) |
