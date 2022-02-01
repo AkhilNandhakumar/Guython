@@ -6,6 +6,16 @@
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <style>
+        a {
+            text-decoration: cadetblue;
+            color: cadetblue;
+        }
+        a:link {
+            color: cadetblue;
+        }
+        a:hover {
+            color:white;
+        }
         h1 {
             margin-top: 25px;
             font-size: 60px;
@@ -76,6 +86,8 @@
             padding-top: 10px;
             color:cadetblue;
             font-size: 30px;
+            max-width: 60%;
+            margin-left: 20%;
         }
     </style>
     <h1>Backpack Pro+</h1>
@@ -90,9 +102,9 @@
     <br>
     <br>
     <input type="text" id="SearchInput" placeholder="Search for pages" title="Search for pages">
-    <input id='submitButton' style='margin-bottom: 15px' type="submit" onclick="SearchMain()" value="Submit">
+    <input id='submitButton' style='margin-bottom: 15px' type="submit" onclick="SearchMain()" value="Search">
     <br>
-    <a id="searchResult" href="#"></a>
+    <p id="searchResult"></p>
     <br>
     <p id="containerFlavorText"> Click on any of these subjects to learn more!</p> <br>
     <body>
@@ -131,32 +143,38 @@
         // the name will be checked against the user's input to check which object should be selected
         // the path is used to create a link to the desired page
         let websitePages = '{"website_pages":[' +
-                '{"name":"Hamza", "path":"/hamza/"},' +
-                '{"name":"Jakub", "path":"/jakub/"},' +
-                '{"name":"Kevin", "path":"/kevin/"},' +
-                '{"name":"Sreeja", "path":"/sreeja/"},' +
-                '{"name":"Tristan", "path":"/tristan/"},' +
-                '{"name":"Math", "path":"/math/"},' +
-                '{"name":"History", "path":"/history/"},' +
-                '{"name":"Science", "path":"/sci/"},' +
-                '{"name":"Literature", "path":"/lit/"},' +
-                '{"name":"Periodic Table", "path":"/periodictable/"},' +
-                '{"name":"API Collection", "path":"/api_collection/"},' +
-                '{"name":"CRUD", "path":"/crud/"},' +
-                '{"name":"Async CRUD", "path":"/crud_api/"},' +
-                '{"name":"Database Search", "path":"/crud/search/"},' +
-                '{"name":"Search (Database)", "path":"/crud/search/"},' +
-                '{"name":"", "path":"//"}]}'; // this object is empty in case the user inputs a blank, so that the previous result is removed and no link is returned
+            '{"name":"Hamza", "path":"/hamza/"},' +
+            '{"name":"Jakub", "path":"/jakub/"},' +
+            '{"name":"Kevin", "path":"/kevin/"},' +
+            '{"name":"Sreeja", "path":"/sreeja/"},' +
+            '{"name":"Tristan", "path":"/tristan/"},' +
+            '{"name":"Math", "path":"/math/"},' +
+            '{"name":"History", "path":"/history/"},' +
+            '{"name":"Science", "path":"/sci/"},' +
+            '{"name":"Literature", "path":"/lit/"},' +
+            '{"name":"Periodic Table", "path":"/periodictable/"},' +
+            '{"name":"API Collection", "path":"/api_collection/"},' +
+            '{"name":"CRUD", "path":"/crud/"},' +
+            '{"name":"Async CRUD", "path":"/crud_api/"},' +
+            '{"name":"Search (Database)", "path":"/crud/search/"}]}';
 
         function SearchMain() {
-            list = JSON.parse(websitePages);
-            input = document.getElementById('SearchInput');
-            filter = input.value.toUpperCase(); // the user's input is changed to uppercase so that the search is not case-sensitive
+            let list = JSON.parse(websitePages);
+            let input = document.getElementById('SearchInput');
+            let filter = input.value.toUpperCase(); // the user's input is changed to uppercase so that the search is not case-sensitive
+            document.getElementById('searchResult').innerHTML = ''
             for (i = 0; i < websitePages.length; i++) { // this section goes through the items in my array and checks if the user's input is the same as any object name
-                if (filter.substring(0, filter.length) === list.website_pages[i].name.toUpperCase().substring(0, filter.length)) { //using substrings allows users to only input part of the page name instead of the whole thing
-                    link = list.website_pages[i].path
-                    document.getElementById('searchResult').innerHTML = list.website_pages[i].name
-                    document.getElementById('searchResult').href = link
+                if (list.website_pages[i].name.toUpperCase().includes(filter)) { //using substrings allows users to only input part of the page name instead of the whole thing
+                    let link = list.website_pages[i].path
+                    let title = list.website_pages[i].name
+                    let output = `<a href='${link}'>${title}</a>` + ', '
+                    document.getElementById('searchResult').innerHTML += output
+                    document.getElementById('searchResult').style.color = 'cadetblue'
+                }
+                if (filter === '') { //in case the user does leaves the input blank, this statements print "No Results"
+                    document.getElementById('searchResult').innerHTML = "No Results"
+                    document.getElementById('searchResult').style.color = 'red'
+                    document.getElementById('searchResult').href = ""
                 }
             }
         }
