@@ -105,7 +105,6 @@
     <input id='submitButton' style='margin-bottom: 15px' type="submit" onclick="SearchMain()" value="Search">
     <br>
     <p id="searchResult"></p>
-    <br>
     <p id="containerFlavorText"> Click on any of these subjects to learn more!</p> <br>
     <body>
 
@@ -140,7 +139,7 @@
     <script>
         // this is a JSON array that includes most of our website's pages
         // each object in the list has a name and a path
-        // the name will be checked against the user's input to check which object should be selected
+        // the name will be checked against the user's input to check which object should be selected to return
         // the path is used to create a link to the desired page
         let websitePages = '{"website_pages":[' +
             '{"name":"Hamza", "path":"/hamza/"},' +
@@ -159,10 +158,10 @@
             '{"name":"Search (Database)", "path":"/crud/search/"}]}';
 
         function SearchMain() {
-            let list = JSON.parse(websitePages);
+            let list = JSON.parse(websitePages); // this allows the JSON array above to be used in JavaScript
             let input = document.getElementById('SearchInput');
             let filter = input.value.toUpperCase(); // the user's input is changed to uppercase so that the search is not case-sensitive
-            document.getElementById('searchResult').innerHTML = ''
+            document.getElementById('searchResult').innerHTML = '' // this line makes the output blank whenever the function is called so that previous information is removed
             for (i = 0; i < websitePages.length; i++) { // this section goes through the items in my array and checks if the user's input is the same as any object name
                 if (list.website_pages[i].name.toUpperCase().includes(filter)) { //using include function allows users to only input part of the page name instead of the whole thing
                     let link = list.website_pages[i].path
@@ -171,10 +170,9 @@
                     document.getElementById('searchResult').innerHTML += output
                     document.getElementById('searchResult').style.color = 'cadetblue'
                 }
-                if (filter === '') { //in case the user does leaves the input blank, this statements print "No Results"
+                if (filter === '') { //in case the user leaves the input blank, this statements causes the function to return "No Results"
                     document.getElementById('searchResult').innerHTML = "No Results"
                     document.getElementById('searchResult').style.color = 'red'
-                    document.getElementById('searchResult').href = ""
                 }
             }
         }
