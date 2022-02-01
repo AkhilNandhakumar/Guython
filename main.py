@@ -5,7 +5,6 @@ from __init__ import app
 from tkinter import *
 
 from flask import Flask, request, Blueprint, render_template
-from flask_socketio import SocketIO
 from image import image_data
 from pathlib import Path
 from crud.app_crud import app_crud
@@ -168,8 +167,8 @@ def api_collection():
     # API 1 - Brightest Stars Information
     url1 = "https://brightest-stars.p.rapidapi.com/brightstars"
     headers1 = {
-    'x-rapidapi-host': "brightest-stars.p.rapidapi.com",
-    'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"
+        'x-rapidapi-host': "brightest-stars.p.rapidapi.com",
+        'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"
     }
     response1 = requests.request("GET", url1, headers=headers1)
     text = response1.json()
