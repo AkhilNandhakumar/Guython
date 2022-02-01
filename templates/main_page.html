@@ -164,10 +164,10 @@
             let filter = input.value.toUpperCase(); // the user's input is changed to uppercase so that the search is not case-sensitive
             document.getElementById('searchResult').innerHTML = ''
             for (i = 0; i < websitePages.length; i++) { // this section goes through the items in my array and checks if the user's input is the same as any object name
-                if (list.website_pages[i].name.toUpperCase().includes(filter)) { //using substrings allows users to only input part of the page name instead of the whole thing
+                if (list.website_pages[i].name.toUpperCase().includes(filter)) { //using include function allows users to only input part of the page name instead of the whole thing
                     let link = list.website_pages[i].path
                     let title = list.website_pages[i].name
-                    let output = `<a href='${link}'>${title}</a>` + ', '
+                    let output = `<a href='${link}'>${title}</a>` + ', ' //this allows multiple links to be included in #searchResult
                     document.getElementById('searchResult').innerHTML += output
                     document.getElementById('searchResult').style.color = 'cadetblue'
                 }
