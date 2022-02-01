@@ -7,11 +7,11 @@
 {% block body %}
     <style>
         a {
-            text-decoration: cadetblue;
-            color: cadetblue;
+            text-decoration: lightblue;
+            color: lightblue;
         }
         a:link {
-            color: cadetblue;
+            color: lightblue;
         }
         a:hover {
             color:white;
@@ -98,11 +98,10 @@
         Stay up to date on assignments with reminders, to-do lists, and a calendar.
         So what are you waiting for? Start using Backpack Pro and get your grades up today!
     </div>
-    <a style="font-size: 30px; margin-bottom: 15px; color: cadetblue" target = "_blank" href="https://jakubponulak.github.io/5_hackers/">Link to Jekyll Site</a>
+    <a style="font-size: 35px; margin-bottom: 15px; color: mediumpurple" target = "_blank" href="https://jakubponulak.github.io/5_hackers/">Link to Jekyll Site</a>
     <br>
     <br>
     <input type="text" id="SearchInput" onkeyup="SearchMain()" placeholder="Search for pages" title="Search for pages">
-    <input id='submitButton' style='margin-bottom: 15px' type="submit" value="Search">
     <br>
     <p id="searchResult"></p>
     <p id="containerFlavorText"> Click on any of these subjects to learn more!</p> <br>
@@ -137,9 +136,9 @@
 
     <canvas id='vfx'></canvas>
     <script>
-        // this is a JSON array that includes most of our website's pages
-        // each object in the list has a name and a path
-        // the name will be checked against the user's input to check which object should be selected to return
+        // this is a JSON array that includes most of our website's pages.
+        // each object in the list has a name and a path.
+        // the name will be checked against the user's input to check which object should be selected to return.
         // the path is used to create a link to the desired page
         let websitePages = '{"website_pages":[' +
             '{"name":"Hamza", "path":"/hamza/"},' +
@@ -166,9 +165,9 @@
                 if (list.website_pages[i].name.toUpperCase().includes(filter)) { //using include function allows users to only input part of the page name instead of the whole thing
                     let link = list.website_pages[i].path
                     let title = list.website_pages[i].name
-                    let output = `<a href='${link}'>${title}</a>` + ', ' //this allows multiple links to be included in #searchResult
-                    document.getElementById('searchResult').innerHTML += output
-                    document.getElementById('searchResult').style.color = 'cadetblue'
+                    let output =`<a href='${link}'>${title}</a>` + ' / ' //this allows multiple links to be included in #searchResult
+                    document.getElementById('searchResult').innerHTML += ' / ' + output
+                    document.getElementById('searchResult').style.color = 'white'
                 }
                 if (filter === '') { //in case the user leaves the input blank, this statements causes the function to return "No Results"
                     document.getElementById('searchResult').innerHTML = "No Results"
