@@ -5,7 +5,7 @@ from __init__ import app
 from tkinter import *
 
 from flask import Flask, request, Blueprint, render_template
-from flask_socketio import SocketIO
+# from flask_socketio import SocketIO
 from image import image_data
 from pathlib import Path
 from crud.app_crud import app_crud
@@ -161,6 +161,10 @@ def math():
 @app.route('/lit/')
 def lit():
     return render_template("class_topics/lit.html")
+
+@app.route('/chem/')
+def chem():
+    return render_template("class_experiences/chem.html")
 
 
 @app.route('/api_collection/')
