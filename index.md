@@ -1,1 +1,3 @@
-<meta http-equiv="refresh" content="0; url=https://jakubponulak.github.io/5_hackers/docs/index.md">
+{% include navigation.html %}
+
+{% include_relative README.md %}
