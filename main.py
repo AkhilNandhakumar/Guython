@@ -5,7 +5,7 @@ from __init__ import app
 from tkinter import *
 
 from flask import Flask, request, Blueprint, render_template
-from flask_socketio import SocketIO
+#from flask_socketio import SocketIO
 from image import image_data
 from pathlib import Path
 from crud.app_crud import app_crud
@@ -243,6 +243,9 @@ def periodictable():
     text = response.json()
     return render_template("class_topics/periodictable.html", text=text)
 
+@app.route('/register/')
+def register():
+    return render_template("login page/register.html")
 
 #
 #

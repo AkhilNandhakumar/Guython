@@ -10,3 +10,4 @@ numpy
 Pillow==9.0.0
 django-os-geocoder~=0.1.6
 algorithm~=1.2.0
+firebase_admin
