@@ -247,6 +247,9 @@ def periodictable():
     text = response.json()
     return render_template("class_topics/periodictable.html", text=text)
 
+@app.route('/register/')
+def register():
+    return render_template("login page/register.html")
 
 #
 #
