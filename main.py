@@ -5,6 +5,7 @@ from __init__ import app
 from tkinter import *
 
 from flask import Flask, request, Blueprint, render_template
+# from flask_socketio import SocketIO
 from image import image_data
 from pathlib import Path
 from crud.app_crud import app_crud
@@ -161,14 +162,18 @@ def math():
 def lit():
     return render_template("class_topics/lit.html")
 
+@app.route('/chem/')
+def chem():
+    return render_template("class_experiences/chem.html")
+
 
 @app.route('/api_collection/')
 def api_collection():
     # API 1 - Brightest Stars Information
     url1 = "https://brightest-stars.p.rapidapi.com/brightstars"
     headers1 = {
-        'x-rapidapi-host': "brightest-stars.p.rapidapi.com",
-        'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"
+    'x-rapidapi-host': "brightest-stars.p.rapidapi.com",
+    'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"
     }
     response1 = requests.request("GET", url1, headers=headers1)
     text = response1.json()
@@ -242,6 +247,9 @@ def periodictable():
     text = response.json()
     return render_template("class_topics/periodictable.html", text=text)
 
+@app.route('/register/')
+def register():
+    return render_template("login page/register.html")
 
 #
 #

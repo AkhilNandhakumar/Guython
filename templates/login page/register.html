@@ -1,0 +1,45 @@
+<html>
+    <head>
+            <title> Form </title>
+    </head>
+</html>
+
+    <body>
+        <h1> Form </h1>
+        <div id="formcontainer">
+            <div id="header"> </div>
+
+            <input type-"email" placeholder-"email" id-"email" >
+            <input type="password" placeholder-"password" id-"password"/>
+
+            <button onclick="signup()" id="signUp"> Sign Up </button>
+            <button onclick="signin()" id="signIn"> Sign In </button>
+            <button onclick="signout()" id="signUp"> Sign Out </button>
+        </div>
+
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyDlLyw_zNfech3CumwNxqct4EPhTT6oqHo",
+                authDomain: "hackers-8d876.firebaseapp.com",
+                projectId: "hackers-8d876",
+                storageBucket: "hackers-8d876.appspot.com",
+                messagingSenderId: "337033111635",
+                appId: "1:337033111635:web:bcd7978cbaf510b438bea6",
+                measurementId: "G-3VBWN30TXW"
+            };
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+        </script>
+
+    </body>
+
+
+</html>

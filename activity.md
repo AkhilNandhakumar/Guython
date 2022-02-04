@@ -10,7 +10,7 @@
 <img src="http://ghchart.rshah.org/Kevinc023032" alt="2021 Kevin's Github chart" />
 
 ## Sreeja's GitHub activity (2021-2022):
-<img src="http://ghchart.rshah.org/SreejaVad" alt="2020 Sreeja's Github chart" />
+<img src="http://ghchart.rshah.org/SreejaVad" alt="2021 Sreeja's Github chart" />
 
 ## Tristan's GitHub activity (2021-2022):
 <img src="http://ghchart.rshah.org/TristanCopley" alt="2021 Tristan's Github chart" />
