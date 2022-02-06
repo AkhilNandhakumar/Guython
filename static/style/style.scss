@@ -38,43 +38,11 @@ $theme-colors: (
 */
 
 // redefine colors
-$primary: #5B9D82;
-$secondary: #a1a9bd;
-$body-bg: #cfd8dc;
+$primary: #61667d;
+$secondary: #434e8a;
+$body-bg: #121b4f;
+
 
 // redefine body background
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// setup default background
-html, body {
-  background-image: var(--bs-gradient);
-  background-color: var(--bs-body-bg);
-}
-
-// setup dark mode styling
-.dark-mode {
-  $enable-gradients: true;
-
-  /* redefine theme colors */
-  $primary: $green-600;
-  $secondary: #5c7ba8;
-  $body-bg: #455a64;
-  /* set background values */
-  --#{$variable-prefix}body-bg: #{$body-bg};
-
-  $theme-colors: (
-          "primary": $primary,
-          "secondary": $secondary
-  );
-  /* redefine theme color variables */
-  @each $color, $value in $theme-colors {
-    --#{$variable-prefix}#{$color}: #{$value};
-  }
-  /* redefine theme theme-colors-rgb variables */
-  $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
-  @each $color, $value in $theme-colors-rgb {
-    --#{$variable-prefix}#{$color}-rgb: #{$value};
-  }
-
-  @import "../../node_modules/bootstrap/scss/bootstrap";
-}

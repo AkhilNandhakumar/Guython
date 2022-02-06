@@ -4,30 +4,66 @@
 {% set project = "Forums" %}
 
 <!- This is a replacement block for Body in base.html -->
+
 {% block body %}
+<div class="body-bg">
+
 <style>
-
-    .profileModule {
-
-    #rcorners4
-        border-radius: 15px;
-        background: #73AD21;
-        padding: 20px;
-        width: 200px;
-        height: 150px;
+    table, tr, th{
+        border: 1px solid black;
+        text-align: center;
     }
-
-
 </style>
-    <body>
 
-    <div class="profileModule">
-
+    <div class="ps-5 py-5">
+        <div class="card bg-secondary text-light" style="width:200px; height:250px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); float: left;">
+            <div class="ps-sm-5 py-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png" style="width:100px; height:100px;">
+            </div>
+            <div class="container text-center">
+                <h4>User</h4>
+                <p>Blah</p>
+            </div>
+        </div>
     </div>
 
-    </body>
+<div>
+    <div class="card bg-secondary text-light" style="width:300px; height:700px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); float:right; ">
+    <h2 style="text-align: center;">Trending</h2>
+    <table>
+        <tr>
+            <th>Really Cool Thing 1</th>
+        </tr>
+        <tr>
+            <th>Really Cool Thing 2</th>
+        </tr>
+        <tr>
+            <th>Really Cool Thing 3</th>
+        </tr>
+    </table>
+    </div>
+</div>
 
+<div>
+    <div class="card bg-secondary ps-5 text-light" style="width:750px; height:700px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); float:left; margin-left:6%">
+        <h1 style="text-align: center; margin-left: -49px;">Questions</h1>
+
+        <table style="width:750px; margin-left: -49px">
+
+            <tr>
+                <th>Question 1</th>
+            </tr>
+            <tr>
+                <th>Question 2</th>
+            </tr>
+            <tr>
+                <th>Question 3</th>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+</div>
 {% endblock %}
-<!- This is turning off birds background from base.html -->
-{% block background %}
-{% endblock %}
+
