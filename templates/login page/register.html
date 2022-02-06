@@ -1,45 +1,100 @@
+<!DOCTYPE html>
+{% extends "layouts/base.html" %}
+<html lang="en">
+{% block body %}
 <html>
-    <head>
-            <title> Form </title>
-    </head>
-</html>
 
-    <body>
-        <h1> Form </h1>
-        <div id="formcontainer">
-            <div id="header"> </div>
 
-            <input type-"email" placeholder-"email" id-"email" >
-            <input type="password" placeholder-"password" id-"password"/>
 
-            <button onclick="signup()" id="signUp"> Sign Up </button>
-            <button onclick="signin()" id="signIn"> Sign In </button>
-            <button onclick="signout()" id="signUp"> Sign Out </button>
-        </div>
 
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    <div class="container">
+        <br>
+        <h4 style="color: white">Sign Up with an Email and Password:</h4>
+        <br>
+        <form id="register">
+            <br />
+            <input
+                    style="text-align: center"
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    class="form-control"
+            />
+            <br />
+            <input
+                    style="text-align: center"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    class="form-control"
+            />
+            <br />
+            <input
+                    style="text-align: center"
+                    class="btn btn-primary loginbtn"
+                    type="submit"
+                    value="Register"
+            />
+        </form>
+        <input
+                style="text-align: center"
+                class="btn btn-primary loginbtn"
+                type="submit"
+                onclick="login()"
+                value="Already have an account?"
+        />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"></script>
+        <script>
             const firebaseConfig = {
                 apiKey: "AIzaSyDlLyw_zNfech3CumwNxqct4EPhTT6oqHo",
                 authDomain: "hackers-8d876.firebaseapp.com",
                 projectId: "hackers-8d876",
                 storageBucket: "hackers-8d876.appspot.com",
                 messagingSenderId: "337033111635",
-                appId: "1:337033111635:web:bcd7978cbaf510b438bea6",
-                measurementId: "G-3VBWN30TXW"
+                appId: "1:337033111635:web:e47fc64f0fc5528a38bea6",
+                measurementId: "G-RSNZWY27F3"
             };
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
+            if (firebase.apps.length === 0) {``
+                firebase.initializeApp(config);
+                console.log("worked");
+            }
+            const auth = firebase.auth();
+            var form = document.getElementById("register");
+            var submit = document.getElementById("submit");
+
+            form.onsubmit = function (e) {
+                e.preventDefault();
+                const email = form["email"].value;
+                const password = form["password"].value;
+                auth.createUserWithEmailAndPassword(email, password).then(function (){
+                    console.log('signed uppathname successfully')
+                    window.location.pathname = '/login'
+                }).catch((err) => {
+                    if (err.code === "auth/email-already-in-use") {
+                        window.location.pathname = "/login/"
+                    }
+                    if (err.code === "auth/weak-password") {
+                        window.location.pathname = "/login/"
+                    }
+                    else if (err.code === "auth/invalid-email") {
+                        window.location.pathname = "/login/"
+                    }
+                });
+            };
+            function login() {
+                window.location.pathname = "/login/"
+            }
         </script>
+    </div>
 
-    </body>
 
 
+{% endblock %}
 </html>
