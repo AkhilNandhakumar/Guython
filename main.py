@@ -251,6 +251,10 @@ def periodictable():
 def register():
     return render_template("login page/register.html")
 
+@app.route('/login/')
+def login():
+    return render_template("login page/login.html")
+
 #
 #
 #
