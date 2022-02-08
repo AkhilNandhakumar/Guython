@@ -55,14 +55,16 @@
             <a class="nav-link" style="padding-top: 10px; font-size: 22px; color: white; " href="/forums">Forums</a>
             <!-- stub is shown using the name of the route -->
         </div>
-        <div style="font-family: Helvetica" class="navbar-nav">
-            <a class="nav-link" style="font-size: 22px; color: white; " href="/register">Register</a>
-            <!-- stub is shown using the name of the route -->
+        <div class="dropdown">
+            <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+            </pList>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" href="/login">Log In</a>
+                <a class="dropdown-item" href="/register">Sign Up</a>
+            </div>
         </div>
-        <div style="font-family: Helvetica" class="navbar-nav">
-            <a class="nav-link" style="font-size:22px; color: white; " href="/login">Login</a>
-            <!-- stub is shown using the name of the route -->
-        </div>
+
         <div class="dropdown">
             <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About Us
@@ -75,7 +77,6 @@
                 <a class="dropdown-item" href="/tristan">Tristan</a>
             </div>
         </div>
-
         <div class="dropdown">
             <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Topics / Classes
@@ -101,10 +102,11 @@
         </div>
         <div class="dropdown">
             <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                APIs
+                Extras
             </pList>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href=/api_collection>Collection</a>
+                <a class="dropdown-item" href=/api_collection>API Collection</a>
+                <a class="dropdown-item" href=/games>Games</a>
             </div>
         </div>
         <input type="text" id="SearchInput2" onkeyup="SearchNavbar()" placeholder="Search for pages" title="Search for pages" style='font-size: 10px; margin-left:20px; height: 25px; width: 100px'>

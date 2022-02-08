@@ -127,7 +127,7 @@ def tristan():
 
 @app.route('/bootstrapLayouts/')
 def bootstrap_layouts():
-    return render_template("our_work/bootstrapLayouts.html")
+    return render_template("our_work/templates/bootstrapLayouts.html")
 
 
 @app.route('/sci/')
@@ -247,13 +247,20 @@ def periodictable():
     text = response.json()
     return render_template("class_topics/periodictable.html", text=text)
 
+
 @app.route('/register/')
 def register():
-    return render_template("login page/register.html")
+    return render_template("login_page/register.html")
+
 
 @app.route('/login/')
 def login():
-    return render_template("login page/login.html")
+    return render_template("login_page/login.html")
+
+
+@app.route('/games/')
+def games():
+    return render_template("games/games.html")
 
 #
 #
