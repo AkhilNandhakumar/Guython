@@ -418,7 +418,9 @@ def wtd3():
 def wchecks():
     return render_template("weather_info/weather_checks.html", background='linear-gradient(-45deg, #f3feed, #5c8be4, '
                                                                           '#fbb73a)')
-
+@app.route('/snake/')
+def snake():
+    return render_template("games/snake.html")
 
 # Forums socket.io code
 # @socketio.on('testing')
