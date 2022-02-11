@@ -248,6 +248,11 @@ def periodictable():
     return render_template("class_topics/periodictable.html", text=text)
 
 
+@app.route('/physics/')
+def physics():
+    return render_template("class_experiences/physics.html")
+
+
 @app.route('/register/')
 def register():
     return render_template("login_page/register.html")
