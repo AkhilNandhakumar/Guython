@@ -78,8 +78,8 @@
             padding-top: 10px;
             color:cadetblue;
             font-size: 30px;
-            max-width: 60%;
-            margin-left: 20%;
+            max-width: 65%;
+            margin-left: 17.5%;
         }
     </style>
     <h1>Backpack Pro+</h1>
@@ -93,7 +93,7 @@
     <a style="font-size: 35px; margin-bottom: 15px; color: mediumpurple" target = "_blank" href="https://jakubponulak.github.io/5_hackers/">Link to Jekyll Site</a>
     <br>
     <br>
-    <input type="text" id="SearchInput" onkeyup="SearchMain(list = websitePages, textcolor = '#7051fc', nullcolor = '#960910', SearchID = 'SearchInput', ResultID = 'SearchResult', DebugMode = false)" placeholder="Search for pages" title="Search for pages">
+    <input type="text" id="SearchInput" onkeyup="SearchMain(list = websitePages, textcolor = '#7051fc', nullcolor = '#e30202', SearchID = 'SearchInput', ResultID = 'SearchResult', DebugMode = false)" placeholder="Search for pages" title="Search for pages">
     <!-- here the search function is called with "onkeyup", meaning whenever a key input is let go.
     This allows users to make searches without hitting a submit button -->
     <br>
@@ -147,10 +147,15 @@
                 {"name":"Science", "path":"/sci/"},
                 {"name":"Literature", "path":"/lit/"},
                 {"name":"Periodic Table", "path":"/periodictable/"},
+                {"name":"AP Chemistry", "path":"/chem/"},
                 {"name":"API Collection", "path":"/api_collection/"},
                 {"name":"CRUD", "path":"/crud/"},
                 {"name":"Async CRUD", "path":"/crud_api/"},
-                {"name":"Search (Database)", "path":"/crud/search/"}
+                {"name":"Search (Database)", "path":"/crud/search/"},
+                {"name":"Login", "path":"/login/"},
+                {"name":"Sign Up", "path":"/register/"},
+                {"name":"Forums", "path":"/forums"},
+                {"name":"Home", "path":"/"},
             ] ;
 
         function SearchMain(list = websitePages, textcolor = 'white',nullcolor = 'red', SearchID = 'SearchInput', ResultID = 'SearchResult', DebugMode = false, NoRText = 'No Results') {
