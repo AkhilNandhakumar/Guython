@@ -1,10 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
 
-</body>
-</html>
+<!- This variable sets name of browser tab  -->
+{% set project = "Physics" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <style>
+        body {
+            text-align: center;
+            font-size: x-large;
+        }
+        .col-12 {
+            max-width: 70%;
+        }
+
+    </style>
+    <h1>Physics Class Experience</h1>
+    <div class="row justify-content-center">
+        <div class="w-100"></div>
+        <div class="col-12">
+            In Physics, you complete a lot of worksheets that are given by the teacher. The teacher usually goes over the answer to the worksheets the next day in class.
+            The students learn a lot about certain formulas that allow them to calculate the speed, velocity, and acceleration of objects. There a multiple units where
+            students learn new topics using different formulas.
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="w-100"></div>
+        <h2>Labs</h2>
+        <div class="w-100"></div>
+        <div class="col-12">
+
+            <br>
+            <br>
+            <br>
+            <table class="row justify-content-center">
+                <tr>
+                    <th style="height:30px;width:400px;text-align:center;"> Formulas </th>
+                    <th style="height:30px;width:400px;text-align:center;"> Math </th>
+                </tr>
+                <tr>
+                    <td>
+                        In Physics you are given a bunch of formulas, you need to be able to recognize which formula is appropriate for the given problem.
+                        You need to be able to make the proper calculations for all the formulas, since the answers could be related to each other.
+                    </td>
+                    <td>
+                        You need to be able to make simple math calculations such as multiplication, addition, subtraction and division.
+                        Knowing these will make the class very easy to follow and understand.
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="w-100"></div>
+        <br>
+        <img src="/static/assets/kevinImages/physics1.jpg">
+    </div>
+{% endblock %}
