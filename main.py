@@ -166,9 +166,11 @@ def lit():
 def chem():
     return render_template("class_experiences/chem.html")
 
+
 @app.route('/physics/')
 def physics():
     return render_template("class_experiences/physics.html")
+
 
 @app.route('/api_collection/')
 def api_collection():
@@ -249,11 +251,6 @@ def periodictable():
     response = requests.request("GET", url, headers=headers)
     text = response.json()
     return render_template("class_topics/periodictable.html", text=text)
-
-
-@app.route('/physics/')
-def physics():
-    return render_template("class_experiences/physics.html")
 
 
 @app.route('/register/')
