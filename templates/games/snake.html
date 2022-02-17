@@ -20,6 +20,15 @@
 
     <canvas width="400" height="400" id="game"></canvas>
     <script>
+
+        let mode = 'ai'
+
+        function distanceBetween(x1, y1, x2, y2) {
+
+            return Math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
+
+        }
+
         var canvas = document.getElementById('game');
         var context = canvas.getContext('2d');
 
@@ -127,6 +136,23 @@
                         apple.y = getRandomInt(0, 25) * grid;
                     }
                 }
+
+                if (mode === "ai") {
+
+                    let direction = ['left', 999];
+
+                    if (distanceBetween(apple.x, apple.y, snake.x - grid, snake.y) < direction[1] && checkCollide) {
+
+
+
+                    }
+                    distanceBetween(apple.x, apple.y, snake.x + grid, snake.y);
+                    distanceBetween(apple.x, apple.y, snake.x + grid, snake.y);
+                    distanceBetween(apple.x, apple.y, snake.x + grid, snake.y);
+
+                }
+
+
             });
         }
 
