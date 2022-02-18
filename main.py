@@ -166,9 +166,11 @@ def lit():
 def chem():
     return render_template("class_experiences/chem.html")
 
+
 @app.route('/physics/')
 def physics():
     return render_template("class_experiences/physics.html")
+
 
 @app.route('/api_collection/')
 def api_collection():
