@@ -267,6 +267,11 @@ def login():
 def games():
     return render_template("games/games.html")
 
+
+@app.route('/google_translate/')
+def translate():
+    return render_template("api_pages/google_translate.html")
+
 #
 #
 #
