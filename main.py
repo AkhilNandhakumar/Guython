@@ -10,10 +10,12 @@ from image import image_data
 from pathlib import Path
 from crud.app_crud import app_crud
 from crud.app_crud_api import app_crud_api
+from class_topics import app_classtopics
 
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
+app.register_blueprint(app_classtopics)
 
 # create a Flask instance
 # app = Flask(__name__)
@@ -130,38 +132,6 @@ def bootstrap_layouts():
     return render_template("our_work/templates/bootstrapLayouts.html")
 
 
-@app.route('/sci/')
-def sci():
-    url = "https://community-open-weather-map.p.rapidapi.com/weather"
-
-    querystring = {"q": "California ,us", "lat": "0", "lon": "0", "callback": "test", "id": "2172797", "lang": "null",
-                   "units": "imperial", "mode": "xml"}
-
-    headers = {
-        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
-        'x-rapidapi-key': "7c1d894378mshb7e7e6c6ecac61bp1f2fcbjsn264b46c0ce80"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    text = response.text
-    return render_template("class_topics/sci.html", text=text)
-
-
-@app.route('/history/')
-def history():
-    return render_template("class_topics/history.html")
-
-
-@app.route('/math/')
-def math():
-    return render_template("class_topics/math.html")
-
-
-@app.route('/lit/')
-def lit():
-    return render_template("class_topics/lit.html")
-
 @app.route('/chem/')
 def chem():
     return render_template("class_experiences/chem.html")
@@ -240,17 +210,6 @@ def api_collection():
     return render_template("api_pages/api_collection.html", text=text, s1n=star1name, s1d=star1distance, s1vm=star1vismag, s2n=star2name, s2d=star2distance, s2vm=star2vismag, s3n=star3name, s3d=star3distance, s3vm=star3vismag,
                            temp=temp, desc=desc, temp2=temp2, desc2=desc2, temp3=temp3, desc3=desc3, cn1=city_name, cn2=city_name2, cn3=city_name3,
                            text2=text2_1, text3_1=text3_1, text3_2=text3_2, text3_3=text3_3, con1=country1, cases1=cases1, d1=deaths1, con2=country2, cases2=cases2, d2=deaths2, con3=country3, cases3=cases3, d3=deaths3)
-
-
-@app.route('/periodictable/')
-def periodictable():
-    url = "https://periodictable.p.rapidapi.com/"
-    headers = {
-        'x-rapidapi-host': "periodictable.p.rapidapi.com",
-        'x-rapidapi-key': "21f1126bdamsh1578fd326fc88e5p1b4740jsn5ffba868400c"}
-    response = requests.request("GET", url, headers=headers)
-    text = response.json()
-    return render_template("class_topics/periodictable.html", text=text)
 
 
 @app.route('/register/')
