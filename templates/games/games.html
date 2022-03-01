@@ -3,4 +3,247 @@
 {% set project = "Games" %}
 
 {% block body %}
+    <head>
+        <title>Pop Lock</title>
+
+        <style>
+
+            html, body {
+
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+
+            }
+
+            #canvas {
+
+                top: 0px;
+                left: 0px;
+                background-color: black;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+    <canvas id='canvas'></canvas>
+    <script>
+        let c = document.getElementById('canvas');
+        let ctx = c.getContext('2d');
+
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
+
+        window.addEventListener('resize', ()=> {
+
+            c.width = window.innerWidth;
+            c.height = window.innerHeight;
+
+        })
+
+        document.addEventListener('keypress', e => {
+
+            if (e.keyCode === 32) {
+
+                if (state === 'game') {
+
+                    checkPop();
+
+                } else {
+
+                    if (buffer < time) {
+
+                        score = 0;
+                        state = 'game';
+                        pointer = 0;
+                        popper = 1.57;
+                        pointerDirection = 1;
+                        pointerSpeed = 0.001
+                        gameZoom = 1;
+                        shakePower = 0;
+                        shakeX = 0;
+                        shakeY = 0;
+
+                    }
+
+                }
+
+            }
+
+        });
+
+        document.addEventListener('mousedown', ()=> {
+
+            if (!clicking){
+
+                if (state === 'game') {
+
+                    checkPop();
+
+                } else {
+
+                    if (buffer < time) {
+
+                        score = 0;
+                        state = 'game';
+                        pointer = 0;
+                        popper = 1.57;
+                        pointerDirection = 1;
+                        pointerSpeed = 0.001
+                        gameZoom = 1;
+                        shakePower = 0;
+                        shakeX = 0;
+                        shakeY = 0;
+
+                    }
+
+                }
+
+            }
+
+            clicking++;
+
+        });
+
+        document.addEventListener('mouseup', ()=> {
+
+            clicking = 0;
+
+        });
+
+        // Init Variables
+
+        let deltaTime = 0.0;
+        let time = 0.0;
+        let score = '[Press Space]';
+        let pointer = 0;
+        let popper = 1.57;
+        let pointerDirection = 1;
+        let pointerSpeed = 0.001
+        let gameZoom = 1;
+        let shakePower = 0;
+        let shakeX = 0;
+        let shakeY = 0;
+        let state = 'start'
+        let clicking = 0;
+        let buffer = 0;
+
+        function drawGame() {
+
+            ctx.clearRect(0, 0, c.width, c.height);
+
+            ctx.fillStyle = 'red';
+
+            ctx.beginPath();
+            ctx.arc(shakeX + c.width / 2, shakeY + c.height / 2, 350, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.fillStyle = 'black';
+
+            ctx.beginPath();
+            ctx.arc(shakeX + c.width / 2, shakeY + c.height / 2, 300, 0, 2 * Math.PI);
+            ctx.fill();
+
+            if (state === 'died') {
+
+                ctx.fillStyle = 'red';
+
+                ctx.beginPath();
+                ctx.arc(shakeX + c.width / 2, shakeY + c.height / 2, 100, 0, 2 * Math.PI);
+                ctx.fill();
+
+            }
+
+            ctx.fillStyle = 'white';
+            ctx.font = '100px monospace';
+            ctx.fillText(score, shakeX + c.width / 2 - (score.toString().length / 2) * 55, shakeY + c.height / 2 + 25)
+
+            ctx.fillStyle = 'black';
+
+            ctx.beginPath();
+            ctx.arc(shakeX + c.width / 2 + Math.cos(popper) * 230 * gameZoom + Math.sin(popper) * 230 * gameZoom, shakeY + c.height / 2 + Math.cos(popper) * 230 * gameZoom - Math.sin(popper) * 230 * gameZoom, 25 * gameZoom, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.fillStyle = 'white';
+
+            ctx.beginPath();
+            ctx.arc(shakeX + c.width / 2 + Math.cos(pointer) * 230 * gameZoom + Math.sin(pointer) * 230 * gameZoom, shakeY + c.height / 2 + Math.cos(pointer) * 230 * gameZoom - Math.sin(pointer) * 230 * gameZoom, 25 * gameZoom, 0, 2 * Math.PI);
+            ctx.fill();
+
+        }
+
+        function iterate() {
+
+            if (state === 'game') {
+
+                if (pointerDirection > 0) {
+
+                    if (pointer > (popper + (0.165 + pointerSpeed * deltaTime))) {
+
+                        score = '\[' + score + '\]'
+                        state = 'died';
+                        buffer = time + 200
+
+                    }
+
+                } else {
+
+                    if (pointer < (popper - (0.165 + pointerSpeed * deltaTime))) {
+
+                        score = '\[' + score + '\]'
+                        state = 'died';
+                        buffer = time + 200
+
+                    }
+
+                }
+
+                pointer += pointerDirection * pointerSpeed * deltaTime;
+                shakePower = shakePower / (1.003 ** deltaTime);
+                shakeX = Math.round((Math.random() - 0.5) * shakePower);
+                shakeY = Math.round((Math.random() - 0.5) * shakePower);
+
+            }
+
+        }
+
+        function checkPop() {
+
+            if (Math.abs(popper - pointer) < (0.165 + pointerSpeed * deltaTime)) {
+
+                pointerDirection *= -1;
+                popper += pointerDirection * (Math.random() + 0.7);
+                score++;
+                pointerSpeed = Math.sqrt(score / 30) * 0.001 + 0.001;
+                shakePower = score ** 0.7 + 7;
+
+            } else {
+
+                score = '\[' + score + '\]'
+                state = 'died';
+                buffer = time + 200
+
+            }
+
+        }
+
+        function tick(current = 1) {
+
+            deltaTime = current - time;
+            time = current;
+
+            drawGame();
+
+            iterate();
+
+            requestAnimationFrame( tick );
+
+        }
+
+        tick();
+
+    </script>
+    </body>
 {% endblock %}
