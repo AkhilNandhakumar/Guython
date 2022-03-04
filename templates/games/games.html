@@ -129,6 +129,7 @@
         let state = 'start'
         let clicking = 0;
         let buffer = 0;
+        let highScore = 0;
 
         function drawGame() {
 
@@ -148,6 +149,7 @@
 
             if (state === 'died') {
 
+
                 ctx.fillStyle = 'red';
 
                 ctx.beginPath();
@@ -157,7 +159,7 @@
             }
 
             ctx.fillStyle = 'white';
-            ctx.font = '100px monospace';
+            ctx.font = '102px verdana';
             ctx.fillText(score, shakeX + c.width / 2 - (score.toString().length / 2) * 55, shakeY + c.height / 2 + 25)
 
             ctx.fillStyle = 'black';
@@ -219,6 +221,8 @@
                 pointerSpeed = Math.sqrt(score / 30) * 0.001 + 0.001;
                 shakePower = score ** 0.7 + 7;
 
+                if (score > highScore && (parseInt(score) === score)) {highScore++}
+
             } else {
 
                 score = '\[' + score + '\]'
@@ -237,6 +241,11 @@
             drawGame();
 
             iterate();
+
+            ctx.fillStyle = 'white';
+            ctx.font = '100px monospace';
+            ctx.fillText(highScore, shakeX + c.width / 2 - (highScore.toString().length / 2) * 55 + 500, shakeY + c.height / 2 + 25 - 200)
+
 
             requestAnimationFrame( tick );
 
