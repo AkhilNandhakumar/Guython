@@ -4,7 +4,7 @@ The purpose of our wesbite is to help students stay organized, both virtually an
 Our website on project is built off of "flask_portfolio_hackers", the repository that Jakub and Tristan used in Trimester 1. However, besides basic layouts, are website and project is different, as it offers a completely new and unrelated theme. Our work on this project started at the beginning of Trimester 2.
 ## Contributors:
 
-Team Member | Hamza | Jakub | Kevin | Sreeja | Tristan |
+Team Member | Akhil | Chris | Jakub | Soma | Yash |
 --- | --- | --- | --- | --- | ---
 GitHub ID: | hamzahakak | JakubPonulak | Kevinc023032 | SreejaVad | TristanCopley |
 Team Role: | Primary Designer | GitHub Admin | Technical Officer | Deployment Manager | Scrum Master |
