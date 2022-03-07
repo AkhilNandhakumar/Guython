@@ -8,8 +8,8 @@ from flask import Flask, request, Blueprint, render_template
 # from flask_socketio import SocketIO
 from image import image_data
 from pathlib import Path
-from crud.app_crud import app_crud
-from crud.app_crud_api import app_crud_api
+from cruddy.app_crud import app_crud
+from cruddy.app_crud_api import app_crud_api
 from class_topics import app_classtopics
 
 
