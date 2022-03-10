@@ -1,8 +1,8 @@
 ## Project Description: 
-This project is a continuations of "Backpack Pro", a project one of our team members worked on during Trimester 2. The website focuses on providing students with helpful and educational resources to further their education. 
+This project is a continuations of "Backpack Pro", a project one of our team members worked on during Trimester 2. The website focuses on providing students with helpful and educational resources to further their education. This includes several classes, including CSP. 
 
 ## Project Plans: 
-Our plan is to keep adding on to the tutoring features and services present in "Backpack Pro". Alongside this we also plan on incorporating some ideas or features requested by our Project Owner, such as platform-wide SCSS for platforms such as GitHub wikis and the Nighthawk Coder Society website.
+Our plan is to keep adding on to the tutoring features and services present in "Backpack Pro". Alongside this we also plan on incorporating some ideas or features requested by our Project Owner, such as platform-wide SCSS for platforms such as GitHub wikis and the Nighthawk Coder Society website. We are also thinking about adding or creating a study calendar / organizer for CSP students, which would allow to plan our their week or studying so that they don't procrastinate or forget to do anything.
 
 ## Contributors:
 
