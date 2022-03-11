@@ -35,7 +35,7 @@ GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.
 **Individual:**
 | Team Member | GitHub Page for TPT  | GitHub Page for TT/Data Structures Code Assignments | GitHub Page for Create Task |
 | --- | --- | --- | --- |
-| Akhil |  |  |  |
+| Akhil | [TPT with Actions](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tpt) | [Page with Link to Code Snippet and Runtime](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tt) | [Create Task Page](https://akhilnandhakumar.github.io/Akhil-Data-Structures/ct) |
 | Jacob |  |  |  |
 | Yash |  |  |  |
 | Chris |  |  |  |
