@@ -17,10 +17,8 @@ GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.
 
 **Project Owner**: John Mortensen 
 
-## [GitHub Repository](https://github.com/JakubPonulak/5_hackers) 
-## [Scrum Board](https://github.com/JakubPonulak/5_hackers/projects/1) 
-## [Team Journal](https://docs.google.com/presentation/d/18iga0TGCSFYNBifNM4t4W3cC2LTcPm3Q6XIjjuCpFjA/edit?usp=sharing) 
-### [TPT Journal](https://docs.google.com/presentation/d/1AT39h9CxG4NIHYyiUUC_T8nwjfJDg2KpHYwVhEW2vXw/edit?usp=sharing) 
+## [GitHub Repository](https://github.com/AkhilNandhakumar/Guython) 
+## [Scrum Board](https://github.com/AkhilNandhakumar/Guython/projects/1) 
 
 # Time Box: 
 
