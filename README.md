@@ -28,7 +28,7 @@ GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.
 **Team:**
 - [Project Description](https://github.com/AkhilNandhakumar/Guython#project-description)
 - [Project Plans](https://github.com/AkhilNandhakumar/Guython#project-plans)
-- [Wireframe (none as of now)](#)
+- [Wireframe (none as of now)](https://docs.google.com/drawings/d/1mogokqAFAM5HKk9fLhzz1qdr9THwx2xbRpUxEg_czEs/edit?usp=sharing)
 - [Team Roles + Project Owner](https://github.com/AkhilNandhakumar/Guython#contributors)
 - [ScrumBoard Started](https://github.com/AkhilNandhakumar/Guython/projects/1)
 
