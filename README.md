@@ -25,3 +25,16 @@ GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.
 # Time Box: 
 
 ### Week 0
+**Team:**
+- [Project Description](https://github.com/AkhilNandhakumar/Guython#project-description)
+- [Project Plans](https://github.com/AkhilNandhakumar/Guython#project-plans)
+- [Wireframe (none as of now)](#)
+
+**Individual:**
+| Team Member | GitHub Page for TPT  | GitHub Page for TT/Data Structures Code Assignments | GitHub Page for Create Task |
+| --- | --- | --- | --- |
+| Akhil |  |  |  |
+| Jacob |  |  |  |
+| Yash |  |  |  |
+| Chris |  |  |  |
+| Somaditya |  |  |  |
