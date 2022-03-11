@@ -29,6 +29,8 @@ GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.
 - [Project Description](https://github.com/AkhilNandhakumar/Guython#project-description)
 - [Project Plans](https://github.com/AkhilNandhakumar/Guython#project-plans)
 - [Wireframe (none as of now)](#)
+- [Team Roles + Project Owner](https://github.com/AkhilNandhakumar/Guython#contributors)
+- [ScrumBoard Started](https://github.com/AkhilNandhakumar/Guython/projects/1)
 
 **Individual:**
 | Team Member | GitHub Page for TPT  | GitHub Page for TT/Data Structures Code Assignments | GitHub Page for Create Task |
