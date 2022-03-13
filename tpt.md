@@ -2,7 +2,7 @@
 
 <table>
     <tr>
-        <td><a href="bi1">Big Idea 1</a></td>
+        <td><a href="docs/bi1">Big Idea 1</a></td>
         <td><a href="bi2">Big Idea 2</a></td>
         <td><a href="bi3">Big Idea 3</a></td>
         <td><a href="bi4">Big Idea 4</a></td>
