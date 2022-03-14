@@ -23,6 +23,7 @@ GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.
 # Time Box: 
 
 ### Week 0
+
 **Team:**
 - [Project Description](https://github.com/AkhilNandhakumar/Guython#project-description)
 - [Project Plans](https://github.com/AkhilNandhakumar/Guython#project-plans)
