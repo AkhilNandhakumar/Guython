@@ -38,5 +38,5 @@ Team Member | GitHub Page for TPT  | GitHub Page for TT/Data Structures Code Ass
 Akhil | [TPT with Actions](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tpt) | [Page with Link to Code Snippet and Runtime](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tt) | [Create Task Page](https://akhilnandhakumar.github.io/Akhil-Data-Structures/ct)
 Jakub | [TPT](https://jakubponulak.github.io/DataStructures/study) | [TT Code & Runtime](https://jakubponulak.github.io/DataStructures/project_doc) | [Create Task Page](https://jakubponulak.github.io/DataStructures/ct_doc)
 Yash | [TPT](https://yashshah138.github.io/Data_Structures1/study) |  | 
-Chris |  |  | 
+Chris | [TPT](https://chom642.github.io/Data_Structures/) |  | 
 Somaditya |[TPT](https://somaditya1.github.io/Data-Structures-1-Soma/)  |  | 
