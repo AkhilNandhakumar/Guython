@@ -39,4 +39,4 @@ Akhil | [TPT with Actions](https://akhilnandhakumar.github.io/Akhil-Data-Structu
 Jakub | [TPT](https://jakubponulak.github.io/DataStructures/study) | [TT Code & Runtime](https://jakubponulak.github.io/DataStructures/project_doc) | [Create Task Page](https://jakubponulak.github.io/DataStructures/ct_doc)
 Yash | [TPT](https://yashshah138.github.io/Data_Structures1/study) |  | 
 Chris | [TPT](https://chom642.github.io/Data_Structures/) |  | 
-Somaditya |[TPT](https://somaditya1.github.io/Data-Structures-1-Soma/)  |  | 
+Somaditya |[TPT](https://somaditya1.github.io/Data-Structures-1-Soma/)  |  | [Create Task](https://github.com/aaditgupta21/silverscreen/wiki/Create-Task-Final-Week-10)-Somaditya-Singh
