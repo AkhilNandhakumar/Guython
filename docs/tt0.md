@@ -226,7 +226,7 @@ More...
 2. Add swap and keypad from Tri 2 Week 10, to your project and menu.
 3. For additional challenge and review, build a Christmas tree with stars or a pattern of your choice
 
-<img src="https://user-images.githubusercontent.com/88572244/156895395-6bbf72be-605f-4bca-a376-b9ee985b5786.png" alt="tree" height="200" width="500"/>
+<img src="https://user-images.githubusercontent.com/88572244/156895395-6bbf72be-605f-4bca-a376-b9ee985b5786.png" alt="tree" height="500" width="200"/>
 
 4. Add two items below to get ready for animations and interacting with terminal codes
 - Here's an example of a ship pattern. Implement it in your project and make your own pattern following the example.
