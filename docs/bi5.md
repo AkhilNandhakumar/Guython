@@ -16,7 +16,8 @@
 
 # Big Idea 5 - Impact of Computing
 
-Table of Contents:
+### Table of Contents:
+1. [5.1](#bigidea51)
 
 ## Big Idea 5.1
 
