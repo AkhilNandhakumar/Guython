@@ -24,7 +24,8 @@
 5. [Big Idea 5.5](#big-idea-55)
 6. [Big Idea 5.6](#big-idea-56)
 
-## Big Idea 5.1 - [Back to Top](#table-of-contents)
+## Big Idea 5.1
+[Back to Top](#table-of-contents)
 
 ### Key Highlights and questions from College Board Videos
 <img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/drones.jpeg" height="400">
@@ -42,7 +43,8 @@
 1. Come up with three of your own Beneficial and corresponding Harmful Effects of Computing
 1. Talk about dopamine issues above.  Real?  Parent conspiracy?  Anything that is impacting your personal study and success in High School?
 
-## Big Idea 5.2 - [Back to Top](#table-of-contents)
+## Big Idea 5.2
+[Back to Top](#table-of-contents)
 
 ## Digital Divide
 ### Deals with "To Have and Have Not" in relation to Computers, Internet, or Technology in general.
@@ -71,7 +73,8 @@
 * Is paper or red tape blocking digital empowerment?  Are there such barriers at Del Norte?  Elsewhere?
 <img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/digitaldivide2.png" height="400">
 
-## Big Idea 5.3 - [Back to Top](#table-of-contents)
+## Big Idea 5.3
+[Back to Top](#table-of-contents)
 
 ## Computer Bias
 Earlier we talked about beneficial and harmful effects of computing.  Such conversation often lead to conversations on computer bias, particularly when bias creates a harmful effect.
@@ -96,7 +99,8 @@ As programmers, you now have the possibility of creating algorithms.  It has bee
     * Should it be corrected?
     * What would you or should you do to produce a better outcome?
 
-# Big Idea 5.4 - [Back to Top](#table-of-contents)
+# Big Idea 5.4
+[Back to Top](#table-of-contents)
 
 ## Crowdsourcing
 The more you crowdsource, the more you reach beyond your own community, the more you will reduce Computer Bias.  Crowdsourcing provides the ability to obtain shared information, share information, and participate in distributed computing.
@@ -117,7 +121,8 @@ The more you crowdsource, the more you reach beyond your own community, the more
 * CompSci has 150 principles students.  Describe a crowdsource idea and how you might initiate it in our environment?  
 * What about Del Norte crowdsourcing?  Could your final project be better with crowdsourcing?
 
-## Big Idea 5.5 - [Back to Top](#table-of-contents)
+## Big Idea 5.5
+[Back to Top](#table-of-contents)
 
 ## Legal and Ethical Concerns
 Free Software Licensing is the primary topic of this section.  
@@ -166,7 +171,8 @@ Creative Commons, Open Source are free terminologies!  However, businesses will 
 1. When you create a GitHub repository it requests a license type.  Review the license types in relationship to this Tech Talk and make some notes in GitHub pages.
 1. Make a license for your personal and Team project.  Document license you picked and why.
 
-## Big Idea 5.6 - [Back to Top](#table-of-contents)
+## Big Idea 5.6
+[Back to Top](#table-of-contents)
 
 ## Safe Computing
 
