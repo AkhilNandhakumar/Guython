@@ -17,7 +17,14 @@
 # Big Idea 5 - Impact of Computing
 
 ### Table of Contents:
-1. [5.1](#bigidea51)
+1. [Big Idea 5.1](#big-idea-51)
+2. [Big Idea 5.2](#big-idea-52)
+3. [Big Idea 5.3](#big-idea-53)
+4. [Big Idea 5.4](#big-idea-54)
+5. [Big Idea 5.5](#big-idea-55)
+6. [Big Idea 5.6](#big-idea-56)
+
+
 
 ## Big Idea 5.1
 
@@ -37,4 +44,57 @@
 1. Come up with three of your own Beneficial and corresponding Harmful Effects of Computing
 1. Talk about dopamine issues above.  Real?  Parent conspiracy?  Anything that is impacting your personal study and success in High School?
 
+## Big Idea 5.2
+
+## Digital Divide
+### Deals with "To Have and Have Not" in relation to Computers, Internet, or Technology in general.
+* Poorer or rural areas in America and other countries may have less or little access to Technology
+* Some countries may have different or restricted access, for instance China and USA may have divide in service allowed in their countries.
+
+### Contributing factors to divide are socioeconomic (money), geographic (location), demographic (education, nationality, religion, and ethnicity)
+* Individual may have less access to latest updates, thus may be working on older generations of computers
+* Religious groups like the Amish choose not to use technology
+* San Diego county has regional distinction in many categories between Northern and Southern population, usually indicated by Interstate 8.
+* Sunnyvale CA has been know as technology hub of influence for the entirety of the United States.
+
+
+### At the start of pandemic 90,000 school children in New Jersey did not have access to computers capable of distance learning.
+<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/digitaldivide.jpeg" height="400">
+
+
+### In education equity requires school to provide materials like Computers or Chrome books.  Here is some counter thinking.
+* In our environment, Del Norte CS preference is that you have your own computer so that you can work away from school.
+* In our classroom, internet blockers at router and lack of admin password can make school computer less productive than personally owned computer.
+* Education is often concerned about cyberbullying, sexting, or student privacy.  What do you think of investments being made in protection versus investments being made in technology education?  Are digital fears expanding digital divide?
+
+### GitHub pages action -- Digital Empowerment
+* How does someone empower themself in a digital world?
+* How does someone that is empowered help someone that is not empowered?  Describe something you could do at Del Norte HS.
+* Is paper or red tape blocking digital empowerment?  Are there such barriers at Del Norte?  Elsewhere?
+<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/digitaldivide2.png" height="400">
+
+## Big Idea 5.3
+
+## Computer Bias
+Earlier we talked about beneficial and harmful effects of computing.  Such conversation often lead to conversations on computer bias, particularly when bias creates a harmful effect.
+
+As programmers, you now have the possibility of creating algorithms.  It has been said, "Humans are error-prone and biased".  So, does that mean algorithms and the computers they run on are better?
+
+<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/computerbias.webp" height="400">
+
+
+### Intentional or Purposeful bias
+* Facebook vs TikTok, is there purposeful exclusion?  Is it harmful?  Should it be corrected?  Is it good business?
+* Amazon, Alexa Google, Apple Siri original had flaws in detecting accents or young voices, was this purposeful?  Is it harmful?  Should it be corrected?  Is it good business?
+* Netflix, do their algorithm purposely bias certain content to certain watchers?  Is it harmful?  Is it good business?
+
+### GitHub Pages Actions.  Break out into Study Groups of 2 or 3
+* Watch the video... [HP computers are racist](https://www.youtube.com/watch?v=t4DT3tQqgRM)
+* Come up with some thoughts on the video and be ready to discuss them as I call on you.  Here are some ideas...
+    * Does the owner of the computer think this was intentional?
+    * If yes or no, justify you conclusion.
+    * How do you think this happened?
+    * Is this harmful?  Was it intended to be harmful or exclude?
+    * Should it be corrected?
+    * What would you or should you do to produce a better outcome?
 
