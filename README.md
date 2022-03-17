@@ -41,3 +41,20 @@ Jakub | [TPT](https://jakubponulak.github.io/DataStructures/study) | [TT Code & 
 Yash | [TPT](https://yashshah138.github.io/Data_Structures1/study) |  | 
 Chris | [TPT](https://chom642.github.io/Data_Structures/) |  | 
 Somaditya |[TPT](https://somaditya1.github.io/Data-Structures-1-Soma/)  |  | [Create Task](https://github.com/aaditgupta21/silverscreen/wiki/Create-Task-Final-Week-10)-
+
+### Week 1
+
+**Team:**
+- [Initial Requirements & owner contact info,]() [tangible plans]()
+- [Scrum Board]()
+<img src="https://github.com/AkhilNandhakumar/Guython/blob/main/static/scrumboardW1.png">
+
+**Individual:**
+Team Member | GitHub Page for TPT  | GitHub Page for TT/Data Structures Code Assignments 
+| --- | --- | --- 
+Akhil | [TPT with Actions](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tpt) | [Page with Link to Code Snippet and Runtime](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tt)
+Jakub | [TPT](https://jakubponulak.github.io/DataStructures/study) | [TT Code & Runtime](https://jakubponulak.github.io/DataStructures/project_doc) 
+Yash | [TPT](https://yashshah138.github.io/Data_Structures1/study) |  
+Chris | [TPT](https://chom642.github.io/Data_Structures/) |  
+Somaditya |[TPT](https://somaditya1.github.io/Data-Structures-1-Soma/)  |  
+
