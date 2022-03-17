@@ -15,7 +15,8 @@ Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=Chom642) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=YashShah138) 
 GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.com/Chom642) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/YashShah138) 
 
-**Project Owner**: John Mortensen 
+### Project Owner: John Mortensen 
+Contact Information: [GitHub Profile](https://github.com/jm1021) | Email: jmortensen@powayusd.com
 
 ## [GitHub Repository](https://github.com/AkhilNandhakumar/Guython) 
 ## [Scrum Board](https://github.com/AkhilNandhakumar/Guython/projects/1) 
@@ -38,5 +39,5 @@ Team Member | GitHub Page for TPT  | GitHub Page for TT/Data Structures Code Ass
 Akhil | [TPT with Actions](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tpt) | [Page with Link to Code Snippet and Runtime](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tt) | [Create Task Page](https://akhilnandhakumar.github.io/Akhil-Data-Structures/ct)
 Jakub | [TPT](https://jakubponulak.github.io/DataStructures/study) | [TT Code & Runtime](https://jakubponulak.github.io/DataStructures/project_doc) | [Create Task Page](https://jakubponulak.github.io/DataStructures/ct_doc)
 Yash | [TPT](https://yashshah138.github.io/Data_Structures1/study) |  | 
-Chris |  |  | 
-Somaditya |  |  | 
+Chris | [TPT](https://chom642.github.io/Data_Structures/) |  | 
+Somaditya |[TPT](https://somaditya1.github.io/Data-Structures-1-Soma/)  |  | [Create Task](https://github.com/aaditgupta21/silverscreen/wiki/Create-Task-Final-Week-10)-
