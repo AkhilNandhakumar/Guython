@@ -15,7 +15,7 @@ Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=Chom642) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=YashShah138) 
 GitHub profile: | [Link](https://github.com/hamzahakak) | [Link](https://github.com/Chom642) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/SreejaVad) | [Link](https://github.com/YashShah138) 
 
-### Project Owner: John Mortensen 
+### Project Owner: John Mortensen - Weekly Meetings on Thursday
 Contact Information: [GitHub Profile](https://github.com/jm1021) | Email: jmortensen@powayusd.com
 
 ## [GitHub Repository](https://github.com/AkhilNandhakumar/Guython) 
