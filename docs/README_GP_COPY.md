@@ -46,8 +46,8 @@ Somaditya |[TPT](https://somaditya1.github.io/Data-Structures-1-Soma/)  |  | [Cr
 
 **Team:**
 - [Initial Requirements & owner contact info,]()
-- tangible plans:
-  - [Github Pages plan](https://docs.google.com/drawings/d/1mogokqAFAM5HKk9fLhzz1qdr9THwx2xbRpUxEg_czEs/edit?usp=sharing)
+- Tangible Plans:
+  - [Github Pages flowchart](https://docs.google.com/drawings/d/1mogokqAFAM5HKk9fLhzz1qdr9THwx2xbRpUxEg_czEs/edit?usp=sharing)
   - [Calendar Notetaker plan](https://docs.google.com/drawings/d/1zjt5Qdw6l88m8sk59pMLM-W7xGrRt5vsgfnX6R5dAaE/edit?usp=sharing)
   - [Overall Planning](https://github.com/AkhilNandhakumar/Guython#project-plans)
 - Scrum Board:
