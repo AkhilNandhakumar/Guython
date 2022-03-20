@@ -14,7 +14,7 @@ GitHub Issues: | [Link](https://github.com/JakubPonulak/5_hackers/issues/assigne
 Scrum Board: | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3Ahamzahakak)| [Link](https://github.com/AkhilNandhakumar/Guython/projects/1?card_filter_query=assignee%3Achom642) | [Link](https://github.com/AkhilNandhakumar/Guython/projects/1?card_filter_query=assignee%3AJakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/projects/1?card_filter_query=assignee%3ASreejaVad) | [Link](https://github.com/AkhilNandhakumar/Guython/projects/1?card_filter_query=assignee%3Ayashshah138) 
 GitHub commits: | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=hamzahakak) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=Chom642) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=JakubPonulak) | [Link](https://github.com/JakubPonulak/5_hackers/commits?author=SreejaVad) | [Link](https://github.com/AkhilNandhakumar/Guython/commits?author=YashShah138) 
 GitHub profile: | [Link](https://github.com/AkhilNandhakumar) | [Link](https://github.com/Chom642) | [Link](https://github.com/JakubPonulak) | [Link](https://github.com/somaditya1) | [Link](https://github.com/YashShah138) 
-GitHub pages: | [Link]() | [Link]() | [Link]() | [Link]() | [Link]() 
+GitHub pages: | [Link]() | [Link]() | [Link](https://jakubponulak.github.io/DataStructures/) | [Link]() | [Link]() 
 
 ### Project Owner: John Mortensen - Weekly Meetings on Thursday
 Contact Information: [GitHub Profile](https://github.com/jm1021) | Email: jmortensen@powayusd.com
