@@ -12,7 +12,7 @@
 </table>
 <hr>
 
-# Tech Talk 2 - Console Programming Part A
+# Tech Talk 2 - Python Classes
 
 ## Learning: Presentation, Organization, and Management
 As development continues, we need to consider cleaning up our repository, runtime, and deployment on Replit.  Here are considerations required before turning in your next assignment.
