@@ -1,0 +1,33 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "CSS" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here ->
+    <style>
+     .t1 {
+         margin-left: 10%;
+         margin-right: 10%;
+     }
+    </style>
+    <div class="titleOfHomePage">
+        <p>Cascading Style Sheets</p>
+    </div>
+
+
+    <div style="margin-left: 100px; margin-right: 100px" class="h2">
+        <p>Also known as CSS, this is a style sheet language used to modify the frontend of a page</p>
+    </div>
+
+    <div class="t1">
+        <p>CSS is one of the most important aspects of the World Wide Web, along with HTML and JavaScript. CSS focuses on the presentation of a webpage, including things like colors, fonts, and layout. CSS also allows styling and layout to be applied across multiple pages.</p>
+    </div>
+
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}

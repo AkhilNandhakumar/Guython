@@ -10,12 +10,12 @@ from image import image_data
 from pathlib import Path
 from cruddy.app_crud import app_crud
 from cruddy.app_crud_api import app_crud_api
-from class_topics import app_classtopics
+from topics import app_topics
 
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
-app.register_blueprint(app_classtopics)
+app.register_blueprint(app_topics)
 
 # create a Flask instance
 # app = Flask(__name__)

@@ -4,7 +4,7 @@
         cursor: pointer;
     }
     pList {
-        font-family: Helvetica;
+        font-family: "Trebuchet MS";
         padding-top: 10px;
         font-size: 22px;
         margin: -2.8% 0% -4% -5%;
@@ -40,21 +40,21 @@
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-hazard">
-    <a style="font-family: Impact; font-size: 38px; color: white" class="navbar-brand">Guython Tutoring</a>
+    <a style="font-family: 'Andale Mono'; font-size: 38px; color: white" class="navbar-brand">Guython Tutoring</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div style="font-family: Helvetica" class="navbar-nav">
+        <div style="font-family: 'Trebuchet MS'" class="navbar-nav">
             <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
             <a class="nav-link" style="padding-top: 10px; font-size: 22px" href="/">Home</a>
             <!-- stub is shown using the name of the route -->
         </div>
-        <div style="font-family: Helvetica" class="navbar-nav">
-            <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-            <a class="nav-link" style="padding-top: 10px; font-size: 22px; color: white; " href="/forums">Forums</a>
-            <!-- stub is shown using the name of the route -->
-        </div>
+{#        <div style="font-family: Gill Sans" class="navbar-nav">#}
+{#            <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->#}
+{#            <a class="nav-link" style="padding-top: 10px; font-size: 22px; color: white; " href="/forums">Forums</a>#}
+{#            <!-- stub is shown using the name of the route -->#}
+{#        </div>#}
         <div class="dropdown">
             <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Login
@@ -65,34 +65,28 @@
             </div>
         </div>
 
+{#        <div class="dropdown">#}
+{#            <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                About Us#}
+{#            </pList>#}
+{#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
+{#                <a class="dropdown-item" href="/hamza">Hamza</a>#}
+{#                <a class="dropdown-item" href="/jakub">Jakub</a>#}
+{#                <a class="dropdown-item" href="/kevin">Kevin</a>#}
+{#                <a class="dropdown-item" href="/sreeja">Sreeja</a>#}
+{#                <a class="dropdown-item" href="/tristan">Tristan</a>#}
+{#            </div>#}
+{#        </div>#}
         <div class="dropdown">
             <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                About Us
+                Topics
             </pList>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href="/hamza">Hamza</a>
-                <a class="dropdown-item" href="/jakub">Jakub</a>
-                <a class="dropdown-item" href="/kevin">Kevin</a>
-                <a class="dropdown-item" href="/sreeja">Sreeja</a>
-                <a class="dropdown-item" href="/tristan">Tristan</a>
+                <a class="dropdown-item" href="/topics/scss">CSS</a>
             </div>
         </div>
         <div class="dropdown">
-            <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Topics / Classes
-            </pList>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href="/class_topics/math">Math</a>
-                <a class="dropdown-item" href="/class_topics/history">US History</a>
-                <a class="dropdown-item" href="/class_topics/sci">Science</a>
-                <a class="dropdown-item" href="/class_topics/lit">Literature</a>
-                <a class="dropdown-item" href="/class_topics/periodictable">Periodic Table</a>
-                <a class="dropdown-item" href="/chem">AP Chemistry</a>
-                <a class="dropdown-item" href="/physics">Physics</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <pList style="font-family: Helvetica;" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <pList style="font-family: 'Trebuchet MS';" class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Database
             </pList>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
