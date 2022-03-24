@@ -1,9 +1,7 @@
 # import "packages" from flask
 import requests, json
 from __init__ import app
-
 from tkinter import *
-
 from flask import Flask, request, Blueprint, render_template
 # from flask_socketio import SocketIO
 from image import image_data

@@ -11,8 +11,11 @@ app_topics = Blueprint('topics', __name__,
 def scss():
     return render_template("topics/scss.html")
 
-
 @app_topics.route('/javascript/')
 def javascript():
     return render_template("topics/javascript.html")
+
+@app_topics.route('/html/')
+def html():
+    return render_template("topics/html.html")
 
