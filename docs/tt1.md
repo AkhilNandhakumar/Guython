@@ -71,7 +71,8 @@ There is also a method called get() on the Dictionary(InfoDb[0]) that will give 
 x = InfoDb[0].get("Owns_Cars")[1]
 
 Here is a function designed to print content from InfoDB
-```python
+```
+python
 # given an index this will print InfoDb content
 def print_data(n):
     print(InfoDb[n]["FirstName"], InfoDb[n]["LastName"])  # using comma puts space between values

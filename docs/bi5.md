@@ -28,7 +28,7 @@
 [Back to Top](#table-of-contents)
 
 ### Key Highlights and questions from College Board Videos
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/drones.jpeg" height="400">
+![Highlights](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/drones.jpeg)
 
 1. UAVs/Drones are used in search & rescue, aerial photography, and for hobbies.  However, there are many unintended usages. Also, there are many military usages.  What do people think about drones?
 1. Dopamine plays a role in how we feel pleasure.  Video games and Social media are shown to impact people chemically.  However, statistically some people's computer time may be greater than their sleep time.   There are positives on games and social media.  Name some?  Here is something to think about and is related to the CB topic...
@@ -37,7 +37,7 @@
 
 1. Automated telephone trees were designed to save employers money, but also reduce hold time for customers.  Innovations in phone trees, voice recognition, or keypads often enables customers to find answers quickly.  What are innovation you would like to see in phone tree?  Will this phone tree transfer you to relevant department during office hours?  Will it always enable you the opportunity for human response?
 
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/flowchart.png" height="400">
+![flowchart](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/flowchart.png)
 
 ### GitHub pages action
 1. Come up with three of your own Beneficial and corresponding Harmful Effects of Computing
@@ -59,7 +59,7 @@
 
 
 ### At the start of pandemic 90,000 school children in New Jersey did not have access to computers capable of distance learning.
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/digitaldivide.jpeg" height="400">
+![comp](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/digitaldivide.jpeg)
 
 
 ### In education equity requires school to provide materials like Computers or Chrome books.  Here is some counter thinking.
@@ -71,7 +71,7 @@
 * How does someone empower themself in a digital world?
 * How does someone that is empowered help someone that is not empowered?  Describe something you could do at Del Norte HS.
 * Is paper or red tape blocking digital empowerment?  Are there such barriers at Del Norte?  Elsewhere?
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/digitaldivide2.png" height="400">
+![Empower](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/digitaldivide2.png)
 
 # Big Idea 5.3
 [Back to Top](#table-of-contents)
@@ -81,7 +81,7 @@ Earlier we talked about beneficial and harmful effects of computing.  Such conve
 
 As programmers, you now have the possibility of creating algorithms.  It has been said, "Humans are error-prone and biased".  So, does that mean algorithms and the computers they run on are better?
 
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/computerbias.webp" height="400">
+![algorithm](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/computerbias.webp)
 
 
 ### Intentional or Purposeful bias
@@ -105,7 +105,7 @@ As programmers, you now have the possibility of creating algorithms.  It has bee
 ## Crowdsourcing
 The more you crowdsource, the more you reach beyond your own community, the more you will reduce Computer Bias.  Crowdsourcing provides the ability to obtain shared information, share information, and participate in distributed computing.
 
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/crowdsourcing.jpeg" height="400">
+![crowd](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/crowdsourcing.jpeg)
 
 
 ### Evidence of Crowdsourcing
@@ -132,7 +132,7 @@ In my most recent years in industry, there were many Lawyers making a profession
 
 Qualcomm makes its **money on patents**, if you use GPL software you could be voiding your rights to charge for software and patents.  **Open Source** by nature, specifically GPL, says any derivative work is free and code should be shared.   Qualcomm wants all derivative work to **require a royalty payment** payment, also anyone who uses the idea/patent pays royalty.
 
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/blackduck.png" height="400">
+![cost](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/blackduck.png)
 
 From synopsis.com, "Black Duck® software composition analysis (SCA) helps teams manage the security, quality, and license compliance risks that come from the use of open source and third-party code in applications and containers."  Qualcomm has had 20 technical jobs and 3 lawyers analyzing all the code produced, analyzing code for Open Source inclusion, and analyzing impact of such licenses to its ability to charge royalties for the use of their Patents.  
 
