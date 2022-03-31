@@ -55,6 +55,7 @@ Somaditya |[TPT](https://somaditya1.github.io/Data-Structures-1-Soma/)  |  | [Cr
 <img src="https://github.com/AkhilNandhakumar/Guython/blob/main/static/scrumboardW1.png">
 
 **Individual:**
+
 Team Member | GitHub Page for TPT  | GitHub Page for TT/Data Structures Code Assignments 
 | --- | --- | --- 
 Akhil | [TPT with Actions](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tpt) | [Page with Link to Code Snippet and Runtime](https://akhilnandhakumar.github.io/Akhil-Data-Structures/tt)
