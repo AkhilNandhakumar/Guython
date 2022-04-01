@@ -1,3 +1,5 @@
+{% include style.html %}
+
 {% include navigation.html %}
 
 # Tech Talks - Trimester 3
