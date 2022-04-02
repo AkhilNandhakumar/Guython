@@ -1,5 +1,3 @@
-{% include style.html %}
-
 {% include navigation.html %}
 
 # Test Prep Tuesdays - Big Ideas
