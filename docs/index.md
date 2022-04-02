@@ -1,5 +1,5 @@
 <head>
-  <link href="https://s9.limitedrun.com/images/1459713/cartoon.gif?type=image/gif" rel="shortcut icon" type="image/gif">
+  <link href="https://cdn.ccdc.cam.ac.uk/content/images/products/Product-Python.png?type=image/png" rel="shortcut icon" type="image/gif">
 </head>
 
 {% include navigation.html %}
