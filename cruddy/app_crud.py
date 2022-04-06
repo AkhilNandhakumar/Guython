@@ -1,7 +1,8 @@
 """control dependencies to support CRUD app routes and APIs"""
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 # from crud.model import users
-from flask_login import login_required, login_manager
+from flask_login import login_required
+from __init__ import login_manager
 from cruddy.sql import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
@@ -17,6 +18,8 @@ app_crud = Blueprint('crud', __name__,
 """
 
 # Default URL
+
+
 @app_crud.route('/')
 def crud():
     """obtains all Users from table and loads Admin Form"""

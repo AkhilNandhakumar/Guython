@@ -1,11 +1,9 @@
-<!-- Extending the predefined project layout -->
+<!DOCTYPE html>
+
 {% extends "layouts/base.html" %}
 
-<!- This variable sets name of browser tab  -->
-{% set project = "Login" %}
+{% block content %}
 
-<!- This is a replacement block for Body in base.html -->
-{% block body %}
     <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom border-primary text-dark">
             <span class="fs-4">SQL CRUD Login Page</span>
@@ -30,4 +28,6 @@
         </div>
 
     </div>
+
+
 {% endblock %}
