@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_login import LoginManager
+
 
 """This needs to be isolated to support blueprints and models"""
 app = Flask(__name__)
