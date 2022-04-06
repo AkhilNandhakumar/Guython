@@ -13,3 +13,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = dbURI
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 db = SQLAlchemy(app)
 Migrate(app, db)
+
+login_manager = LoginManager()
+login_manager.init_app(app)
