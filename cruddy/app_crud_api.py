@@ -9,7 +9,7 @@ from cruddy.sql import *
 
 app_crud_api = Blueprint('crud_api', __name__,
                          url_prefix='/crud_api',
-                         template_folder='templates/crud/',
+                         template_folder='templates/cruddy/',
                          static_folder='static',
                          static_url_path='static')
 
