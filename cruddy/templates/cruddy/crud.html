@@ -12,10 +12,23 @@
 
 <!-- CONTENT (in <body>), content for this page -->
 {% block content %}
+    <style>
+        body {
+            text-align:center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #22bf4c , #000000, #22bf4c, #000000);
+            background-size: 800% 800%;
+            animation: gradient 30s ease infinite;
+        }
+    </style>
     <div class="container py-4 text-dark bg-dark">
         <header class="pb-3 mb-4 border-bottom">
             <div class="d-flex align-items-center text-light text-decoration-none">
                 <span class="fs-4">CRUD Database Operation</span>
+                <form style="margin-left: 15px" action={{url_for('crud.crud_logout')}}>
+                    <input type="submit" value="Log Out" />
+                </form>
+
             </div>
         </header>
 
@@ -185,4 +198,5 @@
         </div>
 
     </div>
+    <br>
 {% endblock %}

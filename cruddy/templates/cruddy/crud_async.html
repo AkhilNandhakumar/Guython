@@ -3,6 +3,8 @@
 <!-- EXTEND (layout.html), this is a template for all rendered pages in the project -->
 {% extends "layout.html" %}
 
+{% set project = "Asynchronous CRUD" %}
+
 <!-- CONTENT (in <head>), content for this page -->
 {% block meta %}
     <title>Async CRUD page</title>
@@ -218,6 +220,15 @@
 
 <!-- CONTENT (in <body>), content for this page -->
 {% block content %}
+    <style>
+        body {
+            text-align:center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #000000, #22bf4c , #000000, #22bf4c, #000000);
+            background-size: 800% 800%;
+            animation: gradient 30s ease infinite;
+        }
+    </style>
     <div class="container py-4 text-light bg-dark">
         <header class="pb-3 mb-4 border-bottom">
             <div class="d-flex align-items-center text-light text-decoration-none">
