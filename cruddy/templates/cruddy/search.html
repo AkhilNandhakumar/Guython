@@ -24,6 +24,9 @@ inspiration from https://www.youtube.com/watch?v=QKcVjdLEX_s
             <a href="#" class="d-flex align-items-center text-light text-decoration-none">
                 <span class="fs-4">Search Database</span>
             </a>
+            <form style="margin-left: 15px" action={{url_for('crud.crud_logout')}}>
+                <input type="submit" value="Log Out" />
+            </form>
         </header>
         <!-- search box -->
         <div class="container">
