@@ -2,26 +2,28 @@
 
 {% extends "layout.html" %}
 
+{% set project = "Authorize" %}
+
 {% block content %}
     <style>
         body {
             text-align:center;
             color: #ffffff;
-            background: linear-gradient(135deg, #000000, #22bf4c , #000000, #22bf4c, #000000);
+            background: linear-gradient(135deg, #22bf4c , #000000, #22bf4c, #000000);
             background-size: 800% 800%;
             animation: gradient 30s ease infinite;
         }
     </style>
     <div class="container py-4">
-        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <header class="pb-3 mb-4 border-bottom border-white text-dark">
             <span style="color: white;" class="fs-4">SQL CRUD Sign Up Page</span>
         </header>
     </div>
 
-    <div class="container py-4 text-light bg-success">
+    <div align="center" style="width: 25%" class="container py-4 text-light bg-clear">
 
-        <div class="container bg-secondary py-4">
-            <div class="p-5 mb-4 bg-light text-dark rounded-3">
+        <div class="container bg-clear py-2">
+            <div class="p-5 mb-4 bg-dark text-light rounded-3">
                 <form method="POST" ID="authUser" action={{url_for('crud.crud_authorize')}} >
                     <table>
                         <tr><th><label for="user_name">Username</label></th></tr>

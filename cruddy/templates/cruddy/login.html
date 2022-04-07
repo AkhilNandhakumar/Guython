@@ -2,6 +2,13 @@
 
 {% extends "layout.html" %}
 
+{% set project = "Login" %}
+
+{% block meta %}
+<title>CRUD Login</title>
+{% endblock %}
+
+
 {% block content %}
     <style>
         body {
@@ -18,10 +25,10 @@
         </header>
     </div>
 
-    <div class="container py-4 text-dark bg-clear">
+    <div align="center" style="width: 25%" class="container py-4 text-dark bg-clear">
 
         <div class="container bg-clear py-2">
-            <div class="p-5 mb-4 bg-light text-dark rounded-3">
+            <div class="p-5 mb-4 bg-dark text-light rounded-3">
                 <form method="POST" ID="login" action={{url_for('crud.crud_login')}}>
                     <table>
                         <tr><th><label for="email">Email</label></th></tr>
