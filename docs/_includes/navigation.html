@@ -1,104 +1,14 @@
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-}
-li {
-  float: left;
-}
-li a {
-  display: block;
-  width: 80px;
-a {
-  display: block;
-  padding: 8px;
-  background-color: #000000;
-}
-.dropbtn {
-  background-color: #000000;
-  color: #00ff00;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #383838}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #383838;
-
-}
-
-</style>
-
 <head>
   <link type="text/css" rel="stylesheet" href="gh_style.css" />
   <link rel="shortcut icon" href="{{ "/static/assets/favicon1.ico" | prepend: site.baseurl }}" type="image/x-icon">
   <link rel="icon" href="{{ "/static/assets/favicon1.ico" | prepend: site.baseurl }}" type="image/x-icon">
 </head>
-<!-- <table>
+<table>
       <tr>
         <td><a href=".">Home</a></td>
         <td><a href="tt">Tech Talks</a></td>
         <td><a href="tpt">Test Prep Tuesdays</a></td>
         <td><a href="other">Other</a></td>
-          <select>
-            <option href="https://nighthawktutoring.com/">Home</option>
-            <option href="https://nighthawktutoring.com/">HTML</option>
-            <option href="https://nighthawktutoring.com/">CSS</option>
-            <option href="https://nighthawktutoring.com/">JavaScript</option>
-            <option href="https://nighthawktutoring.com/">CRUD Database</option>
-            <option href="https://nighthawktutoring.com/">Database Search</option>
-      </select>
+        <td><a href="mainsite">Main Website</a></td>
     </tr>
-</table>   -->
-<ul> 
-  <li><a href=".">Home</a></li>
-  <li><a href="tt">Tech Talks</a></li>
-  <li><a href="tpt">Test Prep Tuesdays</a></li>
-  <li><a href="other">Other</a></li>
-</ul>
-<div class="dropdown">
-  <button class="dropbtn">Main Website</button>
-  <div class="dropdown-content">
-    <a href="https://nighthawktutoring.com/">Home</a>
-    <a href="https://nighthawktutoring.com/">HTML</a>
-    <a href="https://nighthawktutoring.com/">CSS</a>
-  </div>
-</div>
-
-
+</table>   
