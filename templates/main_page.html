@@ -157,6 +157,7 @@
             if (DebugMode === false) {
                 for (x = 0; x < list.length; x++) { // this section goes through the items in my array and checks if the user's input is the same as any object name
                     if (list[x].name.toUpperCase().includes(filter)) { //using include function allows users to only input part of the page name instead of the whole thing
+                        //in this case, the variable "list" is set as "websitePages"
                         let link = list[x].path;
                         let title = list[x].name;
                         let output = `<a class='intlink' href='${link}'>${title}</a>` + ' | '; //this allows multiple links to be included in the result
