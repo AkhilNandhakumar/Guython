@@ -150,7 +150,7 @@
                 {"name":"Google Translate", "path":"/google_translate/"}
             ] ;
 
-        function SearchMain(list = websitePages, textcolor = 'white',nullcolor = 'red', SearchID = 'SearchInput', ResultID = 'SearchResult', DebugMode = false, NoRText = 'No Results') {
+        function SearchMain(list = websitePages, textcolor = 'white',nullcolor = 'red', SearchID = 'SearchInput', ResultID = 'SearchResult', DebugMode = true, NoRText = 'No Results') {
             let input = document.getElementById(SearchID);
             let filter = input.value.toUpperCase(); // the user's input is changed to uppercase so that the search is not case-sensitive
             document.getElementById(ResultID).innerHTML = '| ' // this line makes the output blank whenever the function is called so that previous information is removed
