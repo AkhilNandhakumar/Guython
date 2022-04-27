@@ -1,6 +1,6 @@
 {% include navigation.html %}
 
-# Nighthawk Tutoring Pages
+# Nighthawk Tutoring Main Website
 
 <table>
     <tr>
