@@ -1,6 +1,6 @@
 {% include navigation.html %}
 
-# Nighthawk Tutoring Pages
+# Nighthawk Tutoring Main Website
 
 <table>
     <tr>
@@ -14,4 +14,4 @@
 </table>
 <hr>
 
-{% include_relative README_GP_COPY.md %}
+<p style="text-align: center">Nighthawk Tutoring is a website meant to aid CSP students in studying for the AP Exam and learning valuable CS skills. Our main features include a GitHub pages website with well organized Tech Talk and Test Prep Tuesday lectures from trimester 3, a planning calendar for students to organize their workload throughout the week, and mini quizzes where students can test their knowledge. Our website uses a GPL license which enables users to access our content for free, but stops other programmers from reusing our project for profit.</p>
