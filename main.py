@@ -1,5 +1,5 @@
 # import "packages" from flask
-import requests, json
+import requests
 from __init__ import app
 from tkinter import *
 from flask import Flask, request, Blueprint, render_template
@@ -9,11 +9,14 @@ from pathlib import Path
 from cruddy.app_crud import app_crud
 from cruddy.app_crud_api import app_crud_api
 from topics import app_topics
+from student_calendar import app_nhcalendar
 
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 app.register_blueprint(app_topics)
+app.register_blueprint(app_nhcalendar)
+
 
 # create a Flask instance
 # app = Flask(__name__)

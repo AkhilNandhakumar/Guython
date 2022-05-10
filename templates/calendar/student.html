@@ -1,0 +1,40 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Calendar" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here ->
+    <style>
+        .t1 {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    </style>
+
+    <img style="width: 270px;" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png">
+
+    <div class="titleOfHomePage">
+        <p>HyperText Markup Language</p>
+    </div>
+    <hr color="white" width="50%">
+    <div style="margin-left: 20%; margin-right: 20%" class="h2">
+        <p>Also known as HTML, this is the programming language widely used to display information,
+            such as images, text, and more on website pages.</p>
+    </div>
+    {#    <hr color="white" width="80%">#}
+    <div class="t1">
+        <p>HTML is the basis of frontend web programming. It holds all of the raw visuals seen on a website,
+            without formatting. CSS complements HTML by presenting it in a pleasing and organized manner.
+            An analogy to help understand would be like Google Slides. HTML would compare with text and
+            images on the slides, and CSS would compare with animations, transitions, font color,
+            effects, sizing, organization, etc.</p>
+    </div>
+
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
