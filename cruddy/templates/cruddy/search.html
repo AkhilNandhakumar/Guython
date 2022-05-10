@@ -9,12 +9,24 @@ inspiration from https://www.youtube.com/watch?v=QKcVjdLEX_s
 {% endblock %}
 
 {% block content %}
+    <style>
+        body {
+            text-align:center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #000000, #22bf4c , #000000, #22bf4c, #000000);
+            background-size: 800% 800%;
+            animation: gradient 30s ease infinite;
+        }
+    </style>
     <div class="container py-4 bg-dark">
         <!-- heading -->
         <header class="pb-3 mb-4 border-bottom">
             <a href="#" class="d-flex align-items-center text-light text-decoration-none">
                 <span class="fs-4">Search Database</span>
             </a>
+            <form style="margin-left: 15px" action={{url_for('crud.crud_logout')}}>
+                <input type="submit" value="Log Out" />
+            </form>
         </header>
         <!-- search box -->
         <div class="container">
