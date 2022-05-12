@@ -14,18 +14,20 @@ from flask_login import UserMixin
 # -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
 class Users(UserMixin, db.Model):
     # define the Users schema
-    userID = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), unique=False, nullable=False)
-    email = db.Column(db.String(255), unique=True, nullable=False)
-    password = db.Column(db.String(255), unique=False, nullable=False)
-    phone = db.Column(db.String(255), unique=False, nullable=False)
+    name = db.Column(db.String(255), unique=False, nullable=True)
+    event = db.Column(db.String(255), unique=False, nullable=False)
+    day = db.Column(db.Integer, unique=False, nullable=False)
+    month = db.Column(db.Integer, unique=False, nullable=False)
+    year = db.Column(db.Integer, unique=False, nullable=False)
 
     # constructor of a User object, initializes of instance variables within object
-    def __init__(self, name, email, password, phone):
+
+    def __init__(self, name, event, day, month, year):
         self.name = name
-        self.email = email
-        self.set_password(password)
-        self.phone = phone
+        self.event = event
+        self.day = day
+        self.month = month
+        self.year = year
 
     # CRUD create/add a new record to the table
     # returns self or None on error
@@ -43,24 +45,28 @@ class Users(UserMixin, db.Model):
     # returns dictionary
     def read(self):
         return {
-            "userID": self.userID,
             "name": self.name,
-            "email": self.email,
-            "password": self.password,
-            "phone": self.phone,
+            "event": self.event,
+            "day": self.day,
+            "month": self.month,
+            "year": self.year,
             "query": "by_alc"  # This is for fun, a little watermark
         }
 
     # CRUD update: updates users name, password, phone
     # returns self
-    def update(self, name, password="", phone=""):
+    def update(self, name, event="", day="", month="", year=""):
         """only updates values with length"""
         if len(name) > 0:
             self.name = name
-        if len(password) > 0:
-            self.set_password(password)
-        if len(phone) > 0:
-            self.phone = phone
+        if len(event) > 0:
+            self.event = event
+        if day < 0:
+            self.day = 1
+        if month < 0:
+            self.month = 1
+        if year < 0:
+            self.year = 2022
         db.session.commit()
         return self
 
@@ -71,20 +77,6 @@ class Users(UserMixin, db.Model):
         db.session.commit()
         return None
 
-    # set password method is used to create encrypted password
-    def set_password(self, password):
-        """Create hashed password."""
-        self.password = generate_password_hash(password, method='sha256')
-
-    # check password to check versus encrypted password
-    def is_password_match(self, password):
-        """Check hashed password."""
-        result = check_password_hash(self.password, password)
-        return result
-
-    # required for login_user, overrides id (login_user default) to implemented userID
-    def get_id(self):
-        return self.userID
 
 
 """Database Creation and Testing section"""
