@@ -55,14 +55,10 @@
 {#            <a class="nav-link" style="padding-top: 10px; font-size: 22px; color: white; " href="/forums">Forums</a>#}
 {#            <!-- stub is shown using the name of the route -->#}
 {#        </div>#}
-        <div class="dropdown">
-            <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Calendar
-            </pList>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" href="/calendar/student">Student View</a>
-                <a class="dropdown-item" href="/calendar/admin">Admin View</a>
-            </div>
+        <div style="font-family: 'Trebuchet MS'" class="navbar-nav">
+            <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
+            <a class="nav-link" style="padding-top: 10px; font-size: 22px" href="/calendar/student">Calendar</a>
+            <!-- stub is shown using the name of the route -->
         </div>
 
 {#        <div class="dropdown">#}

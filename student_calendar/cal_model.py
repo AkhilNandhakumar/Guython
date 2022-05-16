@@ -12,16 +12,15 @@ from flask_login import UserMixin
 # -- a.) db.Model is like an inner layer of the onion in ORM
 # -- b.) Users represents data we want to store, something that is built on db.Model
 # -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
-class Users(UserMixin, db.Model):
+class Calendar(UserMixin, db.Model):
     # define the Users schema
-    name = db.Column(db.String(255), unique=False, nullable=True)
-    event = db.Column(db.String(255), unique=False, nullable=False)
+    name = db.Column(db.String(255), unique=True, nullable=True)
+    event = db.Column(db.String(255), unique=False, nullable=False, primary_key=True)
     day = db.Column(db.Integer, unique=False, nullable=False)
     month = db.Column(db.Integer, unique=False, nullable=False)
     year = db.Column(db.Integer, unique=False, nullable=False)
 
     # constructor of a User object, initializes of instance variables within object
-
     def __init__(self, name, event, day, month, year):
         self.name = name
         self.event = event
@@ -50,22 +49,23 @@ class Users(UserMixin, db.Model):
             "day": self.day,
             "month": self.month,
             "year": self.year,
-            "query": "by_alc"  # This is for fun, a little watermark
         }
 
     # CRUD update: updates users name, password, phone
     # returns self
-    def update(self, name, event="", day="", month="", year=""):
+    def update(self, name, event, day, month, year):
         """only updates values with length"""
         if len(name) > 0:
             self.name = name
         if len(event) > 0:
             self.event = event
-        if day < 0:
-            self.day = 1
-        if month < 0:
-            self.month = 1
-        if year < 0:
+        if int(day) > 0:
+            self.day = day
+        if int(month) > 0:
+            self.month = month
+        if int(year) > 2021:
+            self.year = year
+        else:
             self.year = 2022
         db.session.commit()
         return self
@@ -76,46 +76,3 @@ class Users(UserMixin, db.Model):
         db.session.delete(self)
         db.session.commit()
         return None
-
-
-
-"""Database Creation and Testing section"""
-
-
-def model_tester():
-    print("--------------------------")
-    print("Seed Data for Table: users")
-    print("--------------------------")
-    db.create_all()
-    """Tester data for table"""
-    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='123toby', phone="1111111111")
-    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='123niko', phone="1111112222")
-    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='123lex', phone="1111113333")
-    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='123whit', phone="1111114444")
-    u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956")
-    u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956")
-    # U7 intended to fail as duplicate key
-    u7 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8586791294")
-    table = [u1, u2, u3, u4, u5, u6, u7]
-    for row in table:
-        try:
-            db.session.add(row)
-            db.session.commit()
-        except IntegrityError:
-            db.session.remove()
-            print(f"Records exist, duplicate email, or error: {row.email}")
-
-
-def model_printer():
-    print("------------")
-    print("Table: users with SQL query")
-    print("------------")
-    result = db.session.execute('select * from users')
-    print(result.keys())
-    for row in result:
-        print(row)
-
-
-if __name__ == "__main__":
-    model_tester()  # builds model of Users
-    model_printer()
