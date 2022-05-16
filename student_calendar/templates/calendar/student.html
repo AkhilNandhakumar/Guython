@@ -13,7 +13,7 @@
 
         /* Month header */
         .month {
-            padding: 70px 100px;
+            padding: 50px 50px;
             margin-left: 10%;
             width: 80%;
             height: 50px;
@@ -44,6 +44,10 @@
             float: right;
             padding-top: 10px;
         }
+        button {
+            background: none;
+            border: none;
+        }
 
         /* Weekdays (Mon-Sun) */
         .weekdays {
@@ -69,11 +73,11 @@
             margin-left: 10%;
         }
 
-        .days li {
+        .days button {
             list-style-type: none;
             display: inline-block;
             width: 13.6%;
-            height: 25px;
+            height: 45px;
             text-align: center;
             margin-bottom: 5px;
             font-size:12px;
@@ -81,10 +85,10 @@
         }
 
         /* Highlight the "current" day */
-        .days li .active {
+        .days button .active {
             padding: 5px;
-            background: #1abc9c;
-            color: white !important
+            background: white;
+            color: black !important
         }
 
     </style>
@@ -95,57 +99,49 @@
         <ul>
             <button onclick="button_left()" class="prev">&#10094;</button>
             <button onclick="button_right()" class="next">&#10095;</button>
-            <li><p id="month_name">May</p></li>
+            <li><p id="month_name">May - 2022</p></li>
         </ul>
     </div>
 
-    <ul class="weekdays">
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
-        <li>Su</li>
-    </ul>
-
     <ul class="days">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li>11</li>
-        <li>12</li>
-        <li>13</li>
-        <li>14</li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li>21</li>
-        <li>22</li>
-        <li>23</li>
-        <li>24</li>
-        <li>25</li>
-        <li>26</li>
-        <li>27</li>
-        <li>28</li>
-        <li>29</li>
-        <li>30</li>
-        <li>31</li>
-        <li> </li>
-        <li> </li>
-        <li> </li>
-        <li> </li>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>10</button>
+        <button>11</button>
+        <button>12</button>
+        <button><span class="active">13</span></button>
+        <button>14</button>
+        <button>15</button>
+        <button>16</button>
+        <button>17</button>
+        <button>18</button>
+        <button>19</button>
+        <button>20</button>
+        <button>21</button>
+        <button>22</button>
+        <button>23</button>
+        <button>24</button>
+        <button>25</button>
+        <button>26</button>
+        <button>27</button>
+        <button>28</button>
+        <button>29</button>
+        <button>30</button>
+        <button>31</button>
+        <button> </button>
+        <button> </button>
+        <button> </button>
+        <button> </button>
     </ul>
+    <br>
+    <a href="/calendar/admin">Admin Calendar</a>
     <script>
         let n = 4
         function button_left() {
@@ -167,43 +163,41 @@
         function month_changer(num) {
             if (
                 num === 0
-            ) document.getElementById("month_name").innerHTML = "January"
+            ) document.getElementById("month_name").innerHTML = "January - 2022"
             else if (
                 num === 1
-            ) document.getElementById("month_name").innerHTML = "February"
+            ) document.getElementById("month_name").innerHTML = "February - 2022"
             if (
                 num === 2
-            ) document.getElementById("month_name").innerHTML = "March"
+            ) document.getElementById("month_name").innerHTML = "March - 2022"
             if (
                 num === 3
-            ) document.getElementById("month_name").innerHTML = "April"
+            ) document.getElementById("month_name").innerHTML = "April - 2022"
             if (
                 num === 4
-            ) document.getElementById("month_name").innerHTML = "May"
+            ) document.getElementById("month_name").innerHTML = "May - 2022"
             if (
                 num === 5
-            ) document.getElementById("month_name").innerHTML = "June"
+            ) document.getElementById("month_name").innerHTML = "June - 2022"
             if (
                 num === 6
-            ) document.getElementById("month_name").innerHTML = "July"
+            ) document.getElementById("month_name").innerHTML = "July - 2022"
             if (
                 num === 7
-            ) document.getElementById("month_name").innerHTML = "August"
+            ) document.getElementById("month_name").innerHTML = "August - 2022"
             if (
                 num === 8
-            ) document.getElementById("month_name").innerHTML = "September"
+            ) document.getElementById("month_name").innerHTML = "September - 2022"
             if (
                 num === 9
-            ) document.getElementById("month_name").innerHTML = "October"
+            ) document.getElementById("month_name").innerHTML = "October - 2022"
             if (
                 num === 10
-            ) document.getElementById("month_name").innerHTML = "November"
+            ) document.getElementById("month_name").innerHTML = "November - 2022"
             if (
                 num === 11
-            ) document.getElementById("month_name").innerHTML = "December"
+            ) document.getElementById("month_name").innerHTML = "December - 2022"
 
         }
-
-
     </script>
 {% endblock %}
