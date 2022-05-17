@@ -58,7 +58,7 @@ class Calendar(UserMixin, db.Model):
             self.name = name
         if len(event) > 0:
             self.event = event
-        if 32 > day > 0:
+        if 32 > int(day) > 0:
             self.day = day
         else:
             self.day = 1

@@ -25,12 +25,13 @@ def admin():
 def create():
     """gets data from form and add it to Users table"""
     if request.form:
-        po = Users(
+        po = Calendar(
             request.form.get("name"),
             request.form.get("event"),
             request.form.get("day"),
             request.form.get("yearmonth")
         )
+        print(po)
         po.create()
     return redirect(url_for('calendar.admin'))
 
@@ -42,11 +43,9 @@ def read():
     table = []
     if request.form:
         eventid = request.form.get("eventid")
-        print(eventid)
         po = user_by_event(eventid)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
-            print(table)
     return render_template("admin.html", table=table)
 
 
@@ -72,7 +71,8 @@ def delete():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
         eventid = request.form.get("eventid")
-        po = user_by_id(eventid)
+        print(eventid)
+        po = user_by_event(eventid)
         if po is not None:
             po.delete()
     return redirect(url_for('calendar.admin'))
