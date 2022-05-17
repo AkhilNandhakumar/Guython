@@ -20,7 +20,7 @@ def users_all():
 # SQLAlchemy extract all users from database
 def users_all_alc():
     table = Calendar.query.all()
-    json_ready = [peep.read2() for peep in table]
+    json_ready = [peep.read() for peep in table]
     return json_ready
 
 

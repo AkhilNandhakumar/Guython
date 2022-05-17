@@ -22,7 +22,7 @@ def admin():
 
 
 @app_calendar.route('/create/', methods=["POST"])
-def create2():
+def create():
     """gets data from form and add it to Users table"""
     if request.form:
         po = Users(
@@ -31,26 +31,28 @@ def create2():
             request.form.get("day"),
             request.form.get("yearmonth")
         )
-        po.create2()
+        po.create()
     return redirect(url_for('calendar.admin'))
 
 
 # CRUD read
 @app_calendar.route('/read/', methods=["POST"])
-def read2():
+def read():
     """gets userid from form and obtains corresponding data from Users table"""
     table = []
     if request.form:
         eventid = request.form.get("eventid")
+        print(eventid)
         po = user_by_event(eventid)
         if po is not None:
-            table = [po.read2()]  # placed in list for easier/consistent use within HTML
+            table = [po.read()]  # placed in list for easier/consistent use within HTML
+            print(table)
     return render_template("admin.html", table=table)
 
 
 # CRUD update
 @app_calendar.route('/update/', methods=["POST"])
-def update2():
+def update():
     """gets userid and name from form and filters and then data in  Users table"""
     if request.form:
         eventid = request.form.get("eventid")
@@ -60,19 +62,19 @@ def update2():
         yearmonth = request.form.get("yearmonth")
         po = user_by_event(eventid)
         if po is not None:
-            po.update2(name, event, day, yearmonth)
+            po.update(name, event, day, yearmonth)
     return redirect(url_for('calendar.admin'))
 
 
 # CRUD delete
 @app_calendar.route('/delete/', methods=["POST"])
-def delete2():
+def delete():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
         eventid = request.form.get("eventid")
-        po = user_by_event(eventid)
+        po = user_by_id(eventid)
         if po is not None:
-            po.delete2()
+            po.delete()
     return redirect(url_for('calendar.admin'))
 
 

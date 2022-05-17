@@ -14,7 +14,7 @@ from flask_login import UserMixin
 # -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
 class Calendar(UserMixin, db.Model):
     # define the Users schema
-    eventID = db.Column(db.Integer, primary_key=True)
+    eventID = db.Column(db.Integer, primary_key=True, nullable=False)
     name = db.Column(db.String(255), unique=False, nullable=False)
     event = db.Column(db.String(255), unique=True, nullable=False)
     day = db.Column(db.Integer, unique=False, nullable=False)
@@ -29,7 +29,7 @@ class Calendar(UserMixin, db.Model):
 
     # CRUD create/add a new record to the table
     # returns self or None on error
-    def create2(self):
+    def create(self):
         try:
             # creates a person object from Users(db.Model) class, passes initializers
             db.session.add(self)  # add prepares to persist person object to Users table
@@ -41,7 +41,7 @@ class Calendar(UserMixin, db.Model):
 
     # CRUD read converts self to dictionary
     # returns dictionary
-    def read2(self):
+    def read(self):
         return {
             "eventID": self.eventID,
             "name": self.name,
@@ -52,7 +52,7 @@ class Calendar(UserMixin, db.Model):
 
     # CRUD update: updates users name, password, phone
     # returns self
-    def update2(self, name, event="", day="", yearmonth=""):
+    def update(self, name, event, day, yearmonth):
         """only updates values with length"""
         if len(name) > 0:
             self.name = name
@@ -69,7 +69,7 @@ class Calendar(UserMixin, db.Model):
 
     # CRUD delete: remove self
     # None
-    def delete2(self):
+    def delete(self):
         db.session.delete(self)
         db.session.commit()
         return None
