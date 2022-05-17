@@ -59,7 +59,7 @@ def user_by_id(userid):
     return Users.query.filter_by(userID=userid).first()
 
 
-def user_by_event_id(eventid):
+def user_by_event(eventid):
     return Calendar.query.filter_by(eventID=eventid).first()
 
 

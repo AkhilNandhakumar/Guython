@@ -12,7 +12,6 @@ app_calendar = Blueprint('calendar', __name__,
 
 
 @app_calendar.route('/')
-@app_calendar.route('/student/')
 def student():
     return render_template("student.html")
 
@@ -44,7 +43,7 @@ def read():
     table = []
     if request.form:
         eventid = request.form.get("eventID")
-        po = user_by_event_id(eventid)
+        po = user_by_event(eventid)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
     return render_template("admin.html", table=table)
@@ -60,7 +59,7 @@ def update():
         event = request.form.get("event")
         day = request.form.get("day")
         yearmonth = request.form.get("yearmonth")
-        po = user_by_event_id(eventid)
+        po = user_by_event(eventid)
         if po is not None:
             po.update(name, event, day, yearmonth)
     return redirect(url_for('calendar.admin'))
@@ -72,7 +71,7 @@ def delete():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
         eventid = request.form.get("eventid")
-        po = user_by_event_id(eventid)
+        po = user_by_event(eventid)
         if po is not None:
             po.delete()
     return redirect(url_for('calendar.admin'))

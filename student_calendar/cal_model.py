@@ -15,8 +15,8 @@ from flask_login import UserMixin
 class Calendar(UserMixin, db.Model):
     # define the Users schema
     eventID = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), unique=False, nullable=True)
-    event = db.Column(db.String(255), unique=False, nullable=False)
+    name = db.Column(db.String(255), unique=False, nullable=False)
+    event = db.Column(db.String(255), unique=True, nullable=False)
     day = db.Column(db.Integer, unique=False, nullable=False)
     yearmonth = db.Column(db.String(255), unique=False, nullable=False)
 
@@ -60,8 +60,10 @@ class Calendar(UserMixin, db.Model):
             self.event = event
         if int(day) > 0:
             self.day = day
+        else:
+            self.day = 1
         if len(yearmonth) > 0:
-            self.yearmonth = yearmonth
+            self.day = yearmonth
         db.session.commit()
         return self
 
