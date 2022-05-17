@@ -1,6 +1,7 @@
 from __init__ import login_manager, db
 from student_calendar.cal_model import Calendar
 from cruddy.model import Users
+from student_calendar.cal_model import Calendar
 from flask_login import current_user, login_user, logout_user
 
 
@@ -25,10 +26,10 @@ def users_all_alc():
 
 
 # Native SQL extract all users from database
-def users_all_sql():
-    table = db.session.execute('select * from calendar')
-    json_ready = sqlquery_2_list(table)
-    return json_ready
+# def users_all_sql():
+#     table = db.session.execute('select * from calendar')
+#     json_ready = sqlquery_2_list(table)
+#     return json_ready
 
 
 # ALGORITHM to convert the results of an SQL Query to a JSON ready format in Python
@@ -58,8 +59,8 @@ def user_by_id(userid):
     return Users.query.filter_by(userID=userid).first()
 
 
-def user_by_event(event):
-    return Calendar.query.filter_by(event=event).first()
+def user_by_event_id(eventid):
+    return Calendar.query.filter_by(eventID=eventid).first()
 
 
 # SQLAlchemy extract single user from database matching email

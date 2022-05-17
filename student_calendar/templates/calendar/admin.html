@@ -116,10 +116,10 @@
         <button>10</button>
         <button>11</button>
         <button>12</button>
-        <button><span class="active">13</span></button>
+        <button>13</button>
         <button>14</button>
         <button>15</button>
-        <button>16</button>
+        <button><span class="active">16</span></button>
         <button>17</button>
         <button>18</button>
         <button>19</button>
@@ -149,19 +149,17 @@
                     <tr>
                         <th><label for="name">Name</label></th>
                         <th><label for="event">Event</label></th>
-                        <th><label for="day">day</label></th>
+                        <th><label for="day">Day</label></th>
                         <th><label for="month">Month</label></th>
-                        <th><label for="year">Year</label></th>
-                        <th><label for="year">Create</label></th>
+                        <th><label for="create">Create</label></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td><input style='width: 100px' type="text" name="name" id="name" required></td>
-                        <td><input type="event" name="event" id="event" required></td>
-                        <td><input style='width: 40px' type="day" name="day" id="day" required></td>
-                        <td><input style='width: 40px' type="day" name="month" id="month" required></td>
-                        <td><input style='width: 80px' type="year" name="year" id="year" required></td>
+                        <td><input type="text" name="event" id="event" required></td>
+                        <td><input style='width: 40px' type="text" name="day" id="day" required></td>
+                        <td><input style='width: 175px' type="month" name="month" id="month" required></td>
                         <td><input type="submit" value="Create"></td>
                     </tr>
                     </tbody>
@@ -180,13 +178,13 @@
                     <h2>Read</h2>
                     <form method="POST" ID="read" action={{url_for('calendar.read')}} >
                         <table id="read_table">
-                            <tr><th><label for="read_event">Event</label></th></tr>
+                            <tr><th><label for="read_event">ID</label></th></tr>
                             <tr>
                                 <td>
                                     <select name="event" id="read_event">
                                         <optgroup label="event">
                                             {% for row in table %}
-                                                <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                                <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
@@ -205,13 +203,13 @@
                     <h2>Delete</h2>
                     <form method="POST" ID="read" action={{url_for('calendar.delete')}} >
                         <table id="read_table">
-                            <tr><th><label for="delete_event">Event</label></th></tr>
+                            <tr><th><label for="delete_event">ID</label></th></tr>
                             <tr>
                                 <td>
                                     <select name="event" id="delete_event">
                                         <optgroup label="event">
                                             {% for row in table %}
-                                                <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                                <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
@@ -224,32 +222,32 @@
             </div>
         </div>
     </div>
-    <div style="margin-left: 25%" class="col-md-6">
+    <div style="margin-left: 15%" class="col-md-8">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Update</h2>
             <form method="POST" ID="update" action={{url_for('calendar.update')}} >
                 <table id="update_table">
                     <tr>
-                        <th><label for="update_event">Event</label></th>
+                        <th><label for="update_id">ID</label></th>
                         <th><label for="update_name">Name</label></th>
+                        <th><label for="update_event">Event</label></th>
                         <th><label for="update_day">Day</label></th>
                         <th><label for="update_month">Month</label></th>
-                        <th><label for="update_year">Year</label></th>
                     </tr>
                     <tr>
                         <td>
-                            <select name="event" id="update_event">
-                                <optgroup label="event">
+                            <select name="event" id="update_id">
+                                <optgroup label="id">
                                     {% for row in table %}
-                                        <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                        <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                     {% endfor %}
                                 </optgroup>
                             </select>
                         </td>
                         <td><input style='width: 200px' type="text" name="name" id="update_name" required></td>
+                        <td><input style='width: 200px' type="text" name="event" id="update_event" required></td>
                         <td><input style='width: 40px' type="text" name="day" id="update_day" required></td>
-                        <td><input style='width: 40px' type="text" name="month" id="update_month" required></td>
-                        <td><input style='width: 80px' type="text" name="year" id="update_year" required></td>
+                        <td><input style='width: 175px' type="month" name="month" id="update_month" required></td>
                         <td><input type="submit" value="Update"></td>
                     </tr>
                 </table>
@@ -259,28 +257,28 @@
     <div class="container py-4">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Backpack Pro Database Viewer</h2>
-            <a href={{url_for('calendar.admin')}}>Full Table</a>
             <div style="margin-top: -25px" class="row align-items-md-stretch">
-                <div class="container-fluid py-5">
+                <div class="container-fluid py-3">
+                    <a href={{url_for('calendar.admin')}}>Full Table</a>
                     <table style="color: white" class="table">
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Event</th>
                             <th>Day</th>
                             <th>Month</th>
-                            <th>Year</th>
                         </tr>
                         </thead>
                         <tbody>
                         <!-- Loop through rows in table -->
                         {% for row in table %}
                             <tr>
+                                <td>{{ row['eventID'] }}</td>
                                 <td>{{ row['name'] }}</td>
                                 <td>{{ row['event'] }}</td>
                                 <td>{{ row['day'] }}</td>
-                                <td>{{ row['month'] }}</td>
-                                <td>{{ row['year'] }}</td>
+                                <td>{{ row['yearmonth'] }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>

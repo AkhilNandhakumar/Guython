@@ -31,11 +31,10 @@ def create():
             request.form.get("name"),
             request.form.get("event"),
             request.form.get("day"),
-            request.form.get("month"),
-            request.form.get("year")
+            request.form.get("yearmonth"),
         )
         po.create()
-    return render_template("admin.html")
+    return redirect(url_for('calendar.admin'))
 
 
 # CRUD read
@@ -44,8 +43,8 @@ def read():
     """gets userid from form and obtains corresponding data from Users table"""
     table = []
     if request.form:
-        event = request.form.get("event")
-        po = user_by_event(event)
+        eventid = request.form.get("eventID")
+        po = user_by_event_id(eventid)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
     return render_template("admin.html", table=table)
@@ -56,15 +55,15 @@ def read():
 def update():
     """gets userid and name from form and filters and then data in  Users table"""
     if request.form:
+        eventid = request.form.get("eventID")
         name = request.form.get("name")
         event = request.form.get("event")
         day = request.form.get("day")
-        month = request.form.get("month")
-        year = request.form.get("year")
-        po = user_by_event(event)
+        yearmonth = request.form.get("yearmonth")
+        po = user_by_event_id(eventid)
         if po is not None:
-            po.update(name, event, day, month, year)
-    return render_template("admin.html")
+            po.update(name, event, day, yearmonth)
+    return redirect(url_for('calendar.admin'))
 
 
 # CRUD delete
@@ -72,11 +71,11 @@ def update():
 def delete():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
-        event = request.form.get("event")
-        po = user_by_event(event)
+        eventid = request.form.get("eventid")
+        po = user_by_event_id(eventid)
         if po is not None:
             po.delete()
-    return render_template("admin.html")
+    return redirect(url_for('calendar.admin'))
 
 
 
