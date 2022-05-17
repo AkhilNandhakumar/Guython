@@ -1,9 +1,8 @@
-from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
-from flask_login import login_required, logout_user
+from flask import Blueprint, render_template, request, url_for, redirect
+from flask_login import login_required
 
 from student_calendar.cal_query import *
 
-# blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 app_calendar = Blueprint('calendar', __name__,
                          url_prefix='/calendar',
                          template_folder='templates/calendar/',
@@ -23,57 +22,57 @@ def admin():
 
 
 @app_calendar.route('/create/', methods=["POST"])
-def create():
+def create2():
     """gets data from form and add it to Users table"""
     if request.form:
-        po = Calendar(
+        po = Users(
             request.form.get("name"),
             request.form.get("event"),
             request.form.get("day"),
-            request.form.get("yearmonth"),
+            request.form.get("yearmonth")
         )
-        po.create()
+        po.create2()
     return redirect(url_for('calendar.admin'))
 
 
 # CRUD read
 @app_calendar.route('/read/', methods=["POST"])
-def read():
+def read2():
     """gets userid from form and obtains corresponding data from Users table"""
     table = []
     if request.form:
-        eventid = request.form.get("eventID")
+        eventid = request.form.get("eventid")
         po = user_by_event(eventid)
         if po is not None:
-            table = [po.read()]  # placed in list for easier/consistent use within HTML
+            table = [po.read2()]  # placed in list for easier/consistent use within HTML
     return render_template("admin.html", table=table)
 
 
 # CRUD update
 @app_calendar.route('/update/', methods=["POST"])
-def update():
+def update2():
     """gets userid and name from form and filters and then data in  Users table"""
     if request.form:
-        eventid = request.form.get("eventID")
+        eventid = request.form.get("eventid")
         name = request.form.get("name")
         event = request.form.get("event")
         day = request.form.get("day")
         yearmonth = request.form.get("yearmonth")
         po = user_by_event(eventid)
         if po is not None:
-            po.update(name, event, day, yearmonth)
+            po.update2(name, event, day, yearmonth)
     return redirect(url_for('calendar.admin'))
 
 
 # CRUD delete
 @app_calendar.route('/delete/', methods=["POST"])
-def delete():
+def delete2():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
         eventid = request.form.get("eventid")
         po = user_by_event(eventid)
         if po is not None:
-            po.delete()
+            po.delete2()
     return redirect(url_for('calendar.admin'))
 
 

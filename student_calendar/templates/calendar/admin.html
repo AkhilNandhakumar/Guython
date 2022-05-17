@@ -2,7 +2,11 @@
 {% extends "layouts/base.html" %}
 
 <!- This variable sets name of browser tab  -->
-{% set project = "Calendar" %}
+{% block meta %}
+    <title>Nighthawk Tutoring - Calendar</title>
+    <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
+    <script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>
+{% endblock %}
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
@@ -143,7 +147,7 @@
     <div class="container py-4">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Create a new record</h2>
-            <form style="margin-left: 15%" method="POST" ID="create" action={{url_for('calendar.create')}} >
+            <form style="margin-left: 15%" method="POST" ID="create" action={{url_for('calendar.create2')}} >
                 <table style="color: white; width: 50%" class="table">
                     <thead>
                     <tr>
@@ -176,7 +180,7 @@
             <div style="width: 50%" class="col-md-3">
                 <div class="p-5 mb-4 bg-dark text-light rounded-3">
                     <h2>Read</h2>
-                    <form method="POST" ID="read" action={{url_for('calendar.read')}} >
+                    <form method="POST" ID="read" action={{url_for('calendar.read2')}} >
                         <table id="read_table">
                             <tr><th><label for="read_event">ID</label></th></tr>
                             <tr>
@@ -201,7 +205,7 @@
             <div style="width: 50%" class="col-md-3">
                 <div class="p-5 mb-4 bg-dark text-light rounded-3">
                     <h2>Delete</h2>
-                    <form method="POST" ID="read" action={{url_for('calendar.delete')}} >
+                    <form method="POST" ID="read" action={{url_for('calendar.delete2')}} >
                         <table id="read_table">
                             <tr><th><label for="delete_event">ID</label></th></tr>
                             <tr>
@@ -225,7 +229,7 @@
     <div style="margin-left: 15%" class="col-md-8">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Update</h2>
-            <form method="POST" ID="update" action={{url_for('calendar.update')}} >
+            <form method="POST" ID="update" action={{url_for('calendar.update2')}} >
                 <table id="update_table">
                     <tr>
                         <th><label for="update_id">ID</label></th>

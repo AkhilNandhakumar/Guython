@@ -29,7 +29,7 @@ class Calendar(UserMixin, db.Model):
 
     # CRUD create/add a new record to the table
     # returns self or None on error
-    def create(self):
+    def create2(self):
         try:
             # creates a person object from Users(db.Model) class, passes initializers
             db.session.add(self)  # add prepares to persist person object to Users table
@@ -41,7 +41,7 @@ class Calendar(UserMixin, db.Model):
 
     # CRUD read converts self to dictionary
     # returns dictionary
-    def read(self):
+    def read2(self):
         return {
             "eventID": self.eventID,
             "name": self.name,
@@ -52,24 +52,24 @@ class Calendar(UserMixin, db.Model):
 
     # CRUD update: updates users name, password, phone
     # returns self
-    def update(self, name, event, day, yearmonth):
+    def update2(self, name, event="", day="", yearmonth=""):
         """only updates values with length"""
         if len(name) > 0:
             self.name = name
         if len(event) > 0:
             self.event = event
-        if int(day) > 0:
+        if 32 > day > 0:
             self.day = day
         else:
             self.day = 1
         if len(yearmonth) > 0:
-            self.day = yearmonth
+            self.yearmonth = yearmonth
         db.session.commit()
         return self
 
     # CRUD delete: remove self
     # None
-    def delete(self):
+    def delete2(self):
         db.session.delete(self)
         db.session.commit()
         return None
