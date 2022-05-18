@@ -49,6 +49,18 @@ def read():
     return render_template("admin.html", table=table)
 
 
+@app_calendar.route('/read2/', methods=["POST"])
+def read2():
+    """gets userid from form and obtains corresponding data from Users table"""
+    table = []
+    if request.form:
+        yearmonth = request.form.get("yearmonth")
+        po = user_by_ym(yearmonth)
+        if po is not None:
+            table = [po.read()]  # placed in list for easier/consistent use within HTML
+    return render_template("admin.html", table=table)
+
+
 # CRUD update
 @app_calendar.route('/update/', methods=["POST"])
 def update():

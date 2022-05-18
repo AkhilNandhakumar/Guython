@@ -61,6 +61,10 @@ def user_by_event(eventid):
     return Calendar.query.filter_by(eventID=eventid).first()
 
 
+def user_by_ym(yearmonth):
+    return Calendar.query.filter_by(yearmonth=yearmonth).first()
+
+
 # SQLAlchemy extract single user from database matching email
 def user_by_email(email):
     """finds User in table matching email """
