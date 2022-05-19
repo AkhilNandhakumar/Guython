@@ -1,4 +1,5 @@
 from __init__ import db
+from cruddy.model import Users
 from student_calendar.cal_model import Calendar
 # import random
 
@@ -39,15 +40,20 @@ def users_ilike(term):
 
 
 # SQLAlchemy extract single user from database matching ID
-def user_by_id(name):
+def user_by_id(userid):
     """finds User in table matching userid """
-    return Calendar.query.filter_by(name=name).first()
+    return Users.query.filter_by(userID=userid).first()
+
+
+def user_by_event(eventid):
+    """finds User in table matching userid """
+    return Calendar.query.filter_by(eventID=eventid).first()
 
 
 # SQLAlchemy extract single user from database matching email
-def user_by_email(event):
+def user_by_email(email):
     """finds User in table matching email """
-    return Calendar.query.filter_by(event=event).first()
+    return Users.query.filter_by(email=email).first()
 
 
 # ALGORITHM to convert the results of an SQL Query to a JSON ready format in Python
@@ -58,6 +64,7 @@ def sqlquery_2_list(rows):
         row_dictionary = {}
         for i in range(len(keys)):  # This loop lines up K, V pairs, same as JSON style
             row_dictionary[keys[i]] = values[i]
+        row_dictionary["query"] = "by_sql"  # This is for fun a little watermark
         out_list.append(row_dictionary)  # Finally we have a out_list row
     return out_list
 

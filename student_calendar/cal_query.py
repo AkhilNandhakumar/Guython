@@ -1,6 +1,6 @@
 from __init__ import login_manager, db
-from student_calendar.cal_model import Calendar
 from cruddy.model import Users
+from student_calendar.cal_model import Calendar
 from flask_login import current_user, login_user, logout_user
 
 
@@ -24,7 +24,6 @@ def users_all_alc():
     return json_ready
 
 
-# Native SQL extract all users from database
 def users_all_sql():
     table = db.session.execute('select * from calendar')
     json_ready = sqlquery_2_list(table)
@@ -58,8 +57,12 @@ def user_by_id(userid):
     return Users.query.filter_by(userID=userid).first()
 
 
-def user_by_event(event):
-    return Calendar.query.filter_by(event=event).first()
+def user_by_event(eventid):
+    return Calendar.query.filter_by(eventID=eventid).first()
+
+
+def user_by_ym(yearmonth):
+    return Calendar.query.filter_by(yearmonth=yearmonth).first()
 
 
 # SQLAlchemy extract single user from database matching email

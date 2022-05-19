@@ -14,19 +14,18 @@ from flask_login import UserMixin
 # -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
 class Calendar(UserMixin, db.Model):
     # define the Users schema
-    name = db.Column(db.String(255), unique=True, nullable=True)
-    event = db.Column(db.String(255), unique=False, nullable=False, primary_key=True)
+    eventID = db.Column(db.Integer, primary_key=True, nullable=False)
+    name = db.Column(db.String(255), unique=False, nullable=False)
+    event = db.Column(db.String(255), unique=True, nullable=False)
     day = db.Column(db.Integer, unique=False, nullable=False)
-    month = db.Column(db.Integer, unique=False, nullable=False)
-    year = db.Column(db.Integer, unique=False, nullable=False)
+    yearmonth = db.Column(db.String(255), unique=False, nullable=False)
 
     # constructor of a User object, initializes of instance variables within object
-    def __init__(self, name, event, day, month, year):
+    def __init__(self, name, event, day, yearmonth):
         self.name = name
         self.event = event
         self.day = day
-        self.month = month
-        self.year = year
+        self.yearmonth = yearmonth
 
     # CRUD create/add a new record to the table
     # returns self or None on error
@@ -44,29 +43,27 @@ class Calendar(UserMixin, db.Model):
     # returns dictionary
     def read(self):
         return {
+            "eventID": self.eventID,
             "name": self.name,
             "event": self.event,
             "day": self.day,
-            "month": self.month,
-            "year": self.year,
+            "yearmonth": self.yearmonth,
         }
 
     # CRUD update: updates users name, password, phone
     # returns self
-    def update(self, name, event, day, month, year):
+    def update(self, name, event, day, yearmonth):
         """only updates values with length"""
         if len(name) > 0:
             self.name = name
         if len(event) > 0:
             self.event = event
-        if int(day) > 0:
+        if 32 > int(day) > 0:
             self.day = day
-        if int(month) > 0:
-            self.month = month
-        if int(year) > 2021:
-            self.year = year
         else:
-            self.year = 2022
+            self.day = 1
+        if len(yearmonth) > 0:
+            self.yearmonth = yearmonth
         db.session.commit()
         return self
 

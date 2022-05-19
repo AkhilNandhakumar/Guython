@@ -2,14 +2,81 @@
 {% extends "layouts/base.html" %}
 
 <!- This variable sets name of browser tab  -->
-{% set project = "Calendar" %}
+{% block meta %}
+    <title>Nighthawk Tutoring - Calendar</title>
+    <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
+    <script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>
+{% endblock %}
 
 <!- This is a replacement block for Body in base.html -->
 {% block body %}
     <!- Try building a new body here ->
     <style>
-        ul {list-style-type: none;}
-        body {font-family: Verdana, sans-serif;}
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+        }
+
+        /* Popup arrow */
+        .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+            ul {
+                list-style-type: none;
+            }
+            body {
+                font-family: Verdana, sans-serif;
+            }
+        }
 
         /* Month header */
         .month {
@@ -47,6 +114,9 @@
         button {
             background: none;
             border: none;
+        }
+        button:focus, input[type="button"]:focus {
+            outline: none;
         }
 
         /* Weekdays (Mon-Sun) */
@@ -99,69 +169,102 @@
         <ul>
             <button onclick="button_left()" class="prev">&#10094;</button>
             <button onclick="button_right()" class="next">&#10095;</button>
-            <li><p id="month_name">May - 2022</p></li>
+            <div style="margin-left: 45%" class="row">
+                <p id="month">May</p>
+                <p>&nbsp;-&nbsp;</p>
+                <p id="year">2022</p>
+            </div>
         </ul>
     </div>
 
     <ul class="days">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>10</button>
-        <button>11</button>
-        <button>12</button>
-        <button><span class="active">13</span></button>
-        <button>14</button>
-        <button>15</button>
-        <button>16</button>
-        <button>17</button>
-        <button>18</button>
-        <button>19</button>
-        <button>20</button>
-        <button>21</button>
-        <button>22</button>
-        <button>23</button>
-        <button>24</button>
-        <button>25</button>
-        <button>26</button>
-        <button>27</button>
-        <button>28</button>
-        <button>29</button>
-        <button>30</button>
-        <button>31</button>
-        <button> </button>
-        <button> </button>
-        <button> </button>
-        <button> </button>
+        <button><div class="popup" onclick="popup()">1<span class="popuptext" id="1">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">2<span class="popuptext" id="2">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">3<span class="popuptext" id="3">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">4<span class="popuptext" id="4">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">5<span class="popuptext" id="5">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">6<span class="popuptext" id="6">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">7<span class="popuptext" id="7">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">8<span class="popuptext" id="8">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">9<span class="popuptext" id="9">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">10<span class="popuptext" id="10">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">11<span class="popuptext" id="11">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">12<span class="popuptext" id="12">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">13<span class="popuptext" id="13">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">14<span class="popuptext" id="14">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">15<span class="popuptext" id="15">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">16<span class="popuptext" id="16">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">17<span class="popuptext" id="17">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">18<span class="popuptext" id="18">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">19<span class="popuptext" id="19">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">20<span class="popuptext" id="20">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">21<span class="popuptext" id="21">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">22<span class="popuptext" id="22">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">23<span class="popuptext" id="23">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">24<span class="popuptext" id="24">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">25<span class="popuptext" id="25">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">26<span class="popuptext" id="26">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">27<span class="popuptext" id="27">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">28<span class="popuptext" id="28">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">29<span class="popuptext" id="29">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">30<span class="popuptext" id="30">A Simple birthday!</span>
+        </div></button>
+        <button><div class="popup" onclick="popup()">31<span class="popuptext" id="31">A Simple birthday!</span>
+        </div></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
     </ul>
     <div class="container py-4">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Create a new record</h2>
-            <form style="margin-left: 15%" method="POST" ID="create" action={{url_for('calendar.create')}} >
+            <form style="margin-left: 10%" method="POST" ID="create" action={{url_for('calendar.create')}} >
                 <table style="color: white; width: 50%" class="table">
                     <thead>
                     <tr>
                         <th><label for="name">Name</label></th>
                         <th><label for="event">Event</label></th>
-                        <th><label for="day">day</label></th>
-                        <th><label for="month">Month</label></th>
-                        <th><label for="year">Year</label></th>
-                        <th><label for="year">Create</label></th>
+                        <th><label for="day">Day</label></th>
+                        <th><label for="yearmonth">Month</label></th>
+                        <th><label for="create">Create</label></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input style='width: 100px' type="text" name="name" id="name" required></td>
-                        <td><input type="event" name="event" id="event" required></td>
-                        <td><input style='width: 40px' type="day" name="day" id="day" required></td>
-                        <td><input style='width: 40px' type="day" name="month" id="month" required></td>
-                        <td><input style='width: 80px' type="year" name="year" id="year" required></td>
+                        <td><input style='width: 200px' type="text" name="name" id="name" required></td>
+                        <td><input type="text" name="event" id="event" required></td>
+                        <td><input style='width: 40px' type="text" name="day" id="day" required></td>
+                        <td><input style='width: 175px' type="month" name="yearmonth" id="yearmonth" required></td>
                         <td><input type="submit" value="Create"></td>
                     </tr>
                     </tbody>
@@ -171,7 +274,7 @@
         </div>
 
     </div>
-    <div class="container py-1">
+    <div style="width: 45%" class="container py-1">
 
         <div class="row mb-5 bg-dark text-light rounded-3">
 
@@ -180,13 +283,13 @@
                     <h2>Read</h2>
                     <form method="POST" ID="read" action={{url_for('calendar.read')}} >
                         <table id="read_table">
-                            <tr><th><label for="read_event">Event</label></th></tr>
+                            <tr><th><label for="read_eventid">ID</label></th></tr>
                             <tr>
                                 <td>
-                                    <select name="event" id="read_event">
-                                        <optgroup label="event">
+                                    <select name="eventid" id="read_eventid">
+                                        <optgroup label="eventid">
                                             {% for row in table %}
-                                                <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                                <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
@@ -200,18 +303,18 @@
                 </div>
             </div>
 
-            <div style="width: 50%" class="col-md-3">
+            <div class="col-md-3">
                 <div class="p-5 mb-4 bg-dark text-light rounded-3">
                     <h2>Delete</h2>
                     <form method="POST" ID="read" action={{url_for('calendar.delete')}} >
                         <table id="read_table">
-                            <tr><th><label for="delete_event">Event</label></th></tr>
+                            <tr><th><label for="delete_eventid">ID</label></th></tr>
                             <tr>
                                 <td>
-                                    <select name="event" id="delete_event">
-                                        <optgroup label="event">
+                                    <select name="eventid" id="delete_eventid">
+                                        <optgroup label="eventid">
                                             {% for row in table %}
-                                                <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                                <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
@@ -224,32 +327,32 @@
             </div>
         </div>
     </div>
-    <div style="margin-left: 25%" class="col-md-6">
+    <div style="margin-left: 15%" class="col-md-8">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Update</h2>
             <form method="POST" ID="update" action={{url_for('calendar.update')}} >
                 <table id="update_table">
                     <tr>
-                        <th><label for="update_event">Event</label></th>
+                        <th><label for="update_eventid">ID</label></th>
                         <th><label for="update_name">Name</label></th>
+                        <th><label for="update_event">Event</label></th>
                         <th><label for="update_day">Day</label></th>
-                        <th><label for="update_month">Month</label></th>
-                        <th><label for="update_year">Year</label></th>
+                        <th><label for="update_yearmonth">Month</label></th>
                     </tr>
                     <tr>
                         <td>
-                            <select name="event" id="update_event">
-                                <optgroup label="event">
+                            <select name="eventid" id="update_eventid">
+                                <optgroup label="eventid">
                                     {% for row in table %}
-                                        <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                        <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                     {% endfor %}
                                 </optgroup>
                             </select>
                         </td>
                         <td><input style='width: 200px' type="text" name="name" id="update_name" required></td>
+                        <td><input style='width: 200px' type="text" name="event" id="update_event" required></td>
                         <td><input style='width: 40px' type="text" name="day" id="update_day" required></td>
-                        <td><input style='width: 40px' type="text" name="month" id="update_month" required></td>
-                        <td><input style='width: 80px' type="text" name="year" id="update_year" required></td>
+                        <td><input style='width: 175px' type="month" name="yearmonth" id="update_yearmonth" required></td>
                         <td><input type="submit" value="Update"></td>
                     </tr>
                 </table>
@@ -259,28 +362,28 @@
     <div class="container py-4">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Backpack Pro Database Viewer</h2>
-            <a href={{url_for('calendar.admin')}}>Full Table</a>
             <div style="margin-top: -25px" class="row align-items-md-stretch">
-                <div class="container-fluid py-5">
+                <div class="container-fluid py-3">
+                    <a href={{url_for('calendar.admin')}}>Full Table</a>
                     <table style="color: white" class="table">
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Event</th>
                             <th>Day</th>
-                            <th>Month</th>
-                            <th>Year</th>
+                            <th>Year & Month</th>
                         </tr>
                         </thead>
                         <tbody>
                         <!-- Loop through rows in table -->
                         {% for row in table %}
                             <tr>
+                                <td>{{ row['eventID'] }}</td>
                                 <td>{{ row['name'] }}</td>
                                 <td>{{ row['event'] }}</td>
                                 <td>{{ row['day'] }}</td>
-                                <td>{{ row['month'] }}</td>
-                                <td>{{ row['year'] }}</td>
+                                <td>{{ row['yearmonth'] }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>
@@ -291,12 +394,19 @@
 
     </div>
     <script>
+        function popup() {
+            {% for i in range(30) %}
+                popup = document.getElementById(i + 1);
+                popup.classList.toggle("show");
+            {% endfor %}
+        }
         let n = 4
+        let year = 2022
         function button_left() {
             n = n - 1
             if (
                 n < 0
-            ) n = 11
+            ) year_changer()
             month_changer(n)
         }
 
@@ -304,48 +414,56 @@
             n = n + 1
             if (
                 n > 11
-            ) n = 0
+            ) year_changer()
             month_changer(n)
         }
-
         function month_changer(num) {
             if (
                 num === 0
-            ) document.getElementById("month_name").innerHTML = "January - 2022"
+            ) document.getElementById("month").innerHTML = "January"
             else if (
                 num === 1
-            ) document.getElementById("month_name").innerHTML = "February - 2022"
+            ) document.getElementById("month").innerHTML = "February"
             if (
                 num === 2
-            ) document.getElementById("month_name").innerHTML = "March - 2022"
+            ) document.getElementById("month").innerHTML = "March"
             if (
                 num === 3
-            ) document.getElementById("month_name").innerHTML = "April - 2022"
+            ) document.getElementById("month").innerHTML = "April"
             if (
                 num === 4
-            ) document.getElementById("month_name").innerHTML = "May - 2022"
+            ) document.getElementById("month").innerHTML = "May"
             if (
                 num === 5
-            ) document.getElementById("month_name").innerHTML = "June - 2022"
+            ) document.getElementById("month").innerHTML = "June"
             if (
                 num === 6
-            ) document.getElementById("month_name").innerHTML = "July - 2022"
+            ) document.getElementById("month").innerHTML = "July"
             if (
                 num === 7
-            ) document.getElementById("month_name").innerHTML = "August - 2022"
+            ) document.getElementById("month").innerHTML = "August"
             if (
                 num === 8
-            ) document.getElementById("month_name").innerHTML = "September - 2022"
+            ) document.getElementById("month").innerHTML = "September"
             if (
                 num === 9
-            ) document.getElementById("month_name").innerHTML = "October - 2022"
+            ) document.getElementById("month").innerHTML = "October"
             if (
                 num === 10
-            ) document.getElementById("month_name").innerHTML = "November - 2022"
+            ) document.getElementById("month").innerHTML = "November"
             if (
                 num === 11
-            ) document.getElementById("month_name").innerHTML = "December - 2022"
+            ) document.getElementById("month").innerHTML = "December"
 
+        }
+        function year_changer() {
+            if (n > 11) {
+                year += 1; n = 0
+            }
+            else if (n < 1) {
+                year -= 1; n = 11
+            }
+            document.getElementById("year").innerHTML = year.toString()
         }
 
 
