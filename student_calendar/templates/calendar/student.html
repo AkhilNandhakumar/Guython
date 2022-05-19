@@ -140,9 +140,160 @@
         <button> </button>
         <button> </button>
     </ul>
+    <div class="container py-4">
+        <div class="p-5 mb-4 bg-dark text-light rounded-3">
+            <h2>Create a new record</h2>
+            <form style="margin-left: 15%" method="POST" ID="create" action={{url_for('calendar.create')}} >
+                <table style="color: white; width: 50%" class="table">
+                    <thead>
+                    <tr>
+                        <th><label for="name">Name</label></th>
+                        <th><label for="event">Event</label></th>
+                        <th><label for="day">day</label></th>
+                        <th><label for="month">Month</label></th>
+                        <th><label for="year">Year</label></th>
+                        <th><label for="year">Create</label></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input style='width: 100px' type="text" name="name" id="name" required></td>
+                        <td><input type="event" name="event" id="event" required></td>
+                        <td><input style='width: 40px' type="day" name="day" id="day" required></td>
+                        <td><input style='width: 40px' type="day" name="month" id="month" required></td>
+                        <td><input style='width: 80px' type="year" name="year" id="year" required></td>
+                        <td><input type="submit" value="Create"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p id="pswError"></p>
+            </form>
+        </div>
+
+    </div>
+    <div class="container py-1">
+
+        <div class="row mb-5 bg-dark text-light rounded-3">
+
+            <div style="width: 50%" class="col-md-3">
+                <div class="p-5 mb-4 bg-dark text-light rounded-3">
+                    <h2>Read</h2>
+                    <form method="POST" ID="read" action={{url_for('calendar.read')}} >
+                        <table id="read_table">
+                            <tr><th><label for="read_event">Event</label></th></tr>
+                            <tr>
+                                <td>
+                                    <select name="event" id="read_event">
+                                        <optgroup label="event">
+                                            {% for row in table %}
+                                                <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                            {% endfor %}
+                                        </optgroup>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="submit" value="Read">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+            <div style="width: 50%" class="col-md-3">
+                <div class="p-5 mb-4 bg-dark text-light rounded-3">
+                    <h2>Delete</h2>
+                    <form method="POST" ID="read" action={{url_for('calendar.delete')}} >
+                        <table id="read_table">
+                            <tr><th><label for="delete_event">Event</label></th></tr>
+                            <tr>
+                                <td>
+                                    <select name="event" id="delete_event">
+                                        <optgroup label="event">
+                                            {% for row in table %}
+                                                <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                            {% endfor %}
+                                        </optgroup>
+                                    </select>
+                                </td>
+                                <td><input type="submit" value="Delete"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 25%" class="col-md-6">
+        <div class="p-5 mb-4 bg-dark text-light rounded-3">
+            <h2>Update</h2>
+            <form method="POST" ID="update" action={{url_for('calendar.update')}} >
+                <table id="update_table">
+                    <tr>
+                        <th><label for="update_event">Event</label></th>
+                        <th><label for="update_name">Name</label></th>
+                        <th><label for="update_day">Day</label></th>
+                        <th><label for="update_month">Month</label></th>
+                        <th><label for="update_year">Year</label></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="event" id="update_event">
+                                <optgroup label="event">
+                                    {% for row in table %}
+                                        <option label="{{ row['event'] }}">{{ row['event'] }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td><input style='width: 200px' type="text" name="name" id="update_name" required></td>
+                        <td><input style='width: 40px' type="text" name="day" id="update_day" required></td>
+                        <td><input style='width: 40px' type="text" name="month" id="update_month" required></td>
+                        <td><input style='width: 80px' type="text" name="year" id="update_year" required></td>
+                        <td><input type="submit" value="Update"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="container py-4">
+        <div class="p-5 mb-4 bg-dark text-light rounded-3">
+            <h2>Backpack Pro Database Viewer</h2>
+            <a href={{url_for('calendar.admin')}}>Full Table</a>
+            <div style="margin-top: -25px" class="row align-items-md-stretch">
+                <div class="container-fluid py-5">
+                    <table style="color: white" class="table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Event</th>
+                            <th>Day</th>
+                            <th>Month</th>
+                            <th>Year</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Loop through rows in table -->
+                        {% for row in table %}
+                            <tr>
+                                <td>{{ row['name'] }}</td>
+                                <td>{{ row['event'] }}</td>
+                                <td>{{ row['day'] }}</td>
+                                <td>{{ row['month'] }}</td>
+                                <td>{{ row['year'] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <br>
     <a href="/calendar/admin">Admin Calendar</a>
     <script>
+
         let n = 4
         function button_left() {
             n = n - 1
@@ -199,5 +350,6 @@
             ) document.getElementById("month_name").innerHTML = "December - 2022"
 
         }
+
     </script>
 {% endblock %}
