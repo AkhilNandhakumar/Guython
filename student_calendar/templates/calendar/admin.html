@@ -216,7 +216,7 @@
         </div></button>
         <button><div class="popup" onclick="popup()">19<span class="popuptext" id="19">A Simple birthday!</span>
         </div></button>
-        <button><div class="popup" onclick="popup()">20<span class="popuptext" id="20">A Simple birthday!</span>
+        <button><div class="popup active" onclick="popup()">20<span class="popuptext" id="20">A Simple birthday!</span>
         </div></button>
         <button><div class="popup" onclick="popup()">21<span class="popuptext" id="21">A Simple birthday!</span>
         </div></button>
@@ -274,11 +274,11 @@
         </div>
 
     </div>
-    <div style="width: 45%" class="container py-1">
+    <div style="width: 35%" class="container py-1">
 
         <div class="row mb-5 bg-dark text-light rounded-3">
 
-            <div style="width: 50%" class="col-md-3">
+            <div style="width: 50%; margin-right: 130px" class="col-md-3">
                 <div class="p-5 mb-4 bg-dark text-light rounded-3">
                     <h2>Read</h2>
                     <form method="POST" ID="read" action={{url_for('calendar.read')}} >
@@ -327,7 +327,7 @@
             </div>
         </div>
     </div>
-    <div style="margin-left: 15%" class="col-md-8">
+    <div style="margin-left: 250px" class="col-md-8">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Update</h2>
             <form method="POST" ID="update" action={{url_for('calendar.update')}} >
