@@ -49,3 +49,26 @@ class Calendar(UserMixin, db.Model):
             "day": self.day,
             "yearmonth": self.yearmonth,
         }
+    # CRUD update: updates users name, password, phone
+    # returns self
+    def update(self, name, event, day, yearmonth):
+        """only updates values with length"""
+        if len(name) > 0:
+            self.name = name
+        if len(event) > 0:
+            self.event = event
+        if 32 > int(day) > 0:
+            self.day = day
+        else:
+            self.day = 1
+        if len(yearmonth) > 0:
+            self.yearmonth = yearmonth
+        db.session.commit()
+        return self
+
+    # CRUD delete: remove self
+    # None
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
