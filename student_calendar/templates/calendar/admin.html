@@ -162,6 +162,16 @@
         }
 
     </style>
+
+    <script>
+        function popup() {
+            for (i = 0; i < 31; i++) {
+                popupy = document.getElementById((i + 1).toString());
+                popupy.classList.toggle("show");
+            }
+        }
+
+    </script>
     <div class="titleOfHomePage">
         <p>Admin Calendar</p>
     </div>
@@ -394,12 +404,6 @@
 
     </div>
     <script>
-        function popup() {
-            {% for i in range(30) %}
-                popup = document.getElementById(i + 1);
-                popup.classList.toggle("show");
-            {% endfor %}
-        }
         let n = 4
         let year = 2022
         function button_left() {
