@@ -18,7 +18,9 @@ def student():
 @app_calendar.route('/admin/')
 @login_required
 def admin():
-    return render_template("admin.html", table=users_all())
+    for x in range(len(users_all())):
+        days = users_all()[x]['day']
+    return render_template("admin.html", table=users_all(), days=days)
 
 
 @app_calendar.route('/create/', methods=["POST"])

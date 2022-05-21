@@ -164,12 +164,26 @@
     </style>
 
     <script>
-        function popup() {
-            for (i = 0; i < 31; i++) {
-                popupy = document.getElementById((i + 1).toString());
-                popupy.classList.toggle("show");
+        function getValue(elementId)
+        {
+            //comparing
+            for (x = 1; x < 32; x++) {
+                if (document.getElementById(x.toString()).id === elementId) {
+                    document.getElementById(x.toString()).innerHTML = "test"
+                    var popup_element = document.getElementById(x.toString());
+                    popup_element.classList.toggle("show");
+                }
             }
         }
+        function popup() {
+            {#for (i = 0; i < 31; i++) {#}
+            {#    let popup_element = document.getElementById((i + 1));#}
+            {#    popup_element.classList.toggle("show");#}
+            {#}#}
+            {#var element = document.getElementsByClassName("popup")[1].id;#}
+            getValue("2")
+        }
+
 
     </script>
     <div class="titleOfHomePage">
