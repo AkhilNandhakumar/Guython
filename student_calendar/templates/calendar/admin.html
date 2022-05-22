@@ -163,19 +163,6 @@
 
     </style>
 
-    <script>
-        function popup(elementId) {
-            let popupE = document.getElementById(elementId.toString());
-            document.getElementById('year').innerHTML = {{days_list[0]}}
-            if (elementId === {{ days_list[0] }}) {
-                alert("?")
-                document.getElementById(elementId.toString()).innerHTML = "{{ calevent }}"
-                popupE.classList.toggle("show");
-            }
-        }
-
-
-    </script>
     <div class="titleOfHomePage">
         <p>Admin Calendar</p>
     </div>
@@ -472,6 +459,13 @@
                 year -= 1; n = 11
             }
             document.getElementById("year").innerHTML = year.toString()
+        }
+        function popup(elementId) {
+            let popupE = document.getElementById(elementId.toString());
+            if (elementId === {{ days_list[1] }} && document.getElementById('year').innerHTML === "{{ year }}" && (n+1).toString() === "{{ month }}" ) {
+                document.getElementById(elementId.toString()).innerHTML = "{{ calevent }}"
+                popupE.classList.toggle("show");
+            }
         }
 
 
