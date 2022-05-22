@@ -18,9 +18,22 @@ def student():
 @app_calendar.route('/admin/')
 @login_required
 def admin():
+    days_list = []
+    digit_n = []
+    len_days = len(users_all())
+    calevent = users_all()[4]['event']
     for x in range(len(users_all())):
-        days = users_all()[x]['day']
-    return render_template("admin.html", table=users_all(), days=days)
+        digit_n += str(len(str(users_all()[x]['day'])))
+        if digit_n[x] == '1':
+            days_list += str(users_all()[x]['day'])
+        else:
+            days_list += str(users_all()[x]['day'])
+            days_list[x] = days_list[x] + days_list[(x+1)]
+            days_list.pop(x+1)
+    print(days_list)
+    print(calevent)
+    return render_template("admin.html", table=users_all(), days_list=days_list,
+                           len_days=len_days, calevent=calevent)
 
 
 @app_calendar.route('/create/', methods=["POST"])
