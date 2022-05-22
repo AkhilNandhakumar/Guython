@@ -462,10 +462,12 @@
         }
         function popup(elementId) {
             let popupE = document.getElementById(elementId.toString());
-            if (elementId === {{ days_list[1] }} && document.getElementById('year').innerHTML === "{{ year }}" && (n+1).toString() === "{{ month }}" ) {
-                document.getElementById(elementId.toString()).innerHTML = "{{ calevent }}"
+            {% for i in range(len_days) %}
+            if (elementId === {{ days_list[i] }} && document.getElementById('year').innerHTML === "{{ year[i] }}" && (n+1).toString() === "{{ month[i] }}" ) {
+                document.getElementById(elementId.toString()).innerHTML = "{{ calevent[i] }}"
                 popupE.classList.toggle("show");
             }
+            {% endfor %}
         }
 
 
