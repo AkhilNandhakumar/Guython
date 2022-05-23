@@ -156,7 +156,7 @@
 
         /* Highlight the "current" day */
         .days button .active {
-            padding: 5px;
+            padding: 6px;
             background: white;
             color: black !important
         }
@@ -279,6 +279,8 @@
         </div>
 
 
+    <br>
+
     <a style="color: white" href="admin">Link to Admin Calendar</a>
 
     </div>
@@ -297,67 +299,49 @@
             n = n + 1
             if (
                 n > 11
-            ) year_changer()
+            ) n = 0
             month_changer(n)
         }
+
         function month_changer(num) {
             if (
                 num === 0
-            ) document.getElementById("month").innerHTML = "January"
+            ) document.getElementById("month_name").innerHTML = "January - 2022"
             else if (
                 num === 1
-            ) document.getElementById("month").innerHTML = "February"
+            ) document.getElementById("month_name").innerHTML = "February - 2022"
             if (
                 num === 2
-            ) document.getElementById("month").innerHTML = "March"
+            ) document.getElementById("month_name").innerHTML = "March - 2022"
             if (
                 num === 3
-            ) document.getElementById("month").innerHTML = "April"
+            ) document.getElementById("month_name").innerHTML = "April - 2022"
             if (
                 num === 4
-            ) document.getElementById("month").innerHTML = "May"
+            ) document.getElementById("month_name").innerHTML = "May - 2022"
             if (
                 num === 5
-            ) document.getElementById("month").innerHTML = "June"
+            ) document.getElementById("month_name").innerHTML = "June - 2022"
             if (
                 num === 6
-            ) document.getElementById("month").innerHTML = "July"
+            ) document.getElementById("month_name").innerHTML = "July - 2022"
             if (
                 num === 7
-            ) document.getElementById("month").innerHTML = "August"
+            ) document.getElementById("month_name").innerHTML = "August - 2022"
             if (
                 num === 8
-            ) document.getElementById("month").innerHTML = "September"
+            ) document.getElementById("month_name").innerHTML = "September - 2022"
             if (
                 num === 9
-            ) document.getElementById("month").innerHTML = "October"
+            ) document.getElementById("month_name").innerHTML = "October - 2022"
             if (
                 num === 10
-            ) document.getElementById("month").innerHTML = "November"
+            ) document.getElementById("month_name").innerHTML = "November - 2022"
             if (
                 num === 11
-            ) document.getElementById("month").innerHTML = "December"
+            ) document.getElementById("month_name").innerHTML = "December - 2022"
 
         }
-        function year_changer() {
-            if (n > 11) {
-                year += 1; n = 0
-            }
-            else if (n < 1) {
-                year -= 1; n = 11
-            }
-            document.getElementById("year").innerHTML = year.toString()
-        }
-        function popup(elementId) {
-            let popupE = document.getElementById(elementId.toString());
-            {% for i in range(len_days) %}
-                if (elementId === {{ days_list[i] }} && document.getElementById('year').innerHTML === "{{ year[i] }}" && (n+1).toString() === "{{ month[i] }}" ) {
-                    document.getElementById(elementId.toString()).innerHTML = "{{ calevent[i] }}"
-                    popupE.classList.toggle("show");
-                }
-            {% endfor %}
-        }
-
 
     </script>
 {% endblock %}
