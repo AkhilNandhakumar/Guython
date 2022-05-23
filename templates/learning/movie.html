@@ -1,0 +1,35 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "Learning Zone" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!- Try building a new body here ->
+    <style>
+        .t1 {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    </style>
+
+    <img style="width: 270px;" src="NO LINK TEMP FILLER">
+
+    <div class="titleOfHomePage">
+        <p>Learning Zone - Movies</p>
+    </div>
+    <hr color="white" width="50%">
+    <div style="margin-left: 20%; margin-right: 20%" class="h2">
+        <p>ADD CONTENT HERE</p>
+    </div>
+    {#    <hr color="white" width="80%">#}
+    <div class="t1">
+        <p>ADD CONTENT HERE</p>
+    </div>
+
+{% endblock %}
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}

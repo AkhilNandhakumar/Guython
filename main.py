@@ -9,8 +9,9 @@ from cruddy.app_crud import app_crud
 from cruddy.app_crud_api import app_crud_api
 from student_calendar.app_calendar import app_calendar
 from topics import app_topics
+from learning import app_learning
 
-
+app.register_blueprint(app_learning)
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 app.register_blueprint(app_calendar)

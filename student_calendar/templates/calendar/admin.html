@@ -158,7 +158,13 @@
         .days button .active {
             padding: 5px;
             background: white;
-            color: black !important
+        }
+
+        /* Curve the current day block */
+        #curve {
+            border-radius: 10px;
+            background: #ffffff;
+            color: black !important;
         }
 
     </style>
@@ -225,7 +231,7 @@
         </div></button>
         <button><div class="popup" onclick="popup(23)">23<span class="popuptext" id="23">A Simple birthday!</span>
         </div></button>
-        <button><div class="popup" onclick="popup(24)">24<span class="popuptext" id='24'>A Simple birthday!</span>
+        <button id="curve"><div class="popup" onclick="popup(24)">24<span class="popuptext" id='24'>A Simple birthday!</span>
         </div></button>
         <button><div class="popup" onclick="popup(25)">25<span class="popuptext" id='25'>A Simple birthday!</span>
         </div></button>
