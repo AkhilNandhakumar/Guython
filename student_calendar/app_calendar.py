@@ -14,7 +14,26 @@ app_calendar = Blueprint('calendar', __name__,
 
 @app_calendar.route('/')
 def student():
-    return render_template("student.html")
+    currentday = datetime.now().day
+    monthnum = datetime.now().month
+    currentmonth = calendar.month_name
+    currentyear = datetime.now().year
+    days_list = []
+    len_days = len(users_all())
+    calevent = []
+    year = []
+    month = []
+    for x in range(len(users_all())):
+        calevent.append(users_all()[x]['event'])
+        year.append(str(users_all()[x]['yearmonth'])[0:4])
+        days_list.append(str(users_all()[x]['day']))
+        if str(users_all()[x]['yearmonth'])[5:6] == "0":
+            month.append(str(users_all()[x]['yearmonth'])[6:7])
+        else:
+            month.append(str(users_all()[x]['yearmonth'])[5:7])
+    return render_template("student.html", table=users_all(), days_list=days_list,
+                           len_days=len_days, calevent=calevent, year=year, month=month, monthnum=monthnum,
+                           currentday=currentday, currentmonth=currentmonth, currentyear=currentyear)
 
 
 @app_calendar.route('/admin/')
