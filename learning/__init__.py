@@ -13,10 +13,10 @@ def movies():
 
 
 @app_learning.route('/starter/')
-def movies():
+def starter():
     return render_template("learning/starter.html")
 
 
 @app_learning.route('/testprep/')
-def movies():
+def testprep():
     return render_template("learning/testprep.html")
