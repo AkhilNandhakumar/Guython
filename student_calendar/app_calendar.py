@@ -37,13 +37,6 @@ def admin():
             month.append(str(users_all()[x]['yearmonth'])[6:7])
         else:
             month.append(str(users_all()[x]['yearmonth'])[5:7])
-    print(days_list)
-    print(calevent)
-    print(year)
-    print(month)
-    print(currentday)
-    print(currentmonth[5])
-    print(currentyear)
     return render_template("admin.html", table=users_all(), days_list=days_list,
                            len_days=len_days, calevent=calevent, year=year, month=month, monthnum=monthnum,
                            currentday=currentday, currentmonth=currentmonth, currentyear=currentyear)
@@ -74,7 +67,26 @@ def read():
         po = user_by_event(eventid)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
-    return render_template("admin.html", table=table)
+    currentday = datetime.now().day
+    monthnum = datetime.now().month
+    currentmonth = calendar.month_name
+    currentyear = datetime.now().year
+    days_list = []
+    len_days = len(users_all())
+    calevent = []
+    year = []
+    month = []
+    for x in range(len(users_all())):
+        calevent.append(users_all()[x]['event'])
+        year.append(str(users_all()[x]['yearmonth'])[0:4])
+        days_list.append(str(users_all()[x]['day']))
+        if str(users_all()[x]['yearmonth'])[5:6] == "0":
+            month.append(str(users_all()[x]['yearmonth'])[6:7])
+        else:
+            month.append(str(users_all()[x]['yearmonth'])[5:7])
+    return render_template("admin.html", table=table, days_list=days_list,
+                           len_days=len_days, calevent=calevent, year=year, month=month, monthnum=monthnum,
+                           currentday=currentday, currentmonth=currentmonth, currentyear=currentyear)
 
 
 @app_calendar.route('/read2/', methods=["POST"])
