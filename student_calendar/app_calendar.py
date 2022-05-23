@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect
 from flask_login import login_required
+from datetime import datetime
+import calendar
 
 from student_calendar.cal_query import *
 
@@ -18,8 +20,11 @@ def student():
 @app_calendar.route('/admin/')
 @login_required
 def admin():
+    currentday = datetime.now().day
+    monthnum = datetime.now().month
+    currentmonth = calendar.month_name
+    currentyear = datetime.now().year
     days_list = []
-    digit_n = []
     len_days = len(users_all())
     calevent = []
     year = []
@@ -27,24 +32,21 @@ def admin():
     for x in range(len(users_all())):
         calevent.append(users_all()[x]['event'])
         year.append(str(users_all()[x]['yearmonth'])[0:4])
+        days_list.append(str(users_all()[x]['day']))
         if str(users_all()[x]['yearmonth'])[5:6] == "0":
             month.append(str(users_all()[x]['yearmonth'])[6:7])
         else:
             month.append(str(users_all()[x]['yearmonth'])[5:7])
-        digit_n += str(len(str(users_all()[x]['day'])))
-        if digit_n[x] == '1':
-            days_list += str(users_all()[x]['day'])
-        else:
-            days_list += str(users_all()[x]['day'])
-            days_list[x] = days_list[x] + days_list[(x+1)]
-            days_list.pop(x+1)
     print(days_list)
     print(calevent)
     print(year)
     print(month)
-    print(len_days)
+    print(currentday)
+    print(currentmonth[5])
+    print(currentyear)
     return render_template("admin.html", table=users_all(), days_list=days_list,
-                           len_days=len_days, calevent=calevent, year=year, month=month)
+                           len_days=len_days, calevent=calevent, year=year, month=month, monthnum=monthnum,
+                           currentday=currentday, currentmonth=currentmonth, currentyear=currentyear)
 
 
 @app_calendar.route('/create/', methods=["POST"])

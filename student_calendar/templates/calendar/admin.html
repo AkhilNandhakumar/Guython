@@ -171,9 +171,9 @@
             <button onclick="button_left()" class="prev">&#10094;</button>
             <button onclick="button_right()" class="next">&#10095;</button>
             <div style="margin-left: 45%" class="row">
-                <p id="month">May</p>
+                <p id="month">{{ currentmonth[monthnum] }}</p>
                 <p>&nbsp;-&nbsp;</p>
-                <p id="year">2022</p>
+                <p id="year">{{ currentyear }}</p>
             </div>
         </ul>
     </div>
@@ -217,7 +217,7 @@
         </div></button>
         <button><div class="popup" onclick="popup(19)">19<span class="popuptext" id="19">A Simple birthday!</span>
         </div></button>
-        <button><div class="popup active" onclick="popup(20)">20<span class="popuptext" id="20">A Simple birthday!</span>
+        <button><div class="popup" onclick="popup(20)">20<span class="popuptext" id="20">A Simple birthday!</span>
         </div></button>
         <button><div class="popup" onclick="popup(21)">21<span class="popuptext" id="21">A Simple birthday!</span>
         </div></button>
@@ -395,8 +395,8 @@
 
     </div>
     <script>
-        let n = 4
-        let year = 2022
+        let n = ({{ monthnum }} - 1)
+        let year = {{ currentyear }}
         function button_left() {
             n = n - 1
             if (
