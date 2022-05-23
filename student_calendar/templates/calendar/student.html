@@ -86,11 +86,17 @@
 
         /* Highlight the "current" day */
         .days button .active {
-            padding: 5px;
+            padding: 6px;
             background: white;
             color: black !important
+
         }
 
+        /* Curve the current day block */
+        #curve {
+            border-radius: 10px;
+            background: #ffffff;
+        }
     </style>
     <div class="titleOfHomePage">
         <p>Student Calendar</p>
@@ -126,7 +132,7 @@
         <button>20</button>
         <button>21</button>
         <button>22</button>
-        <button><span class="active">23</span></button>
+        <button><span class="active" id="curve">23</span></button>
         <button>24</button>
         <button>25</button>
         <button>26</button>
