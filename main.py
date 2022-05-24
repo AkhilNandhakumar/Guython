@@ -10,7 +10,6 @@ from cruddy.app_crud_api import app_crud_api
 from student_calendar.app_calendar import app_calendar
 from topics import app_topics
 from learning import app_learning
-from popcorncritics import app_popcorncritics
 
 # GUYTHON APP REGISTERS
 app.register_blueprint(app_learning)
@@ -19,8 +18,6 @@ app.register_blueprint(app_crud_api)
 app.register_blueprint(app_calendar)
 app.register_blueprint(app_topics)
 
-# POPCORN CRITICS FILES
-app.register_blueprint(app_popcorncritics)
 
 
 # create a Flask instance
@@ -380,10 +377,6 @@ def wtd2():
 def wtd3():
     return render_template("weather_info/wtd3.html")
 
-
-@app.route('/popcorn/')
-def popcorn():
-    return render_template("popcorn.html")
 
 @app.route('/weather_checks/')
 def wchecks():
