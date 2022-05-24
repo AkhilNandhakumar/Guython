@@ -1,0 +1,384 @@
+<!-- Custom file for standardizing Project Data
+This HTML is setup as as a Jinja2 layout, coders use layouts for:
+ ... standardization of style
+ ... setting expectations for data
+ ... code reuse
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+
+{% set basename = "Nighthawk Coding" %}
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/static/assets/favicon1.ico"
+          type="image/x-icon">
+    <link rel="icon" href="/static/assets/favicon1.ico"
+          type="image/x-icon">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" type="text/css" href={{  url_for("static", filename="style/style.css", version='105') }}>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Londrina+Outline&family=Raleway:wght@100&display=swap');
+
+
+        #vfx {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        body, html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa {
+            padding: 35px;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 40px;
+            text-align: center;
+            margin: auto;
+        }
+        t1 {
+            color: white;
+            font-size: 20px;
+            width: 500px;
+        }
+        .titleOfHomePage {
+            color: white;
+            font-size: 60px;
+            margin-left: 10px;
+            text-align: center;
+        }
+        html, body {
+            width: 100%;
+            height:100%;
+        }
+
+        .textWeather {
+            color: clear;
+            font-family: 'Raleway', sans-serif;
+            font-size: 35px;
+            text-shadow:
+                    -1px -1px 0 #000,
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+        }
+
+        .nav-link dropdown-toggle{
+            font-family: 'Gill Sans', sans-serif;
+
+        }
+
+        body {
+            text-align:center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #000000, #22bf4c , #000000, #22bf4c, #000000);
+            background-size: 800% 800%;
+            animation: gradient 30s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+
+
+        :root{
+            --white: whitesmoke;
+            --black: black;
+            --grey: grey;
+            --blue: #8cccdf;
+            --yellow: #faff56;
+        }
+
+        html, body{
+            margin: 0;
+            height: 100%;
+            animation: fadein 2s;
+            -moz-animation: fadein 2s; /* Firefox */
+            -webkit-animation: fadein 2s; /* Safari and Chrome */
+            -o-animation: fadein 2s; /* Opera */
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        .dark-mode {
+            background-color: var(--white);
+            color: var(--black);
+        }
+        a {
+            color: midnightblue;
+        }
+
+        .fa{
+            font-size: 3em;
+            letter-spacing: 1em;
+            transition: all .2s;
+            color: white;
+        }
+
+        .fa:hover{
+            transform: translateY(10px);
+        }
+
+        .fa-youtube-play:hover{
+            color: #cc0000;
+        }
+
+        .fa-twitter:hover{
+            color: #1da1f2;
+        }
+
+        .fa-github:hover{
+            color: #000000;
+        }
+
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 15px 40px;
+            display: inline-block;
+            border-radius: 100px;
+            transition: all .2s;
+            position: absolute;
+            color: white;
+            font-size: 2.5em;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .row{
+            margin: auto;
+        }
+
+    </style>
+
+
+    {% block meta %}
+        <title>{{ basename }} | {{ project }} </title>
+    {% endblock %}
+</head>
+
+
+<body>
+{% include "layouts2/navbar2.html" %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row justify-content-end" style="padding: 2%;">
+            <div class="col-2" style="text-align: right; font-family: 'Apple Chancery', cursive;">
+                {% block info %}
+                    <!-- notice jinja style variables used in href's -->
+                    <a><h5>{{basename}}</h5></a>
+                    <a href={{github}} target="_blank"><i class="fa fa-github"></i></a>
+                    <a href={{youtube}} target="_blank"><i class="fa fa-youtube-play"></i></a>
+                    <a href={{twitter}} target="_blank"><i class="fa fa-twitter"></i></a>
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="product" style="margin-top: 2%;">
+            <div class="row" style="padding: 10%; padding-top: 0%; padding-bottom: 5%;">
+
+                <div class="col-8" >
+                    <h1>{{ project }} Project</h1>
+                </div>
+
+            </div>
+
+            <div class="row" style="padding-left: 10%;">
+                {% block links %}
+                    <div class="col-3">
+                        <a href="{{ overview }}" class="btn">Overview</a>
+                    </div>
+
+                    <div class="col-3">
+                        <a href="{{ repo }}" class="btn">Repository</a>
+                    </div>
+                {% endblock %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+</body>
+
+{% block background %}
+    <script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vanta.birds.min.js') }}"></script>
+    <script>
+        VANTA.BIRDS({
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 2.00,
+            scaleMobile: 1.00
+        })
+    </script>
+    <script> // Prevents horizontal scrolling and locks the screen to a specific width.
+    let scrollEventHandler = function()
+    {
+        window.scroll(0, window.pageYOffset)
+    }
+    window.addEventListener("scroll", scrollEventHandler, false);
+    let winWidth = window.innerWidth;
+    let winHeight = window.innerHeight;
+    window.addEventListener('resize', function (){winWidth = window.innerWidth; winHeight = window.innerHeight;});
+
+
+    //
+    let miniQuizzesData = {
+
+        math: [
+
+            [1, 'What is three fifth of 100?', '60', '20', '5', '40',],
+            [1, 'If David’s age is 27 years old in 2011. What was his age in 2003?', '19 years', '20 years', '37 years', '17 years',],
+            [1, 'What is the remainder of 21 divided by 7?', 'None of these', '7', '1', '21',],
+            [1, 'I am a number. I have 7 in the ones place. I am less than 80 but greater than 70. What is my number?', '77', '75', '73', '71',],
+            [1, 'How many years are there in a decade?', '5', '10', '20', '100',],
+            [1, 'What is the square of 15?', '225', '252', '30', '15',],
+            [1, 'In a century how many months are there?', '1200', '120', '12000', '12',],
+            [1, '19 + ..... = 42', '23', '22', '24', '13',],
+            [1, 'What is the symbol of pi?', '€', 'π', 'Ω', '∞',],
+            [1, 'Arrange the numbers in ascending order: 36, 12, 29, 21, 7.', '7, 12, 21, 29, 36', '36, 29, 21, 12, 7', '36, 29, 7, 21, 12', 'None of these',],
+            [1, 'What is the greatest two digit number?', '99', '100', '90', '11',],
+            [1, 'How much is 90 – 19?', '71', '72', '61', 'None of these',],
+            [2, 'What is 20 divisible by?', '2', '4', '3', '6',],
+            [2, 'What is 30 divisible by?', '6', '15', '9', '8',],
+            [2, 'What is 100 divisible by?', '10', '25', '45', '55',],
+            [2, 'What is 50 divisible by?', '10', '25', '15', '45',],
+            [2, 'What is 63 divisible by?', '9', '72', '61', '19',],
+            [2, 'What is 70 divisible by?', '35', '10', '4', '6',],
+            [1, 'Find the value of x; if x = (2 × 3) + 11.', '17', '55', '192', '66',],
+            [1, 'What is the smallest three digit number?', '100', '101', '111', '999',],
+            [1, 'How much is 190 – 87 + 16?', '119', '87', '261', '103',],
+            [1, 'What is 1000 × 1 equal to?', '1000', '1', '0', 'None of these',],
+            [1, 'How many sides are there in a nonagon?', '9', '5', '3', '7',],
+            [1, 'How many months have 30 day.', '4', '5', '6', '11',],
+            [1, 'Which number occurred before 9019?', '9099', '9109', '9091', 'None of these',],
+            [1, 'In words number 14 can be written as ……', 'Fourteen.', 'Fourten', 'Fortin', 'Forteen',]
+
+
+        ],
+
+        literature: [
+
+            [1, 'Tweedledum and Tweedledee are two characters of which Children’s book?', 'Alice in Wonderland', 'Animal Farm', 'The Alchemist', 'Night',],
+            [1, 'Who is the author of The Origin Of Species?', 'Darwin', 'Newton', 'Lamarck', 'Wallace',],
+            [1, 'People of which religion consider ‘The Bhagavad Gita’ as their sacred text?', 'Hinduism', 'Judaism', 'Christianity', 'Islam',],
+            [1, 'The abbreviated form of which book is NEB?', 'New English Bible', 'New England Biolabs', 'Nebraska', 'Negative Energy Balance',],
+            [1, 'Shakespeare’s four greatest tragedies are Macbeth, Othello, Hamlet and .....', 'King Lear', 'Romeo and Juliet', 'Osawald', 'Wallace',],
+            [1, 'Who invented the character, Robinson Crusoe?', 'Daniel Defoe', 'Newton', 'Lamarck', 'Wallace',],
+            [1, 'Name the mega-selling writer who has written “Deception Point”?', 'Dan Brown', 'Newton', 'Lamarck', 'Wallace',],
+            [1, 'By what name was Shakespeare’s mother known before her marriage?', 'Mary Arden', 'Margret Arden', 'Mary Garden', 'Margret Garden',],
+            [1, 'In which Charles Dickens’ novel we find the characters Bently Drummle, Joe Gargary, and Herbert Pocket?', 'Great Expectations', 'Common Sense', 'The Alchemist', 'Animal Farm',],
+            [1, 'Mention the exact number of sonnets written by William Shakespeare?', '154', '254', '74', '174',],
+            [1, 'Name the only play written by Shakespeare in which there is no song.', 'The Comedy Of Errors', 'Othello', 'Wallace', 'Romeo and Juliet',],
+            [1, 'Mr. Freeze’ is the arch-enemy of a famous superhero of a comic book. What is the name of that superhero?', 'Batman', 'Superman', 'Spiderman', 'Wonder Woman',],
+            [1, 'In Which Book of the Holy Bible did the death of Moses take place?', 'Deuteronomy', 'Psalms', 'Isaiah', 'Genesis',],
+            [1, '“Bird of Paradise” is a book written by a renowned psychiatrist. What is the name of him?', 'R.D. Laing', 'Kipling', 'Churchill', 'Wallace',],
+            [1, 'The ‘Almagest’ is a book written by a Greek Astronomer. What is the name of him?', 'Ptolemy', 'Newton', 'Lamarck', 'Wallace',],
+            [1, 'Who is the author of the classic masterpiece “Anna Karenina”?', 'Tolstoy', 'Newton', 'Lamarck', 'Wallace',],
+            [1, 'Name the female novelist who has authored ‘Sense and Sensibility’?', 'Austen', 'Newton', 'Lamarck', 'Wallace',],
+            [1, '“Absolutely Mahvelous” is the autobiography of a person who wrote it at the age of 21. Who is he?', 'Billy Crystal', 'Newton', 'Lamarck', 'Wallace',],
+            [1, 'Which novel of William Peter Blatty written in 1971? It has been adopted in which epic Horror Film?', 'The Exorcist', 'Carrie', 'Cujo', 'Wallace',],
+            [1, 'Who is the author of “Roots” that inspired a TV blockbuster?', 'Haley', 'Newton', 'Lamarck', 'Wallace',],
+            [1, 'In which novel of Roald Dahl, the character Willy Wonka can be found?', 'Charlie And The Chocolate Factory', 'Matilda', 'Fantastic Mr. Fox', 'Wallace',],
+            [1, 'Find the missing word in the Best Selling Book by Barak Obama: ‘The Audacity Of _______.’', 'Hope', 'Faith', 'Love', 'Happiness',],
+            [1, '“Rites of Passage” is a novel written by?', 'Golding', 'Newton', 'Lamarck', 'Wallace',]
+
+        ],
+
+        science: [
+
+            [1, 'What weather phenomenon causes more deaths in the U.S. annually than any other except lightning?', 'Tornadoes', 'Tsunamis', 'Floods', 'Hurricane',],
+            [1, 'Pollination by birds is called:', 'ornithophily', 'autogamy', 'entomophily', 'anemophily',],
+            [1, 'Unlike rodents, the rabbit has how many incisor teeth?', '4', '5', '6', '3',],
+            [1, 'What percent of fire-related deaths are due to smoke inhalation rather than burns??', '80%', '99%', '50%', '10%',],
+            [1, 'To what familiar fruit is the plantain similar?', 'Bannana', 'Orange', 'Apple', 'Grape',],
+            [1, 'How many men have walked on the moon?', '12', '11', '14', '10',],
+            [1, 'The fastest-running terrestrial animal is:', 'Cheetah', 'Lion', 'Man', 'Jaguar',],
+            [1, 'In what country do the greatest number of tornadoes occur??', 'America', 'Canada', 'Mexico', 'India',],
+            [1, 'Which sea is the saltiest natural lake and is also at the lowest elevation on the face of the earth?', 'The Dead Sea', 'The Salten Sea', 'The Pacific', 'The Atlantic',],
+            [1, 'The scarab, worshipped by the Egyptians, is what type of beetle?', 'The dung beetle', 'Sand beetle', 'desert beetle', 'water beetle,],
+                [1, 'As you go down into a well, your weight', 'Decreases Slightly', 'Increase', 'Remains the Same',],
+                [1, 'A cloud at ground level is called what?', 'Fog', 'Water', 'Ice', 'Clouds',],
+                [1, 'Bees must collect nectar from approximately how many flowers to make 1 pound of honeycomb? Is it:', '20 Million', '10 Million', '5 Million', '15 Million',],
+                [1, '“What is the name of the largest North American terrestrial rodent, distinguished by its spiny covering?', 'Porcupine', 'Rat', 'Hedgehog', 'Mouse',],
+                [1, 'Albacore is a type of:', 'Tuna', 'Marble', 'Meteoroid', 'Shell-fish',],
+                [1, 'The only species of cat that lives and hunts in groups is?', 'Lion', 'Leopard', 'Cougar', 'Cheetah',],
+                [1, 'Which prefix is often used with scientific terms to indicate that something is the same, equal or constant?', 'Iso', 'Mega', 'Meta', 'Quasi',],
+                [1, 'The study of phenomena at very low temperatures is called:', 'Cryogenics', 'crystallography', 'morphology', 'heat transfer',],
+                [1, 'The branch of medical science which is concerned with the study of disease as it affects a community of people is called', 'epidemiology', 'oncology', 'paleontogy', 'pathology',],
+                [1, 'GENR-91; Multiple Choice: The study of how people use tools to perform work and how people physically relate to their working environment is called:', 'ergonomics', 'agronomy', 'physiology', 'engineering',],
+                [1, 'What famous scientist and inventor participated in the invention of the Aqua-Lung?', ' Jacques Cousteau', 'Isaac Newton', 'Leonardo da Vinci', 'Thomas Edison',]
+
+            ],
+
+            history: [
+
+        [1, 'A 1998 study suggests that which of the following explorers reached the North Pole?', 'Robert E. Peary', 'Roald Amundsen', 'William Barents', 'Adam Sound',],
+        [1, 'History students are taught about the "the fall of Constantinople" in 1453. to who did it fall?', 'Ottoman Turks', 'Christian crusaders', 'Mongol hordes', 'Romans',],
+        [1, 'Catherine the Great ruled what country?', 'Russia', 'England', 'Germany', 'France',],
+        [1, 'What was the next state after the original 13 to be admitted to the United States?', 'Vermont', 'Florida', 'Nebraska', 'Kentucky',],
+        [1, 'Which of these four wise men died before the other three were born?', 'Solomon', 'Confucius', 'Jesus', 'Plato',],
+        [1, 'The Creoles of todays New Orleans are descended from whom?', 'French and Spanish settlers who lived in the city', 'French Canadians from Nova Scotia', 'refugees from the Crimean War', 'none of the above',],
+        [1, 'George Washington is called the father of our country, but how many kids did Mr. Washington really have?', '0', '1', '3', '7',],
+        [1, 'William Rehnquist as chief justice of the Supreme Court was preceded by whom?', 'Warren Burger', 'Earl Warren', 'Abe Fortas', 'Clarence Thomas',],
+        [1, 'What were the first names of the famous explorers Lewis and Clark?', 'Meriwether and William', 'Clark and Lewis', 'John and Lincoln', 'Benjamin and Samuel',],
+        [1, 'Manuel Noriega took refuge in whose embassy after the U.S. invasion of Panama City in 1989?', 'Vatican City', 'Cuba', 'Switzerland', 'Nicaragua',],
+        [1, 'On the island nation formerly known as Ceylon, Tamil separatists have been conducting attacks against the Sinhalese majority. what is the name of the country?', 'Sri Lanka', 'Cyprus', 'Seychelles', 'Madagascar',],
+        [1, 'Where was the UN headquarters located prior to them moving to Manhattans East Side?', 'Long Island, New York', 'San Francisco', 'Geneva, Switzerland', 'Paris, France',],
+        [1, 'John Brown of Civil War fame was which?', 'an abolitionist', 'a slave', 'a slave-owner', 'none of the above',],
+        [1, 'At the time of the Declaration of Independence what was the approximate  population of the United States?', '2,000,000', '20,000,000', '200,000', '20,000',],
+        [1, 'What frontier marshal was murdered in 1876 in Deadwood, South Dakota, by outlaw Jack McCall?', 'Wild Bill Hickok', 'Matt Dillon', 'Buffalo Bill Cody', 'Bat Masterson',],
+        [1, 'In what year did Wyatt Earp die?”?', '1929', '1879', '1889', '1929',],
+        [1, 'In what year did Leonard Kristensen of Norway lead the first party to land on the mainland of Antarctica?', '1895', '1879', '1889', '1929',],
+        [1, 'Namibia became a colony of what European nation in 1890, under the name South-West Africa?', 'Germany', 'Great Britain', 'The Netherlands', 'Portugal',],
+        [1, 'Name th song.', 'The Comedy Of Errors', 'Othello', 'Wallace', 'Romeo and Juliet',]
+
+    ]
+
+    }
+    </script>
+{% endblock %}
+
+</html>
