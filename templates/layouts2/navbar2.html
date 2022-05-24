@@ -40,7 +40,17 @@
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-hazard">
-    <a style="font-family: 'Andale Mono'; font-size: 38px; color: white" class="navbar-brand">Nighthawk Tutoring</a>
+    <div class="dropdown">
+        <pList class="navbar-brand" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Andale Mono'; font-size: 38px; color: white">
+            Popcorn Critics
+        </pList>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+            <a class="dropdown-item" href="/">Guython</a>
+            <a class="dropdown-item" href="/popcorn">Popcorn Critics</a>
+            <a class="dropdown-item" href="/">Slayers</a>
+            <a class="dropdown-item" href="/">Test Prep</a>
+        </div>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -103,16 +113,16 @@
                 <a class="dropdown-item" href={{ url_for('crud.search') }}>Search</a>
             </div>
         </div>
-{#        <div class="dropdown">#}
-{#            <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                Extras#}
-{#            </pList>#}
-{#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
-{#                <a class="dropdown-item" href=/api_collection>API Collection</a>#}
-{#                <a class="dropdown-item" href=/games>Games</a>#}
-{#                <a class="dropdown-item" href=/google_translate>Google Translate</a>#}
-{#            </div>#}
-{#        </div>#}
+        {#        <div class="dropdown">#}
+        {#            <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+        {#                Extras#}
+        {#            </pList>#}
+        {#            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >#}
+        {#                <a class="dropdown-item" href=/api_collection>API Collection</a>#}
+        {#                <a class="dropdown-item" href=/games>Games</a>#}
+        {#                <a class="dropdown-item" href=/google_translate>Google Translate</a>#}
+        {#            </div>#}
+        {#        </div>#}
         <div class="dropdown">
             <pList class="dropdown1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 GitHub Pages
