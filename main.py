@@ -384,6 +384,7 @@ def wchecks():
 def snake():
     return render_template("games/snake.html")
 
+
 # Forums socket.io code
 # @socketio.on('testing')
 # def handle_message(data):
