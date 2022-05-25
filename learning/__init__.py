@@ -20,3 +20,7 @@ def starter():
 @app_learning.route('/testprep/')
 def testprep():
     return render_template("learning/testprep.html")
+
+@app_learning.route('/password/')
+def password():
+    return render_template("learning/password.html")
