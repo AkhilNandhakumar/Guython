@@ -170,7 +170,7 @@
         <ul>
             <button onclick="button_left()" class="prev">&#10094;</button>
             <button onclick="button_right()" class="next">&#10095;</button>
-            <div style="margin-left: 45%" class="row">
+            <div style="margin-left: 43%; margin-right: 38%; font-size: 24px" class="row">
                 <p id="month">{{ currentmonth[monthnum] }}</p>
                 <p>&nbsp;-&nbsp;</p>
                 <p id="year">{{ currentyear }}</p>
@@ -235,11 +235,11 @@
         </div></button>
         <button><div class="popup" onclick="popup(28)">28<span class="popuptext" id="28">A Simple birthday!</span>
         </div></button>
-        <button><div class="popup" onclick="popup(29)">29<span class="popuptext" id="29">A Simple birthday!</span>
+        <button><div id="29_2"class="popup" onclick="popup(29)">29<span class="popuptext" id="29">A Simple birthday!</span>
         </div></button>
-        <button><div class="popup" onclick="popup(30)">30<span class="popuptext" id="30">A Simple birthday!</span>
+        <button><div id="30_2" class="popup" onclick="popup(30)">30<span class="popuptext" id="30">A Simple birthday!</span>
         </div></button>
-        <button><div class="popup" onclick="popup(31)">31<span class="popuptext" id="31">A Simple birthday!</span>
+        <button><div id="31_2" class="popup" onclick="popup(31)">31<span class="popuptext" id="31">A Simple birthday!</span>
         </div></button>
         <button></button>
         <button></button>
@@ -303,42 +303,42 @@
             month_changer(n)
         }
         function month_changer(num) {
-            if (
-                num === 0
-            ) document.getElementById("month").innerHTML = "January"
-            else if (
-                num === 1
-            ) document.getElementById("month").innerHTML = "February"
-            if (
-                num === 2
-            ) document.getElementById("month").innerHTML = "March"
-            if (
-                num === 3
-            ) document.getElementById("month").innerHTML = "April"
-            if (
-                num === 4
-            ) document.getElementById("month").innerHTML = "May"
-            if (
-                num === 5
-            ) document.getElementById("month").innerHTML = "June"
-            if (
-                num === 6
-            ) document.getElementById("month").innerHTML = "July"
-            if (
-                num === 7
-            ) document.getElementById("month").innerHTML = "August"
-            if (
-                num === 8
-            ) document.getElementById("month").innerHTML = "September"
-            if (
-                num === 9
-            ) document.getElementById("month").innerHTML = "October"
-            if (
-                num === 10
-            ) document.getElementById("month").innerHTML = "November"
-            if (
-                num === 11
-            ) document.getElementById("month").innerHTML = "December"
+            if (num === 0) {
+                document.getElementById("month").innerHTML = "January"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
+            }
+            if (num === 1) {
+                document.getElementById("month").innerHTML = "February"; document.getElementById("29_2").style.display = "none"; document.getElementById("30_2").style.display = "none"; document.getElementById("31_2").style.display = "none";
+            }
+            if (num === 2) {
+                document.getElementById("month").innerHTML = "March"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
+            }
+            if (num === 3) {
+                document.getElementById("month").innerHTML = "April"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "none";
+            }
+            if (num === 4) {
+                document.getElementById("month").innerHTML = "May"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
+            }
+            if (num === 5) {
+                document.getElementById("month").innerHTML = "June"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "none";
+            }
+            if (num === 6) {
+                document.getElementById("month").innerHTML = "July"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
+            }
+            if (num === 7) {
+                document.getElementById("month").innerHTML = "August"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
+            }
+            if (num === 8) {
+                document.getElementById("month").innerHTML = "September"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "none";
+            }
+            if (num === 9) {
+                document.getElementById("month").innerHTML = "October"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
+            }
+            if (num === 10) {
+                document.getElementById("month").innerHTML = "November"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "none";
+            }
+            if (num === 11) {
+                document.getElementById("month").innerHTML = "December"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
+            }
 
         }
         function year_changer() {
