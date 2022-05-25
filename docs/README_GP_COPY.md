@@ -1,6 +1,7 @@
 ## Tech Guideline Documentation
 - Review Tickets - [Open](https://github.com/AkhilNandhakumar/Guython/issues) & [Closed](https://github.com/AkhilNandhakumar/Guython/issues?q=is%3Aissue+is%3Aclosed)
 - [Scrum Board](https://github.com/AkhilNandhakumar/Guython/projects/1)
+- [Review Ticket](https://github.com/AkhilNandhakumar/Guython/issues/57)
 
 From the start of the trimester, our master plan has been to create a website that CSP students can use to study computer science and prepare themselves for the AP CSP exam. All of our meaningful contributions have been items that contribute to this theme, such as topic pages that teach students about computer science, or a calendar that allows users to view events set by admins, such as test days or the final AP exam date. We have also been able to incorporate our Sponsor's requirements, which were to make a website that would integrate all the previously made TPT and TT notes into a seamless experience, which more specifically meant having very similar CSS between our meain website and GitHub pages, where we put all of this information. Overall, our team has put a lot of effort into this porject, and has almost always been on task in class.
 
