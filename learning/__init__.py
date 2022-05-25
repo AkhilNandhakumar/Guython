@@ -28,5 +28,5 @@ def findyour():
         input = request.form.get("lname")
         print("works")
         if len("input") != 0:
-            return render_template("lerning/findyour.html", input=input)
+            return render_template("learning/findyour.html", input=input)
     return render_template("learning/findyour.html")
