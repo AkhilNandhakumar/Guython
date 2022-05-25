@@ -1,0 +1,43 @@
+{% extends "layouts/base.html" %}
+
+
+{% block body %}
+    <style>
+        a:link {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: purple;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: purple;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    </style>
+    <html>
+    <table style="border: 3px solid black;border-collapse: collapse; margin-left: auto; margin-right: auto; margin-top: 20px">
+
+        <tr style="background-color: white">
+            <td style="border: 3px solid black;border-collapse: collapse; font-size: 50px; padding: 5px"><a href="/topmoviecode">Top Movie Code</a></td>
+            <td style="border: 3px solid black;border-collapse: collapse; font-size: 50px; padding: 5px"><a href="/randommoviegeneratorcode">Random Movie Generator Code</a></td>
+        </tr>
+        <tr style="background-color: white">
+            <td style="border: 3px solid black;border-collapse: collapse; font-size: 50px; padding: 5px"><a href="/moviequizcode">Movie Quiz Code</a></td>
+            <td style="border: 3px solid black;border-collapse: collapse; font-size: 50px; padding: 5px"><a> </a></td>
+        </tr>
+    </table>
+    </html>
+{% endblock %}
