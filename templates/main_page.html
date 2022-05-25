@@ -136,9 +136,14 @@
         // the path is used to create a link to the desired page
         let websitePages =
             [
+                {"name":"Calendar", "path":"/calendar"},
+                {"name":"Calendar (Admin)", "path":"/calendar/admin"},
                 {"name":"HTML", "path":"/topics/html"},
                 {"name":"CSS", "path":"/topics/scss"},
                 {"name":"JavaScript", "path":"/topics/javascript"},
+                {"name":"Learning Zone: Movie", "path":"/learning/movie"},
+                {"name":"Learning Zone: Starter", "path":"/learning/starter"},
+                {"name":"Learning Zone: AP Test Prep", "path":"/learning/testprep"},
                 {"name":"API Collection", "path":"/api_collection/"},
                 {"name":"CRUD", "path":"/crud/"},
                 {"name":"Async CRUD", "path":"/crud_api/"},
@@ -148,6 +153,7 @@
                 {"name":"Home", "path":"/"},
                 {"name":"Games", "path":"/games/"},
                 {"name":"Google Translate", "path":"/google_translate/"}
+
             ] ;
 
         function SearchMain(list = websitePages, textcolor = 'white',nullcolor = 'red', SearchID = 'SearchInput', ResultID = 'SearchResult', DebugMode = false, NoRText = 'No Results') {
