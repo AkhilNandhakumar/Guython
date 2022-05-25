@@ -386,6 +386,14 @@ def wchecks():
 def snake():
     return render_template("games/snake.html")
 
+@app.route('/popcorncritics/')
+def index2():
+    return render_template("index2.html")
+
+@app.route('/top/')
+def top():
+    return render_template("top.html")
+
 # Forums socket.io code
 # @socketio.on('testing')
 # def handle_message(data):
