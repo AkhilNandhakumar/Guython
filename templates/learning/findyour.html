@@ -98,7 +98,7 @@
 
     <div class="container2" style="margin-right: 80px; width: 650px">
         <p style="font-family: Andale Mono; font-size: x-large; text-align: center">How Does the Code Work?</p>
-        <a href="https://github.com/nadirahaddach/TheSlayers.github.io/blob/main/templates/findyour.html" class="button1" style="font-family: Baskerville; font-size: larger; text-align: center">Github Findyour.html File</a>
+        <a href="https://github.com/nadirahaddach/TheSlayers.github.io/blob/main/templates/findyour.html" class="button1" style="font-family: 'Andale Mono'; font-size: larger; text-align: center">Github Findyour.html File</a>
         <br>
         <br>
         <i>Head:</i> The first section you see is the head tag. This tag includes whatever you don't want in the body of your html file.
@@ -147,8 +147,10 @@
             document.getElementById('counselor').innerHTML = "Ms. Lauren Kennedy";
         } else if ((char1 < 83) || (char1 <= 83 && char2 < 72) || (char1 <= 83 && char2 <= 72 && char3 <= 65)) {
             document.getElementById('counselor').innerHTML = "Mr. Jesse Luna";
-        } else {
+        } else if ((char1 < 90) || (char1 <= 90 && char2 < 90) || (char1 <= 90 && char2 <= 90 && char3 <= 90)) {
             document.getElementById('counselor').innerHTML = "Mrs. Kathy Marron";
+        } else {
+            document.getElementById('counselor').innerHTML = "";
         }
     </script>
 
