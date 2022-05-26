@@ -112,8 +112,9 @@
         }
 
         <!-- uses decimal conversion of each letter one at a time to find where in the alphabet the last name is -->
-
-        if ((char1 < 68) || (char1 <= 68 && char2 < 69) || (char1 <= 68 && char2 <= 69 && char3 <= 76)) {
+        if ((char1 < 65)) {
+            document.getElementById('counselor').innerHTML = "N/A";
+        } else if ((char1 < 68) || (char1 <= 68 && char2 < 69) || (char1 <= 68 && char2 <= 69 && char3 <= 76)) {
             document.getElementById('counselor').innerHTML = "Mrs. Susie Kihneman";
         } else if (char1 <= 74) {
             document.getElementById('counselor').innerHTML = "Mr. Tim Roty";
