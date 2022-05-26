@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends "layouts/base.html" %}
-{%  block body %}
+{% block body %}
+    <title>Notes</title>
     <head>
         <link rel="stylesheet" href=
                 "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -34,7 +35,6 @@
     <a style="font-size: 30px; margin-left: 1%">
         Notes
     </a>
-    </nav>
 
     <div class="container my-3">
         <h1>Take your Notes here</h1>
@@ -49,9 +49,7 @@
                               id="addTxt" rows="3">
 					</textarea>
                 </div>
-                <button onclick="showNotes()" class="btn btn-primary"
-                        id="addBtn" style=
-                                "background-color:darkblue">
+                <button onclick="showNotes()" class="btn btn-primary" id="addBtn" style="background-color:darkblue">
                     Add Note
                 </button>
             </div>
@@ -137,5 +135,5 @@
 
     </script>
     </body>
-{%  endblock %}
+{% endblock %}
 </html>
