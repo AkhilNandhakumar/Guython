@@ -396,6 +396,10 @@ def index2():
 def top():
     return render_template("top.html")
 
+@app.route('/learnmovie/')
+def learnmovie():
+    return render_template("popcornpages/learnmovie.html")
+
 # Forums socket.io code
 # @socketio.on('testing')
 # def handle_message(data):
