@@ -10,6 +10,7 @@ from cruddy.app_crud_api import app_crud_api
 from student_calendar.app_calendar import app_calendar
 from topics import app_topics
 from learning import app_learning
+from popcorncritics import app_popcorn
 
 # GUYTHON APP REGISTERS
 app.register_blueprint(app_learning)
@@ -17,6 +18,7 @@ app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 app.register_blueprint(app_calendar)
 app.register_blueprint(app_topics)
+app.register_blueprint(app_popcorn)
 
 
 
@@ -386,6 +388,13 @@ def wchecks():
 def snake():
     return render_template("games/snake.html")
 
+@app.route('/popcorncritics/')
+def index2():
+    return render_template("index2.html")
+
+@app.route('/top/')
+def top():
+    return render_template("top.html")
 
 # Forums socket.io code
 # @socketio.on('testing')
