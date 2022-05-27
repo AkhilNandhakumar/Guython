@@ -12,6 +12,9 @@ app_popcorn = Blueprint('popcorn', __name__,
 def notes():
     return render_template("popcornpages/notes.html")
 
+@app_popcorn.route('/notesL/')
+def notesL():
+    return render_template("popcornpages/notesL.html")
 
 
 @app_popcorn.route('/top')
