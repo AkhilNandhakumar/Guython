@@ -6,10 +6,16 @@
     <meta charset="UTF-8">
     <title>Learn Top Movies</title>
     <style>
-        code {
-            margin-left:20%;
-            margin-right:20%;
-            color:black;
+        .code {
+            height: 500px;
+            width: 90%;
+            overflow: auto;
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            background-color: lightgrey"
         }
         h {
             margin-left:auto;
@@ -24,11 +30,12 @@
 <body>
 <h1>Learn Top Movies</h1>
 <h2>Preface:</h2>
-<p>You will need to make an account and register an API KEY with <a href="https://themoviedb.org/signup">themoviedb.org/signup</a> before being able to use this code.
+<p style="border: 2px; background-color: black">You will need to make an account and register an API KEY with <a href="https://themoviedb.org/signup">themoviedb.org/signup</a> before being able to use this code.
 Any part of the code that says "_API KEY_" is a placeholder for when you get your API KEY. You will also need to change the "render_template(..., d_list=d_list) to where
 your pages are located in your repository.</p>
 <h3>Full Code:</h3>
-<code>
+<div class="code" style="background-color: lightgrey">
+    <pre><code>
 def top():
     id_list = []
     config = (requests.get("https://api.themoviedb.org/3/configuration?api_key=_API KEY_")).json()
@@ -54,12 +61,18 @@ def top():
         n_dict["image"] = config["images"]["secure_base_url"] + "w185" + d_json["poster_path"]
         d_list.append(n_dict)
     return render_template("popcornpages/top.html", d_list=d_list)
-</code>
-<code>
+</code></pre>
+</div>
+
+<div class="code" style="background-color: lightgrey; height: 100px">
+    <pre><code>
     config = (requests.get("https://api.themoviedb.org/3/configuration?api_key=_API KEY_")).json()
     top = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=_API KEY_&language=en-US&page=1")).json()
-</code>
+</code></pre>
+</div>
+<p>
 These two lines are requests to the themoviedb(tMDB) API: the first one is to get config links for the image display; the second for the details of the entire first page of top movies.
+</p>
 </body>
 {% endblock %}
 </html>
