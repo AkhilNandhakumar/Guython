@@ -12,6 +12,8 @@ app_popcorn = Blueprint('popcorn', __name__,
 def notes():
     return render_template("popcornpages/notes.html")
 
+
+
 @app_popcorn.route('/top')
 def top():
     id_list = []
@@ -41,4 +43,17 @@ def top():
 
 @app_popcorn.route('/topL')
 def topL():
-    return render_template("popcornpages/topL.html")
+    topL = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
+    d_jsonL = (requests.get("https://api.themoviedb.org/3/movie/" + str(topL["results"][14]["id"]) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
+    configL = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
+    movie = {}
+    movie["title"] = d_jsonL["title"]
+    movie["tagline"] = d_jsonL["tagline"]
+    movie["genre"] = d_jsonL["genres"][0]["name"]
+    movie["caption"] = d_jsonL["overview"]
+    movie["country"] = d_jsonL["production_countries"][0]["name"]
+    movie["date"] = d_jsonL["release_date"]
+    movie["runtime"] = d_jsonL["runtime"]
+    movie["rating"] = d_jsonL["vote_average"]
+    movie["image"] = configL["images"]["secure_base_url"] + "w185" + d_jsonL["poster_path"]
+    return render_template("popcornpages/topL.html", movie=movie)
