@@ -8,11 +8,13 @@ app_popcorn = Blueprint('popcorn', __name__,
                          static_url_path='static')
 
 
+@app_popcorn.route('/random')
+def random():
+    return render_template("popcornpages/random.html")
+
 @app_popcorn.route('/notes/')
 def notes():
     return render_template("popcornpages/notes.html")
-
-
 
 @app_popcorn.route('/top')
 def top():
