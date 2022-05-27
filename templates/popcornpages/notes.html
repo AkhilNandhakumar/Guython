@@ -2,8 +2,9 @@
 <html lang="en">
 {% extends "layouts/base.html" %}
 {% block body %}
-    <title>Notes</title>
+
     <head>
+        <title>Notes</title>
         <link rel="stylesheet" href=
                 "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity=
@@ -29,20 +30,60 @@
                         "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous">
         </script>
+        <style>
+
+            p {
+                font-family: "sans-serif";
+                font-size: 21px;
+                text-align: center;
+                padding-left: 20%;
+                padding-right: 20%;
+            }
+            table {
+                margin-left:auto;
+                margin-right:auto;
+            }
+            td {
+                color:#10de24;
+                padding:6px 13px;
+                background-color: #000000;
+                border:1px solid #dfe2e5;
+            }
+            tr {
+                color:#10de24;
+                background-color:#000;
+                border-top:1px solid #c6cbd1;
+            }
+            a {
+                color:#10de24;
+                text-decoration:none;
+                display:block;
+            }
+            a:hover {
+                color:#10de24;
+                text-decoration:underline;
+            }
+        </style>
     </head>
 
     <body>
     <a style="font-size: 30px; margin-left: 1%">
         Notes
     </a>
-
+    <table>
+        <tr>
+            <td><a href="/popcornpages/top">Top Movies</a></td>
+            <td><a href="/popcornpages/topL">Learn Top Movies</a></td>
+            <td><a href="/popcornpages/notes">Notes</a></td>
+            <td><a href="/learning/movie">Learn More</a></td>
+        </tr>
+    </table>
     <div class="container my-3">
         <h1>Take your Notes here</h1>
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">
                     Add a Note
-
                 </h5>
                 <div class="form-group">
 					<textarea class="form-control"
