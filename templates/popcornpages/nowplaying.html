@@ -53,12 +53,12 @@
             <td><a href="/popcornpages/notesL">Learn More</a></td>
         </tr>
     </table>
-    {% for movie in d_list %}
+    {% for movie in NP_list %}
         <br>
         <br>
         <img src="{{ movie.image }}">
         <h2 style="text-align: center">{{ movie.title }}</h2>
-        <h5 style="text-align: center">{{ movie.tagline }}</h5>
+        <h5 style="text-align: center">"{{ movie.tagline }}"</h5>
         <h4 style="text-align: center">{{ movie.genre }}</h4>
         <p style="text-align: center">{{ movie.caption }}</p>
         <p style="text-align: center">Released in {{ movie.country }} on {{ movie.date }}, {{ movie.title }} runs for {{ movie.runtime }} minutes, with viewers rating it at {{ movie.rating }} out of 10</p>

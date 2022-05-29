@@ -46,30 +46,30 @@ def top():
 
 @app_popcorn.route('/nowplaying')
 def nowplaying():
-    id_list = []
-    config = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
-    nowplaying = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
+    id_listNP = []
+    configNP = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
+    nowplaying = (requests.get("https://api.themoviedb.org/3/movie/now_playing?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
     x = 0
     while x < 10:
-        id = nowplaying["results"][x]["id"]
-        id_list.append(id)
+        idNP = nowplaying["results"][x]["id"]
+        id_listNP.append(idNP)
         x += 1
 
-    d_list = []
-    for idNP in id_list:
-        d_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(idNP) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
-        n_dict = {}
-        n_dict["genre"] = d_json["genres"][0]["name"]
-        n_dict["caption"] = d_json["overview"]
-        n_dict["country"] = d_json["production_countries"][0]["name"]
-        n_dict["date"] = d_json["release_date"]
-        n_dict["runtime"] = d_json["runtime"]
-        n_dict["tagline"] = d_json["tagline"]
-        n_dict["title"] = d_json["title"]
-        n_dict["rating"] = d_json["vote_average"]
-        n_dict["image"] = config["images"]["secure_base_url"] + "w185" + d_json["poster_path"]
-        d_list.append(n_dict)
-    return render_template("popcornpages/nowplaying.html.html", d_list=d_list)
+    NP_list = []
+    for idNP in id_listNP:
+        NP_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(idNP) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
+        NP_dict = {}
+        NP_dict["genre"] = NP_json["genres"][0]["name"]
+        NP_dict["caption"] = NP_json["overview"]
+        NP_dict["country"] = NP_json["production_countries"][0]["name"]
+        NP_dict["date"] = NP_json["release_date"]
+        NP_dict["runtime"] = NP_json["runtime"]
+        NP_dict["tagline"] = NP_json["tagline"]
+        NP_dict["title"] = NP_json["title"]
+        NP_dict["rating"] = NP_json["vote_average"]
+        NP_dict["image"] = configNP["images"]["secure_base_url"] + "w185" + NP_json["poster_path"]
+        NP_list.append(NP_dict)
+    return render_template("popcornpages/nowplaying.html", NP_list=NP_list)
 
 @app_popcorn.route('/topL')
 def topL():
