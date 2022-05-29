@@ -22,21 +22,26 @@ app.register_blueprint(app_popcorn)
 def mainpage():
     return render_template("main_page.html")
 
+
 @app.route('/forums')
 def forums():
     return render_template("forums.html")
+
 
 @app.route('/register/')
 def register():
     return render_template("login_page/register.html")
 
+
 @app.route('/login/')
 def login():
     return render_template("login_page/login.html")
 
+
 @app.route('/google_translate/')
 def translate():
     return render_template("api_pages/google_translate.html")
+
 
 # Forums socket.io code
 # @socketio.on('testing')
