@@ -18,7 +18,7 @@ def movie():
 @app_learning.route('/testprep/')
 def testprep():
     return render_template("learning/testprep.html")
-
+  
 @app_learning.route('/findyour/', methods=['GET', 'POST'])
 def findyour():
     if request.form:
@@ -27,3 +27,7 @@ def findyour():
         if len("input") != 0:
             return render_template("learning/findyour.html", input=input)
     return render_template("learning/findyour.html")
+
+@app_learning.route('/password/')
+def password():
+    return render_template("learning/password.html")
