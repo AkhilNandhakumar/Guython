@@ -1,50 +1,52 @@
-<!DOCTYPE html>
+<!-- Extending the predefined project layout -->
 {% extends "layouts/base.html" %}
 
-<html>
+<!- This variable sets name of browser tab  -->
+{% set project = "Learning Zone" %}
 
+<!- This is a replacement block for Body in base.html -->
 {% block body %}
-    <head>
-        <style>
-            table {
-                margin-left:auto;
-                margin-right:auto;
-            }
-            td {
-                color:#10de24;
-                padding:6px 13px;
-                background-color: #000000;
-                border:1px solid #dfe2e5;
-            }
-            tr {
-                color:#10de24;
-                background-color:#000;
-                border-top:1px solid #c6cbd1;
-            }
-            a {
-                color:#10de24;
-                text-decoration:none;
-                display:block;
-            }
-            a:hover {
-                color:#10de24;
-                text-decoration:underline;
-            }
-        </style>
-    </head>
-    <body>
+    <!- Try building a new body here ->
+    <style>
+        .t1 {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        table{margin-left:1%}
+        td{color:#10de24; padding:6px 13px; background-color: #000000; border:1px solid #dfe2e5}
+        tr{color:#10de24; background-color:#000;border-top:1px solid #c6cbd1}
+        a{color:#10de24;text-decoration:none; display:block}
+        a:hover{color:#10de24;text-decoration:underline}
+    </style>
 
-    <h1>Welcome to the Movie Learning Zone!
-    <br>
-    Movie-themed pages and teaching galore!</h1>
     <table>
-        <tr>
-            <td><a href="/popcornpages/top">Top Movies</a></td>
-            <td><a href="/popcornpages/topL">Learn Top Movies</a></td>
-            <td><a href="/popcornpages/notes">Notes</a></td>
-            <td><a href="/learning/movie">Learn More</a></td>
-        </tr>
+        <tbody>
+            <tr>
+                <td><a href="/">Top Movies</a></td>
+                <td><a href="/">Learning API</a></td>
+                <td><a href="/">Movies Review</a></td>
+                <td><a href="/"></a></td>
+                <td><a href="/"></a></td>
+            </tr>
+        </tbody>
     </table>
-    </body>
+
+    <img style="width: 270px;" src="NO LINK TEMP FILLER">
+
+    <div class="titleOfHomePage">
+        <p>Learning Zone - Movies</p>
+    </div>
+    <hr color="white" width="50%">
+    <div style="margin-left: 20%; margin-right: 20%" class="h2">
+        <p>ADD CONTENT HERE</p>
+    </div>
+    {#    <hr color="white" width="80%">#}
+    <div class="t1">
+        <p>ADD CONTENT HERE</p>
+    </div>
+
 {% endblock %}
-</html>
+
+<!- This is turning off birds background from base.html -->
+{% block background %}
+{% endblock %}
