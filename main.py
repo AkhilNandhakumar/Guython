@@ -7,7 +7,9 @@ from student_calendar.app_calendar import app_calendar
 from topics import app_topics
 from learning import app_learning
 from popcorncritics import app_popcorn
-from contenty import app_content
+from contenty.app_content import app_content
+from notey.app_notes import app_notes
+from uploady.app_upload import app_upload
 
 # GUYTHON APP REGISTERS
 app.register_blueprint(app_learning)
@@ -16,7 +18,9 @@ app.register_blueprint(app_crud_api)
 app.register_blueprint(app_calendar)
 app.register_blueprint(app_topics)
 app.register_blueprint(app_popcorn)
-
+app.register_blueprint(app_upload)
+app.register_blueprint(app_notes)
+app.register_blueprint(app_content)
 
 @app.route('/')
 def mainpage():

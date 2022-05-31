@@ -1,17 +1,23 @@
-from flask import Blueprint, render_template
+import os
+from __init__ import app
+from flask_login import login_required, current_user
+from werkzeug.utils import secure_filename
 import requests
+
+import markdown
+from flask import Blueprint, render_template, request, redirect, url_for
+from flask_login import login_required, current_user
+from cruddy.query import user_by_id
+from cruddy.model import Notes
+from uploady.app_upload import upload_save
+
+from cruddy.query import user_by_id
 
 app_popcorn = Blueprint('popcorn', __name__,
                          url_prefix='/popcornpages',
                          template_folder='templates',
                          static_folder='static',
                          static_url_path='static')
-
-
-@app_popcorn.route('/notes/')
-def notes():
-    return render_template("popcornpages/notes.html")
-
 
 @app_popcorn.route('/random')
 def random():
