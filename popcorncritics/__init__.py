@@ -13,9 +13,8 @@ def notes():
     return render_template("popcornpages/notes.html")
 
 
-@app_popcorn.route('/random')
+@app_popcorn.route('/random', methods=['POST', 'GET'])
 def random():
-    return render_template("popcornpages/random.html")
     configR = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
     topR = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
     id_listR = []
@@ -31,6 +30,10 @@ def random():
         n_dict["title"] = details["title"]
         n_dict["image"] = configR["images"]["secure_base_url"] + "w342" + details["poster_path"]
         list.append(n_dict)
+    
+    output = request.form.to_dict()
+    print(output)
+    name = output["name"]
     return render_template("popcornpages/random.html", list=list)
 
 
