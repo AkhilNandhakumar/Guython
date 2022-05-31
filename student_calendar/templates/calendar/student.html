@@ -352,12 +352,19 @@
         }
         function popup(elementId) {
             let popupE = document.getElementById(elementId.toString());
+            popupE.innerHTML = ""
+            let check = false
             {% for i in range(len_days) %}
-                if (elementId === {{ days_list[i] }} && document.getElementById('year').innerHTML === "{{ year[i] }}" && (n+1).toString() === "{{ month[i] }}" ) {
-                    document.getElementById(elementId.toString()).innerHTML = "{{ calevent[i] }}"
-                    popupE.classList.toggle("show");
+                if (elementId === {{ days_list[i] }} && document.getElementById('year').innerHTML === "{{ year[i] }}" && (n + 1).toString() === "{{ month[i] }}") {
+                    check = true
+                    popupE.innerHTML += "{{ calevent[i] }}" + " & "
                 }
             {% endfor %}
+            if (check === true) {
+                let edit_text = popupE.innerHTML.slice(0, -6).toString()
+                popupE.innerHTML = edit_text
+                popupE.classList.toggle("show");
+            }
         }
     </script>
 {% endblock %}
