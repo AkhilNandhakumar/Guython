@@ -8,28 +8,11 @@ app_popcorn = Blueprint('popcorn', __name__,
                          static_url_path='static')
 
 
-@app_popcorn.route('/random')
-def random():
-    configR = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
-    topR = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
-    id_listR = []
-    x = 0
-    while x < 100:
-        id = topR["results"][x]["id"]
-        id_listR.append(id)
-        x += 1
-    list = []
-    for x in id_listR:
-        details = (requests.get("https://api.themoviedb.org/3/movie/" + str(x) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
-        n_dict = {}
-        n_dict["title"] = details["title"]
-        n_dict["image"] = configR["images"]["secure_base_url"] + "w342" + details["poster_path"]
-        list.append(n_dict)
-    return render_template("popcornpages/random.html", list=list)
-
 @app_popcorn.route('/notes/')
 def notes():
     return render_template("popcornpages/notes.html")
+
+
 
 @app_popcorn.route('/top')
 def top():
