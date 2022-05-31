@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Learn Top Movies</title>
+    <style>
+        pre code {
+            background-color: #c8c8c8;
+            display:block;
+            padding:5px;
+            text-align:left;
+            margin-left:10%;
+            margin-right:10%;
+            overflow:scroll;
+        }
+        h {
+            margin-left:auto;
+            margin-right:auto;
+        }
+        p {
+            margin-left:30%;
+            margin-right:30%;
+        }
+        table {
+            margin-left:auto;
+            margin-right:auto;
+        }
+        td {
+            color:#10de24;
+            padding:6px 13px;
+            background-color: #000000;
+            border:1px solid #dfe2e5;
+        }
+        tr {
+            color:#10de24;
+            background-color:#000;
+            border-top:1px solid #c6cbd1;
+        }
+        a {
+            color:#10de24;
+            text-decoration:none;
+            display:block;
+        }
+        a:hover {
+            color:#10de24;
+            text-decoration:underline;
+        }
+</style>
+</head>
+<body>
+<table>
+    <tr>
+        <td><a href="/popcornpages/top">Top Movies</a></td>
+        <td><a href="/popcornpages/topL">Learn Top Movies</a></td>
+        <td><a href="/popcornpages/notes">Notes</a></td>
+        <td><a href="/popcornpages/notesL">Learn More</a></td>
+    </tr>
+</table>
+<h1>Learn Top Movies</h1>
+<h2>Preface:</h2>
+<p style="background-color: grey; border: 2px solid black; border-collapse: collapse">
+    You will need to make an account and register an API KEY with <a href="https://themoviedb.org/signup">themoviedb.org/signup</a> before being able to use this code.
+Any part of the code that says "_API KEY_" is a placeholder for when you get your API KEY. You will also need to change the "render_template(..., d_list=d_list) to where
+your pages are located in your repository.</p>
+<h3>Full Code:</h3>
+<h4>Python:</h4>
+<pre>
+<code style="height: 500px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+import requests
+
+def top():
+    id_list = []
+    config = (requests.get("https://api.themoviedb.org/3/configuration?api_key=_API KEY_")).json()
+    top = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=_API KEY_&language=en-US&page=1")).json()
+    x = 0
+    while x < 10:
+        id = top["results"][x]["id"]
+        id_list.append(id)
+        x += 1
+
+    d_list = []
+    for id in id_list:
+        d_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(id) + "?api_key=_API KEY_&language=en-US")).json()
+        n_dict = {}
+        n_dict["genre"] = d_json["genres"][0]["name"]
+        n_dict["caption"] = d_json["overview"]
+        n_dict["country"] = d_json["production_countries"][0]["name"]
+        n_dict["date"] = d_json["release_date"]
+        n_dict["runtime"] = d_json["runtime"]
+        n_dict["tagline"] = d_json["tagline"]
+        n_dict["title"] = d_json["title"]
+        n_dict["rating"] = d_json["vote_average"]
+        n_dict["image"] = config["images"]["secure_base_url"] + "w185" + d_json["poster_path"]
+        d_list.append(n_dict)
+    return render_template("popcornpages/top.html", d_list=d_list)
+</code>
+</pre>
+<br>
+<h4>HTML + Flask:</h4>
+<pre>
+<code style="height: 300px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    &lbrace&percent for movie in d_list &percent&rbrace
+        &ltimg src="{ movie.image }"&gt
+        &lth2 style="text-align: center"&gt{ movie.title }&lt/h2&gt
+        &lth5 style="text-align: center"&gt{ movie.tagline }&lt/h5&gt
+        &lth4 style="text-align: center"&gt{ movie.genre }&lt/h4&gt
+        &ltp style="text-align: center"&gt{ movie.caption }&lt/p&gt
+        &ltp style="text-align: center"&gtReleased in { movie.country } on { movie.date }, { movie.title } runs for { movie.runtime } minutes, with viewers rating it at { movie.rating } out of 10&lt/p&gt
+    &lbrace&percent endfor &percent&rbrace
+</code>
+</pre>
+<h1>Explanation:</h1>
+<pre>
+<code style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    config = (requests.get("https://api.themoviedb.org/3/configuration?api_key=_API KEY_")).json()
+    top = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=_API KEY_&language=en-US&page=1")).json()
+</code>
+</pre>
+<p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+requests.get() uses the requests package to get the data, and the ().json() converts the data into a format that Python can manipulate
+These two lines are requests to the themoviedb(tMDB) API: the first one is to get config links for the movie poster; the second for the details of the entire first page of top movies.
+</p>
+<pre>
+<code style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    x = 0
+    while x < 10:
+        id = top["results"][x]["id"]
+        id_list.append(id)
+        x += 1
+</code>
+</pre>
+<p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+x = 0 sets up a way for the while loop to run through the details of each movie and append the tMDB id of each movie to a list (type-str)
+</p>
+<pre>
+<code style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    d_list = []
+    for id in id_list:
+    d_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(id) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
+</code>
+</pre>
+<p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+creates a list to add onto later. Iterates through every element (id (type-str)) in id_list, and fetches the specific details of the movie with that id.
+</p>
+<pre>
+<code style="height: 200px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    n_dict = {}
+    n_dict["genre"] = d_json["genres"][0]["name"]
+    n_dict["caption"] = d_json["overview"]
+    n_dict["country"] = d_json["production_countries"][0]["name"]
+    n_dict["date"] = d_json["release_date"]
+    n_dict["runtime"] = d_json["runtime"]
+    n_dict["tagline"] = d_json["tagline"]
+    n_dict["title"] = d_json["title"]
+    n_dict["rating"] = d_json["vote_average"]
+    n_dict["image"] = config["images"]["secure_base_url"] + "w185" + d_json["poster_path"]
+    d_list.append(n_dict)
+</code>
+</pre>
+<p style="height: 300px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+creates a new dictionary called n_dict, and adds every desired attribute from the movie details data into n_dict as key:value pairs.
+Left string is the key name in my dicts, right code is to retrieve specific data from movie details. Second to last line is slightly more complicated because base url from config data is needed for image display.
+Last line appends the newly created dictionary to d_list as an element. After 10 iterations, d_list contains 10 elements (type-dict)
+which each contain the title, tagline, genre, release country, release date, runtime, caption/overview, user rating, and image.
+</p>
+<pre>
+<code style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    return render_template("popcornpages/top.html", d_list=d_list)
+</code>
+</pre>
+<p  style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+end of def top():, need to make sure d_list is returned so that you can refer to the list in the html flask template.
+</p>
+<pre>
+<code style="height: 300px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    &lbrace&percent for movie in d_list &percent&rbrace
+    &ltimg src="&lbrace&lbrace movie.image &rbrace&rbrace"&gt
+    &lth2 style="text-align: center"&gt&lbrace&lbrace movie.title &rbrace&rbrace&lt/h2&gt
+    &lth5 style="text-align: center"&gt&lbrace&lbrace movie.tagline &rbrace&rbrace&lt/h5&gt
+    &lth4 style="text-align: center"&gt&lbrace&lbrace movie.genre &rbrace&rbrace&lt/h4&gt
+    &ltp style="text-align: center"&gt&lbrace&lbrace movie.caption &rbrace&rbrace&lt/p&gt
+    &ltp style="text-align: center"&gtReleased in &lbrace&lbrace movie.country &rbrace&rbrace on &lbrace&lbrace movie.date &rbrace&rbrace, &lbrace&lbrace movie.title &rbrace&rbrace runs for &lbrace&lbrace movie.runtime &rbrace&rbrace minutes,
+    with viewers rating it at &lbrace&lbrace movie.rating &rbrace&rbrace out of 10&lt/p&gt
+    &lbrace&percent endfor &percent&rbrace
+</code>
+</pre>
+<p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    starts flask loop; runs through each element in d_list and displays each desired attribute with movie.(attribute)
+</p>
+<h2>Example of movie 13:</h2>
+<div style="margin-left:20%;
+            margin-right:20%;">
+    <img src="{{ movie.image }}">
+<pre><code>&ltimg src="&lbrace&lbrace movie.image &rbrace&rbrace"&gt</code></pre>
+    <h2 style="text-align: center">{{ movie.title }}</h2>
+<pre><code>&lth2 style="text-align: center"&gt&lbrace&lbrace movie.title &rbrace&rbrace&lt/h2&gt</code></pre>
+    <h5 style="text-align: center">{{ movie.tagline }}</h5>
+<pre><code>&lth5 style="text-align: center"&gt&lbrace&lbrace movie.tagline &rbrace&rbrace&lt/h5&gt</code></pre>
+    <h4 style="text-align: center">{{ movie.genre }}</h4>
+<pre><code>&lth4 style="text-align: center"&gt&lbrace&lbrace movie.genre &rbrace&rbrace&lt/h4&gt</code></pre>
+    <p style="text-align: center">{{ movie.caption }}</p>
+<pre><code>&ltp style="text-align: center"&gt&lbrace&lbrace movie.caption &rbrace&rbrace&lt/p&gt</code></pre>
+</div>
+    <p style="text-align: center">Released in {{ movie.country }} on {{ movie.date }}, {{ movie.title }} runs for {{ movie.runtime }} minutes, with viewers rating it at {{ movie.rating }} out of 10</p>
+<pre><code>&ltp style="text-align: center"&gtReleased in &lbrace&lbrace movie.country &rbrace&rbrace on &lbrace&lbrace movie.date &rbrace&rbrace, &lbrace&lbrace movie.title &rbrace&rbrace
+    runs for &lbrace&lbrace movie.runtime &rbrace&rbrace minutes,with viewers rating it at &lbrace&lbrace movie.rating &rbrace&rbrace out of 10&lt/p&gt</code></pre>
+
+</body>
+{% endblock %}
+</html>

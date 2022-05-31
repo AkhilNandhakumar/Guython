@@ -1,4 +1,3 @@
-from PIL import Image, ImageDraw, ImageFont
 import numpy
 import base64
 from io import BytesIO

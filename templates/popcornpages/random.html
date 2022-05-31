@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+
+{% block body %}
+    <html>
+    <body>
+    <div>
+        <center>
+            <h2 style="color:black"> Random Movie Generator </h2>
+            <h4> Press the button to generate a random movie </h4>
+            <button onclick="displayRandomImages();"> Random Movie </button>
+            {% for x in list %}
+                <p>{{ list.title }}</p>
+                <p>{{ list.image }}</p>
+            {% endfor %}
+        </center>
+    </div>
+    </body>
+    </html>
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        input[type=checkbox] {
+            margin-right: 0;
+        }
+
+        .container1 {
+            background-color: #222222;
+            box-shadow: 50px 50px 50px rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            width: 40%;
+            text-align: center;
+            font-family: Andale Mono;
+            float: left;
+        }
+
+        .container2 {
+            background-color: #222222;
+            box-shadow: 50px 50px 50px rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            width: 40%;
+            text-align: center;
+            float: right;
+        }
+
+        textarea {
+            background-color: rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: absolute;
+            font-size: 18px;
+            letter-spacing: 1px;
+            padding: 12px 10px;
+            height: 50px;
+            width: 37%;
+            word-wrap: break-word;
+        }
+
+
+    </style>
+
+    <body class="center">
+    <br>
+    <br>
+
+    <h1 style="font-size: xxx-large; text-align: center; font-family: Andale Mono"> Find Your Counselor</h1>
+
+    <br>
+    <br>
+
+    <div class="container1" style="margin-left: 20px; width: 650px">
+        <h2>Find Your counselor!</h2>
+        <h5>Type your last name to find your counselor!</h5>
+        <form method="POST" action="/learning/findyour/">
+            <input type="text" id="lname" name="lname">
+            <input type="submit" value="Submit" onclick="compare({{ input }})">
+        </form>
+        <br>
+        <h4>Your counselor is: </h4><h3 id="counselor"></h3>
+    </div>
+
+    <div class="container2" style="margin-right: 80px; width: 650px">
+        <p style="font-family: Andale Mono; font-size: x-large; text-align: center">How Does the Code Work?</p>
+        <a href="https://github.com/nadirahaddach/TheSlayers.github.io/blob/main/templates/findyour.html" class="button1" style="font-family: 'Andale Mono'; font-size: larger; text-align: center">Github Findyour.html File</a>
+        <br>
+        <br>
+        <i>Head:</i> The first section you see is the head tag. This tag includes whatever you don't want in the body of your html file.
+        For this page, we put the styling of the two boxes you see on the screen within the head tag. The black color, width and height of the box, and the font choices are all included within this tag.
+        <br>
+        <br>
+        <i>Body:</i>
+        <br>
+        <br>
+        <i>Script:</i>
+        <br>
+        <br>
+        <i>Blocks:</i>
+
+    </div>
+
+    <script>
+        const input = '{{ input }}';
+        let name = input.toUpperCase()
+
+        const char1 = name.charCodeAt(0);
+        let char2;
+        let char3;
+
+        <!-- we dont need to check if the first character is there bec the python does that -->
+
+        if (name.charCodeAt(1).isNaN) {    <!-- if the second character is non existant -->
+            char2 = 0
+        } else {
+            char2 = name.charCodeAt(1)
+        }
+
+        if (name.charCodeAt(2).isNaN) {    <!-- if the third character is non existant -->
+            char3 = 0
+        } else {
+            char3 = name.charCodeAt(2)
+        }
+
+        <!-- uses decimal conversion of each letter one at a time to find where in the alphabet the last name is -->
+        if ((char1 < 65)) {
+            document.getElementById('counselor').innerHTML = "N/A";
+        } else if ((char1 < 68) || (char1 <= 68 && char2 < 69) || (char1 <= 68 && char2 <= 69 && char3 <= 76)) {
+            document.getElementById('counselor').innerHTML = "Mrs. Susie Kihneman";
+        } else if (char1 <= 74) {
+            document.getElementById('counselor').innerHTML = "Mr. Tim Roty";
+        } else if ((char1 < 77) || (char1 <= 77 && char2 <= 84)) {
+            document.getElementById('counselor').innerHTML = "Ms. Lauren Kennedy";
+        } else if ((char1 < 83) || (char1 <= 83 && char2 < 72) || (char1 <= 83 && char2 <= 72 && char3 <= 65)) {
+            document.getElementById('counselor').innerHTML = "Mr. Jesse Luna";
+        } else if ((char1 < 90) || (char1 <= 90 && char2 < 90) || (char1 <= 90 && char2 <= 90 && char3 <= 90)) {
+            document.getElementById('counselor').innerHTML = "Mrs. Kathy Marron";
+        } else {
+            document.getElementById('counselor').innerHTML = "";
+        }
+    </script>
+
+    </body>
+
+
+{% endblock %}
