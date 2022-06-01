@@ -50,6 +50,9 @@ def Calculator():
 def student():
     return render_template("games/student.html")
 
+@app.route('/Text/')
+def Text():
+    return render_template("games/Text.html")
 
 # Forums socket.io code
 # @socketio.on('testing')
