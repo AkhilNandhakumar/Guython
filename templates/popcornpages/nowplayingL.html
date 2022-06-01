@@ -174,11 +174,11 @@ def nowplaying():
 </code>
 </pre>
     <p  style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-        end of def top():, need to make sure d_list is returned so that you can refer to the list in the html flask template.
+        end of def nowplaying():, need to make sure NP_list is returned so that you can refer to the list in the html flask template.
     </p>
     <pre>
 <code style="height: 300px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-    &lbrace&percent for movie in d_list &percent&rbrace
+    &lbrace&percent for movie in NP_list &percent&rbrace
     &ltimg src="&lbrace&lbrace movie.image &rbrace&rbrace"&gt
     &lth2 style="text-align: center"&gt&lbrace&lbrace movie.title &rbrace&rbrace&lt/h2&gt
     &lth5 style="text-align: center"&gt&lbrace&lbrace movie.tagline &rbrace&rbrace&lt/h5&gt
@@ -190,7 +190,7 @@ def nowplaying():
 </code>
 </pre>
     <p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-        starts flask loop; runs through each element in d_list and displays each desired attribute with movie.(attribute)
+        starts flask loop; runs through each element in NP_list and displays each desired attribute with movie.(attribute)
     </p>
     <h2>Example of movie 13:</h2>
     <div style="margin-left:20%;
