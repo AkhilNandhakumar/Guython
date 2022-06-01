@@ -31,3 +31,7 @@ def findyour():
 @app_learning.route('/password/')
 def password():
     return render_template("learning/password.html")
+
+@app_learning.route('/calc/')
+def calculator():
+    return render_template("learning/calc.html")
