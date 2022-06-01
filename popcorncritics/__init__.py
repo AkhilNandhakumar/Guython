@@ -15,7 +15,6 @@ def notes():
 
 @app_popcorn.route('/random')
 def random():
-    return render_template("popcornpages/random.html")
     configR = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
     topR = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
     id_listR = []
