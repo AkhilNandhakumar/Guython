@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layouts/base.html" %}
+{% block body %}
+    <head>
+        <title>Upcoming Movies</title>
+        <link rel="stylesheet" type="text/css" href="/static/scss/layouts/layout1.css">
+        <style>
+
+            p {
+                font-family: "sans-serif";
+                font-size: 21px;
+                text-align: center;
+                padding-left: 20%;
+                padding-right: 20%;
+            }
+            table {
+                margin-left:auto;
+                margin-right:auto;
+            }
+            td {
+                color:#10de24;
+                padding:6px 13px;
+                background-color: #000000;
+                border:1px solid #dfe2e5;
+            }
+            tr {
+                color:#10de24;
+                background-color:#000;
+                border-top:1px solid #c6cbd1;
+            }
+            a {
+                color:#10de24;
+                text-decoration:none;
+                display:block;
+            }
+            a:hover {
+                color:#10de24;
+                text-decoration:underline;
+            }
+        </style>
+
+    </head>
+
+    <body>
+    <h1 style="text-align: center" >Now Playing</h1>
+    <table>
+        <tr>
+            <td><a href="/popcornpages/top">Top Movies</a></td>
+            <td><a href="/popcornpages/topL">Learn Top Movies</a></td>
+            <td><a href="/popcornpages/nowplaying">Now Playing </a></td>
+            <td><a href="/popcornpages/nowplayingL">Learn Now Playing</a></td>
+            <td><a href="/popcornpages/notes">Notes</a></td>
+            <td><a href="/popcornpages/notes2">Notes (2)</a></td>
+            <td><a href="/popcornpages/notesL">Learn More</a></td>
+        </tr>
+    </table>
+    {% for movie in d_listR %}
+        <br>
+        <br>
+        <img src="{{ movie.image }}">
+        <h2 style="text-align: center">Movie Name: {{ movie.title }}</h2>
+        <h5 style="text-align: center">"{{ movie.tagline }}"</h5>
+        <h4 style="text-align: center">Movie Genre: {{ movie.genre }}</h4>
+        <p style="text-align: center">{{ movie.caption }}</p>
+        <p style="text-align: center">Released in {{ movie.country }} on {{ movie.date }}, {{ movie.title }} runs for {{ movie.runtime }} minutes, with viewers rating it at {{ movie.rating }} out of 10</p>
+    {% endfor %}
+
+    </body>
+    </html>
+{% endblock %}
