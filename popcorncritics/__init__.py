@@ -77,3 +77,48 @@ def topL():
     movie["rating"] = d_jsonL["vote_average"]
     movie["image"] = configL["images"]["secure_base_url"] + "w185" + d_jsonL["poster_path"]
     return render_template("popcornpages/topL.html", movie=movie)
+
+@app_popcorn.route('/nowplaying')
+def nowplaying():
+    id_listNP = []
+    configNP = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
+    nowplaying = (requests.get("https://api.themoviedb.org/3/movie/now_playing?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
+    x = 0
+    while x < 10:
+        idNP = nowplaying["results"][x]["id"]
+        id_listNP.append(idNP)
+        x += 1
+
+    NP_list = []
+    for idNP in id_listNP:
+        NP_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(idNP) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
+        NP_dict = {}
+        NP_dict["genre"] = NP_json["genres"][0]["name"]
+        NP_dict["caption"] = NP_json["overview"]
+        NP_dict["country"] = NP_json["production_countries"][0]["name"]
+        NP_dict["date"] = NP_json["release_date"]
+        NP_dict["runtime"] = NP_json["runtime"]
+        NP_dict["tagline"] = NP_json["tagline"]
+        NP_dict["title"] = NP_json["title"]
+        NP_dict["rating"] = NP_json["vote_average"]
+        NP_dict["image"] = configNP["images"]["secure_base_url"] + "w185" + NP_json["poster_path"]
+        NP_list.append(NP_dict)
+    return render_template("popcornpages/nowplaying.html", NP_list=NP_list)
+
+@app_popcorn.route('/nowplayingL')
+def nowplayingL():
+    nowplayingL = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
+    d_jsonNPL = (requests.get("https://api.themoviedb.org/3/movie/" + str(nowplayingL["results"][14]["id"]) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
+    configNPL = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
+    movieNP = {}
+    movieNP["title"] = d_jsonNPL["title"]
+    movieNP["tagline"] = d_jsonNPL["tagline"]
+    movieNP["genre"] = d_jsonNPL["genres"][0]["name"]
+    movieNP["caption"] = d_jsonNPL["overview"]
+    movieNP["country"] = d_jsonNPL["production_countries"][0]["name"]
+    movieNP["date"] = d_jsonNPL["release_date"]
+    movieNP["runtime"] = d_jsonNPL["runtime"]
+    movieNP["rating"] = d_jsonNPL["vote_average"]
+    movieNP["image"] = configNPL["images"]["secure_base_url"] + "w185" + d_jsonNPL["poster_path"]
+    return render_template("popcornpages/nowplayingL.html", movie=movieNP)
+
