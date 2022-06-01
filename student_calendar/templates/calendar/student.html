@@ -1,17 +1,19 @@
 <!-- Extending the predefined project layout -->
 {% extends "layouts/base.html" %}
 
-<!- This variable sets name of browser tab  -->
+<!-- This variable sets name of browser tab  -->
 {% block meta %}
-    <title>Nighthawk Tutoring - Calendar</title>
-    <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
-    <script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>
+<title>Nighthawk Tutoring - Calendar</title>
+<script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
+<script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 {% endblock %}
 
-<!- This is a replacement block for Body in base.html -->
+<!-- This is a replacement block for Body in base.html -->
 {% block body %}
-    <!- Try building a new body here ->
-    <style>
+<!-- Try building a new body here -->
+<style>
         .popup {
             position: relative;
             display: inline-block;
@@ -57,11 +59,13 @@
             animation: fadeIn 1s;
         }
 
+
         /* Add animation (fade in the popup) */
         @-webkit-keyframes fadeIn {
             from {opacity: 0;}
             to {opacity: 1;}
         }
+
 
         @keyframes fadeIn {
             from {
@@ -78,284 +82,272 @@
             }
         }
 
-        /* Month header */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        .container {
+            width: 100%;
+            height: 80vh;
+            color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calendar {
+            width: 45rem;
+            height: 50rem;
+            background-color: #222227;
+            box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+        }
+
         .month {
-            padding: 50px 50px;
-            margin-left: 10%;
-            width: 80%;
-            height: 50px;
-            background: #56c756;
+            width: 100%;
+            height: 12rem;
+            background-color: #167e56;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            text-align: center;
+            text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
         }
 
-        /* Month list */
-        .month ul {
-            margin: -20px;
+        .month i {
+            font-size: 2.5rem;
+            cursor: pointer;
         }
 
-        .month ul li {
-            color: white;
-            font-size: 20px;
+        .month h1 {
+            font-size: 3rem;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 0.2rem;
+            margin-bottom: 1rem;
         }
 
-        /* Previous button inside month header */
-        .month .prev {
-            float: left;
-            margin-left: -40px;
-            padding-top: 10px;
+        .month p {
+            font-size: 1.6rem;
         }
 
-        /* Next button */
-        .month .next {
-            float: right;
-            padding-top: 10px;
-        }
-        button {
-            background: none;
-            border: none;
-        }
-        button:focus, input[type="button"]:focus {
-            outline: none;
-        }
-
-        /* Weekdays (Mon-Sun) */
         .weekdays {
-            width: 80%;
-            margin-left: 10%;
-            margin-bottom: 0;
-            padding: 10px 0;
-            background-color:#000;
+            width: 100%;
+            height: 5rem;
+            padding: 0 0.4rem;
+            display: flex;
+            align-items: center;
         }
 
-        .weekdays li {
-            display: inline-block;
-            width: 13.6%;
-            color: #fff;
-            text-align: center;
+        .weekdays div {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+            width: calc(44.2rem / 7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
         }
 
-        /* Days (1-31) */
         .days {
-            width: 80%;
-            padding: 10px 0;
-            background: #111;
-            margin-left: 10%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0.2rem;
         }
 
-        .days button {
-            list-style-type: none;
-            display: inline-block;
-            width: 13.6%;
-            height: 45px;
-            text-align: center;
-            margin-bottom: 5px;
-            font-size:12px;
-            color: #86db86;
+        .days div {
+            font-size: 1.4rem;
+            margin: 0.3rem;
+            width: calc(40.2rem / 7);
+            height: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+            transition: background-color 0.2s;
         }
 
-        /* Highlight the "current" day */
-        .days button .active {
-            padding: 6px;
-            background: white;
-            color: black !important
+        .days div:hover:not(.today) {
+            background-color: #262626;
+            border: 0.2rem solid #777;
+            cursor: pointer;
         }
 
+        .prev-date,
+        .next-date {
+            opacity: 0.5;
+        }
+
+        .today {
+            background-color: #167e56;
+        }
     </style>
 
-    <div class="titleOfHomePage">
-        <p>Student Calendar</p>
-    </div>
-    <div class="month">
-        <ul>
-            <button onclick="button_left()" class="prev">&#10094;</button>
-            <button onclick="button_right()" class="next">&#10095;</button>
-            <div style="margin-left: 43%; margin-right: 38%; font-size: 24px" class="row">
-                <p id="month">{{ currentmonth[monthnum] }}</p>
-                <p>&nbsp;-&nbsp;</p>
-                <p id="year">{{ currentyear }}</p>
-            </div>
-        </ul>
-    </div>
+<div class="titleOfHomePage">
+    <p>Student Calendar</p>
+</div>
 
-    <ul class="days">
-        <button><div class="popup" onclick="popup(1)">1<span class="popuptext" id="1">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(2)">2<span class="popuptext" id="2">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(3)">3<span class="popuptext" id="3">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(4)">4<span class="popuptext" id="4">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(5)">5<span class="popuptext" id="5">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(6)">6<span class="popuptext" id="6">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(7)">7<span class="popuptext" id="7">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(8)">8<span class="popuptext" id="8">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(9)">9<span class="popuptext" id="9">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(10)">10<span class="popuptext" id="10">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(11)">11<span class="popuptext" id="11">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(12)">12<span class="popuptext" id="12">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(13)">13<span class="popuptext" id="13">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(14)">14<span class="popuptext" id="14">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(15)">15<span class="popuptext" id="15">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(16)">16<span class="popuptext" id="16">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(17)">17<span class="popuptext" id="17">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(18)">18<span class="popuptext" id="18">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(19)">19<span class="popuptext" id="19">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(20)">20<span class="popuptext" id="20">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(21)">21<span class="popuptext" id="21">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(22)">22<span class="popuptext" id="22">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(23)">23<span class="popuptext" id="23">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(24)">24<span class="popuptext" id='24'>A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(25)">25<span class="popuptext" id='25'>A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(26)">26<span class="popuptext" id="26">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup active" onclick="popup(27)">27<span class="popuptext" id="27">A Simple birthday!</span>
-        </div></button>
-        <button><div class="popup" onclick="popup(28)">28<span class="popuptext" id="28">A Simple birthday!</span>
-        </div></button>
-        <button><div id="29_2"class="popup" onclick="popup(29)">29<span class="popuptext" id="29">A Simple birthday!</span>
-        </div></button>
-        <button><div id="30_2" class="popup" onclick="popup(30)">30<span class="popuptext" id="30">A Simple birthday!</span>
-        </div></button>
-        <button><div id="31_2" class="popup" onclick="popup(31)">31<span class="popuptext" id="31">A Simple birthday!</span>
-        </div></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-    </ul>
-    <div class="container py-4">
-        <div class="p-5 mb-4 bg-dark text-light rounded-3">
-            <h2>Backpack Pro Database Viewer</h2>
-            <div style="margin-top: -25px" class="row align-items-md-stretch">
-                <div class="container-fluid py-3">
-                    <table style="color: white" class="table">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Event</th>
-                            <th>Day</th>
-                            <th>Year & Month</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <!-- Loop through rows in table -->
-                        {% for row in table %}
-                            <tr>
-                                <td>{{ row['eventID'] }}</td>
-                                <td>{{ row['name'] }}</td>
-                                <td>{{ row['event'] }}</td>
-                                <td>{{ row['day'] }}</td>
-                                <td>{{ row['yearmonth'] }}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+<div class="container">
+    <div class="calendar">
+        <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+                <h1></h1>
+                <p></p>
             </div>
+            <i class="fas fa-angle-right next"></i>
         </div>
-
-
-    <br>
-
-    <a style="color: white" href="admin">Link to Admin Calendar</a>
-
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days"></div>
     </div>
-    <script>
-        let n = ({{ monthnum }} - 1)
-        let year = {{ currentyear }}
-            function button_left() {
-                n = n - 1
+</div>
+<a style="color: white; margin-top: 10%; font-size: 25px" href="admin">Link to Admin Calendar</a>
+<div class="container py-4">
+    <div class="p-5 mb-4 bg-dark text-light rounded-3">
+        <h2>Backpack Pro Database Viewer</h2>
+        <div style="margin-top: -25px" class="row align-items-md-stretch">
+            <div class="container-fluid py-3">
+                <table style="color: white" class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Event</th>
+                        <th>Day</th>
+                        <th>Year & Month</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Loop through rows in table -->
+                    {% for row in table %}
+                    <tr>
+                        <td>{{ row['eventID'] }}</td>
+                        <td>{{ row['name'] }}</td>
+                        <td>{{ row['event'] }}</td>
+                        <td>{{ row['day'] }}</td>
+                        <td>{{ row['yearmonth'] }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <br>
+                </table>
+                <br>
+            </div>
+            <br>
+        </div>
+        <br>
+    </div>
+
+</div>
+<script>
+        const date = new Date();
+
+        const renderCalendar = () => {
+            date.setDate(1);
+
+            const monthDays = document.querySelector(".days");
+
+            const lastDay = new Date(
+                date.getFullYear(),
+                date.getMonth() + 1,
+                0
+            ).getDate();
+
+            const prevLastDay = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                0
+            ).getDate();
+
+            const firstDayIndex = date.getDay();
+
+            const lastDayIndex = new Date(
+                date.getFullYear(),
+                date.getMonth() + 1,
+                0
+            ).getDay();
+
+            const nextDays = 7 - lastDayIndex - 1;
+
+            const months = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ];
+
+            document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+
+            document.querySelector(".date p").innerHTML = new Date().toDateString();
+
+            let days = "";
+
+            for (let x = firstDayIndex; x > 0; x--) {
+                days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+            }
+
+            for (let i = 1; i <= lastDay; i++) {
                 if (
-                    n < 0
-                ) year_changer()
-                month_changer(n)
+                    i === new Date().getDate() &&
+                    date.getMonth() === new Date().getMonth()
+                ) {
+                    days += `<button><div onclick="popup(${i})" class="today popup">${i}<span class="popuptext" id="${i}"></span></div></button>`;
+                } else {
+                    days += `<div>${i}</div>`;
+                }
             }
 
-        function button_right() {
-            n = n + 1
-            if (
-                n > 11
-            ) year_changer()
-            month_changer(n)
-        }
-        function month_changer(num) {
-            if (num === 0) {
-                document.getElementById("month").innerHTML = "January"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
+            for (let j = 1; j <= nextDays; j++) {
+                days += `<div class="next-date">${j}</div>`;
+                monthDays.innerHTML = days;
             }
-            if (num === 1) {
-                document.getElementById("month").innerHTML = "February"; document.getElementById("29_2").style.display = "none"; document.getElementById("30_2").style.display = "none"; document.getElementById("31_2").style.display = "none";
-            }
-            if (num === 2) {
-                document.getElementById("month").innerHTML = "March"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
-            }
-            if (num === 3) {
-                document.getElementById("month").innerHTML = "April"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "none";
-            }
-            if (num === 4) {
-                document.getElementById("month").innerHTML = "May"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
-            }
-            if (num === 5) {
-                document.getElementById("month").innerHTML = "June"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "none";
-            }
-            if (num === 6) {
-                document.getElementById("month").innerHTML = "July"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
-            }
-            if (num === 7) {
-                document.getElementById("month").innerHTML = "August"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
-            }
-            if (num === 8) {
-                document.getElementById("month").innerHTML = "September"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "none";
-            }
-            if (num === 9) {
-                document.getElementById("month").innerHTML = "October"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
-            }
-            if (num === 10) {
-                document.getElementById("month").innerHTML = "November"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "none";
-            }
-            if (num === 11) {
-                document.getElementById("month").innerHTML = "December"; document.getElementById("29_2").style.display = "block"; document.getElementById("30_2").style.display = "block"; document.getElementById("31_2").style.display = "block";
-            }
+        };
 
-        }
-        function year_changer() {
-            if (n > 11) {
-                year += 1; n = 0
-            }
-            else if (n < 1) {
-                year -= 1; n = 11
-            }
-            document.getElementById("year").innerHTML = year.toString()
-        }
+        document.querySelector(".prev").addEventListener("click", () => {
+            date.setMonth(date.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.querySelector(".next").addEventListener("click", () => {
+            date.setMonth(date.getMonth() + 1);
+            renderCalendar();
+        });
+
+        renderCalendar();
+
+
         function popup(elementId) {
             let popupE = document.getElementById(elementId.toString());
             popupE.innerHTML = ""
             let check = false
             {% for i in range(len_days) %}
-                if (elementId === {{ days_list[i] }} && document.getElementById('year').innerHTML === "{{ year[i] }}" && (n + 1).toString() === "{{ month[i] }}") {
+                if (elementId === {{ days_list[i] }} && date.getFullYear().toString() === "{{ year[i] }}" && date.getMonth().toString() === "{{ month[i] }}") {
                     check = true
                     popupE.innerHTML += "{{ calevent[i] }}" + " & "
                 }
