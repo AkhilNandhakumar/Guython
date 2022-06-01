@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+{% set project = "student" %}
+{% block body %}
+    <html>
+    <head>
+        <title>Student Feedback Form</title>
+    </head>
+    <body>
+    <form action="http://google.co.in">
+        <!---->
+        <div align="center">
+
+            <h1>Student Feedback Form</h1>
+            Enter your name:
+
+            <input type="text" name="UserName" size=35 maxlength=35 value="">
+            <!--Adds spaces - -->
+            </br></br>
+            Enter your grade:
+            <input type="text" name="Deptt" size=35 maxlength=35 value=""> </br> </br>
+            Tell us a little about yourself:
+
+            <textarea name="Comments" cols=30 rows=4></textarea> </br> </br>
+            Did you enjoy exploring our websites features?
+
+            <input type="radio" name="exe" value=1>Yes
+            <input type="radio" name="exe" value=2>No
+            </p>
+            What topics interests you the most?
+            <p>
+                <!--Checkbox lets you select multiple options -->
+                <input type="checkbox" name="APIs">APIs
+                <input type="checkbox" name="Deployment">Deployment
+                <input type="checkbox" name="Loops & Functions">Loops & Functions
+                <input type="checkbox" name="HTML Website Development">HTML Website Development
+            </p>
+            What did you like most about our website?
+            <!--Select box has multiple dropdown boxes you can select-->
+            <select name="moviepref" ><option>
+                <option value=1 selected = "true"> The Features
+                <option value=2 > The Looks
+                <option value=3 > The Info
+                <option value=4 > The Interface
+                <option value=5 > The Activities
+            </select>
+            </br></br>
+            <!--submits information entered in form by user -->
+            <input type=submit value="Submit form">
+        </div>
+    </form>
+    </body>
+    </html>
+{% endblock %}
