@@ -48,8 +48,9 @@
         <tr>
             <td><a href="/popcornpages/top">Top Movies</a></td>
             <td><a href="/popcornpages/topL">Learn Top Movies</a></td>
+            <td><a href="/popcornpages/nowplaying">Now Playing </a></td>
+            <td><a href="/popcornpages/nowplayingL">Learn Now Playing</a></td>
             <td><a href="/popcornpages/notes">Notes</a></td>
-            <td><a href="/popcornpages/nowplaying">Now Playing</a></td>
             <td><a href="/popcornpages/notesL">Learn More</a></td>
         </tr>
     </table>
@@ -63,6 +64,11 @@
         <p style="text-align: center">{{ movie.caption }}</p>
         <p style="text-align: center">Released in {{ movie.country }} on {{ movie.date }}, {{ movie.title }} runs for {{ movie.runtime }} minutes, with viewers rating it at {{ movie.rating }} out of 10</p>
     {% endfor %}
+    <br>
+    <br>
+    <h2>Want to explore more?</h2>
+    <a href="http://127.0.0.1:5000/popcornpages/nowplayingL">Learn more on how this page was created!</a>
+    <br>
     </body>
     </html>
 {% endblock %}
