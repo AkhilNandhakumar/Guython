@@ -84,6 +84,22 @@ def topL():
     movie["image"] = configL["images"]["secure_base_url"] + "w185" + d_jsonL["poster_path"]
     return render_template("popcornpages/topL.html", movie=movie)
 
+@app_popcorn.route('/notes/')
+def notes():
+    user = ""
+    list_notes = []
+    return render_template("popcornpages/notes.html", user=user, notes=list_notes)
+
+@app_popcorn.route('/notes2/')
+def notes2():
+    user = ""
+    list_notes = []
+    return render_template("popcornpages/notes2.html", user=user, notes=list_notes)
+
+@app_popcorn.route('/notesL/')
+def notesL():
+    return render_template("popcornpages/notesL.html")
+
 @app_popcorn.route('/nowplaying')
 def nowplaying():
     id_listNP = []

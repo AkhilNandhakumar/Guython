@@ -16,5 +16,5 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 # Setup custom application variables
-app.config['UPLOAD_FOLDER'] = 'static/uploads/'     # user uploaded content
+app.config['UPLOAD_FOLDER'] = 'volumes/uploads/'     # user uploaded content
 app.config['NEXT_PAGE'] = None                      # next page on login attempt
