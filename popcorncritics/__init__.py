@@ -4,6 +4,7 @@ from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 import requests
 
+import markdown
 from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required, current_user
 from cruddy.query import user_by_id
@@ -23,7 +24,7 @@ def random():
     return render_template("popcornpages/random.html")
 
 
-@app_popcorn.route('/top/')
+@app_popcorn.route('/top')
 def top():
     id_list = []
     config = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
@@ -66,6 +67,36 @@ def topL():
     movie["rating"] = d_jsonL["vote_average"]
     movie["image"] = configL["images"]["secure_base_url"] + "w185" + d_jsonL["poster_path"]
     return render_template("popcornpages/topL.html", movie=movie)
+
+@app_popcorn.route('/upcoming')
+def upcoming():
+    id_listR = []
+    configR = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
+    recommended = (requests.get("https://api.themoviedb.org/3/movie/upcoming?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
+    print(recommended)
+    x = 0
+    while x < 10:
+        idR = recommended["results"][x]["id"]
+        id_listR.append(idR)
+        x += 1
+
+    d_listR = []
+    for idR in id_listR:
+        d_jsonR = (requests.get("https://api.themoviedb.org/3/movie/" + str(idR) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
+        n_dictR = {}
+        n_dictR["genre"] = d_jsonR["genres"][0]["name"]
+        n_dictR["caption"] = d_jsonR["overview"]
+        n_dictR["country"] = d_jsonR["production_countries"][0]["name"]
+        n_dictR["date"] = d_jsonR["release_date"]
+        n_dictR["runtime"] = d_jsonR["runtime"]
+        n_dictR["tagline"] = d_jsonR["tagline"]
+        n_dictR["title"] = d_jsonR["title"]
+        n_dictR["rating"] = d_jsonR["vote_average"]
+        n_dictR["image"] = configR["images"]["secure_base_url"] + "w185" + d_jsonR["poster_path"]
+        d_listR.append(n_dictR)
+
+    return render_template("popcornpages/upcoming.html", d_listR=d_listR)
+
 
 @app_popcorn.route('/notes/')
 def notes():
