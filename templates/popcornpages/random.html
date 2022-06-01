@@ -1,10 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends "layouts/base.html" %}
-
 {% block body %}
-    <html>
-
+    <head>
+        <meta charset="UTF-8">
+        <title>Random Movies</title>
+        <style>
+            pre code {
+                background-color: #c8c8c8;
+                display:block;
+                padding:5px;
+                text-align:left;
+                margin-left:10%;
+                margin-right:10%;
+                overflow:scroll;
+            }
+            h {
+                margin-left:auto;
+                margin-right:auto;
+            }
+            p {
+                margin-left:30%;
+                margin-right:30%;
+            }
+            table {
+                margin-left:auto;
+                margin-right:auto;
+            }
+            td {
+                color:#10de24;
+                padding:6px 13px;
+                background-color: #000000;
+                border:1px solid #dfe2e5;
+            }
+            tr {
+                color:#10de24;
+                background-color:#000;
+                border-top:1px solid #c6cbd1;
+            }
+            a {
+                color:#10de24;
+                text-decoration:none;
+                display:block;
+            }
+            a:hover {
+                color:#10de24;
+                text-decoration:underline;
+            }
+        </style>
+    </head>
+    <body>
+    <table>
+        <tr>
+            <td><a href="/popcornpages/top">Top Movies</a></td>
+            <td><a href="/popcornpages/topL">Learn Top Movies</a></td>
+            <td><a href="/popcornpages/random">Random Movie</a></td>
+            <td><a href="/popcornpages/randomL">Learn Random Movie</a></td>
+            <td><a href="/popcornpages/nowplaying">Now Playing</a></td>
+            <td><a href="/popcornpages/nowplayingL">Learn Now Playing</a></td>
+            <td><a href="/popcornpages/notes">Notes</a></td>
+        </tr>
+    </table>
     <script>
         function displayRandomImages()
         {

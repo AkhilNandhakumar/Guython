@@ -23,6 +23,10 @@ app_popcorn = Blueprint('popcorn', __name__,
 def random():
     return render_template("popcornpages/random.html")
 
+@app_popcorn.route('/randomL')
+def randomL():
+    return render_template("popcornpages/randomL.html")
+
 
 @app_popcorn.route('/top')
 def top():
