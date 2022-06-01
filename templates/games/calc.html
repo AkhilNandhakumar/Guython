@@ -1,0 +1,160 @@
+{% extends "layouts/base.html" %}
+{% set project = "Calculator" %}
+{% block body %}
+
+
+<script>
+    var no1,tx1,v1=0,v2,choice='e';
+    function f1(value)
+    {
+        no1=value;
+        tx1=document.getElementById('txtAns').value;
+        document.getElementById('txtAns').value=tx1+no1;
+
+    }
+    function f2(value)
+    {
+        if(value=='p')
+        {
+            v1=document.getElementById('txtAns').value;
+            document.getElementById('txtAns').value="";
+            choice=value;
+
+        }
+        else if(value=='s')
+        {
+            v1=document.getElementById('txtAns').value;
+            document.getElementById('txtAns').value="";
+            choice=value;
+
+        }
+        else if(value=='m')
+        {
+            v1=document.getElementById('txtAns').value;
+            document.getElementById('txtAns').value="";
+            choice=value;
+
+        }
+        else if(value=='d')
+        {
+            v1=document.getElementById('txtAns').value;
+            document.getElementById('txtAns').value="";
+            choice=value;
+
+        }
+        else if(value=='mo')
+        {
+            v1=document.getElementById('txtAns').value;
+            choice=value;
+
+        }
+        else//equal
+        {
+            v2=document.getElementById('txtAns').value;
+            document.getElementById('txtAns').value="";
+            switch(choice)
+            {
+                case 'p':
+                    ans=parseInt(v1)+parseInt(v2);
+                    document.getElementById('txtAns').value=ans;
+                    break;
+
+                case 's':
+                    ans=parseInt(v1)-parseInt(v2);
+                    document.getElementById('txtAns').value=ans;
+                    break;
+
+                case 'm':
+                    ans=parseInt(v1)*parseInt(v2);
+                    document.getElementById('txtAns').value=ans;
+                    break;
+
+                case 'd':
+                    ans=parseInt(v1)/parseInt(v2);
+                    document.getElementById('txtAns').value=ans;
+                    break;
+
+                default:
+                    alert('please enter valid number');
+            }
+        }
+    }
+    function f3(value)
+    {
+        if(value=='c')
+        {
+            document.getElementById('txtAns').value="";
+        }
+        if(value=='-')
+        {
+            var tempvalue=parseInt(document.getElementById('txtAns').value);
+            console.log(tempvalue);
+            if(tempvalue > 0)//positive value
+            {
+                console.log('positive value');
+                tempvalue=-Math.abs(tempvalue);
+                console.log(tempvalue);
+                document.getElementById('txtAns').value="";
+                document.getElementById('txtAns').value=tempvalue;
+            }
+            else//negative value
+            {
+                console.log('negative value');
+                tempvalue=-Math.abs(tempvalue);
+                document.getElementById('txtAns').value=tempvalue;
+            }
+        }
+    }
+
+</script>
+    <style>
+    td{
+        text-align:center;
+    }
+    </style>
+    <body>
+    <h1>Calculator</h1>
+    <table align="center" border="3" cellspacing="20px" width="300px" cellpadding="10px">
+        don't know why these are crossed out??
+        <tr>
+            <td style="border:0px;" colspan="3">
+                <input type="text" id="txtAns" maxlength="12" dir="rtl" style="width:300px;height:30px;font-size:25px;">
+            </td>
+            <td onclick="f3('c');">Clear</td>
+            <td style="background-color:red;">On/Off</td>
+        </tr>
+        <tr>
+            <td id="7" onclick="f1(7);">7</td>
+            <td id="8" onclick="f1(8);">8</td>
+            <td id="9" onclick="f1(9);">9</td>
+
+            <td onclick="f2('m');">*</td>
+            <td style="background-color:cyan;" onclick="f3('c');" >AC</td>
+        </tr>
+
+        <tr>
+            <td id="4" onclick="f1(4);">4</td>
+            <td id="5" onclick="f1(5);">5</td>
+            <td id="6" onclick="f1(6);">6</td>
+            <td  onclick="f2('s');">-</td>
+            <td onclick="f2('mo');">%</td>
+        </tr>
+
+        <tr>
+            <td id="7" onclick="f1(1);">1</td>
+            <td id="8" onclick="f1(2);">2</td>
+            <td id="9" onclick="f1(3);">3</td>
+            <td  rowspan="2" onclick="f2('p');">+</td>
+            <td onclick="f2('d');">/</td>
+        </tr>
+
+        <tr>
+            <td onclick="f1(0)">0</td>
+            <td onclick="f3('-')">+/-</td>
+            <td onclick="f1(.)">.</td>
+            <td onclick="f2('eq');">=</td>
+        </tr>
+
+    </table>
+</body>
+{% endblock %}
