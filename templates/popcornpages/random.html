@@ -5,17 +5,38 @@
 {% block body %}
     <html>
     <body>
-    <div>
-        <center>
-            <h2 style="color:black"> Random Movie Generator </h2>
-            <h4> Press the button to generate a random movie </h4>
-            <button onclick="displayRandomImages();"> Random Movie </button>
-            {% for x in list %}
-                <p>{{ list.title }}</p>
-                <p>{{ list.image }}</p>
-            {% endfor %}
-        </center>
-    </div>
+    <script>
+        function randomMovie() {
+            import fetch from "node-fetch";
+
+            // get api
+            const top_url = "https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US";
+            const config_url = "https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44";
+
+            // fetch api
+            const t_response = fetch(top_url);
+            const c_response = fetch(config_url);
+
+            // Storing data in form of JSON
+            var top = t_response.json();
+            var config = c_response.json();
+            // random number stuff
+
+            var num = Math.floor(Math.random() * top.results.length - 1) + 1
+            document.getElementById("title").innerHTML = String(top.results[num]["title"]);
+            document.getElementById("image").src = String(config.images.secure_base_url) + "w342" + String(top.results[num]["poster_path"]);
+            document.getElementById("desc").innerHTML = String(top.results[num]["overview"]);
+        }
+    </script>
+    <center>
+        <h2 style="color:black"> Random Movie Generator </h2>
+        <h4> Press the button to generate a random movie </h4>
+        <button onclick="randomMovie()"> Random Movie: </button>
+        <h1 id="title"></h1>
+        <img id="image" src="">
+        <h3 id="desc"></h3>
+    </center>
+
     </body>
     </html>
 {% endblock %}
