@@ -1,23 +1,18 @@
 {% extends "layouts/base.html" %}
 {% set project = "student" %}
 {% block body %}
-    <!DOCTYPE HTML>
-    <!-- This is how HTML comments look like -->
     <html>
-    <!-- the title will appear on the page-->
     <head>
         <title>Student Feedback Form</title>
     </head>
     <body>
-    <!-- as it is a survey form, we will need to submit the details, hence we use form -->
-    <!-- We can give absolute url, or relative url like /nextpage.jsp, and specify POST or GET method -->
     <form action="http://google.co.in">
-        <!-- If we remove this, every thing will move to the left of the page-->
+        <!---->
         <div align="center">
-            <!--Adds a heading to the form-->
+
             <h1>Student Feedback Form</h1>
             Enter your name:
-            <!-- Input type text for small texts, specify size -->
+
             <input type="text" name="UserName" size=35 maxlength=35 value="">
             <!--Adds spaces - -->
             </br></br>
@@ -43,10 +38,10 @@
             <!--Select box has multiple dropdown boxes you can select-->
             <select name="moviepref" ><option>
                 <option value=1 selected = "true"> The Features
-                <option value=2 >romance
-                <option value=3 >thriller
-                <option value=4 >horror
-                <option value=5 >biopic
+                <option value=2 > The Looks
+                <option value=3 > The Info
+                <option value=4 > The Interface
+                <option value=5 > The Activities
             </select>
             </br></br>
             <!--submits information entered in form by user -->
