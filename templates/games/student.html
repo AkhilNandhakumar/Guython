@@ -19,38 +19,37 @@
             Enter your name:
             <!-- Input type text for small texts, specify size -->
             <input type="text" name="UserName" size=35 maxlength=35 value="">
-            <!--Adds spaces - remove and see what happens -->
+            <!--Adds spaces - -->
             </br></br>
             Enter your grade:
             <input type="text" name="Deptt" size=35 maxlength=35 value=""> </br> </br>
             Tell us a little about yourself:
-            <!-- For writing lot of text like descriptions with text wrapping,
-            if you dont want text wrapping, you can add wrap = "off" (horizontal scrollbar -->
+
             <textarea name="Comments" cols=30 rows=4></textarea> </br> </br>
             Did you enjoy exploring our websites features?
-            <!-- Radio buttons help you choose one out of the many values -->
+
             <input type="radio" name="exe" value=1>Yes
             <input type="radio" name="exe" value=2>No
             </p>
             What topics interests you the most?
             <p>
                 <!--Checkbox lets you select multiple options -->
-                <input type="checkbox" name="Books">API's
-                <input type="checkbox" name="Web">Deployment
-                <input type="checkbox" name="Phone">Loops & Functions
-                <input type="checkbox" name="Magazines">HTML Website Development
+                <input type="checkbox" name="APIs">APIs
+                <input type="checkbox" name="Deployment">Deployment
+                <input type="checkbox" name="Loops & Functions">Loops & Functions
+                <input type="checkbox" name="HTML Website Development">HTML Website Development
             </p>
-            What genre of movies do you like?
-            <!--Select box lets you choose one of the multiple dropdown options-->
+            What did you like most about our website?
+            <!--Select box has multiple dropdown boxes you can select-->
             <select name="moviepref" ><option>
-                <option value=1 selected = "true">comedy
+                <option value=1 selected = "true"> The Features
                 <option value=2 >romance
                 <option value=3 >thriller
                 <option value=4 >horror
                 <option value=5 >biopic
             </select>
             </br></br>
-            <!--submits the information entered in the form by the user -->
+            <!--submits information entered in form by user -->
             <input type=submit value="Submit form">
         </div>
     </form>
