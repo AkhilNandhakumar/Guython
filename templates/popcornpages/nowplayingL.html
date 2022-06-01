@@ -181,9 +181,9 @@ def nowplaying():
 <code style="height: 300px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
     &lbrace&percent for movie in NP_list &percent&rbrace
     &ltimg src="&lbrace&lbrace movie.image &rbrace&rbrace"&gt
-    &lth2 style="text-align: center"&gt&lbrace&lbrace movie.title &rbrace&rbrace&lt/h2&gt
-    &lth5 style="text-align: center"&gt&lbrace&lbrace movie.tagline &rbrace&rbrace&lt/h5&gt
-    &lth4 style="text-align: center"&gt&lbrace&lbrace movie.genre &rbrace&rbrace&lt/h4&gt
+    &lth2 style="text-align: center"Movie Name: &gt&lbrace&lbrace movie.title &rbrace&rbrace&lt/h2&gt
+    &lth5 style="text-align: center""&gt&lbrace&lbrace movie.tagline &rbrace&rbrace&lt/h5&gt"
+    &lth4 style="text-align: center"Movie Genre:&gt&lbrace&lbrace movie.genre &rbrace&rbrace&lt/h4&gt
     &ltp style="text-align: center"&gt&lbrace&lbrace movie.caption &rbrace&rbrace&lt/p&gt
     &ltp style="text-align: center"&gtReleased in &lbrace&lbrace movie.country &rbrace&rbrace on &lbrace&lbrace movie.date &rbrace&rbrace, &lbrace&lbrace movie.title &rbrace&rbrace runs for &lbrace&lbrace movie.runtime &rbrace&rbrace minutes,
     with viewers rating it at &lbrace&lbrace movie.rating &rbrace&rbrace out of 10&lt/p&gt
@@ -193,24 +193,3 @@ def nowplaying():
     <p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
         starts flask loop; runs through each element in NP_list and displays each desired attribute with movie.(attribute)
     </p>
-    <h2>Example of movie 13:</h2>
-    <div style="margin-left:20%;
-            margin-right:20%;">
-        <img src="{{ movie.image }}">
-        <pre><code>&ltimg src="&lbrace&lbrace movie.image &rbrace&rbrace"&gt</code></pre>
-        <h2 style="text-align: center">{{ movie.title }}</h2>
-        <pre><code>&lth2 style="text-align: center"&gt&lbrace&lbrace movie.title &rbrace&rbrace&lt/h2&gt</code></pre>
-        <h5 style="text-align: center">{{ movie.tagline }}</h5>
-        <pre><code>&lth5 style="text-align: center"&gt&lbrace&lbrace movie.tagline &rbrace&rbrace&lt/h5&gt</code></pre>
-        <h4 style="text-align: center">{{ movie.genre }}</h4>
-        <pre><code>&lth4 style="text-align: center"&gt&lbrace&lbrace movie.genre &rbrace&rbrace&lt/h4&gt</code></pre>
-        <p style="text-align: center">{{ movie.caption }}</p>
-        <pre><code>&ltp style="text-align: center"&gt&lbrace&lbrace movie.caption &rbrace&rbrace&lt/p&gt</code></pre>
-    </div>
-    <p style="text-align: center">Released in {{ movie.country }} on {{ movie.date }}, {{ movie.title }} runs for {{ movie.runtime }} minutes, with viewers rating it at {{ movie.rating }} out of 10</p>
-    <pre><code>&ltp style="text-align: center"&gtReleased in &lbrace&lbrace movie.country &rbrace&rbrace on &lbrace&lbrace movie.date &rbrace&rbrace, &lbrace&lbrace movie.title &rbrace&rbrace
-    runs for &lbrace&lbrace movie.runtime &rbrace&rbrace minutes,with viewers rating it at &lbrace&lbrace movie.rating &rbrace&rbrace out of 10&lt/p&gt</code></pre>
-
-    </body>
-{% endblock %}
-</html>

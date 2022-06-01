@@ -46,10 +46,6 @@ def login():
 def translate():
     return render_template("api_pages/google_translate.html")
 
-@app.route('/calc/')
-def Calculator():
-    return render_template("games/calc.html")
-
 @app.route('/student/')
 def student():
     return render_template("games/student.html")
