@@ -4,14 +4,56 @@
 
 {% block body %}
     <html>
-    <body>
+
     <script>
         function displayRandomImages()
         {
-            //array of images 
+            //array of images with image location, height, and width
             var imageArray = [
-                (Something to put here)
-                    ];
+                {
+                    //Jaws
+                    src: "https://imgc.allpostersimages.com/img/posters/jaws_u-L-F9IMPK0.jpg",
+                    //size for the image to be display on webpage
+                    width: "296",
+                    height: "450"
+                },
+                {
+                    // Mulan
+                    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR0aEAej7azokcoezrrfmsEOonNBbhFlRg4GjEV30Hq3VpJ0Pys83t1NGPvpK24zVcjFI&usqp=CAU",
+                    width: "296",
+                    height: "450"
+                },
+                {
+                    // Joker
+                    src: "https://imgc.allpostersimages.com/img/posters/joker_u-L-F9JL6C0.jpg",
+                    width: "296",
+                    height: "450"
+                },
+                {
+                    // The Hunger Games
+                    src: "http://images.fandango.com/images/fandangoblog/hungergamestribute12-1-fina.jpg",
+                    width: "296",
+                    height: "450"
+                },
+                {
+                    // UP
+                    src: "https://m.media-amazon.com/images/M/MV5BMTk3NDE2NzI4NF5BMl5BanBnXkFtZTgwNzE1MzEyMTE@._V1_.jpg",
+                    width: "296",
+                    height: "450"
+                },
+                {
+                    // Ratatouille
+                    src: "https://resizing.flixster.com/gL_JpWcD7sNHNYSwI1ff069Yyug=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzc4ZmJhZjZiLTEzNWMtNDIwOC1hYzU1LTgwZjE3ZjQzNTdiNy5qcGc=",
+                    width: "296",
+                    height: "450"
+                },
+
+                {
+                    // Avatar
+                    src: "https://s3.amazonaws.com/libapps/accounts/44558/images/Avatar.jpg",
+                    width: "296",
+                    height: "450"
+                } ];
 
             //find the length of the array of images
             var arrayLength = imageArray.length;
@@ -19,7 +61,8 @@
             for (var i = 0; i < arrayLength; i++) {
                 newArray[i] = new Image();
                 newArray[i].src = imageArray[i].src;
-
+                newArray[i].width = imageArray[i].width;
+                newArray[i].height = imageArray[i].height;
             }
 
             // create random image number
@@ -43,15 +86,13 @@
             document.body.appendChild(newImage);
         }
     </script>
+
+    <body>
     <div>
         <center>
             <h2 style="color:black"> Random Movie Generator </h2>
             <h4> Press the button to generate a random movie </h4>
             <button onclick="displayRandomImages();"> Random Movie </button>
-            {% for x in list %}
-                <p>{{ list.title }}</p>
-                <p>{{ list.image }}</p>
-            {% endfor %}
         </center>
     </div>
     </body>
