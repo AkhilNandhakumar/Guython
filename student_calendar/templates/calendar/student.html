@@ -219,7 +219,7 @@
             <div class="days"></div>
         </div>
     </div>
-
+    <a style="color: white; margin-top: 10%; font-size: 25px" href="admin">Link to Admin Calendar</a>
     <div class="container py-4">
         <div class="p-5 mb-4 bg-dark text-light rounded-3">
             <h2>Backpack Pro Database Viewer</h2>
@@ -255,8 +255,6 @@
             </div>
             <br>
         </div>
-
-    <a style="color: white" href="admin">Link to Admin Calendar</a>
 
     </div>
     <script>
@@ -319,7 +317,7 @@
                     i === new Date().getDate() &&
                     date.getMonth() === new Date().getMonth()
                 ) {
-                    days += `<div class="today">${i}</div>`;
+                    days += `<button><div onclick="popup(${i})" class="today popup">${i}<span class="popuptext" id="${i}"></span></div></button>`;
                 } else {
                     days += `<div>${i}</div>`;
                 }
@@ -349,7 +347,7 @@
             popupE.innerHTML = ""
             let check = false
             {% for i in range(len_days) %}
-                if (elementId === {{ days_list[i] }} && document.getElementById('year').innerHTML === "{{ year[i] }}" && (n + 1).toString() === "{{ month[i] }}") {
+                if (elementId === {{ days_list[i] }} && date.getFullYear().toString() === "{{ year[i] }}" && date.getMonth().toString() === "{{ month[i] }}") {
                     check = true
                     popupE.innerHTML += "{{ calevent[i] }}" + " & "
                 }
