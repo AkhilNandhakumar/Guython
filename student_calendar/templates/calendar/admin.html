@@ -156,8 +156,9 @@
 
         /* Highlight the "current" day */
         .days button .active {
-            padding: 5px;
+            padding: 15px;
             background: white;
+            color: black !important
         }
 
         /* Curve the current day block */
@@ -185,7 +186,7 @@
     </div>
 
     <ul class="days">
-        <button><div class="popup" onclick="popup(1)">1<span class="popuptext" id="1"></span>
+        <button><div class="popup active" onclick="popup(1)">1<span class="popuptext" id="1"></span>
         </div></button>
         <button><div class="popup" onclick="popup(2)">2<span class="popuptext" id="2"></span>
         </div></button>
@@ -231,7 +232,7 @@
         </div></button>
         <button><div class="popup" onclick="popup(23)">23<span class="popuptext" id="23"></span>
         </div></button>
-        <button id="curve"><div class="popup" onclick="popup(24)">24<span class="popuptext" id='24'></span>
+        <button><div class="popup" onclick="popup(24)">24<span class="popuptext" id='24'></span>
         </div></button>
         <button><div class="popup" onclick="popup(25)">25<span class="popuptext" id='25'></span>
         </div></button>
@@ -408,6 +409,14 @@
             if (
                 n < 0
             ) year_changer()
+            if (n != ({{ monthnum }} - 1)) {
+                let active_popup = document.getElementsByClassName("popup active")
+                active_popup.className = "popup"
+            }
+            else {
+                let active_popup = document.getElementsByClassName("popup active")
+                active_popup.className = "popup"
+            }
             month_changer(n)
         }
 
