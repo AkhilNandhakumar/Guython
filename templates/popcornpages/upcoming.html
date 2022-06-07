@@ -3,7 +3,7 @@
 {% extends "layouts/base.html" %}
 {% block body %}
     <head>
-        <title>Top Movies</title>
+        <title>Upcoming Movies</title>
         <link rel="stylesheet" type="text/css" href="/static/scss/layouts/layout1.css">
         <style>
 
@@ -43,21 +43,21 @@
     </head>
 
     <body>
-        <h1 style="text-align: center" >Top 10 Movies of All Time</h1>
-        <table>
-            <tr>
-                <td><a href="/popcornpages/top">Top Movies</a></td>
-                <td><a href="/popcornpages/topL">Learn Top Movies</a></td>
-                <td><a href="/popcornpages/random">Random Movie</a></td>
-                <td><a href="/popcornpages/randomL">Learn Random Movie</a></td>
-                <td><a href="/popcornpages/upcoming">Upcoming</a></td>
-                <td><a href="/popcornpages/upcomingL">Learn Upcoming</a></td>
-                <td><a href="/popcornpages/nowplaying">Now Playing</a></td>
-                <td><a href="/popcornpages/nowplayingL">Learn Now Playing</a></td>
-                <td><a href="/popcornpages/notes2">Watchlist</a></td>
-            </tr>
-        </table>
-        {% for movie in d_list %}
+    <h1 style="text-align: center" >Upcoming Movies</h1>
+    <table>
+        <tr>
+            <td><a href="/popcornpages/top">Top Movies</a></td>
+            <td><a href="/popcornpages/topL">Learn Top Movies</a></td>
+            <td><a href="/popcornpages/random">Random Movie</a></td>
+            <td><a href="/popcornpages/randomL">Learn Random Movie</a></td>
+            <td><a href="/popcornpages/upcoming">Upcoming</a></td>
+            <td><a href="/popcornpages/upcomingL">Learn Upcoming</a></td>
+            <td><a href="/popcornpages/nowplaying">Now Playing</a></td>
+            <td><a href="/popcornpages/nowplayingL">Learn Now Playing</a></td>
+            <td><a href="/popcornpages/notes2">Watchlist</a></td>
+        </tr>
+    </table>
+    {% for movie in d_list %}
         <br>
         <br>
         <img src="{{ movie.image }}">
@@ -66,7 +66,7 @@
         <h4 style="text-align: center">Movie Genre: {{ movie.genre }}</h4>
         <p style="text-align: center">{{ movie.caption }}</p>
         <p style="text-align: center">Released in {{ movie.country }} on {{ movie.date }}, {{ movie.title }} runs for {{ movie.runtime }} minutes, with viewers rating it at {{ movie.rating }} out of 10</p>
-        {% endfor %}
+    {% endfor %}
     </body>
-</html>
+    </html>
 {% endblock %}

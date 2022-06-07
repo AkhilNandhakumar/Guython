@@ -4,7 +4,7 @@
 {% block body %}
     <head>
         <meta charset="UTF-8">
-        <title>Learn Top Movies</title>
+        <title>Learn Upcoming Movies</title>
         <style>
             pre code {
                 background-color: #c8c8c8;
@@ -63,7 +63,7 @@
             <td><a href="/popcornpages/notes2">Watchlist</a></td>
         </tr>
     </table>
-    <h1>Learn Now Playing</h1>
+    <h1>Learn Upcoming Movies</h1>
     <h2>Preface:</h2>
     <p style="background-color: grey; border: 2px solid black; border-collapse: collapse">
         You will need to make an account and register an API KEY with <a href="https://themoviedb.org/signup">themoviedb.org/signup</a> before being able to use this code.
@@ -75,31 +75,31 @@
 <code style="height: 500px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
 import requests
 
-def nowplaying():
-    id_listNP = []
-    configNP = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
-    nowplaying = (requests.get("https://api.themoviedb.org/3/movie/now_playing?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
+def upcoming():
+    id_list = []
+    upcoming = (requests.get("https://api.themoviedb.org/3/movie/upcoming?api_key=_API KEY_")).json()
     x = 0
     while x < 10:
-        idNP = nowplaying["results"][x]["id"]
-        id_listNP.append(idNP)
+        id = upcoming["results"][x]["id"]
+        id_list.append(id)
         x += 1
 
-    NP_list = []
-    for idNP in id_listNP:
-        NP_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(idNP) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
-        NP_dict = {}
-        NP_dict["genre"] = NP_json["genres"][0]["name"]
-        NP_dict["caption"] = NP_json["overview"]
-        NP_dict["country"] = NP_json["production_countries"][0]["name"]
-        NP_dict["date"] = NP_json["release_date"]
-        NP_dict["runtime"] = NP_json["runtime"]
-        NP_dict["tagline"] = NP_json["tagline"]
-        NP_dict["title"] = NP_json["title"]
-        NP_dict["rating"] = NP_json["vote_average"]
-        NP_dict["image"] = configNP["images"]["secure_base_url"] + "w185" + NP_json["poster_path"]
-        NP_list.append(NP_dict)
-    return render_template("popcornpages/nowplaying.html", NP_list=NP_list)
+    d_list = []
+    for id in id_list:
+        d_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(id) + "?api_key=_API KEY_")).json()
+        n_dict = {}
+        n_dict["genre"] = d_json["genres"][0]["name"]
+        n_dict["caption"] = d_json["overview"]
+        n_dict["country"] = d_json["production_countries"][0]["name"]
+        n_dict["date"] = d_json["release_date"]
+        n_dict["runtime"] = d_json["runtime"]
+        n_dict["tagline"] = d_json["tagline"]
+        n_dict["title"] = d_json["title"]
+        n_dict["rating"] = d_json["vote_average"]
+        n_dict["image"] = config["images"]["secure_base_url"] + "w185" + d_json["poster_path"]
+        d_list.append(n_dict)
+    return render_template("popcornpages/upcoming.html", d_list=d_list)
+
 </code>
 </pre>
     <br>
@@ -120,30 +120,31 @@ def nowplaying():
     <pre>
 <code style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
     configNP = (requests.get("https://api.themoviedb.org/3/configuration?api_key=_API KEY_")).json()
-    nowplaying = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=_API KEY_&language=en-US&page=1")).json()
+    upcoming = (requests.get("https://api.themoviedb.org/3/movie/upcoming?api_key=_API KEY_")).json()
 </code>
 </pre>
     <p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
         requests.get() uses the requests package to get the data, and the ().json() converts the data into a format that Python can manipulate
-        These two lines are requests to the themoviedb(tMDB) API (details shown above): the first one is to get config links for the movie poster; the second for the details of the entire first page of the "now playing" movies.
+
+        These two lines are requests to the themoviedb(tMDB) API (details shown above): the first one is to get config links for the movie poster; the second for the details of the entire first page of the "upcoming" movies.
     </p>
     <pre>
-<code style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+<code style="height: 250px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
     x = 0
     while x < 10:
-        idNP = nowplaying["results"][x]["id"]
-        id_listNP.append(idNP)
+        id = upcoming["results"][x]["id"]
+        id_list.append(id)
         x += 1
 </code>
 </pre>
-    <p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
+    <p style="height: 50px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
         x = 0 sets up a way for the while loop to run through the details of each movie and append the tMDB id of each movie to a list
     </p>
     <pre>
 <code style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-    NP_list = []
-    for id in id_listNP:
-        NP_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(id) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
+     d_list = []
+    for id in id_list:
+        d_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(id) + "?api_key=_API KEY_")).json()
 </code>
 </pre>
     <p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
@@ -151,37 +152,40 @@ def nowplaying():
     </p>
     <pre>
 <code style="height: 200px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-    NP_dict = {}
-        NP_dict["genre"] = NP_json["genres"][0]["name"]
-        NP_dict["caption"] = NP_json["overview"]
-        NP_dict["country"] = NP_json["production_countries"][0]["name"]
-        NP_dict["date"] = NP_json["release_date"]
-        NP_dict["runtime"] = NP_json["runtime"]
-        NP_dict["tagline"] = NP_json["tagline"]
-        NP_dict["title"] = NP_json["title"]
-        NP_dict["rating"] = NP_json["vote_average"]
-        NP_dict["image"] = configNP["images"]["secure_base_url"] + "w185" + NP_json["poster_path"]
-        NP_list.append(NP_dict)
-    return render_template("popcornpages/nowplaying.html", NP_list=NP_list)
+    n_dict = {}
+        n_dict["genre"] = d_json["genres"][0]["name"]
+        n_dict["caption"] = d_json["overview"]
+        n_dict["country"] = d_json["production_countries"][0]["name"]
+        n_dict["date"] = d_json["release_date"]
+        n_dict["runtime"] = d_json["runtime"]
+        n_dict["tagline"] = d_json["tagline"]
+        n_dict["title"] = d_json["title"]
+        n_dict["rating"] = d_json["vote_average"]
+        n_dict["image"] = config["images"]["secure_base_url"] + "w185" + d_json["poster_path"]
+        d_list.append(n_dict)
+    return render_template("popcornpages/upcoming.html", d_list=d_list)
 </code>
 </pre>
     <p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
         * Creates a new dictionary called n_dict, and adds every desired attribute from the movie details data into n_dict as key:value pairs.
+
         Left string is the key name in my dicts, right code is to retrieve specific data from movie details. Second to last line is slightly more complicated because base url from config data is needed for image display.
+
         Last line appends the newly created dictionary to d_list as an element. After 10 iterations, d_list contains 10 elements (type-dict)
+
         which each contain the title, tagline, genre, release country, release date, runtime, caption/overview, user rating, and image.
     </p>
     <pre>
 <code style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-    return render_template("popcornpages/top.html", d_list=d_list)
+      return render_template("popcornpages/upcoming.html", d_list=d_list)
 </code>
 </pre>
     <p  style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-        end of def nowplaying():, need to make sure NP_list is returned so that you can refer to the list in the html flask template.
+        end of def upcoming():, need to make sure d_list is returned so that you can refer to the list in the html flask template.
     </p>
     <pre>
 <code style="height: 300px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-    &lbrace&percent for movie in NP_list &percent&rbrace
+    &lbrace&percent for movie in d_list &percent&rbrace
     &ltimg src="&lbrace&lbrace movie.image &rbrace&rbrace"&gt
     &lth2 style="text-align: center"Movie Name: &gt&lbrace&lbrace movie.title &rbrace&rbrace&lt/h2&gt
     &lth5 style="text-align: center""&gt&lbrace&lbrace movie.tagline &rbrace&rbrace&lt/h5&gt"
@@ -193,6 +197,6 @@ def nowplaying():
 </code>
 </pre>
     <p style="height: 100px; width: 90%; overflow: auto; border: 2px solid black;border-collapse: collapse;margin-left: auto;margin-right: auto; margin-top: 10px;">
-        starts flask loop; runs through each element in NP_list and displays each desired attribute with movie.(attribute)
+        starts flask loop; runs through each element in d_list and displays each desired attribute with movie.(attribute)
     </p>
 {% endblock %}

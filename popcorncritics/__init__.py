@@ -18,6 +18,8 @@ app_popcorn = Blueprint('popcorn', __name__,
                          static_folder='static',
                          static_url_path='static')
 
+config = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
+
 @app_popcorn.route('/random')
 def random():
     return render_template("popcornpages/random.html")
@@ -26,11 +28,39 @@ def random():
 def randomL():
     return render_template("popcornpages/randomL.html")
 
+@app_popcorn.route('/upcoming/')
+def upcoming():
+    id_list = []
+    upcoming = (requests.get("https://api.themoviedb.org/3/movie/upcoming?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
+    x = 0
+    while x < 10:
+        id = upcoming["results"][x]["id"]
+        id_list.append(id)
+        x += 1
+
+    d_list = []
+    for id in id_list:
+        d_json = (requests.get("https://api.themoviedb.org/3/movie/" + str(id) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
+        n_dict = {}
+        n_dict["genre"] = d_json["genres"][0]["name"]
+        n_dict["caption"] = d_json["overview"]
+        n_dict["country"] = d_json["production_countries"][0]["name"]
+        n_dict["date"] = d_json["release_date"]
+        n_dict["runtime"] = d_json["runtime"]
+        n_dict["tagline"] = d_json["tagline"]
+        n_dict["title"] = d_json["title"]
+        n_dict["rating"] = d_json["vote_average"]
+        n_dict["image"] = config["images"]["secure_base_url"] + "w185" + d_json["poster_path"]
+        d_list.append(n_dict)
+    return render_template("popcornpages/upcoming.html", d_list=d_list)
+
+@app_popcorn.route('/upcomingL')
+def upcomingL():
+    return render_template("popcornpages/upcomingL.html")
 
 @app_popcorn.route('/top/')
 def top():
     id_list = []
-    config = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
     top = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
     x = 0
     while x < 10:
@@ -58,7 +88,6 @@ def top():
 def topL():
     topL = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
     d_jsonL = (requests.get("https://api.themoviedb.org/3/movie/" + str(topL["results"][14]["id"]) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
-    configL = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
     movie = {}
     movie["title"] = d_jsonL["title"]
     movie["tagline"] = d_jsonL["tagline"]
@@ -68,7 +97,7 @@ def topL():
     movie["date"] = d_jsonL["release_date"]
     movie["runtime"] = d_jsonL["runtime"]
     movie["rating"] = d_jsonL["vote_average"]
-    movie["image"] = configL["images"]["secure_base_url"] + "w185" + d_jsonL["poster_path"]
+    movie["image"] = config["images"]["secure_base_url"] + "w185" + d_jsonL["poster_path"]
     return render_template("popcornpages/topL.html", movie=movie)
 
 @app_popcorn.route('/notes/')
@@ -90,7 +119,6 @@ def notesL():
 @app_popcorn.route('/nowplaying')
 def nowplaying():
     id_listNP = []
-    configNP = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
     nowplaying = (requests.get("https://api.themoviedb.org/3/movie/now_playing?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
     x = 0
     while x < 10:
@@ -110,7 +138,7 @@ def nowplaying():
         NP_dict["tagline"] = NP_json["tagline"]
         NP_dict["title"] = NP_json["title"]
         NP_dict["rating"] = NP_json["vote_average"]
-        NP_dict["image"] = configNP["images"]["secure_base_url"] + "w185" + NP_json["poster_path"]
+        NP_dict["image"] = config["images"]["secure_base_url"] + "w185" + NP_json["poster_path"]
         NP_list.append(NP_dict)
     return render_template("popcornpages/nowplaying.html", NP_list=NP_list)
 
@@ -118,7 +146,6 @@ def nowplaying():
 def nowplayingL():
     nowplayingL = (requests.get("https://api.themoviedb.org/3/movie/top_rated?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US&page=1")).json()
     d_jsonNPL = (requests.get("https://api.themoviedb.org/3/movie/" + str(nowplayingL["results"][14]["id"]) + "?api_key=16165f36aebaa78f40ee87f1bf743c44&language=en-US")).json()
-    configNPL = (requests.get("https://api.themoviedb.org/3/configuration?api_key=16165f36aebaa78f40ee87f1bf743c44")).json()
     movieNP = {}
     movieNP["title"] = d_jsonNPL["title"]
     movieNP["tagline"] = d_jsonNPL["tagline"]
@@ -128,6 +155,6 @@ def nowplayingL():
     movieNP["date"] = d_jsonNPL["release_date"]
     movieNP["runtime"] = d_jsonNPL["runtime"]
     movieNP["rating"] = d_jsonNPL["vote_average"]
-    movieNP["image"] = configNPL["images"]["secure_base_url"] + "w185" + d_jsonNPL["poster_path"]
+    movieNP["image"] = config["images"]["secure_base_url"] + "w185" + d_jsonNPL["poster_path"]
     return render_template("popcornpages/nowplayingL.html", movie=movieNP)
 
